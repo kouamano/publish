@@ -1,0 +1,188 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6612,        179]
+NotebookOptionsPosition[      5692,        143]
+NotebookOutlinePosition[      6106,        159]
+CellTagsIndexPosition[      6063,        156]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\:4f55\:306e\:305f\:3081\:306e\:30a4\:30f3\:30d1\:30af\:30c8\:30d5\:30a1\
+\:30af\:30bf\:30fc?", "Title",
+ CellChangeTimes->{{3.539984898428383*^9, 3.5399849050345716`*^9}, {
+  3.547426875505941*^9, 3.547426881105239*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\:96d1\:8a8c(\:8ad6\:6587\:96c6\:5408)\:3092\:8a55\:4fa1\:3059\:308b\
+\:305f\:3081\:306e\:6307\:6a19\:306e\:3046\:3061\:306e\:3072\:3068\:3064", \
+"Item",
+ CellChangeTimes->{{3.538871478239399*^9, 3.538871545477766*^9}, {
+  3.539985028538458*^9, 3.5399850481578407`*^9}, {3.5474268361543083`*^9, 
+  3.547426855913361*^9}},
+ FontSize->24],
+
+Cell["\:96d1\:8a8c(\:8ad6\:6587\:96c6\:5408)\:306e\:5e73\:5747\:5f15\:7528\
+\:56de\:6570\:3092\:793a\:3059", "Item",
+ CellChangeTimes->{{3.538871478239399*^9, 3.538871545477766*^9}, {
+  3.539985028538458*^9, 3.5399850481578407`*^9}, {3.5474268361543083`*^9, 
+  3.547426855913361*^9}, {3.547507728096249*^9, 3.547507745575019*^9}},
+ FontSize->24],
+
+Cell["\:56f3\:66f8\:9928\:7b49\:3067\:8cfc\:5165\:3059\:308b\:96d1\:8a8c\:3092\
+\:6c7a\:5b9a\:3059\:308b\:969b\:306e\:53c2\:8003\:3068\:306a\:308b", "Item",
+ CellChangeTimes->{{3.538871478239399*^9, 3.538871545477766*^9}, {
+  3.53998507613419*^9, 3.53998511999715*^9}, {3.539985432917706*^9, 
+  3.539985447795415*^9}},
+ FontSize->24],
+
+Cell["\<\
+\:30c8\:30e0\:30bd\:30f3\:30fb\:30ed\:30a4\:30bf\:30fc\:306eJournal Citation \
+Reports\:306b\:3088\:308b\
+\>", "Item",
+ CellChangeTimes->{{3.539985353087056*^9, 3.539985421769088*^9}},
+ FontSize->24],
+
+Cell["\<\
+\:51fa\:7248\:304b\:3089\:5f15\:7528\:307e\:3067\:306b\:9577\:3044\:6642\:9593\
+\:304c\:639b\:304b\:308b\:8ad6\:6587\:304c\:8a55\:4fa1\:304b\:3089\:5916\:308c\
+\:308b\:7b49\:306e\:554f\:984c\:304c\:3042\:308b\
+\>", "Item",
+ CellChangeTimes->{{3.538871814193613*^9, 3.538871846862815*^9}, {
+   3.538872079287611*^9, 3.538872089930047*^9}, 3.5388721288707037`*^9, {
+   3.539377577679933*^9, 3.539377646847815*^9}, {3.547426893907495*^9, 
+   3.547426898205243*^9}},
+ FontSize->24]
+}, Open  ]],
+
+Cell[TextData[{
+ "Nav:   ",
+ ButtonBox["top",
+  BaseStyle->"Hyperlink",
+  ButtonData->{"BRCweb_categ.nb", None}],
+ " | ",
+ ButtonBox["next",
+  BaseStyle->"Hyperlink",
+  ButtonData->{"BRCweb_impactfactor-keisan.nb", None}]
+}], "Section",
+ CellChangeTimes->{{3.539377721637364*^9, 3.539377760844901*^9}, {
+  3.5395571297972603`*^9, 3.539557130958643*^9}, {3.53998515159156*^9, 
+  3.539985181522591*^9}, {3.53998545934451*^9, 3.539985472767295*^9}, {
+  3.5565868321713057`*^9, 3.556586968903879*^9}, {3.556587047652268*^9, 
+  3.556587047652958*^9}, {3.5565877371426*^9, 3.5565877394185038`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\:30c8\:30e0\:30bd\:30f3\:30fb\:30ed\:30a4\:30bf\:30fc\:304b\:3089\:306e\
+\:5f15\:7528:", "Section",
+ CellChangeTimes->{{3.539377721637364*^9, 3.539377760844901*^9}, {
+  3.5395571297972603`*^9, 3.539557130958643*^9}, {3.53998515159156*^9, 
+  3.539985181522591*^9}, {3.53998545934451*^9, 3.539985472767295*^9}}],
+
+Cell["\<\
+\[OpenCurlyDoubleQuote]\:5f15\:7528\:30c7\:30fc\:30bf\:306b\:57fa\:3065\:3044\
+\:3066\:5b9a\:91cf\:5316\:3057\:305f\:7d71\:8a08\:60c5\:5831\:3092\:63d0\:4f9b\
+\:3059\:308b\:3053\:3068\:3067\:3001\:5165\:624b\:53ef\:80fd\:306a\:5b66\:8853\
+\:96d1\:8a8c\:3092\:53d6\:6368\:9078\:629e\:3059\:308b\:969b\:306b\:3001\:6307\
+\:6a19\:306b\:57fa\:3065\:304f\:610f\:601d\:6c7a\:5b9a\:304c\:884c\:3048\:308b\
+\:3088\:3046\:652f\:63f4\:3057\:307e\:3059\:3002\[CloseCurlyDoubleQuote]\
+\>", "Text",
+ CellChangeTimes->{{3.539985522243682*^9, 3.539985541704571*^9}},
+ FontSize->18],
+
+Cell["http://ip-science.thomsonreuters.jp/products/jcr/", "Text",
+ CellChangeTimes->{{3.5399855698237543`*^9, 3.539985600459887*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See also", "Section",
+ CellChangeTimes->{{3.539377721637364*^9, 3.539377760844901*^9}, {
+  3.5395571297972603`*^9, 3.539557130958643*^9}, {3.53998515159156*^9, 
+  3.539985181522591*^9}, {3.53998545934451*^9, 3.539985472767295*^9}, {
+  3.539985681594605*^9, 3.539985700861408*^9}, {3.5399857587745657`*^9, 
+  3.539985763177815*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["5\:5e74\:30a4\:30f3\:30d1\:30af\:30c8\:30d5\:30a1\
+\:30af\:30bf\:30fc",
+ BaseStyle->"Hyperlink",
+ ButtonData->{"BRCweb_5year-impactfactor-setsumei.nb", None}]], "Item",
+ CellChangeTimes->{{3.538871478239399*^9, 3.538871545477766*^9}, {
+  3.539985028538458*^9, 3.5399850481578407`*^9}, {3.539985731250766*^9, 
+  3.5399857408104677`*^9}, {3.539985809240283*^9, 3.539985824693879*^9}, {
+  3.547426914592308*^9, 3.547426914983555*^9}, {3.547512014833222*^9, 
+  3.547512014834803*^9}}],
+
+Cell[TextData[ButtonBox["\:30a2\:30a4\:30b2\:30f3\:30d5\:30a1\:30af\:30bf\
+\:30fc",
+ BaseStyle->"Hyperlink",
+ ButtonData->{"BRCweb_eigenfactor.nb", None}]], "Item",
+ CellChangeTimes->{{3.538871478239399*^9, 3.538871545477766*^9}, {
+  3.539985028538458*^9, 3.5399850481578407`*^9}, {3.539985731250766*^9, 
+  3.5399857408104677`*^9}, {3.539985809240283*^9, 3.539985824693879*^9}, {
+  3.547426914592308*^9, 3.547426914983555*^9}, {3.547512014833222*^9, 
+  3.547512014834803*^9}, {3.556587503708186*^9, 3.556587547335847*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{978, 848},
+WindowMargins->{{Automatic, 59}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (December 11, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 227, 3, 98, "Title"],
+Cell[CellGroupData[{
+Cell[831, 29, 343, 6, 42, "Item"],
+Cell[1177, 37, 345, 5, 42, "Item"],
+Cell[1525, 44, 333, 5, 42, "Item"],
+Cell[1861, 51, 209, 5, 42, "Item"],
+Cell[2073, 58, 487, 9, 69, "Item"]
+}, Open  ]],
+Cell[2575, 70, 592, 14, 84, "Section"],
+Cell[CellGroupData[{
+Cell[3192, 88, 316, 4, 54, "Section"],
+Cell[3511, 94, 576, 9, 61, "Text"],
+Cell[4090, 105, 133, 1, 31, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4260, 111, 337, 5, 84, "Section"],
+Cell[CellGroupData[{
+Cell[4622, 120, 505, 8, 30, "Item"],
+Cell[5130, 130, 522, 8, 30, "Item"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
