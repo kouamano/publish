@@ -1,0 +1,37 @@
+各分野がそれ以外の全分野に及ぼす影響強度を，雑誌の影響強度指標であるEigenfactorを求める手法\cite{eigen1,Tsunoda1,google1,Onodera1}を応用して求めた．
+具体的な算出法を以下に述べる．
+
+%\textgt{ステップ\bf 1} \\
+まず，$n$個の分野間の被引用/引用行列$H$が与えられているとする．
+また，各要素値が各分野の論文数に比例したベクトル$p;{\sum_{i}{p_i} = 1}$があるとする．
+この行列$H$を以下のように調整し，行列$G$を算出する．
+\begin{enumerate}
+\item 各対角項を0にする．すなわち自分野引用を無視する(これを$H^\star$とする)
+\item $H^\star$の各要素$h_{ij}$を，分野$j$の($H^\star$における)全引用数$\sum_{i}h_{ij}$で規格化する(各列の和が1になる)
+\item 2で得られた行列全体に係数$\alpha$ ($0<\alpha<1$) を掛ける(各列の和が$\alpha$になる)
+\item 各引用ベクトル(列ベクトル)の各要素に$p_i (1-\alpha)$を足す．これを行列$G$とする
+\end{enumerate}
+
+\color{black}
+つまり，行列$G$の各要素$g_{ij}$は次式で表される．
+
+\color{black}
+\begin{equation}\label{eq2}  % displaymath,eqnarray いずれも可能
+g_{ij} = p_i(1 - \alpha) + \alpha h_{ij}/\sum_{i}h_{ij}\\
+\end{equation}
+\color{black}
+
+%\textgt{ステップ\bf 2} \\
+行列$G$に対する(第一)固有ベクトルを$\pi$とすると(式(\ref{eq1}))\footnote{行列$G$は最大固有値$1$を持つ．式(2)の最初の式は，その固有値に対する固有ベクトルが$\pi$であることを意味する．また，式(2)の2番目の式により，$\pi$の要素値の和が$1$になるように規格化している($e^T$はベクトル(1,1,1,...)を表す)．詳細は文献[19]を参照されたい．}，その各要素$\pi_i$が分野$i$の影響を表すスコアとなる(以降，これを分野Eigenfactorと呼ぶこととする)．
+\begin{equation}\label{eq1}  % displaymath,eqnarray いずれも可能
+\begin{array}{l}
+G \pi = \pi\\
+e^{T} \pi = 1
+\end{array}
+\end{equation}
+
+分野Eigenfactorの高い順番が影響度の高い順番となる．
+\color{black}
+式(\ref{eq2})の要素$g_{ij}$は，分野$j$の論文を見ている読者が，次に別の分野$i$の論文に移る確率を表しており，$\alpha$の項は引用を辿って移る確率，$(1 - \alpha)$の項は引用に関係なく$i$の論文数に比例して移る確率である．$\alpha$を大きくするほど，引用による影響の比率が高まる．
+\color{black}
+詳細は，文献\cite{eigen1}を参照されたい．

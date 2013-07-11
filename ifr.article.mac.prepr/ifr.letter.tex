@@ -1,0 +1,253 @@
+\documentclass[a4j,twocolumn,twoside]{jsimsarticle}
+\def\blind{0}
+\def\absthaba{162mm}
+\def\texthaba{49zw}
+\def\longquotehaba{20zw}
+\def\fighaba{76mm}
+\def\longfighaba{\texthaba}
+\def\captionhaba{76mm}
+\def\legendhaba{76mm}
+\def\longcaptionhaba{162mm}
+\def\longlegendhaba{162mm}
+\def\captionlinespread{1.0}
+\def\noindentitem{-7mm}
+\def\myindent{\hspace{1zw}}
+\setlength{\columnsep}{20pt}
+\setlength{\topmargin}{5mm}
+\setlength{\textwidth}{\texthaba}
+\setlength{\textheight}{237.6mm} %237mm-240mm(著者による編集可)
+\setlength{\evensidemargin}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\voffset}{0pt}
+\setlength{\topmargin}{0pt}
+\setlength{\topsep}{\baselineskip}
+\usepackage[dvips]{graphicx,epsfig,color}
+\usepackage{ascmac}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{lscape}
+%\usepackage{rotfloat}
+%\usepackage{rotating}
+%\usepackage{pdflscape}
+\usepackage{slashbox}
+\usepackage{jsimsfancyhdr}
+\usepackage{ifthen}
+\def\moku#1{\addtocounter{paragraph}{1} \noindent \textbf{(\theparagraph) #1}\\}
+\def\basesize{\fontsize{10.5}{11}\selectfont}
+\def\journalvol{N}
+\def\journalnum{N}
+\def\journaltitle{プレプリント 第{\journalvol}巻 第{\journalnum}号}
+\renewcommand{\refname}{注・文献}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+%% (* ここから著者が著者情報を記入して下さい
+\def\sta{{$^{\star}$}}
+\def\stb{{$^{\star \star}$}}
+\def\stc{{$^{\star \star \star}$}}
+\def\std{{$^{\star \star \star \star}$}}
+\def\ste{{$^{\star \star \star \star \star}$}}
+\def\articletitle{引用データに基づく自然科学領域における学術研究分野間の関係}
+\def\articlesubtitle{}
+\def\marktitle{引用データに基づく自然科学領域における学術研究分野間の関係}
+\def\earticletitle{Interdisciplinary Relations among Scientific Research Fields in The Natural Science Area Based on Citation Data}
+\def\earticlesubtitle{}
+\def\authors{天野晃\sta , 児玉閲\stb , 柴田大輔\stc , 小野寺夏生\std}
+\def\eauthors{Kou AMANO\sta , Tadashi KODAMA\stb , Daisuke SHIBATA\stc , Natsuo ONODERA\std}
+\def\affliations{\sta{$^,$}\stb{$^,$}\stc{$^,$}\std 筑波大学 \\ \sta 農業生物資源研究所, 理化学研究所BRC \\ \stb 東邦大学 \\ \stc 帝京平成大学}
+\def\eaffliations{\sta{$^,$}\stb{$^,$}\stc{$^,$}\std University of Tsukuba \\ \sta National Institute of Agrobiological Sciences, RIKEN BRC \\ \stb Toho University \\ \stc Teikyo Heisei University}
+\def\presentaffliation{\\ 現在の所属: \sta\hspace{-0.5mm}理化学研究所}
+\def\presenteaffliation{\\ present address: \sta{}RIKEN}
+\def\emails{\sta kamano@affrc.go.jp , \stb kodamat@mnc.toho-u.ac.jp , \stc daisuke.shibata@thu.ac.jp \std onodera@slis.tsukuba.ac.jp}
+%% ここまで *)
+\pagestyle{fancy}
+%\fancyhead[CO]{\journaltitle}
+%\fancyhead[CE]{\marktitle}
+%\fancyhead[LO]{}
+%\fancyhead[LE]{}
+%\fancyhead[RO]{}
+%\fancyhead[RE]{}
+\lhead[]{}
+\chead[\journaltitle]{\marktitle}
+\rhead[]{}
+\lfoot[]{}
+%\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+\twocolumn[ %%著者名/抄録部	複数ページにわたる場合、twocolumnを分割する
+\begin{flushleft}【原著論文】\end{flushleft}
+%% (* making title %原則として著者が記入する必要はありません
+%% ブラインドの例
+\ifthenelse{\blind=0}{
+        \begin{center}
+        \large\articletitle \\ \normalsize\articlesubtitle \vspace{7mm}
+
+        \basesize\authors
+
+        \affliations
+	%\presentaffliation
+
+        \emails
+
+
+        \end{center}
+}{
+        \begin{center}
+        \large\articletitle \\ \normalsize\articlesubtitle \vspace{7mm}
+        \vspace{0mm} %%適当に
+
+        %\basesize\authors 
+
+        %\affliations 
+
+        %\emails
+        \end{center}
+}
+%% end *)
+\basesize
+%% (* ここから著者が日本語抄録を記入して下さい
+\begin{center}
+\vspace{0mm}
+\begin{tabular}{p{\absthaba}}
+\textgt{要約 }
+\input{ifr.gaiyou.tex}
+\end{tabular}
+\end{center}
+%% *)
+]
+
+
+
+\twocolumn[
+%% (* making einglish titile %原則として著者が記入する必要はありません
+%% ブラインドの例
+\ifthenelse{\blind=0}{
+        \begin{center}
+	\vspace{-6mm}
+        \large\earticletitle \\ \normalsize\earticlesubtitle \vspace{4mm}
+
+        \basesize\eauthors
+
+        \eaffliations
+	%\presenteaffliation
+
+        \emails
+
+
+        \end{center}
+}{
+        \begin{center}
+        \large\earticletitle \\ \normalsize\earticlesubtitle \vspace{4mm}
+        \vspace{0mm} %%適当に
+
+        %\basesize\eauthors 
+
+        %\eaffliations
+
+        %\emails
+        \end{center}
+}
+%% *)
+%]
+
+
+%\twocolumn[
+
+\basesize
+%% (* ここから著者が英文抄録を記入して下さい
+\begin{center}
+\vspace{-6mm}
+\begin{tabular}{p{\absthaba}}
+\textbf{Abstract }
+\input{ifr.gaiyou_en_only_LF.rev.tex}
+%\input{ifr.gaiyou_en_only_LF.rev.pt1.tex}
+\end{tabular}
+\end{center}
+\vspace{6mm} %本文と抄録部との間の調整
+%% *)
+]
+
+
+%\twocolumn[
+%\begin{center}
+%\begin{tabular}{p{\absthaba}}
+%\input{ifr.gaiyou_en_only_LF.rev.pt2.tex}
+%\end{tabular}
+%\end{center}
+%]
+
+\basesize
+%% (* ここから著者が本文(引用も)を記入して下さい
+\section{背景・目的}
+\input{ifr.haikei_mokuteki.rev1.tex}
+
+
+\section{データ}\label{taishou}
+\input{ifr.taishou.tex}
+
+\section{方法}\label{houhou}
+\subsection{天野らの分類}\label{amanoCL}
+\input{ifr.houhou_amano.tex}
+\subsection{分野の決定と分野間被引用/引用行列の作成}\label{ccmat}
+\input{ifr.houhou-bunya.tex}
+\subsection{分析の方法}
+\input{ifr.bunseki-houhou.tex}
+\subsubsection{各分野の他分野引用/被引用の程度}\label{kihon}
+\input{ifr.bunseki-houhou-toukeiti.tex}
+\subsubsection{分野間の階層クラスタ関係}\label{CL}
+\input{ifr.bunseki-houhou-kaisouCL.part1.tex}
+\input{ifr.TableCitedCitingRaw.tex}
+\input{ifr.bunseki-houhou-kaisouCL.part2.tex}
+\subsubsection{分野間の影響関係}\label{sougo}
+\input{ifr.bunseki-houhou-sougo.2.tex}
+\subsubsection{各分野が他の分野に及ぼす影響強度}\label{google}
+\input{ifr.google-page-rank.tex}
+\input{fundamentalTable.4.tex}
+
+\section{結果}\label{kekka}
+\input{ifr.FigDendrogram.tex}
+\input{ifr.TableStanderdizedLinkageIntensity.tex}
+\input{ifr.TableStanderdizedCitedParCiting.tex}
+\input{ifr.TableEigen.3.tex}
+\subsection{各分野の他分野被引用/引用の程度}
+\input{ifr.kekka.toukei.tex}
+\subsection{分野間の階層クラスタ関係}
+\input{ifr.Dendrogram-kekka.tex}
+\subsection{分野間の影響関係}
+\subparagraph{相互結合係数}
+\input{ifr.symmetric_linkage.tex}
+\subparagraph{影響係数}
+\input{ifr.asymmetric_linkage.tex}
+\subsection{各分野が他の分野に及ぼす影響強度}
+\input{ifr.kekka.eigen.tex}
+
+\section{考察・まとめ}\label{kousatsu}
+%\input{ifr.matome.head.tex}
+\subparagraph{分野の規模・全体における影響の強さ}
+\input{ifr.kousatus-kibo.tex}
+\subparagraph{分野間の引用関係}
+\input{ifr.kousatsu-kaisou.tex}
+\subparagraph{まとめ}
+\input{ifr.kousatsu-matome.tex}
+
+\section*{謝辞}\label{thanks}
+\input{ifr.thanks.tex}
+
+\begin{thebibliography}{20}\vspace{2mm}
+\linespread{1.0}\selectfont
+\input{ifr.bibitems.tex}
+\end{thebibliography}
+%% *)
+
+%\newpage
+%% (* 以下は編集で記入
+\vspace{0mm} %左カラムの空きの調整
+\begin{flushright}
+(yyyy年mm月dd日　受付)\\
+(yyyy年mm月dd日　採録)\\
+(yyyy年mm月dd日　出版)\\
+\end{flushright}
+%% *)
+
+\end{document}

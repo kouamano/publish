@@ -1,0 +1,11 @@
+情報メディア学会　情報メディア研究　原稿：
+ifr.letter.pdf
+
+作成者：天野晃
+
+作成環境：mac OS X
+latexバージョン：Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012/MacPorts 2012_10)
+コンパイル手順：
+1. platex -kanji=euc ifr.letter.tex
+2. platex -kanji=euc ifr.letter.tex
+3. dvipdfmx ifr.letter.dvi

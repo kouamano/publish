@@ -1,0 +1,547 @@
+This is pTeXk, Version 3.141592-p3.1.10 (euc) (Web2C 7.5.6) (format=platex 2011.9.8)  11 JUL 2013 10:32
+ %&-line parsing enabled.
+**ifr.letter.tex
+(./ifr.letter.tex
+pLaTeX2e <2006/11/10>+0 (based on LaTeX2e <2005/12/01> patch level 0)
+(./jsimsarticle.cls
+Document Class: jsimsarticle 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen118
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen121
+\epsfysize=\dimen122
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texmf/ptex/platex/base/ascmac.sty
+(/usr/share/texmf/ptex/platex/base/tascmac.sty
+\@savetbaselineshift=\dimen123
+\@saveybaselineshift=\dimen124
+\scb@x=\box41
+\scscb@x=\box42
+\@bw=\dimen125
+\@nbox=\box43
+\@nbody=\box44
+\@scw=\dimen126
+\@itemh=\dimen127
+\@iboxpos=\toks16
+\@iboxstr=\box45
+\@bwsp=\box46
+\@@bwsp=\box47
+\@bcal=\count89
+\shaderule=\dimen128
+))
+(/usr/share/texmf/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen129
+\extrarowheight=\dimen130
+\NC@list=\toks17
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\everycr=\toks18
+\minrowclearance=\skip45
+)
+(/usr/share/texmf/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen131
+)
+(/usr/share/texmf/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+) (./slashbox.sty
+slashbox style by K.Yasuoka, May 1993.
+\@slashboxa=\box48
+\@slashboxb=\box49
+\@slashboxc=\box50
+\@slashboxwd=\count90
+\@slashboxht=\count91
+\@slashsepl=\dimen132
+\@slashsepr=\dimen133
+) (./jsimsfancyhdr.sty
+\fancy@headwidth=\skip46
+\f@ncyO@elh=\skip47
+\f@ncyO@erh=\skip48
+\f@ncyO@olh=\skip49
+\f@ncyO@orh=\skip50
+\f@ncyO@elf=\skip51
+\f@ncyO@erf=\skip52
+\f@ncyO@olf=\skip53
+\f@ncyO@orf=\skip54
+) (/usr/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+
+LaTeX Warning: Unused global option(s):
+    [a4j].
+
+(./ifr.letter.aux)
+\openout1 = `ifr.letter.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 118.
+
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 118.
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 118.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 118.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.5> on input line 118.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.34996> on input line 118.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.25> on input line 118.
+(./ifr.gaiyou.tex)
+Overfull \hbox (1.4487pt too wide) in paragraph at lines 118--118
+ [] 
+ []
+
+[1
+
+
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.5> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 169.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.5> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 169.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 169.
+
+(./ifr.gaiyou_en_only_LF.rev.tex)
+Overfull \hbox (1.4487pt too wide) in paragraph at lines 169--169
+ [] 
+ []
+
+
+LaTeX Warning: Optional argument of \twocolumn too tall on page 2.
+
+
+Overfull \vbox (30.0pt too high) has occurred while \output is active []
+
+
+
+LaTeX Warning: Text page 2 contains only floats.
+
+
+Overfull \vbox (30.0pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (16.0pt too high) has occurred while \output is active []
+
+ [2
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 182.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 182.
+
+(./ifr.haikei_mokuteki.rev1.tex) (./ifr.taishou.tex) [3]
+(./ifr.houhou_amano.tex) (./ifr.houhou-bunya.tex
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+)
+(./ifr.bunseki-houhou.tex) (./ifr.bunseki-houhou-toukeiti.tex)
+(./ifr.bunseki-houhou-kaisouCL.part1.tex) (./ifr.TableCitedCitingRaw.tex
+[4] (./citedcitingraw.2.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]\JY1/mc/m/n/7 化学工
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\JY1/mc/m/n/7 ルギ ー
+ []
+
+)
+Overfull \hbox (4.1154pt too wide) in paragraph at lines 11--22
+[]   []
+ []
+
+
+Overfull \hbox (880.58905pt too wide) has occurred while \output is active
+[] []|[] []
+ []
+
+[5
+
+
+]) (./ifr.bunseki-houhou-kaisouCL.part2.tex)
+(./ifr.bunseki-houhou-sougo.2.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 31.
+ (/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.5> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 31.
+
+) (./ifr.google-page-rank.tex [6
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 25.
+) (./fundamentalTable.4.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+[]|\JY1/mc/m/n/8 他分野
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+[]|\JY1/mc/m/n/8 他分野
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+\JY1/mc/m/n/8 被引用
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 8--8
+[]|\OT1/cmr/m/n/8 1 \JY1/mc/m/n/8 論文あ
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 8--8
+\JY1/mc/m/n/8 たり被引
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 8--8
+[]|\OT1/cmr/m/n/8 1 \JY1/mc/m/n/8 論文あ
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 8--8
+\JY1/mc/m/n/8 たり被引
+ []
+
+) (./ifr.FigDendrogram.tex
+File: HierarchicalCluster21-reduceself-cosine-ave-nolabel.eps Graphic file (typ
+e eps)
+
+<HierarchicalCluster21-reduceself-cosine-ave-nolabel.eps>
+Overfull \hbox (1.4487pt too wide) in paragraph at lines 4--14
+ [] 
+ []
+
+) (./ifr.TableStanderdizedLinkageIntensity.tex (./sym_tab.13.tex
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 数理工
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 電子情
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 化学工
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+\JY1/mc/m/n/5 ルギ ー
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 応用化
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 金属 ・
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+\JY1/mc/m/n/5 セラ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+\JY1/mc/m/n/5 ミ ッ ク
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 物性物
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+\JY1/mc/m/n/5 天体物
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 分析化
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 地球科
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 動植物
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 臨床医
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 3--3
+[]|\JY1/mc/m/n/5 臨床医
+ []
+
+)) (./ifr.TableStanderdizedCitedParCiting.tex (./asymmetric-link.5.tex
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 数理工
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 電子情
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 化学工
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+\JY1/mc/m/n/5 ルギ ー
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 応用化
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 金属 ・
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--5
+\JY1/mc/m/n/5 セラ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--5
+\JY1/mc/m/n/5 ミ ッ ク
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 物性物
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+\JY1/mc/m/n/5 天体物
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 分析化
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 地球科
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 動植物
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 臨床医
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 5--5
+[]|\JY1/mc/m/n/5 臨床医
+ []
+
+)) (./ifr.TableEigen.3.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 7.
+) (./ifr.kekka.toukei.tex) [7]
+(./ifr.Dendrogram-kekka.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+
+LaTeX Warning: Text page 9 contains only floats.
+
+
+LaTeX Warning: Text page 9 contains only floats.
+
+[9]) (./ifr.symmetric_linkage.tex) (./ifr.asymmetric_linkage.tex)
+(./ifr.kekka.eigen.tex) (./ifr.kousatus-kibo.tex [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(./ifr.kousatsu-kaisou.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11])
+(./ifr.kousatsu-matome.tex) (./ifr.thanks.tex) (./ifr.bibitems.tex
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 5.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 5.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 5.
+
+
+Underfull \hbox (badness 3302) in paragraph at lines 11--12
+[]\OT1/cmr/m/n/10.95 Leydesdorf, L. In-di-ca-tors of struc-tual
+ []
+
+[12]
+Underfull \hbox (badness 7451) in paragraph at lines 23--24
+[]\OT1/cmr/m/n/10.95 Chen, C.-M. Clas-si-fi-ca-tion of Sci-en-
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 57--58
+\OT1/cmr/m/n/10.95 mura, Y.; On-odera, A. Self-organizing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+[]\OT1/cmr/m/n/10.95 Eigenfactor$[]$ Score and AI$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+\OT1/cmr/m/n/10.95 Score: De-tailed meth-ods.
+ []
+
+
+Overfull \hbox (9.63321pt too wide) in paragraph at lines 62--63
+\OML/cmm/m/it/10.95 <$\OT1/cmr/m/n/10.95 http://www.eigenfactor.org/methods.pdf
+$\OML/cmm/m/it/10.95 >$
+ []
+
+) [13] (./ifr.letter.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.45pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1366 strings out of 257674
+ 17574 string characters out of 1941522
+ 176719 words of memory out of 1500000
+ 4434 multiletter control sequences out of 10000+200000
+ 15296 words of font info for 60 fonts, out of 1200000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 34i,17n,43p,825b,601s stack positions out of 5000i,500n,6000p,200000b,15000s
+
+Output written on ifr.letter.dvi (13 pages, 96240 bytes).
