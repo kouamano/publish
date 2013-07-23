@@ -1,4 +1,4 @@
-This is pTeXk, Version 3.141592-p3.1.10 (euc) (Web2C 7.5.6) (format=platex 2011.9.8)  11 JUL 2013 10:32
+This is pTeXk, Version 3.141592-p3.1.10 (euc) (Web2C 7.5.6) (format=platex 2013.7.23)  23 JUL 2013 13:11
  %&-line parsing enabled.
 **ifr.letter.tex
 (./ifr.letter.tex
@@ -537,11 +537,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  1366 strings out of 257674
- 17574 string characters out of 1941522
- 176719 words of memory out of 1500000
+ 17574 string characters out of 1941521
+ 176632 words of memory out of 1500000
  4434 multiletter control sequences out of 10000+200000
  15296 words of font info for 60 fonts, out of 1200000 for 2000
  14 hyphenation exceptions out of 8191
  34i,17n,43p,825b,601s stack positions out of 5000i,500n,6000p,200000b,15000s
 
-Output written on ifr.letter.dvi (13 pages, 96240 bytes).
+Output written on ifr.letter.dvi (13 pages, 96056 bytes).
