@@ -1,0 +1,14 @@
+VOS:
+http://www.ludowaltman.nl/classification_system/
+VOS_C_08012013.zip
+
+compile:
+-3.2.1/F2CLIBS -L/usr/local/CLAPACK-3.2.1 -L/usr/local/CLAPACK-3.2.1/INSTALL
+-I/usr/local/CLAPACK-3.2.1/F2CLIBS/libf2c VOSmapping.c
+
+needs:
+CLAPACK-3.2.1 (clapack.tgz)
+atlas-3.8.4-2.el6.x86_64.rpm
+atlas-devel-3.8.4-2.el6.x86_64.rpm
+lapack-3.2.1-4.el6.x86_64.rpm
+lapack-devel-3.2.1-4.el6.x86_64.rpm
