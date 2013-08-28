@@ -445,6 +445,12 @@ ruby setup.rb install
 []$ createdb test
 []$ psql test	#接続
 
+#システムカタログ
+#カラム名
+select * from pg_attribute;
+#テーブル名
+select * from pg_class;
+
 #カラムを文字列として結合(AとBをansとして結合、ans, Cを表示)
 SELECT A || '-' || B ans , C from table;
 SELECT name_code || '+' || brc_no from accession;
