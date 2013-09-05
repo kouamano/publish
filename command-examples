@@ -331,8 +331,11 @@ gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
 sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 
-#フォントの埋め込み:
+#dvips
+##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
+##ファイルに出力:
+pdvips -D2400 -P pdf -f cluster-validity.dvi -P pdf > tmp.ps
 
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
