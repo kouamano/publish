@@ -335,7 +335,7 @@ sudo apt-get update
 ##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
 ##ファイルに出力:
-pdvips -D2400 -P pdf -f cluster-validity.dvi -P pdf > tmp.ps
+pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
 
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
