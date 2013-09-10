@@ -2,6 +2,9 @@
 ##タブの入力
 [Ctrl]v [tab]
 
+#xargs
+find ./  | xargs /BANK/PMC/bin/extract-title.pl
+
 #SSH
 #Xのトンネリングでかな漢字変換を有効にする
 #ローカル側の /etc/ssh/ssh_configに
