@@ -4,6 +4,8 @@
 
 #xargs
 find ./  | xargs /BANK/PMC/bin/extract-title.pl
+## オプション -IXXX で、XXXを任意の場所に挿入
+find Ar* | xargs -IF /BANK/PMC/bin/match_position qf=/BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only sf=F
 
 #SSH
 #Xのトンネリングでかな漢字変換を有効にする
