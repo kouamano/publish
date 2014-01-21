@@ -1,0 +1,6 @@
+time for i in `seq 1000`; do echo "1" >value; sleep 0.01; echo "0" >value; sleep 0.01; done
+
+real	0m44.940s
+user	0m2.910s
+sys	0m5.040s
+

@@ -1,0 +1,1 @@
+for i in `seq 10000`; do echo "1" >value; echo "0" >value; sleep 0.01; done
