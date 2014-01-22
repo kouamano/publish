@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5485,        185]
-NotebookOptionsPosition[      4461,        144]
-NotebookOutlinePosition[      4824,        160]
-CellTagsIndexPosition[      4781,        157]
+NotebookDataLength[      5887,        203]
+NotebookOptionsPosition[      4719,        156]
+NotebookOutlinePosition[      5083,        172]
+CellTagsIndexPosition[      5040,        169]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,6 +22,34 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["Write/read file", "Title",
  CellChangeTimes->{{3.59934199051213*^9, 3.5993420122703342`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Program", "Section",
+ CellChangeTimes->{{3.599344265537292*^9, 3.599344272576144*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"openWriteClose", "[", 
+   RowBox[{"file_String", ",", "v_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "fp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"fp", "=", 
+      RowBox[{"OpenWrite", "[", "file", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Write", "[", 
+      RowBox[{"fp", ",", "v"}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Close", "[", "fp", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.59934221485327*^9, 3.5993423235616817`*^9}, {
+  3.599342485716723*^9, 3.5993424882629013`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Section",
+ CellChangeTimes->{{3.599344285302924*^9, 3.599344293364135*^9}}],
 
 Cell[CellGroupData[{
 
@@ -77,23 +105,6 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"openWriteClose", "[", 
-   RowBox[{"file_String", ",", "v_"}], "]"}], ":=", 
-  RowBox[{"Module", "[", 
-   RowBox[{
-    RowBox[{"{", "fp", "}"}], ",", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"fp", "=", 
-      RowBox[{"OpenWrite", "[", "file", "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"Write", "[", 
-      RowBox[{"fp", ",", "v"}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"Close", "[", "fp", "]"}], ";"}]}], "\[IndentingNewLine]", 
-   "]"}]}]], "Input",
- CellChangeTimes->{{3.59934221485327*^9, 3.5993423235616817`*^9}, {
-  3.599342485716723*^9, 3.5993424882629013`*^9}}],
-
-Cell[BoxData[
  RowBox[{"openWriteClose", "[", 
   RowBox[{"\"\</Users/kouamano/test/v1\>\"", ",", "3"}], "]"}]], "Input",
  CellChangeTimes->{{3.5993423279102783`*^9, 3.599342348073824*^9}, {
@@ -108,7 +119,7 @@ Cell[BoxData[
 
 Cell[BoxData[
  DynamicBox[ToBoxes[$CellContext`x, StandardForm],
-  ImageSizeCache->{39., {1., 9.}}]], "Output",
+  ImageSizeCache->{31., {1., 9.}}]], "Output",
  CellChangeTimes->{3.5993425626571302`*^9}]
 }, Open  ]],
 
@@ -141,9 +152,10 @@ Cell[BoxData[
  CellChangeTimes->{3.599342612610914*^9}]
 }, Open  ]]
 }, Open  ]]
+}, Open  ]]
 },
 WindowSize->{740, 756},
-WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowMargins->{{-4, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2013\:5e741\
 \:670828\:65e5)",
 StyleDefinitions->"Default.nb"
@@ -162,29 +174,35 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 99, 1, 92, "Title"],
 Cell[CellGroupData[{
-Cell[703, 27, 187, 4, 28, "Input"],
-Cell[893, 33, 210, 4, 28, "Output"]
-}, Open  ]],
-Cell[1118, 40, 148, 3, 28, "Input"],
-Cell[1269, 45, 148, 3, 28, "Input"],
-Cell[CellGroupData[{
-Cell[1442, 52, 125, 2, 28, "Input"],
-Cell[1570, 56, 532, 11, 23, "Message"],
-Cell[2105, 69, 272, 6, 28, "Output"]
-}, Open  ]],
-Cell[2392, 78, 632, 15, 97, "Input"],
-Cell[3027, 95, 287, 5, 28, "Input"],
-Cell[CellGroupData[{
-Cell[3339, 104, 126, 2, 28, "Input"],
-Cell[3468, 108, 155, 3, 28, "Output"]
+Cell[703, 27, 92, 1, 80, "Section"],
+Cell[798, 30, 632, 15, 97, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3660, 116, 158, 3, 28, "Input"],
-Cell[3821, 121, 131, 2, 40, "Output"]
+Cell[1467, 50, 92, 1, 80, "Section"],
+Cell[CellGroupData[{
+Cell[1584, 55, 187, 4, 28, "Input"],
+Cell[1774, 61, 210, 4, 28, "Output"]
+}, Open  ]],
+Cell[1999, 68, 148, 3, 28, "Input"],
+Cell[2150, 73, 148, 3, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2323, 80, 125, 2, 28, "Input"],
+Cell[2451, 84, 532, 11, 23, "Message"],
+Cell[2986, 97, 272, 6, 28, "Output"]
+}, Open  ]],
+Cell[3273, 106, 287, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3585, 115, 126, 2, 28, "Input"],
+Cell[3714, 119, 155, 3, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3989, 128, 224, 5, 28, "Input"],
-Cell[4216, 135, 217, 5, 62, "Output"]
+Cell[3906, 127, 158, 3, 28, "Input"],
+Cell[4067, 132, 131, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4235, 139, 224, 5, 28, "Input"],
+Cell[4462, 146, 217, 5, 28, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
