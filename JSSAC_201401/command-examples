@@ -1,3 +1,5 @@
 for i in `seq 100`; do echo "1" >/Users/kouamano/test/v2; sleep 0.3; echo "0" >/Users/kouamano/test/v2; sleep 0.3; done
 
 paste s0 s1 | while read a b; do /Users/kouamano/gitsrc/publish/JSSAC_201401/freq.sh $a $b; done <&0
+
+while : ;do ./freq.trc.sh; done
