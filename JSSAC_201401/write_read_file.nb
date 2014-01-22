@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5887,        203]
-NotebookOptionsPosition[      4719,        156]
-NotebookOutlinePosition[      5083,        172]
-CellTagsIndexPosition[      5040,        169]
+NotebookDataLength[      5257,        185]
+NotebookOptionsPosition[      4131,        139]
+NotebookOutlinePosition[      4495,        155]
+CellTagsIndexPosition[      4452,        152]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -61,9 +61,9 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{"OutputStream", "[", 
-  RowBox[{"\<\"/Users/kouamano/test/v1\"\>", ",", "121"}], "]"}]], "Output",
+  RowBox[{"\<\"/Users/kouamano/test/v1\"\>", ",", "540"}], "]"}]], "Output",
  CellChangeTimes->{3.599342075635171*^9, 3.599342161348261*^9, 
-  3.599342373343071*^9}]
+  3.599342373343071*^9, 3.5993454783277483`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -82,26 +82,9 @@ Cell[BoxData[
  RowBox[{"Close", "[", "fp", "]"}]], "Input",
  CellChangeTimes->{{3.599342135297909*^9, 3.599342139510025*^9}}],
 
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"General", "::", "openx"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], \
-"\<\"\[NoBreak]\\!\\(OutputStream[\\(\\(\\\"/Users/kouamano/test/v1\\\", \
-121\\)\\)]\\)\[NoBreak]\:306f\:958b\:3044\:3066\:3044\:307e\:305b\:3093\:ff0e \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/openx\\\", \
-ButtonNote -> \\\"General::openx\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.599342420759124*^9}],
-
-Cell[BoxData[
- RowBox[{"Close", "[", 
-  RowBox[{"OutputStream", "[", 
-   RowBox[{"\<\"/Users/kouamano/test/v1\"\>", ",", "121"}], "]"}], 
-  "]"}]], "Output",
+Cell[BoxData["\<\"/Users/kouamano/test/v1\"\>"], "Output",
  CellChangeTimes->{3.5993421514978943`*^9, 3.5993421982189417`*^9, 
-  3.599342383209937*^9, 3.599342420760128*^9}]
+  3.599342383209937*^9, 3.599342420760128*^9, 3.599345489617688*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -119,7 +102,7 @@ Cell[BoxData[
 
 Cell[BoxData[
  DynamicBox[ToBoxes[$CellContext`x, StandardForm],
-  ImageSizeCache->{31., {1., 9.}}]], "Output",
+  ImageSizeCache->{39., {1., 9.}}]], "Output",
  CellChangeTimes->{3.5993425626571302`*^9}]
 }, Open  ]],
 
@@ -181,27 +164,26 @@ Cell[CellGroupData[{
 Cell[1467, 50, 92, 1, 80, "Section"],
 Cell[CellGroupData[{
 Cell[1584, 55, 187, 4, 28, "Input"],
-Cell[1774, 61, 210, 4, 28, "Output"]
+Cell[1774, 61, 234, 4, 28, "Output"]
 }, Open  ]],
-Cell[1999, 68, 148, 3, 28, "Input"],
-Cell[2150, 73, 148, 3, 28, "Input"],
+Cell[2023, 68, 148, 3, 28, "Input"],
+Cell[2174, 73, 148, 3, 28, "Input"],
 Cell[CellGroupData[{
-Cell[2323, 80, 125, 2, 28, "Input"],
-Cell[2451, 84, 532, 11, 23, "Message"],
-Cell[2986, 97, 272, 6, 28, "Output"]
+Cell[2347, 80, 125, 2, 28, "Input"],
+Cell[2475, 84, 195, 2, 28, "Output"]
 }, Open  ]],
-Cell[3273, 106, 287, 5, 28, "Input"],
+Cell[2685, 89, 287, 5, 28, "Input"],
 Cell[CellGroupData[{
-Cell[3585, 115, 126, 2, 28, "Input"],
-Cell[3714, 119, 155, 3, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3906, 127, 158, 3, 28, "Input"],
-Cell[4067, 132, 131, 2, 40, "Output"]
+Cell[2997, 98, 126, 2, 28, "Input"],
+Cell[3126, 102, 155, 3, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4235, 139, 224, 5, 28, "Input"],
-Cell[4462, 146, 217, 5, 28, "Output"]
+Cell[3318, 110, 158, 3, 28, "Input"],
+Cell[3479, 115, 131, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3647, 122, 224, 5, 28, "Input"],
+Cell[3874, 129, 217, 5, 28, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
