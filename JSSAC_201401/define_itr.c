@@ -21,7 +21,7 @@ struct options {
 
 void help(void){
 	printf("USAGE:\n");
-	printf(" define_itr [-h] [-s] [-c] on=<v1> off=<v2>.\n");
+	printf(" define_itr [-h] [-s] [-c] on=<v1> off=<v2>\n");
 	printf("  -h : help.\n");
 	printf("  -s : stat.\n");
 	printf("  -c : check args.\n");
@@ -81,18 +81,30 @@ void check_options(struct options *opt){
 }
 
 int main(int argc, char **argv){
+	int ie = 0;
+	float itr_f = 0;
+	int itr_i = 0;
 	struct options *opt;
 	opt = alloc_options();
 	init_options(opt);
 	get_options(argc-1, argv+1, opt);
 	if((*opt).help == 1){
 		help();
+		ie = 1;
 	}
 	if((*opt).stat == 1){
 		status();
+		ie = 1;
 	}
 	if((*opt).check == 1){
 		check_options(opt);
+		ie = 1;
 	}
+	if(ie > 0){
+		exit(0);
+	}
+	itr_f = 1 / ((*opt).on + (*opt).off);
+	itr_i = (int)itr_f;
+	printf("%d\n",itr_i);
 	return(0);
 }
