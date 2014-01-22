@@ -1,0 +1,194 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5485,        185]
+NotebookOptionsPosition[      4461,        144]
+NotebookOutlinePosition[      4824,        160]
+CellTagsIndexPosition[      4781,        157]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Write/read file", "Title",
+ CellChangeTimes->{{3.59934199051213*^9, 3.5993420122703342`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fp", "=", 
+  RowBox[{
+  "OpenWrite", "[", "\"\</Users/kouamano/test/v1\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.599342048104664*^9, 3.5993420745358887`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"OutputStream", "[", 
+  RowBox[{"\<\"/Users/kouamano/test/v1\"\>", ",", "121"}], "]"}]], "Output",
+ CellChangeTimes->{3.599342075635171*^9, 3.599342161348261*^9, 
+  3.599342373343071*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Write", "[", 
+  RowBox[{"fp", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.599342081675362*^9, 3.599342087101205*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Write", "[", 
+  RowBox[{"fp", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.599342081675362*^9, 3.599342087101205*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Close", "[", "fp", "]"}]], "Input",
+ CellChangeTimes->{{3.599342135297909*^9, 3.599342139510025*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "openx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], \
+"\<\"\[NoBreak]\\!\\(OutputStream[\\(\\(\\\"/Users/kouamano/test/v1\\\", \
+121\\)\\)]\\)\[NoBreak]\:306f\:958b\:3044\:3066\:3044\:307e\:305b\:3093\:ff0e \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/openx\\\", \
+ButtonNote -> \\\"General::openx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.599342420759124*^9}],
+
+Cell[BoxData[
+ RowBox[{"Close", "[", 
+  RowBox[{"OutputStream", "[", 
+   RowBox[{"\<\"/Users/kouamano/test/v1\"\>", ",", "121"}], "]"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.5993421514978943`*^9, 3.5993421982189417`*^9, 
+  3.599342383209937*^9, 3.599342420760128*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"openWriteClose", "[", 
+   RowBox[{"file_String", ",", "v_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "fp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"fp", "=", 
+      RowBox[{"OpenWrite", "[", "file", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Write", "[", 
+      RowBox[{"fp", ",", "v"}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Close", "[", "fp", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.59934221485327*^9, 3.5993423235616817`*^9}, {
+  3.599342485716723*^9, 3.5993424882629013`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"openWriteClose", "[", 
+  RowBox[{"\"\</Users/kouamano/test/v1\>\"", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5993423279102783`*^9, 3.599342348073824*^9}, {
+  3.599342436052525*^9, 3.59934243638306*^9}, {3.5993425313982143`*^9, 
+  3.599342532002289*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", "x", "]"}]], "Input",
+ CellChangeTimes->{{3.599342554865451*^9, 3.599342562327078*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`x, StandardForm],
+  ImageSizeCache->{39., {1., 9.}}]], "Output",
+ CellChangeTimes->{3.5993425626571302`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Slider", "[", 
+  RowBox[{"Dynamic", "[", "x", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.599342564314884*^9, 3.59934257643895*^9}}],
+
+Cell[BoxData[
+ SliderBox[Dynamic[$CellContext`x]]], "Output",
+ CellChangeTimes->{{3.5993425683511887`*^9, 3.5993425768697166`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"openWriteClose", "[", 
+   RowBox[{"\"\</Users/kouamano/test/v1\>\"", ",", "x"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.599342599777521*^9, 3.599342611875084*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`openWriteClose["/Users/kouamano/test/v1", $CellContext`x], 
+   StandardForm],
+  ImageSizeCache->{31., {0., 9.}}]], "Output",
+ CellChangeTimes->{3.599342612610914*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 756},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2013\:5e741\
+\:670828\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 99, 1, 92, "Title"],
+Cell[CellGroupData[{
+Cell[703, 27, 187, 4, 28, "Input"],
+Cell[893, 33, 210, 4, 28, "Output"]
+}, Open  ]],
+Cell[1118, 40, 148, 3, 28, "Input"],
+Cell[1269, 45, 148, 3, 28, "Input"],
+Cell[CellGroupData[{
+Cell[1442, 52, 125, 2, 28, "Input"],
+Cell[1570, 56, 532, 11, 23, "Message"],
+Cell[2105, 69, 272, 6, 28, "Output"]
+}, Open  ]],
+Cell[2392, 78, 632, 15, 97, "Input"],
+Cell[3027, 95, 287, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3339, 104, 126, 2, 28, "Input"],
+Cell[3468, 108, 155, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3660, 116, 158, 3, 28, "Input"],
+Cell[3821, 121, 131, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3989, 128, 224, 5, 28, "Input"],
+Cell[4216, 135, 217, 5, 62, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
