@@ -156,7 +156,8 @@ digraph sample3 {
 dot -Kdot -Tsvg sample3.utf.dot -o sample3.utf.svg
 dot -Kdot -Tps test2.utf.dot -o test.ps 
 
-
+#R
+pos=which(targetList == min(targetList));
 
 #c言語:qsort():
 qsort()の第一引数baseについて:
