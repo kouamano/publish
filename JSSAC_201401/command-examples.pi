@@ -1,0 +1,10 @@
+for i in `seq 50000`; do echo "1" >value; echo "0" >value; done
+
+for i in `seq 10000`; do echo "1" >value; echo "0" >value; sleep 0.001; done
+for i in `seq 10000`; do echo "1" >value; sleep 0.001; echo "0" >value; sleep 0.009; done
+time for i in `seq 100`; do echo "1" >value; sleep 0.01; echo "0" >value; sleep 0.01; done
+
+echo 1 >value; sleep 1; echo 0 >value; sleep 0.01
+
+while : ;do ./freq_pi.trc.sh; done
+while : ;do ./freq_pi_gpio4.trc.sh; done
