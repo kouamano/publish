@@ -592,6 +592,9 @@ git branch <ブランチ名>
 git checkout <branch>
 ##branchのリスト閲覧
 git branch -a
+##強制的にpull
+git checkout -- .
+git pull
 
 #RIKEN RICC
 ##キューの確認
