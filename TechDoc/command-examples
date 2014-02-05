@@ -148,7 +148,6 @@ dot -Kdot -Tps test2.utf.dot -o test.ps
 pos=which(targetList == min(targetList));
 
 #C
-
 ##gcc 最適化
 gcc -O3 -m64 regionposition.c -lm -o regionposition
 
@@ -164,11 +163,11 @@ global/localは単にプログラムソースコード上での呼び名ぽい。
 動的メモリ確保を要求するかどうかとは独立。
 ->globalだからといってheap領域に確保されるわけではない。
 
-##c言語:qsort():
+##qsort():
 qsort()の第一引数baseについて:
 baseに対するmalloc()は1次配列までしか対応できない。
 
-##C言語:qsort()の例:<startnoignore(#)>
+##qsort()の例:<startnoignore(#)>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
