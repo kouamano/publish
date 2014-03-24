@@ -457,6 +457,9 @@ select * from pg_attribute;
 ###テーブル名
 select * from pg_class;
 
+##テーブルオーナーの書き換え:
+term_region=# ALTER TABLE public.organizationname_region OWNER TO kamano;
+
 ##カラムを文字列として結合(AとBをansとして結合、ans, Cを表示)
 SELECT A || '-' || B ans , C from table;
 SELECT name_code || '+' || brc_no from accession;
@@ -526,6 +529,12 @@ ALTER TABLE accession_and_assay_and_fact_data ADD constraint assay_fact_data for
 
 ##制約:例2
 ALTER TABLE tbl1 add primary key (item1);
+
+
+##制約:例3
+ALTER TABLE region_type add constraint cons_region_type unique (region_type);
+alter TABLE resourcename_region add constraint cons_region_type foreign key (region_type) references region_type(region_type);
+ALTER TABLE organizationname_region add constraint cons_region_type foreign key (region_type) references region_type(region_type);
 
 ##外部接続の許可
 $PGDATAディレクトリ以下のふたつのファイル
