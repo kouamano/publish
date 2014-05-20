@@ -14,39 +14,17 @@ SendEnv XMODIFIERS
 ##リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
 
-#vnc
-##sshでサーバに接続
-vncserver :1 -geometry 1200x800
-##クライアントで接続
-##クライアントでlogoff
-vncserver -kill :1
+#cpioのextract
+cat libstdc++-3.2.3-59.i386.cpio | cpio -id
 
-#kvm
-##imgのマウント
-kpartx -av disk.img
-mount /dev/mapper/loop0p1 /mnt/kvmimg
-umount /mnt/kvmimg
-kpartx -dv disk.img
+#ipフォワードのチェック
+cat /proc/sys/net/ipv4/ip_forward
 
+#insert species name into .ffn files
+for dir in `cat _Dir`; do cd $dir; for file in *ffn; do ./add_species_name.pl $file > $file.rev; done; cd ../; done
 
-#Xen
-##consoleのアタッチ
-xm console <domain name>
- +(リターン2回)
-##consoleのデタッチ
-[ctrl]"]"
-
-
-#KVM
-##virt-install
-virt-install --name=SL62 --ram=2000 --vcpus=1 --location='/ARCHIVE/OS/SL62/SL-62-x86_64-2012-02-06-Install-DVD.iso' --os-type='linux' --file=/var/lib/libvirt/images/sl62.img --file-size=10 --bridge=virbr0
-##コンソール接続
-virsh -c qemu:///system console sl62
-virsh console sl62
-##rawイメージのマウント
-mount -o loop,offset=32256 vm006.img /mnt/vimg0
-
-
+#gzipでもとのファイルを残す
+gzip -c
 
 #OSのバージョン
 cat /etc/redhat-release
@@ -55,10 +33,8 @@ cat /etc/redhat-release
 ##make .te file using  audit2allow
 audit2allow -a -l -m local
 audit2allow -i audit.mail -l -m sendmail
-
 ##semodule working dir
 /usr/share/selinux/devel
-
 ##メッセージの探し方:
 ##まず、ファイル: /var/log/messages を見て、
 ##sealert -l <ID>
@@ -87,6 +63,170 @@ mecab -d /usr/share/mecab/dic/mecab-ipadic
 
 #yumのデータベースからエントリを削除
 yum --tsflags=justdb remove 'scim*'
+
+#vnc
+##sshでサーバに接続
+vncserver :1 -geometry 1200x800
+##クライアントで接続
+##クライアントでlogoff
+vncserver -kill :1
+
+#zshでのhistory
+history 1
+で全履歴。
+
+#nkfで文字コードを推測する
+nkf -g hoge.txt
+
+#mpage アウトライン無し2page/A4
+mpage -o -2 k_amano.ps > k_amano.mpage.ps
+
+#sorthex.plの使いかた:
+sorthex.pl -f 2 file.txt
+
+#mailコマンドでメイルおくる
+mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
+
+#rpm
+##rpmbuild
+##BUILD/以下にmakeのためのディレクトリができる:
+rpmbuild --rebuild *src.rpm
+##RPMS/以下にrpmができる(SRPMS/に*.src.rpm必要):
+rpmbuild -ba *.spec
+##rpmによるまだインストールされていないパッケージリストの問い合わせ。
+rpm -qpl bash-completion-20060301-4.el5.noarch.rpm
+##rpmによる特定のファイルがどのパッケージに含まれるかの検索。
+rpm -qf /bin/ls
+##rpmパッケージ削除/データベースを強制的に修正
+rpm -e --justdb package.rpm
+##rpmデータベースの修復
+rpm --rebuilddb
+
+#debian: apt-get
+apt-get update
+公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 鍵の文字列のエラーが出るとき
+gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
+sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
+sudo apt-get update
+
+#dvips
+##フォントの埋め込み:
+pdvips -D600 -P pdf jcc.jslis.dvi 
+##ファイルに出力:
+pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
+
+#cdrecord
+cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/OpenSolaris/os200805.iso
+cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OperatingSystem.img/Ubuntu/ubuntu-ja-9.04-desktop-i386.iso
+cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /home/kamano/download/ubuntu-ja-8.10-desktop-i386.iso
+
+#NFS server
+/etc/sysconfig/nfsを読み、portを固定、そのportをiptablesで許可する。
+それ以外で許可するportは
+111
+875
+いずれも、tcp/udpを許可しておく。
+どのディレクトリを許可するかは
+/etc/exports
+
+#Xen
+##consoleのアタッチ
+xm console <domain name>
+ +(リターン2回)
+##consoleのデタッチ
+[ctrl]"]"
+
+#KVM
+##virt-install
+virt-install --name=SL62 --ram=2000 --vcpus=1 --location='/ARCHIVE/OS/SL62/SL-62-x86_64-2012-02-06-Install-DVD.iso' --os-type='linux' --file=/var/lib/libvirt/images/sl62.img --file-size=10 --bridge=virbr0
+##コンソール接続
+virsh -c qemu:///system console sl62
+virsh console sl62
+##rawイメージのマウント
+mount -o loop,offset=32256 vm006.img /mnt/vimg0
+##imgのマウント
+kpartx -av disk.img
+mount /dev/mapper/loop0p1 /mnt/kvmimg
+umount /mnt/kvmimg
+kpartx -dv disk.img
+
+#wgetの結果を標準出力
+wget http://192.168.0.4/ -O -
+
+#mapserver config:
+./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
+
+#nifH関係
+for file in `cat species_add.cand_ex.2.ov50.Dir.sort.uniq`; do cat /BANK/SEQUENCE/ncbi/genomes/Bacteria/$file/*rev; done | ./extract_420-450.pl > Arch+Bac.420-450.ffn.rev
+
+#murasaki
+time murasaki -p11001100 -dHs17-Mm11 /BANK/SEQUENCE/ncbi/genomes/H_sapiens/Assembled_chromosomes/hs_ref_chr17.fa /BANK/SEQUENCE/ncbi/genomes/M_musclus/Assembled_chromosomes/mm_ref_chr11.fa
+
+#blast+
+##makeblastdb (使いかたよくわからん、これでよいのか? -> よいらしい)
+makeblastdb -in GI-fname-CDS.fasta.faa -input_type fasta
+##DNA
+makeblastdb -in mm_ref_chrX.fa.gz.cut.50 -dbtype nucl -input_type fasta
+##blastp (blastpを行うディレクトリはdbのあるディレクトリでないといけない? とはか ぎらない?)
+##アミノ酸
+blastp -query GI-fname-CDS.fasta -db ./GI-fname-CDS.fasta
+blastp -query 89member.fasta -db /BANK/SEQUENCE/blastdb/Bacteria.20100925.top3group/44_89_94member.fasta
+##blastn
+blastn -query test_query.fasta -db ./mm_ref_chrX.fa.gz.cut.50 > test_query.fasta.result
+
+#megablast
+megablast -d /BANK/SEQUENCE/ncbi/blastdb/cut1000/cfa_chr9.fa.cut -i /BANK/SEQUENCE/ncbi/cut1000/H_sapiens/hs_ref_chr17.cut -W 25 -o hs_chr17-cf_chr9.mega-W25
+
+#megablast
+time for file in /BANK/SEQUENCE/frame/cut1000/H_sapiens/*; do   /usr/local/blast-2.2.18/bin/megablast -d /BANK/SEQUENCE/blastdb/cut1000/mm_ref_chrAll.cut -i $file -W 50 -o ${file##*\/}-mm_ref_chrAll.cut-W50; done
+
+#blastall
+blastn ・・・ 塩基配列対塩基配列の比較を行うためのプログラム。
+blastp ・・・ アミノ酸配列対アミノ酸配列の比較を行うためのプログラム。
+plastx ・・・ 塩基配列(質問配列)対アミノ酸配列(データベース配列)の比較を行うためのプログラム。
+tblastn ・・・ アミノ酸配列(質問配列)対塩基配列(データベース配列)の比較を行うためのプログラム。
+tblastx ・・・ 塩基配列対塩基配列の比較を、アミノ酸配列に翻訳して行うためのプログラム。
+
+
+#bash
+##bash if 構文
+for file in *; do if [ -d $file ]; then echo 1; else echo 2; fi; done; 
+##bash TABとかの入力
+Ctrl + v 入力の直次の入力がverbatimになる。
+
+#GIT
+##gitことはじめ
+https://github.com/
+githubでリポジトリ作成
+メッセージにしたがってソースコードをpushまでおこなう。
+プロジェクトごとに.gitつくる
+##あたらしいレポジトリの作成
+###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
+###メッセージにしたがいリポジトリを作成、
+###おなじくメッセージにしたがいローカルでディレクトリを作成、コミット。
+###git pull
+プロジェクトのディレクトリで
+git pull <URL>
+git pull origin master
+git pull --all
+##git add (新しいファイルを作ったとき)
+##git commit (更新をコミット)
+##git push
+git add <program>
+git commit
+git push origin master
+##push先の変更
+git remote rm origin
+git remote add origin git@github.com:tsunekawa/baum.git
+##branchの作成
+git branch <ブランチ名>
+##brunch間の移動
+git checkout <branch>
+##branchのリスト閲覧
+git branch -a
+##強制的にpull
+git checkout -- .
+git pull
 
 #svn
 ##svn リポジトリ作成 (サーバ側)
@@ -126,8 +266,6 @@ svn diff svn://jewela.tu1135.riken.jp:3695/var/www/svn/web/test/php/pg/qa_list/c
 svn log  -v | sed -n '/ookawa/,/----$/ p'
 svn log  -v | sed -n '/| yookawa |/,/----$/ p'
 
-#gzipでもとのファイルを残す
-gzip -c
 
 
 #graphviz
@@ -144,35 +282,35 @@ digraph sample3 {
 dot -Kdot -Tsvg sample3.utf.dot -o sample3.utf.svg
 dot -Kdot -Tps test2.utf.dot -o test.ps 
 
+#Mathematica subkernel
+/usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
+numactl --cpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
+numactl --physcpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
+
 #R
 pos=which(targetList == min(targetList));
 
 #C
 ##gcc 最適化
 gcc -O3 -m64 regionposition.c -lm -o regionposition
-
 ##clone()システムコール
 clone(A,B,C,D)
 A: 関数へのポインタ
 B: 何かのポインタ
 C: フラグ
 D: 関数Aの引数へのポインタ; グローバル領域でないとダメ、malloc()必要。複数の引数があるとき、たぶん、構造体を使わないとダメ。
-
 ##Cの変数
 global/localは単にプログラムソースコード上での呼び名ぽい。
 動的メモリ確保を要求するかどうかとは独立。
 ->globalだからといってheap領域に確保されるわけではない。
-
 ##qsort():
 qsort()の第一引数baseについて:
 baseに対するmalloc()は1次配列までしか対応できない。
-
 ##qsort()の例:<startnoignore(#)>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "/home/pub/include/alloc.c"
-
 int mat[10][5];
 typedef int bigint[10];
 //int **mat;
@@ -275,131 +413,6 @@ int main(int atgc, char **argv){
 ##C言語のtime_t
 は、long int
 
-#zshでのhistory
-history 1
-で全履歴。
-
-#nkfで文字コードを推測する
-nkf -g hoge.txt
-
-#mpage アウトライン無し2page/A4
-mpage -o -2 k_amano.ps > k_amano.mpage.ps
-
-#sorthex.plの使いかた:
-sorthex.pl -f 2 file.txt
-
-#mailコマンドでメイルおくる
-mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
-
-#NFS server
-/etc/sysconfig/nfsを読み、portを固定、そのportをiptablesで許可する。
-それ以外で許可するportは
-111
-875
-いずれも、tcp/udpを許可しておく。
-どのディレクトリを許可するかは
-/etc/exports
-
-
-#bash
-##bash if 構文
-for file in *; do if [ -d $file ]; then echo 1; else echo 2; fi; done; 
-##bash TABとかの入力
-Ctrl + v 入力の直次の入力がverbatimになる。
-
-#cpioのextract
-cat libstdc++-3.2.3-59.i386.cpio | cpio -id
-
-#ipフォワードのチェック
-cat /proc/sys/net/ipv4/ip_forward
-
-#insert species name into .ffn files
-for dir in `cat _Dir`; do cd $dir; for file in *ffn; do ./add_species_name.pl $file > $file.rev; done; cd ../; done
-
-#OSX nfs client
-[Directory utility] -> [mount] -> (dialog左下のアイコン列;一番右をクリック) -> [詳細マウントパラメータ] に "-P nosuid" を入れる。
-
-
-#rpm
-##rpmbuild
-##BUILD/以下にmakeのためのディレクトリができる:
-rpmbuild --rebuild *src.rpm
-##RPMS/以下にrpmができる(SRPMS/に*.src.rpm必要):
-rpmbuild -ba *.spec
-
-##rpmによるまだインストールされていないパッケージリストの問い合わせ。
-rpm -qpl bash-completion-20060301-4.el5.noarch.rpm
-
-##rpmによる特定のファイルがどのパッケージに含まれるかの検索。
-rpm -qf /bin/ls
-
-##rpmパッケージ削除/データベースを強制的に修正
-rpm -e --justdb package.rpm
-
-##rpmデータベースの修復
-rpm --rebuilddb
-
-#debian: apt-get
-apt-get update
-公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 鍵の文字列のエラーが出るとき
-gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
-sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
-sudo apt-get update
-
-#dvips
-##フォントの埋め込み:
-pdvips -D600 -P pdf jcc.jslis.dvi 
-##ファイルに出力:
-pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
-
-#mapserver config:
-./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
-
-#nifH関係
-for file in `cat species_add.cand_ex.2.ov50.Dir.sort.uniq`; do cat /BANK/SEQUENCE/ncbi/genomes/Bacteria/$file/*rev; done | ./extract_420-450.pl > Arch+Bac.420-450.ffn.rev
-
-#cdrecord
-cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/OpenSolaris/os200805.iso
-cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OperatingSystem.img/Ubuntu/ubuntu-ja-9.04-desktop-i386.iso
-cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /home/kamano/download/ubuntu-ja-8.10-desktop-i386.iso
-
-#murasaki
-time murasaki -p11001100 -dHs17-Mm11 /BANK/SEQUENCE/ncbi/genomes/H_sapiens/Assembled_chromosomes/hs_ref_chr17.fa /BANK/SEQUENCE/ncbi/genomes/M_musclus/Assembled_chromosomes/mm_ref_chr11.fa
-
-#blast+
-##makeblastdb (使いかたよくわからん、これでよいのか? -> よいらしい)
-makeblastdb -in GI-fname-CDS.fasta.faa -input_type fasta
-##DNA
-makeblastdb -in mm_ref_chrX.fa.gz.cut.50 -dbtype nucl -input_type fasta
-
-##blastp (blastpを行うディレクトリはdbのあるディレクトリでないといけない? とはか ぎらない?)
-##アミノ酸
-blastp -query GI-fname-CDS.fasta -db ./GI-fname-CDS.fasta
-blastp -query 89member.fasta -db /BANK/SEQUENCE/blastdb/Bacteria.20100925.top3group/44_89_94member.fasta
-##blastn
-blastn -query test_query.fasta -db ./mm_ref_chrX.fa.gz.cut.50 > test_query.fasta.result
-
-
-#megablast
-megablast -d /BANK/SEQUENCE/ncbi/blastdb/cut1000/cfa_chr9.fa.cut -i /BANK/SEQUENCE/ncbi/cut1000/H_sapiens/hs_ref_chr17.cut -W 25 -o hs_chr17-cf_chr9.mega-W25
-
-#megablast
-time for file in /BANK/SEQUENCE/frame/cut1000/H_sapiens/*; do   /usr/local/blast-2.2.18/bin/megablast -d /BANK/SEQUENCE/blastdb/cut1000/mm_ref_chrAll.cut -i $file -W 50 -o ${file##*\/}-mm_ref_chrAll.cut-W50; done
-
-#blastall
-blastn ・・・ 塩基配列対塩基配列の比較を行うためのプログラム。
-blastp ・・・ アミノ酸配列対アミノ酸配列の比較を行うためのプログラム。
-plastx ・・・ 塩基配列(質問配列)対アミノ酸配列(データベース配列)の比較を行うためのプログラム。
-tblastn ・・・ アミノ酸配列(質問配列)対塩基配列(データベース配列)の比較を行うためのプログラム。
-tblastx ・・・ 塩基配列対塩基配列の比較を、アミノ酸配列に翻訳して行うためのプログラム。
-
-#Mathematica subkernel
-/usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
-numactl --cpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
-numactl --physcpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
-
-#wgetの結果を標準出力
-wget http://192.168.0.4/ -O -
 
 #perl
 ##perlの区切り文字:
@@ -416,7 +429,6 @@ while(<>){
                 print "$j\n";
         }
 }
-
 ##perlの逐次マッチ
 		while($len > 0){				#パターンのヒットが無くなればブレーク(パターンのlengthで判定)
                         if($res =~ /.*[\s]+(ref[^\n]+\n).*/){	#もしマッチさせたいパターンがあれば、
@@ -431,9 +443,16 @@ while(<>){
                                 $len = 0;
                         }
                 }
-
 ##perlの数値オーバーフロー
 16進表現を使用した場合、0x99******くらいからオーバーフローする。
+##perlのマッチポジション
+##マッチしたポジションを得る
+while($txt =~ /computer/g){
+	$p = pos($txt);
+}
+##さらにそのポジションを変更
+pos($txt) = $p - length($1);
+
 
 #rubygemsのインストール
 tar zxvf rubygems-1.0.1.tgz
@@ -450,20 +469,16 @@ ruby setup.rb install
 []$ pg_ctl start -D /BANK/pgsql/8.1
 []$ createdb test
 []$ psql test	#接続
-
 ##システムカタログ
 ###カラム名
 select * from pg_attribute;
 ###テーブル名
 select * from pg_class;
-
 ##テーブルオーナーの書き換え:
 term_region=# ALTER TABLE public.organizationname_region OWNER TO kamano;
-
 ##カラムを文字列として結合(AとBをansとして結合、ans, Cを表示)
 SELECT A || '-' || B ans , C from table;
 SELECT name_code || '+' || brc_no from accession;
-
 ##テキストをcomma結合する集約関数
 CREATE FUNCTION text_comma_join(text, text) RETURNS text AS '
 	SELECT $1 || '','' || $2
@@ -503,12 +518,10 @@ create function parent(text) returns text as '
 	select line.background from line where(line.current = $1)
 ' LANGUAGE sql;
 
-
 ##parents()
 create function parents(text) returns setof text as '
 	select line.background from line where(line.current = $1)
 ' LANGUAGE sql;
-
 
 ##daughter()
 create function daughter(text) returns text as '
@@ -522,14 +535,11 @@ create function daughters(text) returns setof text as '
 
 ##制約:例1
 ALTER TABLE fact_data ADD primary key (fact_data);
-
 ALTER TABLE fact_data ADD constraint fact unique (fact_data);
-
 ALTER TABLE accession_and_assay_and_fact_data ADD constraint assay_fact_data foreign key (fact_data) REFERENCES fact_data(fact_data) MATCH FULL;
 
 ##制約:例2
 ALTER TABLE tbl1 add primary key (item1);
-
 
 ##制約:例3
 ALTER TABLE region_type add constraint cons_region_type unique (region_type);
@@ -541,15 +551,15 @@ $PGDATAディレクトリ以下のふたつのファイル
 pg_hba.conf
 postgresql.conf
 をそれぞれ書き換え:
-
-pg_hba.conf:<startignore(#)>
+##pg_hba.conf の書き換え:<startignore(#)>
 ===
 # host       DATABASE  USER  CIDR-ADDRESS  METHOD  [OPTION]
 ---
 host       all  all  192.168.0.5  255.255.255.255 trust
 ===
+##:<endignore(#)>
 
-postgresql.conf
+##postgresql.conf の書き換え:<startignore(#)>
 ===
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
 ---
@@ -560,49 +570,14 @@ listen_addresses = '*'
 ##dblink
 ###dblinkのインストール: そこから利用したい全てのデータベースに対し行う
 psql -U postgres -d test < /usr/share/pgsql/contrib/dblink.sql
-
 ###dblink_connect()
 SELECT dblink_connect('sassc','host=192.168.0.4 port=5432 dbname=sassc user=sassc password=Ra88Fr87');
-
 ###select from dblink
 SELECT * from dblink('sassc', 'select * from gene') as t1(gene_symbol text, gene_name text, remarks text);
-
 ###select dblink_disconnect()
 SELECT dblink_disconnect('sassc');
 
-#GIT
-##gitことはじめ
-https://github.com/
-githubでリポジトリ作成
-メッセージにしたがってソースコードをpushまでおこなう。
-プロジェクトごとに.gitつくる
-##あたらしいレポジトリの作成
-###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
-###メッセージにしたがいリポジトリを作成、
-###おなじくメッセージにしたがいローカルでディレクトリを作成、コミット。
-###git pull
-プロジェクトのディレクトリで
-git pull <URL>
-git pull origin master
-git pull --all
-##git add (新しいファイルを作ったとき)
-##git commit (更新をコミット)
-##git push
-git add <program>
-git commit
-git push origin master
-##push先の変更
-git remote rm origin
-git remote add origin git@github.com:tsunekawa/baum.git
-##branchの作成
-git branch <ブランチ名>
-##brunch間の移動
-git checkout <branch>
-##branchのリスト閲覧
-git branch -a
-##強制的にpull
-git checkout -- .
-git pull
+
 
 #RIKEN RICC
 ##キューの確認
@@ -618,4 +593,7 @@ qsub file
 #mac OSX
 #ファイアウォールの切りかた:
 sysctl -w net.inet.ip.fw.enable=0
+
+#OSX nfs client
+[Directory utility] -> [mount] -> (dialog左下のアイコン列;一番右をクリック) -> [詳細マウントパラメータ] に "-P nosuid" を入れる。
 
