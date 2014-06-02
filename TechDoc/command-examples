@@ -266,8 +266,6 @@ svn diff svn://jewela.tu1135.riken.jp:3695/var/www/svn/web/test/php/pg/qa_list/c
 svn log  -v | sed -n '/ookawa/,/----$/ p'
 svn log  -v | sed -n '/| yookawa |/,/----$/ p'
 
-
-
 #graphviz
 ##graphviz サンプル (utf8を使うこと):
 digraph sample3 {
@@ -289,6 +287,10 @@ numactl --physcpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -sub
 
 #R
 pos=which(targetList == min(targetList));
+
+#matlab
+##かれんとディレクトリのファイル(ワイルドカード)を得て、配列変数に代入:
+files = (dir('*.sptbl'))
 
 #C
 ##gcc 最適化
