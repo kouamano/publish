@@ -291,6 +291,10 @@ pos=which(targetList == min(targetList));
 #matlab
 ##かれんとディレクトリのファイル(ワイルドカード)を得て、配列変数に代入:
 files = (dir('*.sptbl'))
+##ライセンス情報の出力は、
+license
+##ではなく、
+ver
 
 #C
 ##gcc 最適化
