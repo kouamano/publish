@@ -297,6 +297,8 @@ license
 ver
 ##coapTabの対角要素をゼロに置き換える
 coapTab(eye(size(coapTab))~=0)=0
+## strcat()  で気をつける:
+strcat()は文字列の配列(cell型)を返すことがある。
 
 #C
 ##gcc 最適化
