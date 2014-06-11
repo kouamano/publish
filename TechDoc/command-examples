@@ -299,6 +299,13 @@ ver
 coapTab(eye(size(coapTab))~=0)=0
 ## strcat()  で気をつける:
 strcat()は文字列の配列(cell型)を返すことがある。
+## save sparse matrix:
+>> CoapRes
+>> [i,j,v]=find(CoapRes)
+>> data=[i,j,v];
+>> fd=fopen('count_pos_MMs_AllResNames-U_Jour-All.CoapRes.sp.dat','w')
+>> fprintf(fd,'%d %d %d\n',transpose(data))
+>> fclose(fd)
 
 #C
 ##gcc 最適化
