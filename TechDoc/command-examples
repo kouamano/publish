@@ -1,6 +1,10 @@
 #bash
 ##タブの入力
 [Ctrl]v [tab]
+##bash if 構文
+for file in *; do if [ -d $file ]; then echo 1; else echo 2; fi; done; 
+##bash TABとかの入力
+Ctrl + v 入力の直次の入力がverbatimになる。
 
 #xargs
 find ./  | xargs /BANK/PMC/bin/extract-title.pl
@@ -58,9 +62,6 @@ screen -r
 ##アタッチされているスクリーンデーモンに接続
 screen -rx
 
-#mecab
-mecab -d /usr/share/mecab/dic/mecab-ipadic
-
 #yumのデータベースからエントリを削除
 yum --tsflags=justdb remove 'scim*'
 
@@ -74,18 +75,6 @@ vncserver -kill :1
 #zshでのhistory
 history 1
 で全履歴。
-
-#nkfで文字コードを推測する
-nkf -g hoge.txt
-
-#mpage アウトライン無し2page/A4
-mpage -o -2 k_amano.ps > k_amano.mpage.ps
-
-#sorthex.plの使いかた:
-sorthex.pl -f 2 file.txt
-
-#mailコマンドでメイルおくる
-mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
 
 #rpm
 ##rpmbuild
@@ -153,6 +142,25 @@ kpartx -dv disk.img
 #wgetの結果を標準出力
 wget http://192.168.0.4/ -O -
 
+#nkfで文字コードを推測する
+nkf -g hoge.txt
+
+#mecab
+mecab -d /usr/share/mecab/dic/mecab-ipadic
+
+#mpage アウトライン無し2page/A4
+mpage -o -2 k_amano.ps > k_amano.mpage.ps
+
+#sorthex.plの使いかた:
+sorthex.pl -f 2 file.txt
+
+#mailコマンドでメイルおくる
+mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
+
+#eclipse
+##64bit版を指定してjava VMを機動
+eclipse -vm /usr/java/x64/latest/bin/java
+
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
 
@@ -187,12 +195,6 @@ plastx ・・・ 塩基配列(質問配列)対アミノ酸配列(データベース配列)の比較を行うため
 tblastn ・・・ アミノ酸配列(質問配列)対塩基配列(データベース配列)の比較を行うためのプログラム。
 tblastx ・・・ 塩基配列対塩基配列の比較を、アミノ酸配列に翻訳して行うためのプログラム。
 
-
-#bash
-##bash if 構文
-for file in *; do if [ -d $file ]; then echo 1; else echo 2; fi; done; 
-##bash TABとかの入力
-Ctrl + v 入力の直次の入力がverbatimになる。
 
 #GIT
 ##gitことはじめ
