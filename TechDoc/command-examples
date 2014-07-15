@@ -293,9 +293,7 @@ pos=which(targetList == min(targetList));
 #matlab
 ##かれんとディレクトリのファイル(ワイルドカード)を得て、配列変数に代入:
 files = (dir('*.sptbl'))
-##ライセンス情報の出力は、
-license
-##ではなく、
+##ライセンス情報の出力は、matlabを起動後、コマンドで
 ver
 ##coapTabの対角要素をゼロに置き換える
 coapTab(eye(size(coapTab))~=0)=0
