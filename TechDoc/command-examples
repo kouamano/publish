@@ -291,11 +291,15 @@ numactl --physcpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -sub
 pos=which(targetList == min(targetList));
 
 #matlab
-##かれんとディレクトリのファイル(ワイルドカード)を得て、配列変数に代入:
+## matlabではステートメントの返り値を直接操作できない
+size(SpCountCat)(1)	#エラーになる
+msize = size(SpCountCat)	#一旦変数に代入
+msize(1)	#OK
+## かれんとディレクトリのファイル(ワイルドカード)を得て、配列変数に代入:
 files = (dir('*.sptbl'))
-##ライセンス情報の出力は、matlabを起動後、コマンドで
+## ライセンス情報の出力は、matlabを起動後、コマンドで
 ver
-##coapTabの対角要素をゼロに置き換える
+## coapTabの対角要素をゼロに置き換える
 coapTab(eye(size(coapTab))~=0)=0
 ## strcat()  で気をつける:
 strcat()は文字列の配列(cell型)を返すことがある。
