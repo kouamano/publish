@@ -306,6 +306,8 @@ strcat()は文字列の配列(cell型)を返すことがある。
 >> fd=fopen('count_pos_MMs_AllResNames-U_Jour-All.CoapRes.sp.dat','w')
 >> fprintf(fd,'%d %d %d\n',transpose(data))
 >> fclose(fd)
+## 変数の型
+class()
 
 #C
 ##gcc 最適化
