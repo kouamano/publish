@@ -288,7 +288,18 @@ numactl --cpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkern
 numactl --physcpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
 
 #R
+##position
 pos=which(targetList == min(targetList));
+##ライブラリのロード
+##ライブラリ形式でcoding
+##確認:
+gcc -lm -c MST.lib.c
+##Rによるコンパイル:
+R R CMD SHLIB MST.lib.c
+##R起動:
+R
+##ライブラリをロード:
+> dyn.load("./MST.lib.so")
 
 #matlab
 ## matlabではステートメントの返り値を直接操作できない
