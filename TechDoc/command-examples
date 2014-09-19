@@ -340,7 +340,7 @@ global/localは単にプログラムソースコード上での呼び名ぽい。
 ##qsort():
 qsort()の第一引数baseについて:
 baseに対するmalloc()は1次配列までしか対応できない。
-##qsort()の例:<startnoignore(#)>
+##qsort()の例:<startverb>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -425,9 +425,9 @@ int main(){
         }
         return(0);
 }
-##:<endnoignore(#)>
+##:<endverb>
 
-##C言語高精度タイマの例:<startnoignore(#)>
+##C言語高精度タイマの例:<startverb>
 #include <stdlib.h>
 #include <time.h>
 int main(int atgc, char **argv){
@@ -442,7 +442,7 @@ int main(int atgc, char **argv){
         printf("curr_time::date:%s:",ctime(&curr_time));
         return(0);
 }
-##:<endnoignore(#)>
+##:<endverb>
 
 ##C言語のtime_t
 は、long int
@@ -589,21 +589,21 @@ $PGDATAディレクトリ以下のふたつのファイル
 pg_hba.conf
 postgresql.conf
 をそれぞれ書き換え:
-##pg_hba.conf の書き換え:<startignore(#)>
+##pg_hba.conf の書き換え:<startverb>
 ===
 # host       DATABASE  USER  CIDR-ADDRESS  METHOD  [OPTION]
 ---
 host       all  all  192.168.0.5  255.255.255.255 trust
 ===
-##:<endignore(#)>
+##:<endverb>
 
-##postgresql.conf の書き換え:<startignore(#)>
+##postgresql.conf の書き換え:<startverb>
 ===
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
 ---
 listen_addresses = '*'
 ===
-##:<endignore(#)>
+##:<endverb>
 
 ##dblink
 ###dblinkのインストール: そこから利用したい全てのデータベースに対し行う
@@ -614,6 +614,24 @@ SELECT dblink_connect('sassc','host=192.168.0.4 port=5432 dbname=sassc user=sass
 SELECT * from dblink('sassc', 'select * from gene') as t1(gene_symbol text, gene_name text, remarks text);
 ###select dblink_disconnect()
 SELECT dblink_disconnect('sassc');
+
+#Lucene
+#lucene-4.10.0
+##ダウンロード:
+lucene-4.10.0.tgz
+pache-ant-1.9.4-bin.zip
+apache-ivy-2.2.0-bin.tar.gz
+##java + ant + ivy のパスの設定(.bashrc):
+export ANT_HOME=/usr/local/ant
+export JAVA_HOME=/usr/java/default
+export PATH=${PATH}:${ANT_HOME}/bin
+##クラスパスの設定(.bashrc):
+export CLASSPATH=${CLASSPATH}:/usr/local/lucene-4.10.0/core/lucene-core-4.10.0.jar:/usr/local/lucene-4.10.0/queryparser/lucene-queryparser-4.10.0.jar:/usr/local/lucene-4.10.0/analysis/common/lucene-analyzers-common-4.10.0.jar:/usr/local/lucene-4.10.0/demo/lucene-demo-4.10.0.jar
+##srcディレクトリの作成(root):
+cd /usr/local/lucene-4.10.0
+mkdir src
+##デモ(srcが空なので何もインデックスされない)(root):
+java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
 
 
 
