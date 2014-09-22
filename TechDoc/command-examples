@@ -157,47 +157,6 @@ sorthex.pl -f 2 file.txt
 #mailコマンドでメイルおくる
 mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
 
-#eclipse
-##64bit版を指定してjava VMを機動 <- aliasを設定
-alias eclipse='/usr/local/eclipse4.4/eclipse -vm /usr/bin/java'
-
-
-
-#mapserver config:
-./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
-
-#nifH関係
-for file in `cat species_add.cand_ex.2.ov50.Dir.sort.uniq`; do cat /BANK/SEQUENCE/ncbi/genomes/Bacteria/$file/*rev; done | ./extract_420-450.pl > Arch+Bac.420-450.ffn.rev
-
-#murasaki
-time murasaki -p11001100 -dHs17-Mm11 /BANK/SEQUENCE/ncbi/genomes/H_sapiens/Assembled_chromosomes/hs_ref_chr17.fa /BANK/SEQUENCE/ncbi/genomes/M_musclus/Assembled_chromosomes/mm_ref_chr11.fa
-
-#blast+
-##makeblastdb (使いかたよくわからん、これでよいのか? -> よいらしい)
-makeblastdb -in GI-fname-CDS.fasta.faa -input_type fasta
-##DNA
-makeblastdb -in mm_ref_chrX.fa.gz.cut.50 -dbtype nucl -input_type fasta
-##blastp (blastpを行うディレクトリはdbのあるディレクトリでないといけない? とはか ぎらない?)
-##アミノ酸
-blastp -query GI-fname-CDS.fasta -db ./GI-fname-CDS.fasta
-blastp -query 89member.fasta -db /BANK/SEQUENCE/blastdb/Bacteria.20100925.top3group/44_89_94member.fasta
-##blastn
-blastn -query test_query.fasta -db ./mm_ref_chrX.fa.gz.cut.50 > test_query.fasta.result
-
-#megablast
-megablast -d /BANK/SEQUENCE/ncbi/blastdb/cut1000/cfa_chr9.fa.cut -i /BANK/SEQUENCE/ncbi/cut1000/H_sapiens/hs_ref_chr17.cut -W 25 -o hs_chr17-cf_chr9.mega-W25
-
-#megablast
-time for file in /BANK/SEQUENCE/frame/cut1000/H_sapiens/*; do   /usr/local/blast-2.2.18/bin/megablast -d /BANK/SEQUENCE/blastdb/cut1000/mm_ref_chrAll.cut -i $file -W 50 -o ${file##*\/}-mm_ref_chrAll.cut-W50; done
-
-#blastall
-blastn ・・・ 塩基配列対塩基配列の比較を行うためのプログラム。
-blastp ・・・ アミノ酸配列対アミノ酸配列の比較を行うためのプログラム。
-plastx ・・・ 塩基配列(質問配列)対アミノ酸配列(データベース配列)の比較を行うためのプログラム。
-tblastn ・・・ アミノ酸配列(質問配列)対塩基配列(データベース配列)の比較を行うためのプログラム。
-tblastx ・・・ 塩基配列対塩基配列の比較を、アミノ酸配列に翻訳して行うためのプログラム。
-
-
 #GIT
 ##gitことはじめ
 https://github.com/
@@ -269,6 +228,65 @@ svn diff svn://jewela.tu1135.riken.jp:3695/var/www/svn/web/test/php/pg/qa_list/c
 ##sedを使って大川さんのログだけ取り出す
 svn log  -v | sed -n '/ookawa/,/----$/ p'
 svn log  -v | sed -n '/| yookawa |/,/----$/ p'
+
+#Java
+##jar で.jarを見る
+jar tvf <ファイル>
+#eclipse
+##64bit版を指定してjava VMを機動 <- aliasを設定
+alias eclipse='/usr/local/eclipse4.4/eclipse -vm /usr/bin/java'
+#Lucene
+#lucene-4.10.0
+##ダウンロード:
+lucene-4.10.0.tgz
+pache-ant-1.9.4-bin.zip
+apache-ivy-2.2.0-bin.tar.gz
+##java + ant + ivy のパスの設定(.bashrc):
+export ANT_HOME=/usr/local/ant
+export JAVA_HOME=/usr/java/default
+export PATH=${PATH}:${ANT_HOME}/bin
+##クラスパスの設定(.bashrc):
+export CLASSPATH=${CLASSPATH}:/usr/local/lucene-4.10.0/core/lucene-core-4.10.0.jar:/usr/local/lucene-4.10.0/queryparser/lucene-queryparser-4.10.0.jar:/usr/local/lucene-4.10.0/analysis/common/lucene-analyzers-common-4.10.0.jar:/usr/local/lucene-4.10.0/demo/lucene-demo-4.10.0.jar
+##srcディレクトリの作成(root):
+cd /usr/local/lucene-4.10.0
+mkdir src
+##デモ(srcが空なので何もインデックスされない)(root):
+java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
+
+
+#mapserver config:
+./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
+
+#nifH関係
+for file in `cat species_add.cand_ex.2.ov50.Dir.sort.uniq`; do cat /BANK/SEQUENCE/ncbi/genomes/Bacteria/$file/*rev; done | ./extract_420-450.pl > Arch+Bac.420-450.ffn.rev
+
+#murasaki
+time murasaki -p11001100 -dHs17-Mm11 /BANK/SEQUENCE/ncbi/genomes/H_sapiens/Assembled_chromosomes/hs_ref_chr17.fa /BANK/SEQUENCE/ncbi/genomes/M_musclus/Assembled_chromosomes/mm_ref_chr11.fa
+
+#blast+
+##makeblastdb (使いかたよくわからん、これでよいのか? -> よいらしい)
+makeblastdb -in GI-fname-CDS.fasta.faa -input_type fasta
+##DNA
+makeblastdb -in mm_ref_chrX.fa.gz.cut.50 -dbtype nucl -input_type fasta
+##blastp (blastpを行うディレクトリはdbのあるディレクトリでないといけない? とはか ぎらない?)
+##アミノ酸
+blastp -query GI-fname-CDS.fasta -db ./GI-fname-CDS.fasta
+blastp -query 89member.fasta -db /BANK/SEQUENCE/blastdb/Bacteria.20100925.top3group/44_89_94member.fasta
+##blastn
+blastn -query test_query.fasta -db ./mm_ref_chrX.fa.gz.cut.50 > test_query.fasta.result
+
+#megablast
+megablast -d /BANK/SEQUENCE/ncbi/blastdb/cut1000/cfa_chr9.fa.cut -i /BANK/SEQUENCE/ncbi/cut1000/H_sapiens/hs_ref_chr17.cut -W 25 -o hs_chr17-cf_chr9.mega-W25
+
+#megablast
+time for file in /BANK/SEQUENCE/frame/cut1000/H_sapiens/*; do   /usr/local/blast-2.2.18/bin/megablast -d /BANK/SEQUENCE/blastdb/cut1000/mm_ref_chrAll.cut -i $file -W 50 -o ${file##*\/}-mm_ref_chrAll.cut-W50; done
+
+#blastall
+blastn ・・・ 塩基配列対塩基配列の比較を行うためのプログラム。
+blastp ・・・ アミノ酸配列対アミノ酸配列の比較を行うためのプログラム。
+plastx ・・・ 塩基配列(質問配列)対アミノ酸配列(データベース配列)の比較を行うためのプログラム。
+tblastn ・・・ アミノ酸配列(質問配列)対塩基配列(データベース配列)の比較を行うためのプログラム。
+tblastx ・・・ 塩基配列対塩基配列の比較を、アミノ酸配列に翻訳して行うためのプログラム。
 
 #graphviz
 ##graphviz サンプル (utf8を使うこと):
@@ -616,26 +634,6 @@ SELECT dblink_connect('sassc','host=192.168.0.4 port=5432 dbname=sassc user=sass
 SELECT * from dblink('sassc', 'select * from gene') as t1(gene_symbol text, gene_name text, remarks text);
 ###select dblink_disconnect()
 SELECT dblink_disconnect('sassc');
-
-#Lucene
-#lucene-4.10.0
-##ダウンロード:
-lucene-4.10.0.tgz
-pache-ant-1.9.4-bin.zip
-apache-ivy-2.2.0-bin.tar.gz
-##java + ant + ivy のパスの設定(.bashrc):
-export ANT_HOME=/usr/local/ant
-export JAVA_HOME=/usr/java/default
-export PATH=${PATH}:${ANT_HOME}/bin
-##クラスパスの設定(.bashrc):
-export CLASSPATH=${CLASSPATH}:/usr/local/lucene-4.10.0/core/lucene-core-4.10.0.jar:/usr/local/lucene-4.10.0/queryparser/lucene-queryparser-4.10.0.jar:/usr/local/lucene-4.10.0/analysis/common/lucene-analyzers-common-4.10.0.jar:/usr/local/lucene-4.10.0/demo/lucene-demo-4.10.0.jar
-##srcディレクトリの作成(root):
-cd /usr/local/lucene-4.10.0
-mkdir src
-##デモ(srcが空なので何もインデックスされない)(root):
-java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
-
-
 
 #RIKEN RICC
 ##キューの確認
