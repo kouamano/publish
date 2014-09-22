@@ -158,8 +158,10 @@ sorthex.pl -f 2 file.txt
 mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
 
 #eclipse
-##64bit版を指定してjava VMを機動
-eclipse -vm /usr/java/x64/latest/bin/java
+##64bit版を指定してjava VMを機動 <- aliasを設定
+alias eclipse='/usr/local/eclipse4.4/eclipse -vm /usr/bin/java'
+
+
 
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
