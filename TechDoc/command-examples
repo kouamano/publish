@@ -233,6 +233,7 @@ svn log  -v | sed -n '/| yookawa |/,/----$/ p'
 ##jar で.jarを見る
 jar tvf <ファイル>
 #eclipse
+##CentOS 6.5
 ##64bit版を指定してjava VMを機動 <- aliasを設定
 alias eclipse='/usr/local/eclipse4.4/eclipse -vm /usr/bin/java'
 #Lucene
