@@ -76,6 +76,10 @@ vncserver -kill :1
 history 1
 で全履歴。
 
+#X-window
+#設定
+Xorg -configure
+
 #rpm
 ##rpmbuild
 ##BUILD/以下にmakeのためのディレクトリができる:
