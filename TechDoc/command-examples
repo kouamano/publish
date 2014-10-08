@@ -194,6 +194,9 @@ git branch -a
 ##強制的にpull
 git checkout -- .
 git pull
+##git server 構築
+##n005に構築済みのはず
+##kamano利用可能
 
 #svn
 ##svn リポジトリ作成 (サーバ側)
