@@ -520,6 +520,11 @@ while($txt =~ /computer/g){
 pos($txt) = $p - length($1);
 
 
+#python
+##定義のロード
+execfile(<ファイル名>)
+
+
 #rubygemsのインストール
 tar zxvf rubygems-1.0.1.tgz
 cd rubygems-1.0.1
