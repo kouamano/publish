@@ -194,6 +194,9 @@ git branch -a
 ##強制的にpull
 git checkout -- .
 git pull
+##強制的にpull(2)
+git fetch origin
+git reset --hard origin/master
 ##git server 構築
 ##n005に構築済みのはず
 ##kamano利用可能
