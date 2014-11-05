@@ -663,9 +663,13 @@ qsub file
 
 
 #mac OSX
-#ファイアウォールの切りかた:
+##ファイアウォールの切りかた:
 sysctl -w net.inet.ip.fw.enable=0
-
-#OSX nfs client
+##OSX nfs client
 [Directory utility] -> [mount] -> (dialog左下のアイコン列;一番右をクリック) -> [詳細マウントパラメータ] に "-P nosuid" を入れる。
+##imputmethodが起動しなくなった時(Yosemite)
+以下のどれかのプログラムが落ちていないか確認:
+/System/Library/Input Methods/JapaneseIM.app/Contents/MacOS/JapaneseIM
+/System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent
+/System/Library/Frameworks/InputMethodKit.framework/Versions/A/XPCServices/com.apple.InputMethodKit.UserDictionary.xpc/Contents/MacOS/com.apple.InputMethodKit.UserDictionary
 
