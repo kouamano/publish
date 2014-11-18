@@ -18,6 +18,9 @@ find ./  | xargs /BANK/PMC/bin/extract-title.pl
 ## オプション -IXXX で、XXXを任意の場所に挿入
 find Ar* | xargs -IF /BANK/PMC/bin/match_position qf=/BANK/Organiztion/RIKEN-BRC_2012/organization-name/org.name.only sf=F
 
+#split
+split -l `cat split-size` Jour-All.fname Jour-split.
+
 #SSH
 ##Xのトンネリングでかな漢字変換を有効にする
 ##ローカル側の /etc/ssh/ssh_configに
