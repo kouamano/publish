@@ -664,8 +664,6 @@ SELECT dblink_disconnect('sassc');
 #BerkleyParser
 ## example1:
 java -jar /usr/local/BerkleyParser/BerkeleyParser-1.7.jar -gr /usr/local/BerkleyParser/eng_sm6.gr -inputFile /BANK/PMC/20140724/terms/ALL/patt.4/ArtVSTerm/Word_Jour-au.sortuniq-eachline
-## example2:
-java -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt
 
 #RIKEN RICC
 ##キューの確認
