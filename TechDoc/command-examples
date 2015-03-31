@@ -539,6 +539,17 @@ pos($txt) = $p - length($1);
 #python
 ##定義のロード
 execfile(<ファイル名>)
+## nltkのインストール
+rpm -ivh python-nltk-2.0.4-2.el6.1.noarch
+### データのインストール
+### pythonを起動
+python
+### pythonコマンド
+import numpy
+importl nltk
+nltk.download()
+### GUIが起動する
+### GUIにしたがってデータをインストール
 
 
 #rubygemsのインストール
