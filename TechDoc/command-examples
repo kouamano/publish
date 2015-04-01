@@ -131,7 +131,7 @@ sudo apt-get update
 - apsrmp.bst
 5. スーパーユーザー で texconfig コマンドを実行。 REAHSH を選択。これで revtex4.cls にパスが通る。これを実行しないと以下のエラーとなる。
 ! LaTeX Error: File `revtex4.cls' not found.
-
+6. /usr/local/share/texmf/tex/latex/revtex4/sample/apssamp.tex をコンパイル。\endnoteに対してエラーがでるが、その他はOK。
 #dvips
 ##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
