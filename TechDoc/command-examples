@@ -112,6 +112,26 @@ gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
 sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 
+#TeX
+##revtex4のインストール(http://be.nucl.ap.titech.ac.jp/~koba/cgi-bin/moin.cgi/Linux%20Memo)
+1. texconfig コマンドで TEXMFLOCAL のパスを確認
+ CONF を選択
+2. revtex4.zip をダウンロード、展開。
+3. README の Installation を確認し、$TEXMFLOCAL/tex/latex/revtex4 に、以下のファイルを置く。
+ $TEXMFLOCAL/tex/latex に revtex4 というディレクトリがなければ作る。(パーミッションは特に気にしない。)
+- 10pt.rtx
+- 11pt.rtx
+- 12pt.rtx
+- aps.rtx
+- revsymb.sty
+- revtex4.cls
+- rmp.rtx
+4. $TEXMFLOCAL/bibtex/bst/revtex4 に、以下のファイルを置く。$TEXMFLOCAL/bibtex/bst に revtex4 というディレクトリがなければ作る。
+- apsrev.bst
+- apsrmp.bst
+5. スーパーユーザー で texconfig コマンドを実行。 REAHSH を選択。これで revtex4.cls にパスが通る。これを実行しないと以下のエラーとなる。
+! LaTeX Error: File `revtex4.cls' not found.
+
 #dvips
 ##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
