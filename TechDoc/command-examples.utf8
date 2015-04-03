@@ -707,6 +707,8 @@ java -jar /usr/local/BerkleyParser/BerkeleyParser-1.7.jar -gr /usr/local/Berkley
 ## example:
 java -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt 
 
+
+
 #RIKEN RICC
 ##キューの確認
 qstat
