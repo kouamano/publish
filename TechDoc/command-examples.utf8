@@ -716,6 +716,21 @@ mpicc -pc mpi-test.c
 mpirun a.out
 ##キューへのsubmit
 qsub file
+#RIKEN HOKUSAI
+##インタラクティブジョブシークエンス(超並列sparc)に入る:
+[]$ pjsub --interact -L rscunit=gwmpc
+##以下の出力がある:
+[INFO] PJM 0000 pjsub Job 35031 submitted.
+[INFO] PJM 0081 .connected.
+[INFO] PJM 0082 pjsub Interactive job 35031 started.
+##インタラクティブ実行: ふつうにバイナリ実行
+[]$ ls
+##インタラクティブシークエンスから抜ける:
+[]$ exit
+##以下の出力がある:
+logout
+[INFO] PJM 0083 pjsub Interactive job 35031 completed.
+
 
 
 #mac OSX
