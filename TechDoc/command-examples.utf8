@@ -745,4 +745,8 @@ sysctl -w net.inet.ip.fw.enable=0
 /System/Library/Input Methods/JapaneseIM.app/Contents/MacOS/JapaneseIM
 /System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent
 /System/Library/Frameworks/InputMethodKit.framework/Versions/A/XPCServices/com.apple.InputMethodKit.UserDictionary.xpc/Contents/MacOS/com.apple.InputMethodKit.UserDictionary
-
+##HomeBrew
+##ライブラリがみつからない的なエラー対応:
+cd /usr/local/Library
+git pull origin master
+brew update
