@@ -750,3 +750,12 @@ sysctl -w net.inet.ip.fw.enable=0
 cd /usr/local/Library
 git pull origin master
 brew update
+
+
+
+#NCBIのNXML
+##マルチバイトコードの数値文字参照について
+##数値部分が10進数表記か16進数表記かわからない
+##ほとんど以下の表現なので文字エンコードでなく文字コードの10進数表記か?
+## &#x[][][][][];
+#
