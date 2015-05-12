@@ -1,0 +1,3 @@
+#pjsubによるインタラクティブシークエンスの開始
+[] pjsub --interact -L rscunit=gwmpc
+[] fcc
