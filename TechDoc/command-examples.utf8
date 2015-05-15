@@ -758,4 +758,7 @@ brew update
 ##数値部分が10進数表記か16進数表記かわからない
 ##ほとんど以下の表現なので文字エンコードでなく文字コードの10進数表記か?
 ## &#x[][][][][];
-#
+#Pubme API
+##http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed にアクセス：
+- ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=22674858,22434880
+##キーワードを取ってこれるかをしらべるべし。
