@@ -763,3 +763,6 @@ brew update
 - ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=22674858,22434880
 ##Meshを含む書誌情報をget
 - ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=22674858
+##キーワードリストを含む書誌情報をhttpから得る(APIじゃない)
+http://www.ncbi.nlm.nih.gov/pubmed/25965974?report=xml&format=text
+
