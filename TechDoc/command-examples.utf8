@@ -759,6 +759,7 @@ brew update
 ##ほとんど以下の表現なので文字エンコードでなく文字コードの10進数表記か?
 ## &#x[][][][][];
 #Pubme API
-##http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed にアクセス：
+##summaryをget
 - ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=22674858,22434880
-##キーワードを取ってこれるかをしらべるべし。
+##Meshを含む書誌情報をget
+- ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=22674858
