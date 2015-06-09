@@ -735,6 +735,30 @@ logout
 
 
 
+
+#raspberrypi
+##keyboard setting
+cd /etc/default/
+$ sudo cp -p keyboard keyboard.orig
+$ sudo vi keyboard
+# KEYBOARD CONFIGURATION FILE
+
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="hhk"
+XKBLAYOUT="us"
+XKBVARIANT=""
+XKBOPTIONS=""
+
+BACKSPACE="guess"
+$ diff keyboard.orig keyboard
+6c6
+< XKBLAYOUT="gb"
+---
+> XKBLAYOUT="us"
+
+
+
 #mac OSX
 ##ファイアウォールの切りかた:
 sysctl -w net.inet.ip.fw.enable=0
