@@ -135,6 +135,7 @@ sudo apt-get update
 #dvips
 ##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
+dvipdfmx -f texfonts.map  sample.dvi
 ##ファイルに出力:
 pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
 
@@ -190,6 +191,10 @@ sorthex.pl -f 2 file.txt
 
 #mailコマンドでメイルおくる
 mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
+
+#hexstring2bytecodeの使い方
+#hogeとtmpはおなじはずだがtmpに改行が余計に入っている?
+cat hoge | tofullcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
 
 #GIT
 ##gitことはじめ
