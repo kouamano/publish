@@ -764,7 +764,9 @@ $ diff keyboard.orig keyboard
 
 ##日本語入力
 apt-get install anthy*
+apt-get install uim
 apt-get install ibus
+reboot
 
 
 
