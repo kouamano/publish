@@ -762,6 +762,10 @@ $ diff keyboard.orig keyboard
 ---
 > XKBLAYOUT="us"
 
+##日本語入力
+apt-get install anthy*
+apt-get install ibus
+
 
 
 #mac OSX
