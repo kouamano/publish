@@ -34,6 +34,9 @@ cat libstdc++-3.2.3-59.i386.cpio | cpio -id
 #ipフォワードのチェック
 cat /proc/sys/net/ipv4/ip_forward
 
+# adding default gateway
+route add default gw <ipaddr>
+
 #insert species name into .ffn files
 for dir in `cat _Dir`; do cd $dir; for file in *ffn; do ./add_species_name.pl $file > $file.rev; done; cd ../; done
 
