@@ -543,6 +543,8 @@ while(<>){
                 print "$j\n";
         }
 }
+##(xml等の)コメントを同じ長さの空白に置き換える
+$tx =~ s/(<!--.*?-->)/$count=0;$sb="";while($count < length($1)){$sb = $sb." "; $count++;};$sb/eg;
 ##perlの逐次マッチ
 		while($len > 0){				#パターンのヒットが無くなればブレーク(パターンのlengthで判定)
                         if($res =~ /.*[\s]+(ref[^\n]+\n).*/){	#もしマッチさせたいパターンがあれば、
