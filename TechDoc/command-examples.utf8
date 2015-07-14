@@ -773,6 +773,8 @@ apt-get install uim
 apt-get install ibus
 reboot
 
+##セットアップコマンド
+raspi-config
 
 
 #mac OSX
