@@ -753,6 +753,7 @@ logout
 cd /etc/default/
 $ sudo cp -p keyboard keyboard.orig
 $ sudo vi keyboard
+=====
 # KEYBOARD CONFIGURATION FILE
 
 # Consult the keyboard(5) manual page.
@@ -768,15 +769,18 @@ $ diff keyboard.orig keyboard
 < XKBLAYOUT="gb"
 ---
 > XKBLAYOUT="us"
+=====
 
 ##日本語入力
 apt-get install anthy*
 apt-get install uim
 apt-get install ibus
 reboot
-
 ##セットアップコマンド
 raspi-config
+##MPI
+sudo apt-get install openmpi*
+sudo apt-get install mpich*
 
 
 #mac OSX
