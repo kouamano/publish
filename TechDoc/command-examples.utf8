@@ -214,6 +214,8 @@ githubでリポジトリ作成
 git pull <URL>
 git pull origin master
 git pull --all
+##git clone
+githubにpubkeyを登録してsshでclone。
 ##git add (新しいファイルを作ったとき)
 ##git commit (更新をコミット)
 ##git push
