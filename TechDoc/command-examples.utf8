@@ -21,6 +21,9 @@ find Ar* | xargs -IF /BANK/PMC/bin/match_position qf=/BANK/Organiztion/RIKEN-BRC
 #split
 split -l `cat split-size` Jour-All.fname Jour-split.
 
+#aspell
+aspell --lang=en -c -t network.amano.tex
+
 #SSH
 ##Xのトンネリングでかな漢字変換を有効にする
 ##ローカル側の /etc/ssh/ssh_configに
