@@ -784,6 +784,8 @@ raspi-config
 ##MPI
 sudo apt-get install openmpi*
 sudo apt-get install mpich*
+##qemuでraspberrypi
+qemu-system-arm -kernel /BANK/OS.img/kernel-qemu  -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda /BANK/OS.img/2013-09-25-wheezy-raspbian.img
 
 
 #mac OSX
