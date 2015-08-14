@@ -589,6 +589,12 @@ importl nltk
 nltk.download()
 ### GUIが起動する
 ### GUIにしたがってデータをインストール
+##pip
+###インストール
+yum install yum install python-pip
+###pipを使ったアップグレード
+pip install --upgrade numpy
+
 
 
 #rubygemsのインストール
