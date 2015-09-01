@@ -12,6 +12,9 @@ for f in *
 done
 ###以下は並列で動かない:
 for f in *; do echo $f ;& done
+##while read
+###read の対象ファイル名にバックスラッシュを含む場合の処理(-rオプション)
+while read -r fname ...
 
 #zshでのhistory
 history 1
