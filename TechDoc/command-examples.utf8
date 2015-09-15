@@ -29,7 +29,11 @@ AcceptEnv XMODIFIERS
 
 #LVM
 #以下のコマンドあやしい?
-##pool
+##pvcreate
+- pvcreate
+##vgcreate
+- vgcreate
+##pool作る
 -? lvcreate -l 100%FREE -T /dev/mapper/VolGroop00/Pool00
 ##割り当て
 -? lvcreate -V 2.73T -T /dev/mapper/VolGroup-Pool00 -n lv_bank
