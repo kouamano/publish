@@ -27,6 +27,16 @@ SendEnv XMODIFIERS
 ##リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
 
+#LVM
+#以下のコマンドあやしい?
+##pool
+-? lvcreate -l 100%FREE -T /dev/mapper/VolGroop00/Pool00
+##割り当て
+-? lvcreate -V 2.73T -T /dev/mapper/VolGroup-Pool00 -n lv_bank
+-(こっちが正しい?) lvcreate -V 2.73T -T /dev/mapper/VolGroup00-Pool00 -n lv_bank
+##実体
+/dev/VolGroup00/lv_bank
+
 #OSのバージョン
 cat /etc/redhat-release
 
