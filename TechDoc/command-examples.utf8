@@ -138,6 +138,8 @@ cat refxml.source.shtrim | tr [:lower:] [:upper:]
 #vim
 ##行頭に行番号を挿入
 :%s/^/\=line('.').'^I'/
+##文字コードを指定して開く
+vim -c ":e ++enc=euc-jp" inedx.html
 
 #TeX
 ##revtex4のインストール(http://be.nucl.ap.titech.ac.jp/~koba/cgi-bin/moin.cgi/Linux%20Memo)
