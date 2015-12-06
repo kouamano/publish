@@ -848,3 +848,20 @@ brew update
 ##キーワードリストを含む書誌情報をhttpから得る(APIじゃない)
 http://www.ncbi.nlm.nih.gov/pubmed/25965974?report=xml&format=text
 
+
+#enju
+##検索エンジン登録
+###google
+ 名前: google
+
+URL: https://www.google.co.jp/
+
+ベースURL: https://www.google.co.jp/search
+
+HTTPメソッド: get
+
+クエリパラメータ: q
+
+追加のパラメータ:
+
+注記: 
