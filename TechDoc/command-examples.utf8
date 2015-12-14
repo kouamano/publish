@@ -841,6 +841,8 @@ Host github.com
  Hostname ssh.github.com
  ProxyCommand /bin/nc -x www.xxx.xxx.xx:xxxx %h %p
 =====/
+###ブラウザの起動
+端末からコマンド
 
 #mac OSX
 ##ファイアウォールの切りかた:
