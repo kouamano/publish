@@ -842,7 +842,7 @@ Host github.com
  ProxyCommand /bin/nc -x www.xxx.xxx.xx:xxxx %h %p
 =====/
 ###ブラウザの起動
-設定ファイルをsourceして端末からコマンド
+設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
 #mac OSX
 ##ファイアウォールの切りかた:
