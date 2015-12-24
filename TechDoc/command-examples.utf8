@@ -448,7 +448,8 @@ global/localは単にプログラムソースコード上での呼び名ぽい�
 ##qsort():
 qsort()の第一引数baseについて:
 baseに対するmalloc()は1次配列までしか対応できない。
-##qsort()の例:<startverb>
+##qsort()の例:
+/===
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -533,9 +534,10 @@ int main(){
         }
         return(0);
 }
-##:<endverb>
+===/
 
-##C言語高精度タイマの例:<startverb>
+##C言語高精度タイマの例:
+/===
 #include <stdlib.h>
 #include <time.h>
 int main(int atgc, char **argv){
@@ -550,7 +552,7 @@ int main(int atgc, char **argv){
         printf("curr_time::date:%s:",ctime(&curr_time));
         return(0);
 }
-##:<endverb>
+===/
 
 ##C言語のtime_t
 は、long int
@@ -721,21 +723,19 @@ $PGDATAディレクトリ以下のふたつのファイル
 pg_hba.conf
 postgresql.conf
 をそれぞれ書き換え:
-##pg_hba.conf の書き換え:<startverb>
-===
+##pg_hba.conf の書き換え:
+/===
 # host       DATABASE  USER  CIDR-ADDRESS  METHOD  [OPTION]
 ---
 host       all  all  192.168.0.5  255.255.255.255 trust
-===
-##:<endverb>
+===/
 
-##postgresql.conf の書き換え:<startverb>
-===
+##postgresql.conf の書き換え:
+/===
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
 ---
 listen_addresses = '*'
-===
-##:<endverb>
+===/
 
 ##dblink
 ###dblinkのインストール: そこから利用したい全てのデータベースに対し行う
