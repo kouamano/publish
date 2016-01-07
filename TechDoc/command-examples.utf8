@@ -341,6 +341,14 @@ mkdir src
 ##デモ(srcが空なので何もインデックスされない)(root):
 java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
 
+#apache http server
+##Basic認証
+- パスワードファイル: /etc/httpd/conf/.htpasswd
+-- コマンド: htpasswd
+- 設定ファイル: <認証させたいDIR>/.htaccess
+/===
+
+===/
 
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
