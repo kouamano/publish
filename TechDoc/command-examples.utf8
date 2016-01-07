@@ -347,7 +347,13 @@ java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
 -- コマンド: htpasswd
 - 設定ファイル: <認証させたいDIR>/.htaccess
 /===
-
+Options +ExecCGI
+AddHandler cgi-script .cgi .py htpasswd
+AddType application/x-httpd-php .php .html
+AuthUserFile /etc/httpd/conf/.htpasswd
+AuthName "kamano"
+AuthType Basic
+Require valid-user
 ===/
 
 #mapserver config:
