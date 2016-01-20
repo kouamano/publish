@@ -32,6 +32,7 @@ AcceptEnv XMODIFIERS
 ##pvcreate
 - pvcreate
 ##vgcreate
+##複数のpvをグループ化
 - vgcreate
 ##pool作る
 -? lvcreate -l 100%FREE -T /dev/mapper/VolGroop00/Pool00
