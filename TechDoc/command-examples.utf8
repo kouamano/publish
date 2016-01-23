@@ -906,10 +906,12 @@ http://www.ncbi.nlm.nih.gov/pubmed/25965974?report=xml&format=text
 ##仮想マシン
 login: vagrant
 pass: vagrant
-enju管理者: admin
-pass: adminpassword
 ##enjuへのアクセス
 VMGにて http://127.0.0.1:8080 にアクセス
+##enjuシステムログイン
+enju管理者: admin
+pass: adminpassword
+
 
 ##検索エンジン登録
 ###google
