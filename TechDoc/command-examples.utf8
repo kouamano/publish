@@ -911,8 +911,9 @@ VMGにて http://127.0.0.1:8080 にアクセス
 ##enjuシステムログイン
 enju管理者: admin
 pass: adminpassword
-
-
+##bundle update
+##メモリーが結構必要>2.5G
+仮想マシン版からアップデートするときいくつかのパッケージ必要
 ##検索エンジン登録
 ###google
 名前: google
