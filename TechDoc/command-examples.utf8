@@ -909,7 +909,7 @@ pass: vagrant
 ##enjuへのアクセス
 VMGにて http://127.0.0.1:8080 にアクセス
 ##enjuシステムログイン
-enju管理者: admin
+enju管理者: enjuadmin
 pass: adminpassword
 ##bundle update
 ##メモリーが結構必要>2.5G
