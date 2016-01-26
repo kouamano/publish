@@ -87,6 +87,10 @@ gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
 sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 
+#sudo
+##inheritance of user env
+sudo -E xxx
+
 #X-window
 #設定
 Xorg -configure
