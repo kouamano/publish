@@ -657,6 +657,13 @@ ruby setup.rb config
 ruby setup.rb setup
 ruby setup.rb install
 
+#rails
+##railsのコンソールに接続
+rails console -e production
+##railsからDBに接続
+rails dbconsole -e production
+
+
 
 #POSTGRES
 ##postgres初期化
