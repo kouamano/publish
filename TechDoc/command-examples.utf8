@@ -675,6 +675,8 @@ rails dbconsole -e production
 ##システムカタログ
 ###カラム名
 select * from pg_attribute;
+###特定のテーブルのカラム名
+select * from pg_attribute where attrelid = 'manifestations'::regclass;
 ###テーブル名
 select * from pg_class;
 ##テーブルオーナーの書き換え:
