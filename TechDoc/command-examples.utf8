@@ -240,6 +240,7 @@ mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
 cat hoge | tofullcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
 
 #GIT
+##gitのproxy設定: sshのproxy設定参照
 ##gitことはじめ
 https://github.com/
 githubでリポジトリ作成
