@@ -869,9 +869,9 @@ Acquire::https::proxy "https://プロキシサーバー名:ポート番号/";
 Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
 Acquire::socks::proxy "socks://プロキシサーバー名:ポート番号/";
 ===/
-##ssh
+##ssh (git)
 - file: ~/.ssh/config
-/=====
+/===
 Host N005
  hostname 134.160.xx.xx
  User kxxxx
@@ -881,7 +881,7 @@ Host github.com
  Hostname ssh.github.com
  ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
 
-=====/
+===/
 ##ブラウザの起動
 設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
