@@ -850,9 +850,10 @@ sudo apt-get install openmpi*
 sudo apt-get install mpich*
 ##qemuでraspberrypi
 qemu-system-arm -kernel /BANK/OS.img/kernel-qemu  -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda /BANK/OS.img/2013-09-25-wheezy-raspbian.img
-##proxy
-##ハマリポイント: .bash_profile が login時に読まれないので、source 。
-###全般
+
+#proxy
+#ハマリポイント: .bash_profile が login時に読まれないので、source 。
+##全般
 - file: .bash_profile
 /===
 export http_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
@@ -860,7 +861,7 @@ export https_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
 export ftp_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
 export no_proxy=127.0.0.1,*.local,localhost,*.xxx.xx/
 ===/
-###apt
+##apt
 - file: /etc/apt/apt.conf
 /===
 Acquire::http::proxy "http://プロキシサーバー名:ポート番号/";
@@ -868,7 +869,7 @@ Acquire::https::proxy "https://プロキシサーバー名:ポート番号/";
 Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
 Acquire::socks::proxy "socks://プロキシサーバー名:ポート番号/";
 ===/
-###ssh
+##ssh
 - file: ~/.ssh/config
 /=====
 Host N005
@@ -881,7 +882,7 @@ Host github.com
  ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
 
 =====/
-###ブラウザの起動
+##ブラウザの起動
 設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
 #mac OSX
