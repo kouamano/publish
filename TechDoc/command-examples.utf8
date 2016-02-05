@@ -140,6 +140,8 @@ screen -ls
 screen -r
 ##アタッチされているスクリーンデーモンに接続
 screen -rx
+##screenの出タッチ
+[ctrl]
 
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
