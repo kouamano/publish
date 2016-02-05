@@ -140,8 +140,17 @@ screen -ls
 screen -r
 ##アタッチされているスクリーンデーモンに接続
 screen -rx
-##screenの出タッチ
-[ctrl]
+##screenのdetouch
+[ctrl]a d
+##screen内の仮想端末のリスト
+[ctrl]a w
+##screen内に新しい仮想端末を追加
+[ctrl]a c
+##screen内の仮想端末間の移動
+[ctrl]a n
+[ctrl]a p
+
+
 
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
