@@ -661,6 +661,8 @@ nltk.download()
 yum install yum install python-pip
 ###pipを使ったアップグレード
 pip install --upgrade numpy
+###proxy
+pip install <pkg> --proxy=wwwout.xxxx.xx.xx:8888
 
 
 
