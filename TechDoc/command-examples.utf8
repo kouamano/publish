@@ -300,7 +300,9 @@ unset SSH_ASKPASS
 ##kamano利用可能
 
 #GitHubAPI
+- 参考:
 https://developer.github.com/v3/oauth/
+http://qiita.com/KENJU/items/1f02720f1f64c657cc44
 - curl
 curlをつかってのprivateなアクセス法を探す
 -- いくつかの例:
@@ -319,6 +321,7 @@ curl -H "Authorization: token 85d462260f07d15088cfae8e0a151b6931fb91d0" https://
 -- issue情報(とれた!):
 curl -i -u "kouamano:Na11Mg12" https://api.github.com/repos/kouamano/test/issues
 curl -i -u "kouamano:Na11Mg12" https://api.github.com/repos/nims-library/library/issues
+
 
 
 #svn
