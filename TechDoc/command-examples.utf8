@@ -230,6 +230,14 @@ kpartx -dv disk.img
 ##仮想マシンのipaddr
 仮想マシンに login ifconfig
 
+#VirtualBox
+##ホストからゲストにssh接続
+Natでポートフォワーディングを設定する。
+Host port : 2222
+GUest port : 22
+ホストからlogin
+$ ssh -p <ホストポート番号> <ログインユーザー>@localhost	
+
 #wgetの結果を標準出力
 wget http://192.168.0.4/ -O -
 
