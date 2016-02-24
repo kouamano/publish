@@ -716,7 +716,7 @@ ruby setup.rb config
 ruby setup.rb setup
 ruby setup.rb install
 
-#rails
+#Rails
 ##railsのコンソールに接続
 rails console -e production
 ##railsからDBに接続
