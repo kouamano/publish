@@ -229,6 +229,16 @@ umount /mnt/kvmimg
 kpartx -dv disk.img
 ##仮想マシンのipaddr
 仮想マシンに login ifconfig
+##ssh login to vmguest
+### eth address should be created:
+ifconfig #on vmguest
+eth0 ....
+### bridge dev should be created:
+ifconfig #on vmhost
+virbr0 ....
+### ssh from vmhost
+ssh xxx@192.168.122.xxx
+
 
 #VirtualBox
 ##ホストからゲストにssh接続
