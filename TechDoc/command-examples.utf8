@@ -42,13 +42,22 @@ AcceptEnv XMODIFIERS
 ##実体
 /dev/VolGroup00/lv_bank
 
+#NFS server
+/etc/sysconfig/nfsを読み、portを固定、そのportをiptablesで許可する。
+それ以外で許可するportは
+111
+875
+いずれも、tcp/udpを許可しておく。
+どのディレクトリを許可するかは
+/etc/exports
+
 #OSのバージョン
 cat /etc/redhat-release
 
 #ipフォワードのチェック
 cat /proc/sys/net/ipv4/ip_forward
 
-# adding default gateway
+#adding default gateway
 route add default gw <ipaddr>
 
 #selinux
@@ -91,17 +100,6 @@ sudo apt-get update
 ##inheritance of user env
 sudo -E xxx
 
-#X-window
-#設定
-Xorg -configure
-
-#vnc
-##sshでサーバに接続
-vncserver :1 -geometry 1200x800
-##クライアントで接続
-##クライアントでlogoff
-vncserver -kill :1
-
 #xargs
 find ./  | xargs /BANK/PMC/bin/extract-title.pl
 ## オプション -IXXX で、XXXを任意の場所に挿入
@@ -110,6 +108,9 @@ find Ar* | xargs -IF /BANK/PMC/bin/match_position qf=/BANK/Organiztion/RIKEN-BRC
 #lsof
 ##port:3000を利用しているPID
 sudo lsof -i:3000
+
+#logrotate
+priority setting: /etc/logrotate.d/
 
 #split
 split -l `cat split-size` Jour-All.fname Jour-split.
@@ -132,25 +133,6 @@ date -d now
 ##フォーマット指定
 date +"%Y-%m-%d:%H"
 date +"%Y-%m-%d.%H:%M"
-
-#screen
-##スクリーンデーモンリスト
-screen -ls
-##デタッチされているスクリーンデーモンに接続
-screen -r
-##アタッチされているスクリーンデーモンに接続
-screen -rx
-##screenのdetouch
-[ctrl]a d
-##screen内の仮想端末のリスト
-[ctrl]a w
-##screen内に新しい仮想端末を追加
-[ctrl]a c
-##screen内の仮想端末間の移動
-[ctrl]a n
-[ctrl]a p
-
-
 
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
@@ -181,6 +163,7 @@ vim -c ":e ++enc=euc-jp" inedx.html
 5. スーパーユーザー で texconfig コマンドを実行。 REAHSH を選択。これで revtex4.cls にパスが通る。これを実行しないと以下のエラーとなる。
 ! LaTeX Error: File `revtex4.cls' not found.
 6. /usr/local/share/texmf/tex/latex/revtex4/sample/apssamp.tex をコンパイル。\endnoteに対してエラーがでるが、その他はOK。
+
 #dvips
 ##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
@@ -193,14 +176,57 @@ cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/O
 cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OperatingSystem.img/Ubuntu/ubuntu-ja-9.04-desktop-i386.iso
 cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /home/kamano/download/ubuntu-ja-8.10-desktop-i386.iso
 
-#NFS server
-/etc/sysconfig/nfsを読み、portを固定、そのportをiptablesで許可する。
-それ以外で許可するportは
-111
-875
-いずれも、tcp/udpを許可しておく。
-どのディレクトリを許可するかは
-/etc/exports
+
+#wgetの結果を標準出力
+wget http://192.168.0.4/ -O -
+
+#nkfで文字コードを推測する
+nkf -g hoge.txt
+
+#mecab
+mecab -d /usr/share/mecab/dic/mecab-ipadic
+
+#mpage アウトライン無し2page/A4
+mpage -o -2 k_amano.ps > k_amano.mpage.ps
+
+#sorthex.plの使いかた:
+sorthex.pl -f 2 file.txt
+
+#mailコマンドでメイルおくる
+mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
+
+#hexstring2bytecodeの使い方
+#hogeとtmpはおなじはずだがtmpに改行が余計に入っている?
+cat hoge | tofullcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
+
+
+#screen
+##スクリーンデーモンリスト
+screen -ls
+##デタッチされているスクリーンデーモンに接続
+screen -r
+##アタッチされているスクリーンデーモンに接続
+screen -rx
+##screenのdetouch
+[ctrl]a d
+##screen内の仮想端末のリスト
+[ctrl]a w
+##screen内に新しい仮想端末を追加
+[ctrl]a c
+##screen内の仮想端末間の移動
+[ctrl]a n
+[ctrl]a p
+
+#X-window
+#設定
+Xorg -configure
+
+#vnc
+##sshでサーバに接続
+vncserver :1 -geometry 1200x800
+##クライアントで接続
+##クライアントでlogoff
+vncserver -kill :1
 
 #Xen
 ##consoleのアタッチ
@@ -247,28 +273,6 @@ Host port : 2222
 GUest port : 22
 ホストからlogin
 $ ssh -p <ホストポート番号> <ログインユーザー>@localhost	
-
-#wgetの結果を標準出力
-wget http://192.168.0.4/ -O -
-
-#nkfで文字コードを推測する
-nkf -g hoge.txt
-
-#mecab
-mecab -d /usr/share/mecab/dic/mecab-ipadic
-
-#mpage アウトライン無し2page/A4
-mpage -o -2 k_amano.ps > k_amano.mpage.ps
-
-#sorthex.plの使いかた:
-sorthex.pl -f 2 file.txt
-
-#mailコマンドでメイルおくる
-mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
-
-#hexstring2bytecodeの使い方
-#hogeとtmpはおなじはずだがtmpに改行が余計に入っている?
-cat hoge | tofullcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
 
 #GIT
 ##gitのproxy設定: sshのproxy設定参照
