@@ -320,6 +320,14 @@ unset SSH_ASKPASS
 ##git server 構築
 ##n005に構築済みのはず
 ##kamano利用可能
+##GitHub
+- 参照: http://qiita.com/shunjikonishi/items/c5024e70b0878817725f
+###issueの検索
+created / updated / mereged /closed
+ created:<2015-04-01
+ updated:>=2015-04-01T18:00:00+09:00
+ merged:2015-04-01..2015-05-01
+
 
 #GitHubAPI
 - 参考:
