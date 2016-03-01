@@ -954,6 +954,7 @@ Host github.com
 ##ブラウザの起動
 設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
+
 #mac OSX
 ##ファイアウォールの切りかた:
 sysctl -w net.inet.ip.fw.enable=0
@@ -967,11 +968,14 @@ sysctl -w net.inet.ip.fw.enable=0
 ##ソフトウエアアップデート
 sudo softwareupdate -i -a
 ##HomeBrew
-##ライブラリがみつからない的なエラー対応:
+###ライブラリがみつからない的なエラー対応:
 cd /usr/local/Library
 git pull origin master
 brew update
-
+###エラーが出た時
+$ cd `brew --prefix`
+$ git fetch origin
+$ git reset --hard origin/master
 
 
 #NCBIのNXML
