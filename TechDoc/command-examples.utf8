@@ -274,7 +274,7 @@ GUest port : 22
 ホストからlogin
 $ ssh -p <ホストポート番号> <ログインユーザー>@localhost	
 
-#GIT
+#Git
 ##gitのproxy設定: sshのproxy設定参照
 ##gitことはじめ
 https://github.com/
@@ -327,7 +327,6 @@ created / updated / mereged /closed
  created:<2015-04-01
  updated:>=2015-04-01T18:00:00+09:00
  merged:2015-04-01..2015-05-01
-
 
 #GitHubAPI
 - 参考:
