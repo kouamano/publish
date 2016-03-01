@@ -320,9 +320,10 @@ unset SSH_ASKPASS
 ##git server 構築
 ##n005に構築済みのはず
 ##kamano利用可能
-##GitHub
+
+#GitHub
 - 参照: http://qiita.com/shunjikonishi/items/c5024e70b0878817725f
-###issueの検索
+##issueの検索
 created / updated / mereged /closed
  created:<2015-04-01
  updated:>=2015-04-01T18:00:00+09:00
@@ -350,7 +351,6 @@ curl -H "Authorization: token 85d462260f07d15088cfae8e0a151b6931fb91d0" https://
 -- issue情報(とれた!):
 curl -i -u "kouamano:Na11Mg12" https://api.github.com/repos/kouamano/test/issues
 curl -i -u "kouamano:Na11Mg12" https://api.github.com/repos/nims-library/library/issues
-
 
 
 #svn
