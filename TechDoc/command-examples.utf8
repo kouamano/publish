@@ -421,6 +421,7 @@ java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
 - パスワードファイル: /etc/httpd/conf/.htpasswd
 -- コマンド: htpasswd
 - 設定ファイル: <認証させたいDIR>/.htaccess
+- example: htpasswd -b -c -m /etc/httpd/conf/.htpasswd centos centospassos
 /===
 Options +ExecCGI
 AddHandler cgi-script .cgi .py htpasswd
