@@ -95,6 +95,7 @@ apt-get update
 gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
 sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
+##aptのproxy設定 -> #proxy
 
 #sudo
 ##inheritance of user env
@@ -275,7 +276,7 @@ GUest port : 22
 $ ssh -p <ホストポート番号> <ログインユーザー>@localhost	
 
 #Git
-##gitのproxy設定: sshのproxy設定参照
+##gitのproxy設定: sshのproxy設定
 ##gitことはじめ
 https://github.com/
 githubでリポジトリ作成
@@ -931,7 +932,7 @@ export https_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
 export ftp_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
 export no_proxy=127.0.0.1,*.local,localhost,*.xxx.xx/
 ===/
-##apt
+##aptのproxy
 - file: /etc/apt/apt.conf
 /===
 Acquire::http::proxy "http://プロキシサーバー名:ポート番号/";
@@ -939,7 +940,7 @@ Acquire::https::proxy "https://プロキシサーバー名:ポート番号/";
 Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
 Acquire::socks::proxy "socks://プロキシサーバー名:ポート番号/";
 ===/
-##ssh (git)
+##ssh(git)のproxy
 - file: ~/.ssh/config
 /===
 Host N005
@@ -950,7 +951,6 @@ Host N005
 Host github.com
  Hostname ssh.github.com
  ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
-
 ===/
 ##ブラウザの起動
 設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
