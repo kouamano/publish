@@ -1,3 +1,5 @@
 #asahi への login
-komoridoから
+- komoridoから
 ssh asahi -i mbair.ssh/id_rsa
+- VBGuest on negi229 から
+ssh asahi
