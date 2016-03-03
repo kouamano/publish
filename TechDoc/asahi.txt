@@ -1,0 +1,3 @@
+#asahi への login
+komoridoから
+ssh asahi -i mbair.ssh/id_rsa
