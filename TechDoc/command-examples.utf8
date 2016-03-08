@@ -143,6 +143,8 @@ cat refxml.source.shtrim | tr [:lower:] [:upper:]
 #keyboard confiug
 ##Ubuntu
 sudo dpkg-reconfigure keyboard-configuration
+##VirtualBox(windows-host)のハマりポイント
+キボード認識が英語キーボードになっていることがありVBoxにも踏襲される。
 
 #vim
 ##行頭に行番号を挿入
