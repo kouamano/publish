@@ -26,6 +26,8 @@ history 1
 SendEnv XMODIFIERS
 ##リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
+#SCP
+##ハマリポイント: 引数の順番が決まっていて、入れ替えが効かない。当たるまでひたすら引数の順番を変える。
 
 #LVM
 #以下のコマンドあやしい?

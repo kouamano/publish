@@ -1,0 +1,3 @@
+#komoridoへのXフォワード接続
+##Cygwinから
+ssh -Y kamano@komorido
