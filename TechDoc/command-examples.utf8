@@ -140,6 +140,10 @@ date +"%Y-%m-%d.%H:%M"
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
 
+#keyboard confiug
+##Ubuntu
+sudo dpkg-reconfigure keyboard-configuration
+
 #vim
 ##行頭に行番号を挿入
 :%s/^/\=line('.').'^I'/
@@ -276,7 +280,7 @@ Host port : 2222
 GUest port : 22
 ホストからlogin
 $ ssh -p <ホストポート番号> <ログインユーザー>@localhost
-##macのハマりポイント
+##mac(ホスト)のハマりポイント
 キーボード入力
 
 #Git
