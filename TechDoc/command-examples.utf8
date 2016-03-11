@@ -284,6 +284,8 @@ GUest port : 22
 $ ssh -p <ホストポート番号> <ログインユーザー>@localhost
 ##mac(ホスト)のハマりポイント
 キーボード入力
+##デバイスにコピーイメージをアサインできない
+http://www.webzoit.net/hp/it/internet/homepage/env/cs/virtual_machine/move_copy/
 
 #Git
 ##gitのproxy設定 -> ##sshのproxy設定
