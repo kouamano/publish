@@ -976,6 +976,13 @@ Host Supernig
 設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
 
+#FreeBSD
+##iscsi target setting file
+/etc/ctl.conf
+
+#cygwin
+
+
 #mac OSX
 ##Xのハマりポイント
 ###ssh -X
@@ -1038,4 +1045,3 @@ HTTPメソッド: get
 追加のパラメータ:
 注記: 
 
-#cygwin
