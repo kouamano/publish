@@ -353,17 +353,17 @@ curl https://github.com/kouamano/test/issues
 curl https://api.github.con/users/kouamano
 curl -i -u 自分のユーザ名 https://api.github.com/users/ユーザ名
 curl -i -u kouamano https://api.github.com/users/kouamano
-curl -i -u "kouamano:Na11Mg12" https://api.github.com/users/nims-library
-curl -i -u "kouamano:Na11Mg12" https://api.github.com/users/kouamano
-curl -i -u "kouamano:Na11Mg12" https://github.com/kouamano/test
-curl -i -u "kouamano:Na11Mg12" https://github.com/kouamano/test/issues
-curl -i -u "kouamano:Na11Mg12" https://github.com/nims-library/samurai2
-curl -i -u "kouamano:Na11Mg12" https://github.com/nims-library/ninja/issues - 404
+curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library
+curl -i -u "kouamano:<pass>" https://api.github.com/users/kouamano
+curl -i -u "kouamano:<pass>" https://github.com/kouamano/test
+curl -i -u "kouamano:<pass>" https://github.com/kouamano/test/issues
+curl -i -u "kouamano:<pass>" https://github.com/nims-library/samurai2
+curl -i -u "kouamano:<pass>" https://github.com/nims-library/ninja/issues - 404
 -- ユーザー情報(token使用):
-curl -H "Authorization: token 85d462260f07d15088cfae8e0a151b6931fb91d0" https://api.github.com/user
+curl -H "Authorization: token <token>" https://api.github.com/user
 -- issue情報(とれた!):
-curl -i -u "kouamano:Na11Mg12" https://api.github.com/repos/kouamano/test/issues
-curl -i -u "kouamano:Na11Mg12" https://api.github.com/repos/nims-library/library/issues
+curl -i -u "kouamano:<pass>" https://api.github.com/repos/kouamano/test/issues
+curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/issues
 
 
 #svn
