@@ -1,7 +1,9 @@
 #icinga2
+##document
+https://www.youtube.com/watch?v=tGhGmWrYpVM
+##sequence
 - install
  http://packages.icinga.org/epel/
-
 - setup
 -- Mysql
  local:/usr/share/icinga2-ido-mysql/schema/
