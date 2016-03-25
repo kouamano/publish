@@ -4,5 +4,6 @@
 
 - setup
 -- Mysql
+ local:/usr/share/icinga2-ido-mysql/schema/
 - start
 - watch
