@@ -1,0 +1,8 @@
+#icinga2
+- install
+ http://packages.icinga.org/epel/
+
+- setup
+-- Mysql
+- start
+- watch
