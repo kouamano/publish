@@ -966,11 +966,18 @@ Host github.com
 
 Host hokusai
  Hostname hokusai
- Proxycommand /usr/bin/nc -X connect -x wwwout.nims.go.jp:8888 %h %p
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
 
 Host Supernig
  Hostname gw.ddbj.nig.ac.jp
- Proxycommand /usr/bin/nc -X connect -x wwwout.nims.go.jp:8888 %h %p
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
+===/
+##using port 443 for git
+/===
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
 ===/
 ##ブラウザの起動
 設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
