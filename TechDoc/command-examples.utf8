@@ -341,6 +341,10 @@ created / updated / mereged /closed
  created:<2015-04-01
  updated:>=2015-04-01T18:00:00+09:00
  merged:2015-04-01..2015-05-01
+###特定のユーザーのリポジトリの検索
+user:kouamano cvi
+###所属するorganizationののリポジトリの検索
+org:nims-library nimspapers
 
 #GitHubAPI
 - 参考:
