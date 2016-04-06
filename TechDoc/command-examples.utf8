@@ -272,7 +272,7 @@ eth0 ....
 ifconfig #on vmhost
 virbr0 ....
 ### ssh from vmhost
-ssh xxx@192.168.122.xxx
+ssh xxx@192.168.122.xxx (ethx on vmguest)
 
 
 #VirtualBox
