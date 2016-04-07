@@ -351,23 +351,27 @@ org:nims-library nimspapers
 https://developer.github.com/v3/oauth/
 http://qiita.com/KENJU/items/1f02720f1f64c657cc44
 - curl
-curlをつかってのprivateなアクセス法を探す
--- いくつかの例:
+-- tokenを使わない例:
+--- ユーザー/組織情報
+curl https://api.github.con/users/kouamano - 503
+curl -i -u 自分のユーザ名 https://api.github.com/users/ユーザ名 ##ユーザー情報
+curl -i -u kouamano https://api.github.com/users/kouamano ##ユーザー情報
+curl -i -u "kouamano:<pass>" https://api.github.com/users/kouamano ##ユーザー情報
+curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library ##組織情報
+--- リポジトリ情報
+curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library/repos ##リポジトリ情報、プライベート以外
+curl -i -u "kouamano:<pass>" https://api.github.com/orgs/nims-library/repos ##リポジトリ情報、プライベート含む
+--- issue情報
 curl https://github.com/kouamano/test/issues
-curl https://api.github.con/users/kouamano
-curl -i -u 自分のユーザ名 https://api.github.com/users/ユーザ名
-curl -i -u kouamano https://api.github.com/users/kouamano
-curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library
-curl -i -u "kouamano:<pass>" https://api.github.com/users/kouamano
 curl -i -u "kouamano:<pass>" https://github.com/kouamano/test
 curl -i -u "kouamano:<pass>" https://github.com/kouamano/test/issues
 curl -i -u "kouamano:<pass>" https://github.com/nims-library/samurai2
 curl -i -u "kouamano:<pass>" https://github.com/nims-library/ninja/issues - 404
--- ユーザー情報(token使用):
-curl -H "Authorization: token <token>" https://api.github.com/user
--- issue情報(とれた!):
 curl -i -u "kouamano:<pass>" https://api.github.com/repos/kouamano/test/issues
 curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/issues
+
+-- token使用例:
+curl -H "Authorization: token <token>" https://api.github.com/user
 
 
 #svn
