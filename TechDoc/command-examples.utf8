@@ -361,6 +361,7 @@ curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library ##組織�
 --- リポジトリ情報
 curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library/repos ##リポジトリ情報、プライベート以外
 curl -i -u "kouamano:<pass>" https://api.github.com/orgs/nims-library/repos ##リポジトリ情報、プライベート含む
+curl -i -u "kouamano:<pass>" https://api.github.com/orgs/nims-library/repos | /home/kamano/gitsrc/JSONOP/git_ReponameFromRepolist.pl ##リポジトリ名のみ取得
 --- issue情報
 curl https://github.com/kouamano/test/issues
 curl -i -u "kouamano:<pass>" https://github.com/kouamano/test
