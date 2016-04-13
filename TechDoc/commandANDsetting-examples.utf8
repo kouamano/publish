@@ -265,6 +265,11 @@ umount /mnt/kvmimg
 kpartx -dv disk.img
 ##仮想マシンのipaddr
 仮想マシンに login ifconfig
+## to kill guest virbr0
+virsh net-destroy default
+virsh net-autostart default --disable
+virsh net-list --all #check
+
 ##ssh login to vmguest
 ### eth address should be created:
 ifconfig #on vmguest
