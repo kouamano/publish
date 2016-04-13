@@ -974,6 +974,7 @@ Host N005
 
 Host github.com
  Hostname ssh.github.com
+ Port 443
  ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
 
 Host hokusai
