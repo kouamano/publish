@@ -16,7 +16,8 @@ for f in *; do echo $f ;& done
 ###read の対象ファイル名にバックスラッシュを含む場合の処理(-rオプション)
 while read -r fname ...
 
-#zshでのhistory
+#zsh
+##zshでのhistory
 history 1
 で全履歴。
 
@@ -273,9 +274,8 @@ ifconfig #on vmhost
 virbr0 ....
 ### ssh from vmhost
 ssh xxx@192.168.122.xxx (ethx on vmguest)
-## when vmguest is disorder
-- e.g. stop at proxy server
--- to solve : reboot of VMG and VMH
+## when vmguest network is disorder
+- to solve : reboot of VMG and VMH
 
 
 #VirtualBox
