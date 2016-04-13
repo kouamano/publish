@@ -461,6 +461,8 @@ cd /usr/local/lucene-4.10.0
 mkdir src
 ##デモ(srcが空なので何もインデックスされない)(root):
 java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
+##switch Java version
+alternatives --config java
 
 #apache http server
 ##Basic認証
