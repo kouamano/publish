@@ -469,6 +469,8 @@ mkdir src
 java org.apache.lucene.demo.IndexFiles -docs /usr/local/lucene-4.10.0/src
 ##switch Java version
 alternatives --config java
+##setting nonProxy
+-Dhttp.nonProxyHosts=localhost|127.0.0.1|10.0.*.*
 
 #apache http server
 ##Basic認証
