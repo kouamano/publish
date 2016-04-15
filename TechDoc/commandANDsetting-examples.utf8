@@ -303,7 +303,10 @@ IPV6_PEERDNS=yes
 IPV6_PEERROUTES=yes
 IPV6_PRIVACY=no
 ===/
-
+##ゲストのネットワークが落ちる問題
+- 複数のゲストを起動中に落ちる
+- libvirtdの再起動とゲストの再起動で復帰
+- 原因はホストのDHCP機能?
 
 #VirtualBox
 ##ホストからゲストにssh接続
