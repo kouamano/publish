@@ -191,6 +191,8 @@ cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /home/kama
 wget http://192.168.0.4/ -O -
 ##no proxy
 wget --no-proxy
+##port
+wget http://xxx.xxx.xxx:8080/home/
 
 #nkfで文字コードを推測する
 nkf -g hoge.txt
