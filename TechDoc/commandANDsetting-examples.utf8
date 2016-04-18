@@ -30,6 +30,12 @@ AcceptEnv XMODIFIERS
 #SCP
 ##ハマリポイント: 引数の順番が決まっていて、入れ替えが効かない。当たるまでひたすら引数の順番を変える。
 
+#FireWall
+##firewalld: CentOS7
+systemctl enable firewalld
+systemctl start firewalld
+firewall-cmd --permanent --zone=public --addport=8080/tcp
+
 #LVM
 #以下のコマンドあやしい?
 ##pvcreate
