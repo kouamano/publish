@@ -897,14 +897,14 @@ $PGDATAディレクトリ以下のふたつのファイル
 pg_hba.conf
 postgresql.conf
 をそれぞれ書き換え:
-##pg_hba.conf の書き換え:
+###pg_hba.conf の書き換え:
 /===
 # host       DATABASE  USER  CIDR-ADDRESS  METHOD  [OPTION]
 ---
 host       all  all  192.168.0.5  255.255.255.255 trust
 ===/
 
-##postgresql.conf の書き換え:
+###postgresql.conf の書き換え:
 /===
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
 ---
