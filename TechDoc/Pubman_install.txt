@@ -11,4 +11,5 @@ Pubman 7.8.2 (http://pubman.mpdl.mpg.de/software/get_pubman/download.html)
 3. install
 インストールマニュアル: Installation_Guidelines_PubMan_7.8.pdf
 - 5.17 (20160718)
+ 現在の状況: アイテムを登録できない(depositor)
 - 5.18
