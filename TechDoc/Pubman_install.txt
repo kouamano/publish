@@ -4,5 +4,11 @@ Pubman 7.8.2 (http://pubman.mpdl.mpg.de/software/get_pubman/download.html)
 - pubman : pubman
 - escidoc : escidoc core
 
+2. requirement
 - innstaller : http://pubman.mpdl.mpg.de/software/get_pubman/pubman_installer-standard.jar
-- Java 
+- Java  openJDK 1.7
+
+3. install
+インストールマニュアル: Installation_Guidelines_PubMan_7.8.pdf
+- 5.17 (20160718)
+- 5.18
