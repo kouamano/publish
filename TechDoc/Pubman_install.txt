@@ -1,0 +1,8 @@
+Pubman 7.8.2 (http://pubman.mpdl.mpg.de/software/get_pubman/download.html)
+
+1. node
+- pubman : pubman
+- escidoc : escidoc core
+
+- innstaller : http://pubman.mpdl.mpg.de/software/get_pubman/pubman_installer-standard.jar
+- Java 
