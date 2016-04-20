@@ -1,15 +1,21 @@
 Pubman 7.8.2 (http://pubman.mpdl.mpg.de/software/get_pubman/download.html)
 
 1. node
+2ノードにインストール
 - pubman : pubman
-- escidoc : escidoc core
+- escidoc : escidoc-core
 
 2. requirement
+2.1 pubman
 - innstaller : http://pubman.mpdl.mpg.de/software/get_pubman/pubman_installer-standard.jar
 - Java  openJDK 1.7
+2.2 escidoc
+- installer : http://www.escidoc.org/software/builds/stable-releases/1.3.9/escidoc-core-1.3.9-installer.jar
+- Java JDK 1.6
 
 3. install
 インストールマニュアル: Installation_Guidelines_PubMan_7.8.pdf
+- 4. #escidocのインストール
 - 5.17 (20160418)
  現在の状況: アイテムを登録できない(depositor)
 - 5.18 (20160420)
