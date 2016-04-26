@@ -19,6 +19,9 @@ Pubman 7.8.2 (http://pubman.mpdl.mpg.de/software/get_pubman/download.html)
 - 5.17 (20160418)
  現在の状況: アイテムを登録できない(depositor)
 - 5.18 (20160420)
+- 5.22
  設定ファイルのコピー
  pubman_installer-standard.jar を解凍したときのファイル itemContainerAdminXmlToLucene.xslt ; mpdlEscidocXmlToLucene.xslt を escidocノードの escidoc/jboss/server/default/conf/search/config/index/item_container_admin/ 以下にコピー (同名のファイルあり)
 
+2. satrt
+pubman:/home/kamano/pubman/wildfly-8.1.0.Final/bin/standalone.sh -b 0.0.0.0
