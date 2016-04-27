@@ -1,3 +1,7 @@
+#SELinux
+##change context
+chcon unconfined_u:object_r:httpd_user_content_t:s0 CharacteristicsOfEigen.nb
+
 #bash
 ##タブの入力
 [Ctrl]v [tab]
