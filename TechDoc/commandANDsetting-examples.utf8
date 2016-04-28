@@ -493,7 +493,9 @@ alternatives --config java
 ##setting nonProxy
 -Dhttp.nonProxyHosts=localhost|127.0.0.1|10.0.*.*
 
-#apache http server
+#Apache http server
+##Reverse Proxy
+-  参考ページ: http://www.rickynews.com/blog/2014/08/25/why-you-need-to-use-reverse-proxy/
 ##Basic認証
 - パスワードファイル: /etc/httpd/conf/.htpasswd
 -- コマンド: htpasswd
