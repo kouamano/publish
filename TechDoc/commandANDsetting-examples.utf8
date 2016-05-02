@@ -1,3 +1,5 @@
+(**** Linuxを中心としたまとめドキュメント ****)
+
 #SELinux
 ##change context
 chcon unconfined_u:object_r:httpd_user_content_t:s0 CharacteristicsOfEigen.nb
@@ -63,6 +65,12 @@ firewall-cmd --permanent --zone=public --addport=8080/tcp
 いずれも、tcp/udpを許可しておく。
 どのディレクトリを許可するかは
 /etc/exports
+
+#iSCSI
+##どのデバイスがどのサーバ(ターゲット)から提供されているか？
+- サーバー側の設定(/etc/tgt/targets.conf)を見るしかない?
+##FreeBSDでのターゲットの設定ファイル:
+/etc/ctl.conf
 
 #OSのバージョン
 cat /etc/redhat-release
@@ -1055,9 +1063,6 @@ Host github.com
 設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
 
-#FreeBSD
-##iscsi target setting file
-/etc/ctl.conf
 
 #cygwin
 
