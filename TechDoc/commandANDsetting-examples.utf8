@@ -345,7 +345,7 @@ $ ssh -p <ホストポート番号> <ログインユーザー>@localhost
 http://www.webzoit.net/hp/it/internet/homepage/env/cs/virtual_machine/move_copy/
 
 #Git
-##gitのproxy設定 -> ##sshのproxy設定
+##gitのproxy設定 -> ##ssh(git)のproxy
 ##gitことはじめ
 https://github.com/
 githubでリポジトリ作成
