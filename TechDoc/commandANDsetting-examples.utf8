@@ -88,7 +88,7 @@ route add default gw <ipaddr>
 ##ドキュメント
 - http://www.unix-power.net/linux/iscsi.html
 ##どのデバイスがどのサーバ(ターゲット)から提供されているか？
-- クライアント側のdmesgを見るしかない?
+- イニシエータからloginしたときに表示されるのみ?
 ##FreeBSDでのターゲットの設定ファイル:
 /etc/ctl.conf
 
