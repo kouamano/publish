@@ -1,8 +1,20 @@
 (**** Linuxを中心としたまとめドキュメント ****)
 
+#OSのバージョン
+cat /etc/redhat-release
+
 #SELinux
 ##change context
 chcon unconfined_u:object_r:httpd_user_content_t:s0 CharacteristicsOfEigen.nb
+##make .te file using  audit2allow
+audit2allow -a -l -m local
+audit2allow -i audit.mail -l -m sendmail
+##semodule working dir
+/usr/share/selinux/devel
+##メッセージの探し方:
+まず、ファイル: /var/log/messages を見て、
+sealert -l <ID>
+でメッセージを見る
 
 #bash
 ##タブの入力
@@ -41,6 +53,12 @@ AcceptEnv XMODIFIERS
 systemctl enable firewalld
 systemctl start firewalld
 firewall-cmd --permanent --zone=public --addport=8080/tcp
+##ipフォワードのチェック
+cat /proc/sys/net/ipv4/ip_forward
+
+#Gateway
+##adding default gateway
+route add default gw <ipaddr>
 
 #LVM
 #以下のコマンドあやしい?
@@ -57,7 +75,7 @@ firewall-cmd --permanent --zone=public --addport=8080/tcp
 ##実体
 /dev/VolGroup00/lv_bank
 
-#NFS server
+#NFS
 /etc/sysconfig/nfsを読み、portを固定、そのportをiptablesで許可する。
 それ以外で許可するportは
 111
@@ -67,30 +85,12 @@ firewall-cmd --permanent --zone=public --addport=8080/tcp
 /etc/exports
 
 #iSCSI
+##ドキュメント
+- http://www.unix-power.net/linux/iscsi.html
 ##どのデバイスがどのサーバ(ターゲット)から提供されているか？
-- サーバー側の設定(/etc/tgt/targets.conf)を見るしかない?
+- クライアント側のdmesgを見るしかない?
 ##FreeBSDでのターゲットの設定ファイル:
 /etc/ctl.conf
-
-#OSのバージョン
-cat /etc/redhat-release
-
-#ipフォワードのチェック
-cat /proc/sys/net/ipv4/ip_forward
-
-#adding default gateway
-route add default gw <ipaddr>
-
-#selinux
-##make .te file using  audit2allow
-audit2allow -a -l -m local
-audit2allow -i audit.mail -l -m sendmail
-##semodule working dir
-/usr/share/selinux/devel
-##メッセージの探し方:
-##まず、ファイル: /var/log/messages を見て、
-##sealert -l <ID>
-##でメッセージを見る
 
 #yumのデータベースからエントリを削除
 yum --tsflags=justdb remove 'scim*'
@@ -116,7 +116,7 @@ apt-get update
 gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
 sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
-##aptのproxy設定 -> #proxy
+##aptのproxy設定 -> ##aptのproxy
 
 #sudo
 ##inheritance of user env
@@ -159,7 +159,7 @@ date +"%Y-%m-%d.%H:%M"
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
 
-#keyboard confiug
+#keyboard config
 ##Ubuntu
 sudo dpkg-reconfigure keyboard-configuration
 ##VirtualBox(windows-host)のハマりポイント
@@ -204,8 +204,8 @@ cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/O
 cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OperatingSystem.img/Ubuntu/ubuntu-ja-9.04-desktop-i386.iso
 cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /home/kamano/download/ubuntu-ja-8.10-desktop-i386.iso
 
-
-#wgetの結果を標準出力
+#wget
+##wgetの結果を標準出力
 wget http://192.168.0.4/ -O -
 ##no proxy
 wget --no-proxy
@@ -230,7 +230,6 @@ mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
 #hexstring2bytecodeの使い方
 #hogeとtmpはおなじはずだがtmpに改行が余計に入っている?
 cat hoge | tofullcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
-
 
 #screen
 ##スクリーンデーモンリスト
@@ -431,7 +430,6 @@ curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/i
 -- token使用例:
 curl -H "Authorization: token <token>" https://api.github.com/user
 
-
 #svn
 ##svn リポジトリ作成 (サーバ側)
 svnadmin create /usr/local/var/svn/repos/ArticleMatchSystem
@@ -563,7 +561,7 @@ digraph sample3 {
  form -> confirm [ dir = both ];
  confirm -> finish;
 }
-##graphviz
+##graphviz:dotの例:
 dot -Kdot -Tsvg sample3.utf.dot -o sample3.utf.svg
 dot -Kdot -Tps test2.utf.dot -o test.ps 
 
@@ -715,7 +713,6 @@ int main(){
         return(0);
 }
 ===/
-
 ##C言語高精度タイマの例:
 /===
 #include <stdlib.h>
@@ -733,10 +730,8 @@ int main(int atgc, char **argv){
         return(0);
 }
 ===/
-
 ##C言語のtime_t
 は、long int
-
 
 #perl
 ##perlの区切り文字:
@@ -783,7 +778,6 @@ while($txt =~ /computer/g){
 ##さらにそのポジションを変更
 pos($txt) = $p - length($1);
 
-
 #python
 ##定義のロード
 execfile(<ファイル名>)
@@ -807,23 +801,20 @@ pip install --upgrade numpy
 pip install <pkg> --proxy=wwwout.xxxx.xx.xx:8888
 
 
-
-#rubygemsのインストール
+#Ruby
+##rubygemsのインストール
 tar zxvf rubygems-1.0.1.tgz
 cd rubygems-1.0.1
 ruby setup.rb config
 ruby setup.rb setup
 ruby setup.rb install
-
 #Rails
 ##railsのコンソールに接続
 rails console -e production
 ##railsからDBに接続
 rails dbconsole -e production
 
-
-
-#POSTGRES
+#Postgresql
 ##postgres初期化(1)
 []# su - postgres
 []#initdb
@@ -951,6 +942,55 @@ java -jar /usr/local/BerkleyParser/BerkeleyParser-1.7.jar -gr /usr/local/Berkley
 ## example:
 java -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt 
 
+#proxy
+#ハマリポイント: .bash_profile が login時に読まれないので、source 。
+##全般
+- file: .bash_profile
+/===
+export http_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
+export https_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
+export ftp_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
+export no_proxy=127.0.0.1,*.local,localhost,*.xxx.xx/
+===/
+##aptのproxy
+- file: /etc/apt/apt.conf
+/===
+Acquire::http::proxy "http://プロキシサーバー名:ポート番号/";
+Acquire::https::proxy "https://プロキシサーバー名:ポート番号/";
+Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
+Acquire::socks::proxy "socks://プロキシサーバー名:ポート番号/";
+===/
+##ssh(git)のproxy
+- file: ~/.ssh/config
+/===
+Host N005
+ hostname 134.160.xx.xx
+ User kxxxx
+ ProxyCommand /bin/nc -x sock.xxx.xxx.xx:xxxx %h %p
+
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+ ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
+
+Host hokusai
+ Hostname hokusai
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
+
+Host Supernig
+ Hostname gw.ddbj.nig.ac.jp
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
+===/
+##using port 443 for git
+/===
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
+===/
+##ブラウザの起動
+設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
+
 
 
 #RIKEN RICC
@@ -1012,59 +1052,6 @@ sudo apt-get install openmpi*
 sudo apt-get install mpich*
 ##qemuでraspberrypi
 qemu-system-arm -kernel /BANK/OS.img/kernel-qemu  -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda /BANK/OS.img/2013-09-25-wheezy-raspbian.img
-
-#proxy
-#ハマリポイント: .bash_profile が login時に読まれないので、source 。
-##全般
-- file: .bash_profile
-/===
-export http_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
-export https_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
-export ftp_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
-export no_proxy=127.0.0.1,*.local,localhost,*.xxx.xx/
-===/
-##aptのproxy
-- file: /etc/apt/apt.conf
-/===
-Acquire::http::proxy "http://プロキシサーバー名:ポート番号/";
-Acquire::https::proxy "https://プロキシサーバー名:ポート番号/";
-Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
-Acquire::socks::proxy "socks://プロキシサーバー名:ポート番号/";
-===/
-##ssh(git)のproxy
-- file: ~/.ssh/config
-/===
-Host N005
- hostname 134.160.xx.xx
- User kxxxx
- ProxyCommand /bin/nc -x sock.xxx.xxx.xx:xxxx %h %p
-
-Host github.com
- Hostname ssh.github.com
- Port 443
- ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
-
-Host hokusai
- Hostname hokusai
- Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
-
-Host Supernig
- Hostname gw.ddbj.nig.ac.jp
- Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
-===/
-##using port 443 for git
-/===
-Host github.com
- Hostname ssh.github.com
- Port 443
- Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
-===/
-##ブラウザの起動
-設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
-
-
-
-#cygwin
 
 
 #mac OSX
@@ -1128,6 +1115,7 @@ HTTPメソッド: get
 クエリパラメータ: q
 追加のパラメータ:
 注記: 
+
 
 #MS-excel
 ##get the list of sheets
