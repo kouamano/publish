@@ -826,6 +826,8 @@ rails dbconsole -e production
 []$ pg_ctl start -D /BANK/pgsql/8.1
 []$ createdb test
 []$ psql test	#接続
+##list DB
+psql -l
 ##connection test
 psql template1 -h localhost -p 5432 -U postgres
 ##システムカタログ
