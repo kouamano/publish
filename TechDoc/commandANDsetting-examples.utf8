@@ -826,11 +826,14 @@ rails dbconsole -e production
 []$ pg_ctl start -D /BANK/pgsql/8.1
 []$ createdb test
 []$ psql test	#接続
-##list DB
-psql -l
 ##connection test
 psql template1 -h localhost -p 5432 -U postgres
 ##システムカタログ
+###list DB
+[] psql
+=# select * from pg_database;
+ OR
+[] psql -l
 ###カラム名
 select * from pg_attribute;
 ###特定のテーブルのカラム名
