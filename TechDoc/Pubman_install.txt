@@ -32,8 +32,13 @@ pubman: systemctl start postgresql
 pubman:/home/kamano/pubman/wildfly-8.1.0.Final/bin/standalone.sh -b 0.0.0.0
 
 #Check
+- DB
 @pubman: psql -l 
 ...
  cone   | postgres | UTF8    | ja_JP.UTF-8 | ja_JP.UTF8  |
 ...
+- 登録
+書誌情報の登録 - OK
+ファイルのアップロード - NG
 @Pubman: cannot registor item: The given mime type is not valid. 
+ mime-typeがマッチしないため登録できない
