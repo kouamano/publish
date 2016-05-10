@@ -22,9 +22,10 @@ Pubman 7.8.2 (http://pubman.mpdl.mpg.de/software/get_pubman/download.html)
 - 5.18 (20160420)
 - 5.22
  設定ファイルのコピー
+ /home/kamano/Pubman_install/ 配下に展開
  pubman_installer-standard.jar を解凍したときのファイル itemContainerAdminXmlToLucene.xslt ; mpdlEscidocXmlToLucene.xslt を escidocノードの escidoc/jboss/server/default/conf/search/config/index/item_container_admin/ 以下にコピー (同名のファイルあり)
 
-4. satrt
+4. start
 escidoc: systemctl start postgresql
 escidoc:/home/kamano/escidoc/jbpss/bin/run.sh -b 0.0.0.0
 pubman: systemctl start postgresql
