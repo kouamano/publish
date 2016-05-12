@@ -815,6 +815,11 @@ ruby setup.rb install
 rails console -e production
 ##railsからDBに接続
 rails dbconsole -e production
+##try
+tryをつかうと
+/home/kamano/gist/xml2tsv.rb:14:in `block in <main>': undefined method `try' for nil:NilClass (NoMethodError)
+-> require 'active_support/core_ext/object/try'
+
 
 #Postgresql
 ##postgres初期化(1)
