@@ -274,6 +274,8 @@ virt-install --name=SL62 --ram=2000 --vcpus=1 --location='/ARCHIVE/OS/SL62/SL-62
 ##コンソールリスト
 sudo su -
 virsh list --all
+##start
+virsh start cent7
 ##コンソール接続
 virsh -c qemu:///system console sl62
 virsh console sl62
