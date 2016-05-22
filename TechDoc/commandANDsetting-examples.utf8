@@ -47,6 +47,8 @@ SendEnv XMODIFIERS
 AcceptEnv XMODIFIERS
 #SCP
 ##ハマリポイント: 引数の順番が決まっていて、入れ替えが効かない。当たるまでひたすら引数の順番を変える。
+##ポート設定のオプション
+-P : 大文字のP(sshとおぷしょんがちがう)
 
 #FireWall
 ##firewalld: CentOS7
@@ -338,8 +340,8 @@ IPV6_PRIVACY=no
 #VirtualBox
 ##ホストからゲストにssh接続
 Natでポートフォワーディングを設定する。
-Host port : 2222
-GUest port : 22
+Host port : 2223
+Guest port : 22
 ホストからlogin
 $ ssh -p <ホストポート番号> <ログインユーザー>@localhost
 ##mac(ホスト)のハマりポイント
