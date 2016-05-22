@@ -1141,7 +1141,7 @@ bundle exec foreman stat
 /===
 gem 'enju_biblio', '~> 0.2.0.beta.1', github: 'next-l/enju_biblio', branch: '1.2'
 ===/
-##インデクシング
+##再インデクシング
 RAILS_ENV=production rake sunspot:solr:reindex
 ##アタッチメント(PDF)のインデクシング
 1. solrをだうんろーど
