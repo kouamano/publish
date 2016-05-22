@@ -1135,6 +1135,21 @@ HTTPメソッド: get
 cd /home/kamano/your_enju
 bundle exec foreman stat
  port 3000でサービス
+##Gemfile: 設定ファイル
+モジュールの読み込みを行う
+たとえば、'enju_biblio'をgithubから直接読み込む設定など
+/===
+gem 'enju_biblio', '~> 0.2.0.beta.1', github: 'next-l/enju_biblio', branch: '1.2'
+===/
+##インデクシング
+RAILS_ENV=production rake sunspot:solr:reindex
+##アタッチメント(PDF)のインデクシング
+1. solrをだうんろーど
+2. 展開 > solr-5.5.1/
+3. cp solr-5.5.1/dist/solr-cell-5.5.1.jar /home/kamano/your_enju/solr/lib/
+4. cp solr-5.5.1/contrib/extraction/lib/* /home/kamano/your_enju/solr/lib/
+5. enjuをりすたーと
+6. チェック: $ curl "http://localhost:8983/solr/default/update/extract?extractOnly=true&wt=ruby" -F "myfile=@example.pdf"
 
 
 #MS-excel
