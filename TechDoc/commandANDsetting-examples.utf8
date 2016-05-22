@@ -1129,6 +1129,10 @@ HTTPメソッド: get
 クエリパラメータ: q
 追加のパラメータ:
 注記: 
+##サービススタート
+cd /home/kamano/your_enju
+bundle exec foreman stat
+ port 3000でサービス
 
 
 #MS-excel
