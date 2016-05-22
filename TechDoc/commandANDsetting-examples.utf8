@@ -1150,6 +1150,12 @@ RAILS_ENV=production rake sunspot:solr:reindex
 4. cp solr-5.5.1/contrib/extraction/lib/* /home/kamano/your_enju/solr/lib/
 5. enjuをりすたーと
 6. チェック: $ curl "http://localhost:8983/solr/default/update/extract?extractOnly=true&wt=ruby" -F "myfile=@example.pdf"
+7. indexing
+7.1 rails c production
+7.2 a=Manifestation.find(4)
+7.3 a.extract_text
+7.4 a.save
+7.5 a.index!
 
 
 #MS-excel
