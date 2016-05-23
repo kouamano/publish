@@ -41,9 +41,9 @@ history 1
 
 #SSH
 ##Xのトンネリングでかな漢字変換を有効にする
-##ローカル側の /etc/ssh/ssh_configに
+ローカル側の /etc/ssh/ssh_configに
 SendEnv XMODIFIERS
-##リモート側の /etc/ssh/sshd_configに
+リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
 ##port 443を使う
 sshd_config:
