@@ -45,6 +45,30 @@ history 1
 SendEnv XMODIFIERS
 ##リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
+##port 443を使う
+sshd_config:
+/===
+Port 22
+Port 443
+===/
+SELinux:
+/===
+[root@n007 etc]# semanage port -a -t ssh_port_t -p tcp 443
+/usr/sbin/semanage: ポート tcp/443 はすでに定義されています
+[root@n007 etc]# semanage port -d -t http_port_t -p tcp 443
+libsemanage.get_users: user xguest not in password file
+[root@n007 etc]# semanage port -m -t ssh_port_t -p tcp 443
+libsemanage.get_users: user xguest not in password file
+[root@n007 etc]# semanage port -l | grep ssh
+ssh_port_t                     tcp      443, 22
+[root@n007 etc]# setenforce 0
+[root@n007 etc]# setenforce 1
+[root@n007 etc]# service sshd restart
+sshd を停止中:                                             [  OK  ]
+sshd を起動中:                                             [  OK  ]
+[root@n007 etc]# getenforce
+Enforcing
+===/
 #SCP
 ##ハマリポイント: 引数の順番が決まっていて、入れ替えが効かない。当たるまでひたすら引数の順番を変える。
 ##ポート設定のオプション
