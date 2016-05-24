@@ -843,8 +843,12 @@ ruby setup.rb install
 rails new <application_name> -d postgresql
 ##モデルの作成
 rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
+##DB定義の場所
+db/migrate/*.rb
 ##migration
 rails db:migration
+##サービスのスタート
+rails s -b 0.0.0.0
 ##railsのコンソールに接続
 rails console -e production
 ##railsからDBに接続
