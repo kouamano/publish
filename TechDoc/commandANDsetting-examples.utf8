@@ -845,6 +845,18 @@ ruby setup.rb install
 rails new <application_name> -d postgresql
 ##モデルの作成
 rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
+##sunspotrailsのインストール
+- file: Gemfile
+/===
+gem 'sunspot_rails'
+gem 'sunspot_solr' 
+===/
+- バンドル
+bundle install
+- コンフィグファイルの生成:
+rails generate sunspot_rails:install
+- solrの起動:
+bundle exec rake sunspot:solr:start
 ##DB定義の場所
 db/migrate/*.rb
 ##migration
