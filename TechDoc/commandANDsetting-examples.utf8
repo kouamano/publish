@@ -858,6 +858,8 @@ bundle install
 rails generate sunspot_rails:install
 - solrの起動:
 bundle exec rake sunspot:solr:start
+##solrの再インデックス
+bundle exec rake sunspot:solr:reindex
 ##DB定義の場所
 db/migrate/*.rb
 ##migration
