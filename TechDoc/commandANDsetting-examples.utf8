@@ -854,6 +854,9 @@ rake db:migrate
 rails runner <script> <引数>
 ##サービスのスタート
 rails s -b 0.0.0.0
+##railsからDBのエントリの全ケシ
+rails c ##コンソール
+<model>.destroy_all
 ##railsのコンソールに接続
 rails console -e production
 ##railsからDBに接続
