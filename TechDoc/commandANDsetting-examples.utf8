@@ -856,6 +856,8 @@ gem 'sunspot_solr'
 bundle install
 - コンフィグファイルの生成:
 rails generate sunspot_rails:install
+-- 場所: 
+config/sunspot.yml
 - solrの起動:
 bundle exec rake sunspot:solr:start
 ##solrの再インデックス
