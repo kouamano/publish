@@ -839,6 +839,8 @@ ruby setup.rb config
 ruby setup.rb setup
 ruby setup.rb install
 #Rails
+##インストール
+- ドキュメントURL: https://tsuchikazu.net/linux_ruby_on_rails_install/
 ##アプリケーションの作成(postgresql)
 rails new <application_name> -d postgresql
 ##モデルの作成
@@ -846,7 +848,7 @@ rails g scaffold PatentApplication doc_number_s:string title:text applicant:text
 ##DB定義の場所
 db/migrate/*.rb
 ##migration
-rails db:migration
+rake db:migrate
 ##サービスのスタート
 rails s -b 0.0.0.0
 ##railsのコンソールに接続
