@@ -846,6 +846,7 @@ rails new <application_name> -d postgresql
 ##モデルの作成
 rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
 ##sunspotrailsのインストール
+- ドキュメントURL: http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
 - file: Gemfile
 /===
 gem 'sunspot_rails'
