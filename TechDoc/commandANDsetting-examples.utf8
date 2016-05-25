@@ -849,6 +849,9 @@ rails g scaffold PatentApplication doc_number_s:string title:text applicant:text
 db/migrate/*.rb
 ##migration
 rake db:migrate
+##runner
+スクリプトをRails環境で実行する:
+rails runner <script> <引数>
 ##サービスのスタート
 rails s -b 0.0.0.0
 ##railsのコンソールに接続
