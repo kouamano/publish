@@ -841,10 +841,6 @@ ruby setup.rb install
 #Rails
 ##インストール
 - ドキュメントURL: https://tsuchikazu.net/linux_ruby_on_rails_install/
-##アプリケーションの作成(postgresql)
-rails new <application_name> -d postgresql
-##モデルの作成
-rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
 ##sunspotrailsのインストール
 - ドキュメントURL: http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
 - file: Gemfile
@@ -860,15 +856,6 @@ rails generate sunspot_rails:install
 config/sunspot.yml
 - solrの起動:
 bundle exec rake sunspot:solr:start
-##solrの再インデックス
-bundle exec rake sunspot:solr:reindex
-##DB定義の場所
-db/migrate/*.rb
-##migration
-rake db:migrate
-##runner
-スクリプトをRails環境で実行する(スクリプト内ではrailsの環境(モデルなど)が使える):
-rails runner <script> <引数>
 ##サービスのスタート
 rails s -b 0.0.0.0
 ##railsからDBのエントリの全ケシ
@@ -878,6 +865,19 @@ rails c ##コンソール
 rails console -e production
 ##railsからDBに接続
 rails dbconsole -e production
+##solrの再インデックス
+bundle exec rake sunspot:solr:reindex
+##アプリケーションの作成(postgresql)
+rails new <application_name> -d postgresql
+### 1. モデルの作成
+rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
+### 2. migration
+rake db:migrate
+##DB定義の場所
+db/migrate/*.rb
+##runner
+スクリプトをRails環境で実行する(スクリプト内ではrailsの環境(モデルなど)が使える):
+rails runner <script> <引数>
 ##try
 tryをつかうと
 /home/kamano/gist/xml2tsv.rb:14:in `block in <main>': undefined method `try' for nil:NilClass (NoMethodError)
