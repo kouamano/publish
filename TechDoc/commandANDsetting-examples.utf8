@@ -838,6 +838,8 @@ cd rubygems-1.0.1
 ruby setup.rb config
 ruby setup.rb setup
 ruby setup.rb install
+##nokogiri : HTML
+- URL: http://morizyun.github.io/blog/ruby-nokogiri-scraping-tutorial/#7
 #Rails
 ##インストール
 - ドキュメントURL: https://tsuchikazu.net/linux_ruby_on_rails_install/
