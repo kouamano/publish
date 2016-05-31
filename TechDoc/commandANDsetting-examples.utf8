@@ -864,15 +864,21 @@ rails s -b 0.0.0.0
 <model>.destroy_all
 ##railsのコンソールに接続
 rails console -e production
+###コンソールからの検索
+search = PatentUsTsv.search {fulltext "Mg"}
+res = search.results
+res.count
 ##railsからDBに接続
 rails dbconsole -e production
 ##solrの再インデックス
 bundle exec rake sunspot:solr:reindex
 ##アプリケーションの作成(postgresql)
 rails new <application_name> -d postgresql
-### モデルの作成
+###モデルの作成
 rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
-### migration
+###モデルの修正
+db/migrate/ 以下の .rbを修正
+###migration
 rake db:migrate
 ### モデルの破棄(DBの破棄は行われない)
 rails destroy model <modelname>
@@ -884,6 +890,8 @@ rails destroy model <modelname>
 ##DB関係の設定
 config/database.yml
 db/migrate/*.rb
+##フルテキストサーチの実装
+- http://morizyun.github.io/blog/search-form-rails-bootstrap/
 ##runner
 スクリプトをRails環境で実行する(スクリプト内ではrailsの環境(モデルなど)が使える):
 rails runner <script> <引数>
