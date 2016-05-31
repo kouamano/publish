@@ -856,8 +856,10 @@ bundle install
 rails generate sunspot_rails:install
 -- 場所: 
 config/sunspot.yml
-- solrの起動:
+## solrの起動:
 bundle exec rake sunspot:solr:start
+##solrの再インデックス
+bundle exec rake sunspot:solr:reindex
 ##サービスのスタート
 rails s -b 0.0.0.0
 ##railsからDBのエントリの全ケシ
@@ -874,8 +876,6 @@ res = search.results
 res.count
 ##railsからDBに接続
 rails dbconsole -e production
-##solrの再インデックス
-bundle exec rake sunspot:solr:reindex
 ##アプリケーションの作成(postgresql)
 rails new <application_name> -d postgresql
 ###モデルの作成
