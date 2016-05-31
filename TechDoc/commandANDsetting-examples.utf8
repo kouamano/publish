@@ -860,7 +860,7 @@ config/sunspot.yml
 bundle exec rake sunspot:solr:start
 ##サービスのスタート
 rails s -b 0.0.0.0
-##railsからmodelのエントリの全ケシ
+##railsからDBのエントリの全ケシ
 <model>.destroy_all
 ##railsからDBエントリを削除
 rake db:reset
@@ -990,7 +990,8 @@ create function daughters(text) returns setof text as '
 
 ##制約:例1
 ALTER TABLE fact_data ADD primary key (fact_data);
-ALTER TABLE fact_data ADD constraint fact unique (fact_data);
+ALTER TABLE fact_data ADD constraint fact unique (<colum_name>);
+alter table patent_us_tsvs add constraint publication_number unique(publication_number);
 ALTER TABLE accession_and_assay_and_fact_data ADD constraint assay_fact_data foreign key (fact_data) REFERENCES fact_data(fact_data) MATCH FULL;
 
 ##制約:例2
