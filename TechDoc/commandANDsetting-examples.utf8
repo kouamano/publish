@@ -860,8 +860,12 @@ config/sunspot.yml
 bundle exec rake sunspot:solr:start
 ##サービスのスタート
 rails s -b 0.0.0.0
-##railsからDBのエントリの全ケシ
+##railsからmodelのエントリの全ケシ
 <model>.destroy_all
+##railsからDBエントリを削除
+rake db:reset
+##railsでDBをロールバック(DBのロールバックのみ、ファイルは管理されない)
+rake db:rollback
 ##railsのコンソールに接続
 rails console -e production
 ###コンソールからの検索
