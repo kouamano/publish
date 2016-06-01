@@ -988,6 +988,9 @@ create function daughters(text) returns setof text as '
 	select line.current from line where(line.background = $1)
 ' LANGUAGE sql;
 
+##制約の確認
+select * from information_schema.table_constraints;
+
 ##制約:例1
 ALTER TABLE fact_data ADD primary key (fact_data);
 ALTER TABLE fact_data ADD constraint fact unique (<colum_name>);
