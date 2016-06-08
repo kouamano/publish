@@ -856,11 +856,12 @@ bundle install
 rails generate sunspot_rails:install
 -- 場所: 
 config/sunspot.yml
-## solrの起動:
+##Railsアプリの起動
+###solrの起動:
 bundle exec rake sunspot:solr:start
-##solrの再インデックス
+###solrの再インデックス
 bundle exec rake sunspot:solr:reindex
-##サービスのスタート
+###サービスのスタート
 rails s -b 0.0.0.0
 ##railsからDBのエントリの全ケシ
 <model>.destroy_all
