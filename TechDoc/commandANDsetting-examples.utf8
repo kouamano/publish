@@ -863,20 +863,6 @@ bundle exec rake sunspot:solr:start
 bundle exec rake sunspot:solr:reindex
 ###サービスのスタート
 rails s -b 0.0.0.0
-##railsからDBのエントリの全ケシ
-<model>.destroy_all
-##railsからDBエントリを削除
-rake db:reset
-##railsでDBをロールバック(DBのロールバックのみ、ファイルは管理されない)
-rake db:rollback
-##railsのコンソールに接続
-rails console -e production
-###コンソールからの検索
-search = PatentUsTsv.search {fulltext "Mg"}
-res = search.results
-res.count
-##railsからDBに接続
-rails dbconsole -e production
 ##アプリケーションの作成(postgresql)
 rails new <application_name> -d postgresql
 ###モデルの作成
@@ -887,19 +873,33 @@ db/migrate/ 以下の .rbを修正
 rake db:migrate
 ### モデルの破棄(DBの破棄は行われない)
 rails destroy model <modelname>
+###DB関係の設定
+config/database.yml
+db/migrate/*.rb
 ### DBの破棄
 #### マイグレーションファイル作成
 #### マイグレーションファイルに削除記述追加
 #### マイグレーション実行
 #### あるいは直接DBを削除
-##DB関係の設定
-config/database.yml
-db/migrate/*.rb
+##railsからDBのエントリの全ケシ
+<model>.destroy_all
+##railsからDBエントリを削除
+rake db:reset
+##railsでDBをロールバック(DBのロールバックのみ、ファイルは管理されない)
+rake db:rollback
 ##フルテキストサーチの実装
 - http://morizyun.github.io/blog/search-form-rails-bootstrap/
 ##runner
 スクリプトをRails環境で実行する(スクリプト内ではrailsの環境(モデルなど)が使える):
 rails runner <script> <引数>
+##railsのコンソールに接続
+rails console -e production
+###コンソールからの検索
+search = PatentUsTsv.search {fulltext "Mg"}
+res = search.results
+res.count
+##railsからDBに接続
+rails dbconsole -e production
 ##try
 tryをつかうと
 /home/kamano/gist/xml2tsv.rb:14:in `block in <main>': undefined method `try' for nil:NilClass (NoMethodError)
