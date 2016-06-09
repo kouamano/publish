@@ -150,6 +150,10 @@ sudo apt-get update
 ##inheritance of user env
 sudo -E xxx
 
+#find
+## パーミッションの一括変換
+find public_html -type d -exec chmod 755 {} \;
+
 #xargs
 find ./  | xargs /BANK/PMC/bin/extract-title.pl
 ## オプション -IXXX で、XXXを任意の場所に挿入
