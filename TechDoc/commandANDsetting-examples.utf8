@@ -869,6 +869,7 @@ rails new <application_name> -d postgresql
 rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
 ###モデルの修正
 db/migrate/ 以下の .rbを修正
+- index: true, unique: true などを追加
 ###migration
 rake db:migrate
 ### モデルの破棄(DBの破棄は行われない)
