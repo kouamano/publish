@@ -897,6 +897,9 @@ rake db:reset
 rake db:rollback
 ##フルテキストサーチの実装
 - http://morizyun.github.io/blog/search-form-rails-bootstrap/
+###1. models/においてsearchable 設定
+###2. views/において表示項目 設定
+###3. controllers/において検索 設定
 ##runner
 スクリプトをRails環境で実行する(スクリプト内ではrailsの環境(モデルなど)が使える):
 rails runner <script> <引数>
