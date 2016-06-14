@@ -853,6 +853,7 @@ ruby setup.rb install
 -- http://jetglass.hatenablog.jp/entry/2015/04/15/165236
 ##インストール
 - https://tsuchikazu.net/linux_ruby_on_rails_install/
+- http://qiita.com/egnr-in-6matroom/items/c84a1d3896f1015be8d2 (一番簡単)
 ##sunspotrailsのインストール
 - http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
 - file: Gemfile
