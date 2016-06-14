@@ -854,7 +854,17 @@ ruby setup.rb install
 ##インストール
 - https://tsuchikazu.net/linux_ruby_on_rails_install/
 - http://qiita.com/egnr-in-6matroom/items/c84a1d3896f1015be8d2 (一番簡単)
-##sunspotrailsのインストール
+
+##Railsアプリの起動
+###solrの起動:
+bundle exec rake sunspot:solr:start
+###solrの再インデックス
+bundle exec rake sunspot:solr:reindex
+###サービスのスタート
+rails s -b 0.0.0.0
+
+##Railsアプリのインストール
+###sunspotrailsのインストール
 - http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
 - file: Gemfile
 /===
@@ -867,14 +877,8 @@ bundle install
 rails generate sunspot_rails:install
 -- 場所: 
 config/sunspot.yml
-##Railsアプリの起動
-###solrの起動:
-bundle exec rake sunspot:solr:start
-###solrの再インデックス
-bundle exec rake sunspot:solr:reindex
-###サービスのスタート
-rails s -b 0.0.0.0
-##アプリケーションの作成(postgresql)
+
+##Railsアプリの作成(postgresql)
 rails new <application_name> -d postgresql #ディレクトリができる
 ###モデルの作成
 cd <application_name> #特定のアプリケーションディレクトリに移動
