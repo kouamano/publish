@@ -851,6 +851,8 @@ ruby setup.rb install
 ##一般参考
 - ひとつのアプリで複数モデル(DB)使う:
 -- http://jetglass.hatenablog.jp/entry/2015/04/15/165236
+- モデル間横断検索?
+-- http://www.prime-architect.co.jp/myblog/ruby-on-rails-1566
 ##インストール
 - https://tsuchikazu.net/linux_ruby_on_rails_install/
 - http://qiita.com/egnr-in-6matroom/items/c84a1d3896f1015be8d2 (一番簡単)
