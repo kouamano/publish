@@ -952,6 +952,8 @@ select * from pg_attribute;
 select * from pg_attribute where attrelid = 'manifestations'::regclass;
 ###テーブル名
 select * from pg_class;
+##タプルデリート
+delete  from patent_patents;
 ##テーブルオーナーの書き換え:
 term_region=# ALTER TABLE public.organizationname_region OWNER TO kamano;
 ##カラムを文字列として結合(AとBをansとして結合、ans, Cを表示)
