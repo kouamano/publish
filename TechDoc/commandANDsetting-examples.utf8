@@ -847,6 +847,7 @@ ruby setup.rb install
 - URL: http://morizyun.github.io/blog/ruby-nokogiri-scraping-tutorial/#7
 ###XML
 - URL: http://d.hatena.ne.jp/otn/20090509/p1
+
 #Rails
 ##一般参考
 - ひとつのアプリで複数モデル(DB)使う:
@@ -856,14 +857,14 @@ ruby setup.rb install
 ##インストール
 - https://tsuchikazu.net/linux_ruby_on_rails_install/
 - http://qiita.com/egnr-in-6matroom/items/c84a1d3896f1015be8d2 (一番簡単)
+##サービス起動
+rails s -b 0.0.0.0
 
 ##Railsアプリの起動
 ###solrの起動:
 bundle exec rake sunspot:solr:start
 ###solrの再インデックス
 bundle exec rake sunspot:solr:reindex
-###サービスのスタート
-rails s -b 0.0.0.0
 
 ##Railsアプリのインストール
 ###sunspotrailsのインストール
