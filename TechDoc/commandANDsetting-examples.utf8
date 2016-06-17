@@ -891,8 +891,10 @@ db/migrate/ 以下の .rbを修正
 - index: true, unique: true などを追加
 ###migration
 rake db:migrate
-### モデルの破棄(DBの破棄は行われない)
+###モデルの破棄(DBの破棄は行われない)
 rails destroy model <modelname>
+###コントローラーの破棄(DBの破棄は行われない)
+rails destroy controller <modelname>
 ###DB関係の設定
 config/database.yml
 db/migrate/*.rb
