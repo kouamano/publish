@@ -1245,7 +1245,7 @@ HTTPメソッド: get
 注記: 
 ##サービススタート
 cd /home/kamano/your_enju
-bundle exec foreman stat
+bundle exec foreman start
  port 3000でサービス
 ##Gemfile: 設定ファイル
 モジュールの読み込みを行う
