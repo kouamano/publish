@@ -1226,8 +1226,10 @@ http://www.ncbi.nlm.nih.gov/pubmed/25965974?report=xml&format=text
 ##仮想マシン
 login: vagrant
 pass: vagrant
-##enjuへのアクセス
+###enjuへのアクセス
 VMGにて http://127.0.0.1:8080 にアクセス
+##インストール
+- https://github.com/next-l/enju_leaf/wiki/Install
 ##enjuシステムログイン
 enju管理者: enjuadmin
 pass: adminpassword
