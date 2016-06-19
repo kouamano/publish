@@ -1255,6 +1255,11 @@ gem 'enju_biblio', '~> 0.2.0.beta.1', github: 'next-l/enju_biblio', branch: '1.2
 ===/
 ##再インデクシング
 RAILS_ENV=production rake sunspot:solr:reindex
+##アタッチメントの登録
+###GUI
+1. adminでlogin
+2. 資料の受け入れ
+3. 入力、添付するとインデックスも行われる
 ##アタッチメント(PDF)のインデクシング
 ###モジュールのインストール
 ###ドキュメント: https://github.com/next-l/enju_leaf/wiki/Solr	
