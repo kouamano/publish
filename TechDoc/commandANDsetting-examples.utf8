@@ -889,6 +889,9 @@ rails g scaffold PatentApplication doc_number_s:string title:text applicant:text
 ###モデルの修正
 db/migrate/ 以下の .rbを修正
 - index: true, unique: true などを追加
+app/models/ 以下の .rbを修正
+app/controllers/ 以下の
+app/views/ 以下の
 ###migration
 rake db:migrate
 ###モデルの破棄(DBの破棄は行われない)
