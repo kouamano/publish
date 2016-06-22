@@ -927,7 +927,7 @@ rails console -e production
 (irb) res = search.results
 (irb) res.count
 - ex.2
-(irb) PatentPatent.where('created_at >= ?','2016-06-22').count
+(irb) PatentPatent.where('created_at >= ?','2016-06-22 00:00:00').count
 - ex.3
 (irb) PatentPatent.where('created_at >= ?','2016-06-22').map{|patent| patent.index}
 (irb) Sunspot.commit
