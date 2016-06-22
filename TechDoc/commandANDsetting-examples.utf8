@@ -865,7 +865,6 @@ rails s -b 0.0.0.0
 bundle exec rake sunspot:solr:start
 ###solrの再インデックス
 bundle exec rake sunspot:solr:reindex
-
 ##Railsアプリのインストール
 ###sunspotrailsのインストール
 - http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
@@ -880,7 +879,6 @@ bundle install
 rails generate sunspot_rails:install
 -- 場所: 
 config/sunspot.yml
-
 ##Railsアプリの作成(postgresql)
 rails new <application_name> -d postgresql #ディレクトリができる
 ###モデルの作成
@@ -908,6 +906,7 @@ db/migrate/*.rb
 #### あるいは直接DBを削除
 ##railsからDBのエントリの全ケシ
 <model>.destroy_all
+
 ##railsからDBエントリを削除
 rake db:reset
 ##railsでDBをロールバック(DBのロールバックのみ、ファイルは管理されない)
