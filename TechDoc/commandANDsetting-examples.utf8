@@ -110,6 +110,10 @@ route add default gw <ipaddr>
 どのディレクトリを許可するかは
 /etc/exports
 
+#ZFS
+##リスト
+zpool get all
+
 #iSCSI
 ##ドキュメント
 - http://www.unix-power.net/linux/iscsi.html
