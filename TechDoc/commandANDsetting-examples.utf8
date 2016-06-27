@@ -117,6 +117,19 @@ zpool get all
 #iSCSI
 ##ドキュメント
 - http://www.unix-power.net/linux/iscsi.html
+##新領域セットアップ手順
+###ターゲット
+0. iscsiがすでにつかえるとして
+1. 設定ファイル編集: freeBSD: /etc/ctr.conf
+/===
+ path /dev/zvol/data/komorido
+===/
+2. ZFSボリューム作成: freeBSD: sudo zfs create -V 100G data/komorido
+###イニシエータ
+0. iscscがすでにつかえるとして
+1. login
+2. mkfs
+3. マウント or fdisk設定
 ##どのデバイスがどのサーバ(ターゲット)から提供されているか？
 - イニシエータ側のiscsictlでconnectしたときのみ表示?
 -- iscsictl -A -p 10.10.10.10 -t iqn.2012-06.com.example:target0
