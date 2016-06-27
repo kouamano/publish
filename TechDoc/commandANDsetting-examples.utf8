@@ -972,6 +972,7 @@ tryをつかうと
 []$ psql test	#接続
 ##connection test
 psql template1 -h localhost -p 5432 -U postgres
+psql -h achi -d tokkyodb_development -U kamano
 ##システムカタログ
 ###list DB
 [] psql
