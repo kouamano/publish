@@ -867,6 +867,11 @@ ruby setup.rb install
 - URL: http://morizyun.github.io/blog/ruby-nokogiri-scraping-tutorial/#7
 ###XML
 - URL: http://d.hatena.ne.jp/otn/20090509/p1
+##後方参照 -> () カッコ を　$1,$2,...
+str.match(/(.+)/)
+puts $1
+##マッチ部分全体を後方参照できる
+$&
 
 #Rails
 ##一般参考
