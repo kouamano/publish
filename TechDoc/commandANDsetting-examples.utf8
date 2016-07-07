@@ -887,6 +887,9 @@ rails s -b 0.0.0.0
 ##Railsアプリの起動
 ###solrの起動:
 bundle exec rake sunspot:solr:start
+###solrの再起動(restartで失敗する場合がある?):
+bundle exec rake sunspot:solr:stop
+bundle exec rake sunspot:solr:start
 ###solrの再インデックス
 bundle exec rake sunspot:solr:reindex
 ##Railsアプリのインストール
