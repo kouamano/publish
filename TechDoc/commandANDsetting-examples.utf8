@@ -891,7 +891,10 @@ bundle exec rake sunspot:solr:start
 bundle exec rake sunspot:solr:stop
 bundle exec rake sunspot:solr:start
 ###solrの再インデックス
-bundle exec rake sunspot:solr:reindex
+- アプリ全体:
+ bundle exec rake sunspot:solr:reindex
+- モデル指定:
+ rake "sunspot:reindex[,PatentPubpatent]"
 ##Railsアプリのインストール
 ###sunspotrailsのインストール
 - http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
