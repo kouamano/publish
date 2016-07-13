@@ -137,7 +137,8 @@ zpool get all
 ##FreeBSDでのターゲットの設定ファイル:
 /etc/ctl.conf
 
-#yumのデータベースからエントリを削除
+#yum
+##yumのデータベースからエントリを削除
 yum --tsflags=justdb remove 'scim*'
 
 #rpm
