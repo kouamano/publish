@@ -1224,33 +1224,6 @@ sudo apt-get install mpich*
 ##qemuでraspberrypi
 qemu-system-arm -kernel /BANK/OS.img/kernel-qemu  -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda /BANK/OS.img/2013-09-25-wheezy-raspbian.img
 
-
-#mac OSX
-##Xのハマりポイント
-###ssh -X
-そもそもキー入力がおかしい
-##ファイアウォールの切りかた:
-sysctl -w net.inet.ip.fw.enable=0
-##OSX nfs client
-[Directory utility] -> [mount] -> (dialog左下のアイコン列;一番右をクリック) -> [詳細マウントパラメータ] に "-P nosuid" を入れる。
-##imputmethodが起動しなくなった時(Yosemite)
-以下のどれかのプログラムが落ちていないか確認:
-/System/Library/Input Methods/JapaneseIM.app/Contents/MacOS/JapaneseIM
-/System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent
-/System/Library/Frameworks/InputMethodKit.framework/Versions/A/XPCServices/com.apple.InputMethodKit.UserDictionary.xpc/Contents/MacOS/com.apple.InputMethodKit.UserDictionary
-##ソフトウエアアップデート
-sudo softwareupdate -i -a
-##HomeBrew
-###ライブラリがみつからない的なエラー対応:
-cd /usr/local/Library
-git pull origin master
-brew update
-###エラーが出た時
-$ cd `brew --prefix`
-$ git fetch origin
-$ git reset --hard origin/master
-
-
 #NCBIのNXML
 ##マルチバイトコードの数値文字参照について
 ##数値部分が10進数表記か16進数表記かわからない
@@ -1263,7 +1236,6 @@ $ git reset --hard origin/master
 - ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=22674858
 ##キーワードリストを含む書誌情報をhttpから得る(APIじゃない)
 http://www.ncbi.nlm.nih.gov/pubmed/25965974?report=xml&format=text
-
 
 #enju
 ##仮想マシン
@@ -1324,8 +1296,39 @@ RAILS_ENV=production rake sunspot:solr:reindex
 7.5 a.index!
 
 
+
+#mac OSX
+##Xのハマりポイント
+###ssh -X
+そもそもキー入力がおかしい
+##ファイアウォールの切りかた:
+sysctl -w net.inet.ip.fw.enable=0
+##OSX nfs client
+[Directory utility] -> [mount] -> (dialog左下のアイコン列;一番右をクリック) -> [詳細マウントパラメータ] に "-P nosuid" を入れる。
+##imputmethodが起動しなくなった時(Yosemite)
+以下のどれかのプログラムが落ちていないか確認:
+/System/Library/Input Methods/JapaneseIM.app/Contents/MacOS/JapaneseIM
+/System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent
+/System/Library/Frameworks/InputMethodKit.framework/Versions/A/XPCServices/com.apple.InputMethodKit.UserDictionary.xpc/Contents/MacOS/com.apple.InputMethodKit.UserDictionary
+##ソフトウエアアップデート
+sudo softwareupdate -i -a
+##HomeBrew
+###ライブラリがみつからない的なエラー対応:
+cd /usr/local/Library
+git pull origin master
+brew update
+###エラーが出た時
+$ cd `brew --prefix`
+$ git fetch origin
+$ git reset --hard origin/master
+
+
+
+#PoweerShell
+##カレントディレクトリの使用サイズ
+Get-ChildItem  -Recurse -Force | ForEach-Object -Begin { $Len = 0 } -Process { $Len = $Len + $_.Length } -End { $Len }
+
 #MS-excel
 ##get the list of sheets
 blog.asens.jp/archives/1194
-
 
