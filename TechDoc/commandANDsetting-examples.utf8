@@ -1110,6 +1110,11 @@ SELECT * from dblink('sassc', 'select * from gene') as t1(gene_symbol text, gene
 ###select dblink_disconnect()
 SELECT dblink_disconnect('sassc');
 
+#mysql
+##mariadb
+ systemctl enable mariadb.service
+ systemctl start mariadb.service
+
 #BerkleyParser
 ## example1:
 java -jar /usr/local/BerkleyParser/BerkeleyParser-1.7.jar -gr /usr/local/BerkleyParser/eng_sm6.gr -inputFile /BANK/PMC/20140724/terms/ALL/patt.4/ArtVSTerm/Word_Jour-au.sortuniq-eachline
