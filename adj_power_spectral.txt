@@ -5,4 +5,7 @@
 一般的な性質として、隣接行列の固有値列が異なるならば非同型であることが分かっているが、その逆は成立しない。
 しかしながら、化学構造のグラフは制限されたグラフであり、マッチングに関して事実上このような制約を考慮する必要がない可能性が高い。
 特に、筆者が提案する隣接行列は、対角要素に原子番号を挿入するものであり、上記問題を十分に回避できると考えられる。
+このコンセプトによるもののひとつに、Burden Matrixがある。
+ Burden. Molecular Identification Number for Substructure Searches. J. Chem. Comput. Sci. (1989) 29, 225-227. :
+The Burden matrix is a symmetric matrix which is constructed as following: the diagonal elements are the atomic number of the atoms; the off diagonal terms representing two bonded atoms i and j are equal to pi* . 10e-1, where pi* is the conventional bond order: 0.1, 0.2, 0.3 and 0.15 for single, double, triple and aromatic bonds, respectively. Off diagonal elements that correspond to terminal bonds are augmented by 0.01, and the rest matrix elements are set at 0.001.
 
