@@ -1,7 +1,0 @@
-#asahi への login
-- komoridoから
- ssh asahi -i mbair.ssh/id_rsa
-- from Cygwin terminal of negi229
- ssh asahi
-- VBGuest on negi229 から
- ssh asahi
