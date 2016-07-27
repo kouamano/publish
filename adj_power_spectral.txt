@@ -19,7 +19,7 @@ a,bが同じ化合物なら、UA,UBの固有値列(v[UA],v[UB])は同一となる。
 この係数は以下を考える:
               Int( v[UA]*v[UB] )dx
 ---------------------------------------------
-Sqrt(Int(v[UA],v[UA])dx * Int(v[UA],v[UB])dx)
+Sqrt(Int(v[UA],v[UA])dx * Int(v[UB],v[UB])dx)
 
 
 
