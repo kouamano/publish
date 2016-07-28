@@ -340,6 +340,8 @@ qemu-img create -f raw ubuntu16.img 80G
 mount -o loop,offset=32256 vm006.img /mnt/vimg0
 ##イメージの拡張
 qemu-img resize raw.img +80G
+##convert image
+qemu-img convert -f vmdk amaayo.vmdk -O raw amaayo-flat.vmdk.img #amaayo.vmdk is not a image, but a setting file.
 ##imgのマウント
 kpartx -av disk.img
 mount /dev/mapper/loop0p1 /mnt/kvmimg
