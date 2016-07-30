@@ -1,22 +1,22 @@
-���ܹ���Υѥ���ڥ��ȥ�����Ѥ������ع�¤�ޥå���
+隣接行列のパワースペクトルを利用した化学構造マッチング
 
-����դ����ܹ���θ�ͭ�͡���ͭ�٥��ȥ�����򰷤������򡢥��ڥ��ȥ�륰��������ȸ�����1950ǯ���긦�椵��Ƥ�����
-���ܹ�����ץ饷���������Ѵ����ư������Ȥ�¿����
-����Ū�������Ȥ��ơ����ܹ���θ�ͭ���󤬰ۤʤ�ʤ����Ʊ���Ǥ��뤳�Ȥ�ʬ���äƤ��뤬�����εդ���Ω���ʤ���
-�������ʤ��顢���ع�¤�Υ���դ����¤��줿����դǤ��ꡢ�ޥå��󥰤˴ؤ��ƻ��¾夳�Τ褦��������θ����ɬ�פ��ʤ���ǽ�����⤤��
-�äˡ�ɮ�Ԥ���Ƥ������ܹ���ϡ��г����Ǥ˸����ֹ�����������ΤǤ��ꡢ�嵭�����ʬ�˲���Ǥ���ȹͤ����롣
-���Υ��󥻥ץȤˤ���ΤΤҤȤĤˡ�Burden Matrix�����롣
+グラフの隣接行列の固有値／固有ベクトル問題を扱う理論を、スペクトラルグラフ理論と言い、1950年代より研究されてきた。
+隣接行列をラプラシアン行列に変換して扱うことが多い。
+一般的な性質として、隣接行列の固有値列が異なるならば非同型であることが分かっているが、その逆は成立しない。
+しかしながら、化学構造のグラフは制限されたグラフであり、マッチングに関して事実上このような制約を考慮する必要がない可能性が高い。
+特に、筆者が提案する隣接行列は、対角要素に原子番号を挿入するものであり、上記問題を十分に回避できると考えられる。
+このコンセプトによるもののひとつに、Burden Matrixがある。
  Burden. Molecular Identification Number for Substructure Searches. J. Chem. Comput. Sci. (1989) 29, 225-227. :
 The Burden matrix is a symmetric matrix which is constructed as following: the diagonal elements are the atomic number of the atoms; the off diagonal terms representing two bonded atoms i and j are equal to pi* . 10e-1, where pi* is the conventional bond order: 0.1, 0.2, 0.3 and 0.15 for single, double, triple and aromatic bonds, respectively. Off diagonal elements that correspond to terminal bonds are augmented by 0.01, and the rest matrix elements are set at 0.001.
 
-�����ǡ�Burden Matrix����äȤ��벽�ع�¤�ޥå��󥰤���Ƥ��롣
-����ʪa,b������Ȥ������줾���Burden Matrix��A,B�Ȥ��롣
-�����ǡ�����ʪa,b�θ��ҽ����Union(u)��ͤ��롣
-u�ϸ��Ҥν���Ǥ��뤬��������Ф��벽��ʪa,b��Burden Matrix(UA,UB)���ۤ��롣
-a,b��Ʊ������ʪ�ʤ顢UA,UB�θ�ͭ����(v[UA],v[UB])��Ʊ��Ȥʤ롣
-���Ǥ˽Ҥ٤��褦�ˡ�v[]��Ʊ��Ǥ��뤫�鲽��ʪ��Ʊ��Ǥ���Ȥϸ¤�ʤ���
-����������Ĥλ�ɸ�Ȥ��ơ���¤�Υޥå��󥰷��������뤳�ȤϤǤ��롣
-���η����ϰʲ���ͤ���:
+ここで、Burden Matrixを基礎とする化学構造マッチングを提案する。
+化合物a,bがあるとき、それぞれのBurden MatrixをA,Bとする。
+ここで、化合物a,bの原子集合のUnion(u)を考える。
+uは原子の集合であるが、これに対する化合物a,bのBurden Matrix(UA,UB)を構築する。
+a,bが同じ化合物なら、UA,UBの固有値列(v[UA],v[UB])は同一となる。
+すでに述べたように、v[]が同一であるから化合物が同一であるとは限らない。
+しかし、一つの指標として、構造のマッチング係数を得ることはできる。
+この係数は以下を考える:
               Int( v[UA]*v[UB] )dx
 ---------------------------------------------
 Sqrt(Int(v[UA],v[UA])dx * Int(v[UB],v[UB])dx)
