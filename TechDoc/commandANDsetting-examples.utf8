@@ -4,6 +4,8 @@
 cat /etc/redhat-release
 
 #SELinux
+##未解決問題
+httpdのスタートがEnforcingではできない。スタート後にEnforcingするとサービスできる
 ##change context
 chcon unconfined_u:object_r:httpd_user_content_t:s0 CharacteristicsOfEigen.nb
 ##make .te file using  audit2allow
