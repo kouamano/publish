@@ -11,15 +11,17 @@ The Burden matrix is a symmetric matrix which is constructed as following: the d
 
 ここで、Burden Matrixを基礎とする化学構造マッチングを提案する。
 化合物a,bがあるとき、それぞれのBurden MatrixをA,Bとする。
-ここで、化合物a,bの原子集合のUnion(u)を考える。
-uは原子の集合であるが、これに対する化合物a,bのBurden Matrix(UA,UB)を構築する。
+まず、化合物a,bの原子集合の特殊な共通集合u = Union(a,b)を考える。
+集合uは、それぞれの化合物の結合テーブルを作ることができる原子集合である。
+uに対する化合物a,bのBurden Matrix(UA,UB)を構築する。
+つぎに、それぞれのBurden Matrixの固有値をもとめる。
+以下の係数により親和性をもとめる:
+                          Int( v[UA]*v[UB] )dx
+AFF(a,b) =  ---------------------------------------------
+            Sqrt(Int(v[UA],v[UA])dx * Int(v[UB],v[UB])dx)
+
 a,bが同じ化合物なら、UA,UBの固有値列(v[UA],v[UB])は同一となる。
 すでに述べたように、v[]が同一であるから化合物が同一であるとは限らない。
-しかし、一つの指標として、構造のマッチング係数を得ることはできる。
-この係数は以下を考える:
-              Int( v[UA]*v[UB] )dx
----------------------------------------------
-Sqrt(Int(v[UA],v[UA])dx * Int(v[UB],v[UB])dx)
-
+しかし、一つの指標として、上記係数により構造のマッチング係数を得ることはできる。
 
 
