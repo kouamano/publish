@@ -11,6 +11,8 @@ httpdのスタートがEnforcingではできない。スタート後にEnforcing
 ##audit2allow
 ###make allow policy
 audit2allow --module=httpd --dmesg
+##list service port
+semanage port -l | grep http
 ##allow service port
 semanage port -a -t http_port_t -p tcp 8099
 ##change context
