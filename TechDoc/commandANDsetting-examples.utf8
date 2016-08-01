@@ -11,6 +11,8 @@ httpdのスタートがEnforcingではできない。スタート後にEnforcing
 ##audit2allow
 ###make allow policy
 audit2allow --module=httpd --dmesg
+##allow service port
+semanage port -a -t http_port_t -p tcp 8099
 ##change context
 chcon unconfined_u:object_r:httpd_user_content_t:s0 CharacteristicsOfEigen.nb
 ##make .te file using  audit2allow
