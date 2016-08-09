@@ -183,6 +183,11 @@ sudo -E xxx
 #find
 ## パーミッションの一括変換
 find public_html -type d -exec chmod 755 {} \;
+## search by time stamp
+### within 7 days
+find ./ -type f -mtime -7 -exec ls -l {} \;
+### within 60 minits
+find ./ -type f -mmin -60 -ls
 
 #xargs
 find ./  | xargs /BANK/PMC/bin/extract-title.pl
