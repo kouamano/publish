@@ -309,7 +309,7 @@ cat hoge | string_to_hexcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2byteco
 ##スクリーンデーモンリスト
 screen -ls
 ##デタッチされているスクリーンデーモンに接続
-screen -r
+screen -r <pid>
 ##アタッチされているスクリーンデーモンに接続
 screen -rx
 ##screenのdetouch
