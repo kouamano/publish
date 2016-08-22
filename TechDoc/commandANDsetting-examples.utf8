@@ -924,6 +924,7 @@ bundle exec rake sunspot:solr:start
  bundle exec rake sunspot:solr:reindex[,PatentPubpatent]
  rails c; Sunspot.commmit
 - モデル指定(2):
+ rails c;
  PatentPublication.reindex
  Sunspot.commit
 ##Railsアプリのインストール
