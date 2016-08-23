@@ -920,10 +920,13 @@ bundle exec rake sunspot:solr:start
 ###solrの再インデックス
 - アプリ全体:
  bundle exec rake sunspot:solr:reindex
-- モデル指定:
+- モデル指定例(1):
+ bundle exec rake sunspot:solr:reindex[116923,PatentPublication]
+ rails c; Sunspot.commmit
+- モデル指定例(2):
  bundle exec rake sunspot:solr:reindex[,PatentPubpatent]
  rails c; Sunspot.commmit
-- モデル指定(2):
+- モデル指定例(3):
  rails c;
  PatentPublication.reindex
  Sunspot.commit
