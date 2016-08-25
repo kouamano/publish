@@ -467,6 +467,8 @@ git reset --hard origin/master
 ### ex.1
 git remote set-url origin https://kouamano@github.com/kouamano/SOC.git
 unset SSH_ASKPASS
+##ファイルを特定のcommit状態に戻す
+git checkout <commit番号> <ファイル>
 ##git server 構築
 ##n005に構築済みのはず
 ##kamano利用可能
