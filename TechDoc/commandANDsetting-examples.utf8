@@ -1031,6 +1031,8 @@ psql -h achi -d tokkyodb_development -U kamano
 =# select * from pg_database;
  OR
 [] psql -l
+##create table
+CREATE TABLE organization (id int, top_level_organization_name text, organization_name text);
 ###カラム名
 select * from pg_attribute;
 ###特定のテーブルのカラム名
