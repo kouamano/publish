@@ -1320,7 +1320,7 @@ gem 'enju_biblio', '~> 0.2.0.beta.1', github: 'next-l/enju_biblio', branch: '1.2
 RAILS_ENV=production rake sunspot:solr:reindex
 ##アタッチメントの登録
 ###GUI
-1. adminでlogin
+1. adminでlogin; enjuadmin: adminpassword
 2. 資料の受け入れ
 3. 入力、添付するとインデックスも行われる
 ##アタッチメント(PDF)のインデクシング
