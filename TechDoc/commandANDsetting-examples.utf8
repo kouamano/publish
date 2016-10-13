@@ -960,7 +960,7 @@ db/migrate/ 以下の .rbを修正
 app/models/ 以下の .rbを修正
 app/controllers/ 以下の
 app/views/ 以下の
-###DBへ追加の反映
+###DBへカラム追加の反映
 rails generate migration AddOwnersToPatentPatents owner:text
 rake db:migrate
 ###migration
