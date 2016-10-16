@@ -1307,9 +1307,11 @@ HTTPメソッド: get
 追加のパラメータ:
 注記: 
 ##サービススタート
-cd /home/kamano/your_enju
+###
 bundle exec foreman start
  port 3000でサービス
+### Ubuntu 16.04
+sudo systemctl restart enju_leaf.target
 ##Gemfile: 設定ファイル
 モジュールの読み込みを行う
 たとえば、'enju_biblio'をgithubから直接読み込む設定など
