@@ -972,6 +972,10 @@ rails destroy controller <modelname>
 ###DB関係の設定
 config/database.yml
 db/migrate/*.rb
+##モデルとDBから特定のレコードを削除
+rails c;
+ds = PatentRepublication.where('id = ?','18832')
+ds.destroy
 ### DBの破棄
 #### マイグレーションファイル作成
 #### マイグレーションファイルに削除記述追加
