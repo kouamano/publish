@@ -692,6 +692,10 @@ strcat()は文字列の配列(cell型)を返すことがある。
 >> fclose(fd)
 ## 変数の型
 class()
+##xハッシュ(マップ)
+m=containers.Map({'aa','aab'},{1,3})
+m('aab')
+ans = 3
 
 #C
 ##gcc 最適化
