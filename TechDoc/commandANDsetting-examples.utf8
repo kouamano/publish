@@ -948,6 +948,10 @@ bundle exec rake sunspot:solr:start
  rails c;
  PatentPublication.reindex
  Sunspot.commit
+- 条件指定例(1)
+ rails c;
+ PatentPatent.where('created_at >= ?','2016-06-27 12:00:00').map{|patent| patent.index}
+ Sunspot.commit
 ###springのstart/stop
 bundle exec spring start
 bundle exec spring stop
