@@ -1,4 +1,4 @@
-(**** Linuxを中心としたまとめドキュメント ****)
+( **** Linuxを中心としたまとめドキュメント ****)
 
 #OSのバージョン
 cat /etc/redhat-release
@@ -892,6 +892,10 @@ yum install yum install python-pip
 pip install --upgrade numpy
 ###proxy
 pip install <pkg> --proxy=wwwout.xxxx.xx.xx:8888
+##numpy
+###固有値、固有ベクトルの対応
+eigval,eigvec = np.linalg.eig()
+eigval[i]に対応するのはeigvec[:,i]となる
 
 
 #Ruby
