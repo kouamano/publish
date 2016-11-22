@@ -45,6 +45,10 @@ for f in *; do echo $f ;& done
 ##while read
 ###read の対象ファイル名にバックスラッシュを含む場合の処理(-rオプション)
 while read -r fname ...
+##history設定
+##コマンド実行時刻を記録する
+- file: .bashrc
+ HISTTIMEFORMAT='%Y-%m-%dT%T%z '
 
 #zsh
 ##zshでのhistory
