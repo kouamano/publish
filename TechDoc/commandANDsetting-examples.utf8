@@ -434,6 +434,24 @@ IPV6_PRIVACY=no
 - 複数のゲストを起動中に落ちる
 - libvirtdの再起動とゲストの再起動で復帰
 - 原因はホストのDHCP機能?
+##一般ユーザーでvirt-manager
+- 参考: http://inaz2.hatenablog.com/entry/2013/06/21/004454
+- libvirt group を作る
+- 利用させたいユーザーを libvirt group に参加
+- /etc/libvirt/libvirtd.conf を編集
+/===
+unix_sock_group = "libvirt"
+unix_sock_rw_perms = "0770"
+auth_unix_rw = "none"
+===/
+- /etc/libvirt/qemu.conf を編集
+/===
+#参加させたいゆーざーを列挙
+user = ...
+user = ...
+group = "libvirt"
+dynamic_ownership = 1
+===/
 
 #VirtualBox
 ##ホストからゲストにssh接続
