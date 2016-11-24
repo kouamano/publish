@@ -899,6 +899,11 @@ pos($txt) = $p - length($1);
 -- 例: $l =~ s/(<ORG>.+?<\/ORG>.*?<[0-9]*W>.+?<\/[0-9]*W>)(((?!<ORG>).)+)/$1<RESc>$2<\/RESc>/g;
 
 #python
+##おすすめインストール
+-    Windows: anaconda(or miniconda)
+-    linux: git + pyenv + anaconda(or miniconda)
+-    MacOS: homebrew + pyenv + anaconda(or miniconda)
+-    ChromeOS: chromebrew + git + pyenv + anaconda(or miniconda)
 ##定義のロード
 execfile(<ファイル名>)
 ## nltkのインストール
