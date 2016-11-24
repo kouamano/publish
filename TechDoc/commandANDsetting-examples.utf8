@@ -900,6 +900,7 @@ pos($txt) = $p - length($1);
 
 #python
 ##おすすめインストール
+http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c
 -    Windows: anaconda(or miniconda)
 -    linux: git + pyenv + anaconda(or miniconda)
 -    MacOS: homebrew + pyenv + anaconda(or miniconda)
