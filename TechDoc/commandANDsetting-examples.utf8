@@ -887,6 +887,8 @@ while(<>){
                 print "$j\n";
         }
 }
+##複数の文字列にマッチ
+$str -~ s/(?:Hello)|(?:test)/hit/g;
 ##(xml等の)コメントを同じ長さの空白に置き換える
 $tx =~ s/(<!--.*?-->)/$count=0;$sb="";while($count < length($1)){$sb = $sb." "; $count++;};$sb/eg;
 ##perlの逐次マッチ
