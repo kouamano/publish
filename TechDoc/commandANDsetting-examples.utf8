@@ -101,6 +101,8 @@ cat /proc/sys/net/ipv4/ip_forward
 #Gateway
 ##adding default gateway
 route add default gw <ipaddr>
+##delete default gateway
+route del default
 
 #LVM
 #以下のコマンドあやしい?
