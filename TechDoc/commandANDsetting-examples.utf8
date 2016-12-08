@@ -138,6 +138,8 @@ route del default
 - /etc/hosts.allow
 ALL: 127.0.0.1
 ALL: <init>
+- ターゲットファイル
+chown -R nfsnobody <target>
 ###サービス起動
 service rpcbind start
 service nfslock start
