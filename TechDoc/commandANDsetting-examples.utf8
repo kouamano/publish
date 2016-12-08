@@ -131,6 +131,7 @@ route del default
  MOUNTD_PORT=892
  STATD_PORT=662
 - /etc/exports
+/BANK/  144.213.7.82/255.255.255.0(rw,sync,no_root_squash)
 - /etc/sysconfig/iptables
 111
 875
