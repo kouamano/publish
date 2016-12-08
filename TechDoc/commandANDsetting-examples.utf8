@@ -123,16 +123,19 @@ route del default
 ##設定
 - http://wingse.blog57.fc2.com/blog-entry-288.html
 - /etc/sysconfig/nfs
-MOUNTD_NFS_V2="no"
-MOUNTD_NFS_V3="yes"
-LOCKD_TCPPORT=32803
-LOCKD_UDPPORT=32769
-MOUNTD_PORT=892
-STATD_PORT=662
+ MOUNTD_NFS_V2="no"
+ MOUNTD_NFS_V3="yes"
+ LOCKD_TCPPORT=32803
+ LOCKD_UDPPORT=32769
+ MOUNTD_PORT=892
+ STATD_PORT=662
 - /etc/exports
 - /etc/sysconfig/iptables
 111
 875
+- /etc/hosts.allow
+ALL: 127.0.0.1
+ALL: <init>
 ##起動
 service rpcbind start
 service nfslock start
