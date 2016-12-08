@@ -120,7 +120,8 @@ route del default
 /dev/VolGroup00/lv_bank
 
 #NFS(CentOS6)
-##設定
+##サーバー側
+###設定
 - http://wingse.blog57.fc2.com/blog-entry-288.html
 - /etc/sysconfig/nfs
  MOUNTD_NFS_V2="no"
@@ -133,13 +134,20 @@ route del default
 - /etc/sysconfig/iptables
 111
 875
+2049
 - /etc/hosts.allow
 ALL: 127.0.0.1
 ALL: <init>
-##起動
+###サービス起動
 service rpcbind start
 service nfslock start
 service nfs start
+##クライアント側
+###サービス起動
+service rpcbind start
+service netfs start
+###マウント
+mount -t nfs 192.168.1.100:/mnt/nfs /nfs
 
 #ZFS
 ##リスト
