@@ -119,14 +119,24 @@ route del default
 ##実体
 /dev/VolGroup00/lv_bank
 
-#NFS
-/etc/sysconfig/nfsを読み、portを固定、そのportをiptablesで許可する。
-それ以外で許可するportは
+#NFS(CentOS6)
+##設定
+- http://wingse.blog57.fc2.com/blog-entry-288.html
+- /etc/sysconfig/nfs
+MOUNTD_NFS_V2="no"
+MOUNTD_NFS_V3="yes"
+LOCKD_TCPPORT=32803
+LOCKD_UDPPORT=32769
+MOUNTD_PORT=892
+STATD_PORT=662
+- /etc/exports
+- /etc/sysconfig/iptables
 111
 875
-いずれも、tcp/udpを許可しておく。
-どのディレクトリを許可するかは
-/etc/exports
+##起動
+service rpcbind start
+service nfslock start
+service nfs start
 
 #ZFS
 ##リスト
