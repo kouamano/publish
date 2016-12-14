@@ -9,6 +9,9 @@ httpdのスタートがEnforcingではできない。スタート後にEnforcing
 -> tomporary solution: setenforce 0; service httpd start; setenforce 1
 ##log file
 /var/log/messages
+/var/log/audit
+##ps
+ps -eZ
 ##audit2allow
 ###make allow policy
 audit2allow --module=httpd --dmesg
