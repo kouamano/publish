@@ -19,6 +19,8 @@ audit2allow --module=httpd --dmesg
 semanage port -l | grep http
 ##allow service port
 semanage port -a -t http_port_t -p tcp 8099
+##disable service port
+semanage port -d -t http_port_t -p tcp 443
 ##change context
 chcon unconfined_u:object_r:httpd_user_content_t:s0 CharacteristicsOfEigen.nb
 ##make .te file using  audit2allow
