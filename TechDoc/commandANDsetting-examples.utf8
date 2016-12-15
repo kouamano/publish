@@ -4,9 +4,6 @@
 cat /etc/redhat-release
 
 #SELinux
-##未解決問題
-httpdのスタートがEnforcingではできない。スタート後にEnforcingするとサービスできる
--> tomporary solution: setenforce 0; service httpd start; setenforce 1
 ##log file
 /var/log/messages
 /var/log/audit
