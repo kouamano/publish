@@ -92,6 +92,10 @@ Enforcing
 ##ポート設定のオプション
 -P : 大文字のP(sshとおぷしょんがちがう)
 
+#systemd
+##logに対するtail -f 的な使い方
+journalctl -f
+
 #FireWall
 ##firewalld: CentOS7
 systemctl enable firewalld
