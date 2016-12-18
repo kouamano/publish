@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    916532,      18321]
-NotebookOptionsPosition[    914877,      18258]
-NotebookOutlinePosition[    915240,      18274]
-CellTagsIndexPosition[    915197,      18271]
+NotebookDataLength[    917362,      18353]
+NotebookOptionsPosition[    915462,      18280]
+NotebookOutlinePosition[    915825,      18296]
+CellTagsIndexPosition[    915782,      18293]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,6 +22,35 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["Parallel\:7cfb\:95a2\:6570\:4e26\:5217\:5316", "Title",
  CellChangeTimes->{{3.6910553994185057`*^9, 3.691055421979436*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["System Information", "Section",
+ CellChangeTimes->{{3.6910559010379887`*^9, 3.691055914335245*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Date", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.69105537741511*^9, 3.691055379893271*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2016", ",", "12", ",", "18", ",", "22", ",", "9", ",", 
+   "40.720217`8.36238506196094"}], "}"}]], "Output",
+ CellChangeTimes->{3.691055380740074*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Version"], "Input",
+ CellChangeTimes->{{3.691055879372654*^9, 3.6910558868576393`*^9}}],
+
+Cell[BoxData["\<\"10.0 for Mac OS X x86 (64-bit) (July 9, 2014)\"\>"], \
+"Output",
+ CellChangeTimes->{{3.6910558841435127`*^9, 3.6910558876947727`*^9}}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -13766,7 +13795,7 @@ Controller\"\>"},
           "Rows" -> {
             Offset[0.2], {
              Offset[0.8]}, 
-            Offset[0.2]}, "RowsIndexed" -> {}}]}}, 1,
+            Offset[0.2]}, "RowsIndexed" -> {}}]}}, 4,
        DefaultBaseStyle->"DialogStyle",
        ImageSize->{All, Automatic}]},
      {
@@ -17576,22 +17605,14 @@ tools.jar"}, "LoadedJavaClasses" -> {}, ".NetLinkVersion" ->
       "LastLocalIndexUpdateServer" -> {}, "Paclets" -> 
       "PacletManager Version 2.2.0", "TotalDownloads" -> Missing["NotActive"],
        "DownloadsDirectory" -> Missing["NotActive"]}}]]], "Output",
- CellChangeTimes->{3.69105547568015*^9}]
+ CellChangeTimes->{3.69105547568015*^9, 3.69105581422892*^9}]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"Date", "[", "]"}]], "Input",
- CellChangeTimes->{{3.69105537741511*^9, 3.691055379893271*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "2016", ",", "12", ",", "18", ",", "22", ",", "9", ",", 
-   "40.720217`8.36238506196094"}], "}"}]], "Output",
- CellChangeTimes->{3.691055380740074*^9}]
-}, Open  ]],
+Cell["Code", "Section",
+ CellChangeTimes->{{3.6910559010379887`*^9, 3.691055928432335*^9}}],
 
 Cell[CellGroupData[{
 
@@ -18255,6 +18276,7 @@ Cell[BoxData[
  CellChangeTimes->{3.691055355655671*^9}]
 }, Open  ]]
 }, Open  ]]
+}, Open  ]]
 },
 WindowSize->{808, 755},
 WindowMargins->{{4, Automatic}, {Automatic, 4}},
@@ -18276,51 +18298,61 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 129, 1, 92, "Title"],
 Cell[CellGroupData[{
-Cell[734, 27, 65, 1, 28, "Input"],
-Cell[802, 30, 889205, 17548, 615, "Output"]
+Cell[734, 27, 105, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[864, 32, 117, 2, 28, "Input"],
+Cell[984, 36, 193, 5, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[890044, 17583, 117, 2, 28, "Input"],
-Cell[890164, 17587, 193, 5, 28, "Output"]
+Cell[1214, 46, 102, 1, 28, "Input"],
+Cell[1319, 49, 152, 2, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[890394, 17597, 471, 12, 28, "Input",
+Cell[1508, 56, 65, 1, 28, "Input"],
+Cell[1576, 59, 889226, 17548, 303, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[890851, 17613, 91, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[890967, 17618, 471, 12, 28, "Input",
  CellID->26752],
-Cell[890868, 17611, 276, 6, 28, "Output"]
+Cell[891441, 17632, 276, 6, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[891181, 17622, 473, 12, 28, "Input",
+Cell[891754, 17643, 473, 12, 28, "Input",
  CellID->1193854637],
-Cell[891657, 17636, 252, 6, 28, "Output"]
+Cell[892230, 17657, 252, 6, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[891946, 17647, 382, 11, 28, "Input",
+Cell[892519, 17668, 382, 11, 28, "Input",
  CellID->2065809082],
-Cell[892331, 17660, 232, 6, 28, "Output"]
+Cell[892904, 17681, 232, 6, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[892600, 17671, 376, 9, 28, "Input"],
-Cell[892979, 17682, 323, 9, 28, "Output"]
+Cell[893173, 17692, 376, 9, 28, "Input"],
+Cell[893552, 17703, 323, 9, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[893339, 17696, 253, 7, 28, "Input"],
-Cell[893595, 17705, 327, 9, 28, "Output"]
+Cell[893912, 17717, 253, 7, 28, "Input"],
+Cell[894168, 17726, 327, 9, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[893959, 17719, 483, 12, 28, "Input"],
-Cell[894445, 17733, 9548, 236, 142, "Output"]
+Cell[894532, 17740, 483, 12, 28, "Input"],
+Cell[895018, 17754, 9548, 236, 142, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[904030, 17974, 446, 12, 28, "Input"],
-Cell[904479, 17988, 9538, 234, 142, "Output"]
+Cell[904603, 17995, 446, 12, 28, "Input"],
+Cell[905052, 18009, 9538, 234, 142, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[914054, 18227, 129, 2, 28, "Input"],
-Cell[914186, 18231, 123, 2, 28, "Output"]
+Cell[914627, 18248, 129, 2, 28, "Input"],
+Cell[914759, 18252, 123, 2, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[914346, 18238, 319, 9, 28, "Input"],
-Cell[914668, 18249, 181, 5, 28, "Output"]
+Cell[914919, 18259, 319, 9, 28, "Input"],
+Cell[915241, 18270, 181, 5, 28, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
