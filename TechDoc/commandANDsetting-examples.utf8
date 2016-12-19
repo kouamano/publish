@@ -1129,6 +1129,9 @@ rails dbconsole -e production
 tryをつかうと
 /home/kamano/gist/xml2tsv.rb:14:in `block in <main>': undefined method `try' for nil:NilClass (NoMethodError)
 -> require 'active_support/core_ext/object/try'
+##forman
+###systemd daemon 登録
+sudo foreman export systemd -a tokkyodb -u kamano /etc/systemd/system/
 
 
 #Postgresql
