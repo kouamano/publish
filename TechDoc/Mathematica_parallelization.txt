@@ -47,6 +47,6 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
  ps ax | grep math
  parallel系関数が呼び出された時にサブカーネルが起動する
  Timing[ParallelTable[Prime[n], {n, 1, 4000000}];]
- Quitには時間がかかる
+ Quitには時間がかかることがある
  Quit
 
