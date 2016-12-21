@@ -29,7 +29,7 @@ CPUダイごとにメインメモリーアクセスの距離が異なる。
 下例、In[2]ではマルチスレッドが施される。
 もし、スレッド数が1ソケットあたりのCPUコア数を超えたら、QPI通信が発生し処理は遅延する。
 
- OMP_NUM_THREADS=16;math
+ export OMP_NUM_THREADS=16;math # 標準では、OMP_NUM_THREADSは32
  In[1]:= t=Table[Random[],{4000},{4000}];                                       
  In[2]:= PrincipalComponents[t]; 
 
@@ -41,5 +41,12 @@ CPUダイごとにメインメモリーアクセスの距離が異なる。
 ###マルチプロセス
 Parallel系関数では、マルチスレッドが抑制され、カーネルがマルチプロセスで実行される。
 各プロセスはそれぞれのCPUコアに分配され、プロセス間通信が発生し、処理は遅延する。
-
+ 起動直後にはサブカーネルが準備されていない
+ ps ax | grep math 
+ Timing[Table[Prime[n], {n, 1, 4000000}];]
+ ps ax | grep math
+ parallel系関数が呼び出された時にサブカーネルが起動する
+ Timing[ParallelTable[Prime[n], {n, 1, 4000000}];]
+ Quitには時間がかかる
+ Quit
 
