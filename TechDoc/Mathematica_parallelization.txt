@@ -30,8 +30,9 @@ CPUダイごとにメインメモリーアクセスの距離が異なる。
 もし、スレッド数が1ソケットあたりのCPUコア数を超えたら、QPI通信が発生し処理は遅延する。
 
  export OMP_NUM_THREADS=16;math # 標準では、OMP_NUM_THREADSは32
- In[1]:= t=Table[Random[],{4000},{4000}];                                       
- In[2]:= PrincipalComponents[t]; 
+ t=Table[Random[],{4000},{4000}];                                       
+ PrincipalComponents[t]; 
+ #スレッディングでは1-Control Kernelにつき16スレッド、合計32スレッドを実行可能。
 
 マルチスレッドでは各スレッドがそれぞれのCPUコアに分配されるが、ロードはプロセスを受け持つCPUに集約される。
 
@@ -50,6 +51,7 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
  Timing[ParallelTable[Prime[n], {n, 1, 4000000}];]
  AbsoluteTiming[ParallelTable[Prime[n], {n, 1, 4000000}];]
  #サブカーネルの合計起動数は8
+ #カーネル関数のような入力に対して出力が少なくなるjobの効率は高くなる。
  #Quitには時間がかかる/失敗することがある
  Quit
 
