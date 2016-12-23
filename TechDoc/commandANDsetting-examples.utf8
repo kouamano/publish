@@ -504,10 +504,22 @@ https://github.com/
 githubでリポジトリ作成
 メッセージにしたがってソースコードをpushまでおこなう。
 プロジェクトごとに.gitつくる
-##あたらしいレポジトリの作成
+##あたらしいレポジトリの作成(1)
+###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
+###clone 元URLをコピー、clone
+git clone ...
+###git push
+> .gitignore
+git add .gitignore
+git commit
+git push origin master
+##あたらしいレポジトリの作成(2)
 ###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
 ###メッセージにしたがいリポジトリを作成、
 ###おなじくメッセージにしたがいローカルでディレクトリを作成、コミット。
+###git config
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 ###git pull
 プロジェクトのディレクトリで
 git pull <URL>
