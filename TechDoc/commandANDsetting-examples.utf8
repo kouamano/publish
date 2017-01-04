@@ -554,9 +554,12 @@ git remote set-url origin https://kouamano@github.com/kouamano/SOC.git
 unset SSH_ASKPASS
 ##ファイルを特定のcommit状態に戻す
 git checkout <commit番号> <ファイル>
-##git server 構築
-##n005に構築済みのはず
-##kamano利用可能
+##未解決問題
+###forkしたリポジトリへのpush
+  ! [remote rejected] master -> master (permission denied)
+   error: failed to push some refs to 'git@github.com:kamano-at-nims/utility.git'
+ branchをつくらないとダメなのか？
+ - http://kik.xii.jp/archives/179
 
 #GitHub
 - 参照: http://qiita.com/shunjikonishi/items/c5024e70b0878817725f
