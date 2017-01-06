@@ -63,9 +63,13 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
 さらに、ユーザーの明示的な指示によりプロセスとCPUをバインドし続けることができる。
 
 ###mathkernelとCPUのバインド固定
-top -u kamano
- f j 
-CloseKernels[]
-Needs["SubKernels`LocalKernels`"]
-LaunchKernels[ LocalMachine[ "numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
-LaunchKernels[ LocalMachine[ "numactl --physcpubind=1  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
+ top -u kamano
+  f j 
+ math
+
+ CloseKernels[]
+ Needs["SubKernels`LocalKernels`"]
+ LaunchKernels[ LocalMachine[ "numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
+ LaunchKernels[ LocalMachine[ "numactl --physcpubind=1  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
+
+
