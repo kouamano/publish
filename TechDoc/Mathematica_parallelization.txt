@@ -57,6 +57,8 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
 
 ###mathkernelとCPUのバインド
 
+top -u kamano
+ f j 
 CloseKernels[]
 Needs["SubKernels`LocalKernels`"]
 LaunchKernels[ LocalMachine[ "numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
