@@ -78,4 +78,11 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=1  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
 
+####Mathematicaの並列化の仕組みを推測する
+上記のコマンドは重要な示唆を含んでいる。
+すなわち、subkernelは外部コマンドによって立ち上げられる = Mathematica内でfork()されない。
+したがって、各subkernelは、基本的には親プロセスの定義を引き継いでいない。
+このことは、ネットワークを超えた汎用性の高い並列化を実現できる反面、変数の共有において多大なコストを要する。
+
+
 
