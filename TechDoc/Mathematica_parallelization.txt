@@ -84,5 +84,5 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
 したがって、各subkernelは、基本的には親プロセスの定義を引き継いでいない。
 このことは、ネットワークを超えた汎用性の高い並列化を実現できる反面、変数の共有において多大なコストを要する。
 
- strace echo -e Needs[\"SubKernels\`LocalKernels\`\"]\;\\n LaunchKernels[ LocalMachine[ \"numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink\"]] | math
+ strace -o tmp echo -e Needs[\"SubKernels\`LocalKernels\`\"]\;\\n LaunchKernels[ LocalMachine[ \"numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink\"]] | math
 
