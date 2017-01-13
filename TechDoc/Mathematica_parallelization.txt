@@ -89,4 +89,5 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
 このことは、ネットワークを超えた汎用性の高い並列化を実現できる反面、変数の共有において多大なコストを要する。
 
  strace -o tmp echo -e Needs[\"SubKernels\`LocalKernels\`\"]\;\\n LaunchKernels[ LocalMachine[ \"numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink\"]] | math
+ strace -ff -o tmp2 echo -e Needs[\"SubKernels\`LocalKernels\`\"]\;\\n LaunchKernels[ LocalMachine[ \"numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink\"]] | math
 
