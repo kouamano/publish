@@ -77,6 +77,7 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
  Needs["SubKernels`LocalKernels`"]
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=1  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
+ $KernelCount
 
 ####Mathematicaの並列化の仕組みを推測する
 上記のコマンドは重要な示唆を含んでいる。
