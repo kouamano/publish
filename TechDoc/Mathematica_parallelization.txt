@@ -76,6 +76,7 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
 
  Needs["SubKernels`LocalKernels`"]
  Get["/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Parallel_operations.txt"]
+ Do[launchBind[i],{i,8}]
  CloseKernels[]
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=1  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
