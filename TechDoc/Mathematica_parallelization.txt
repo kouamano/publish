@@ -69,12 +69,14 @@ Parallel系関数では、マルチスレッドが抑制され、カーネルが
 「プロセスマイグレーション」という言葉は、実際にはより広義に使われる。
 
 ###mathkernelとCPUのバインド固定
+
  top -u kamano
   f j 
  math
 
- CloseKernels[]
  Needs["SubKernels`LocalKernels`"]
+ Get["/home/kamano/gitsrc/MATH_SCRIPT/SCRIPTS/Parallel_operations.txt"]
+ CloseKernels[]
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=0  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
  LaunchKernels[ LocalMachine[ "numactl --physcpubind=1  /usr/local/bin/math -subkernel  -noinit -mathlink"]]
  $KernelCount
