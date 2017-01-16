@@ -294,6 +294,7 @@ date -d "2016-12-26 00:00" +%s
 ##FreeBSD
 ###変換
 date -j -f "%a %b %d %T %Z %Y" "Sat Jan 9 18:49:08 JST 2010" "+%s"
+date -j -f "%m %d %T %Z %Y" "1 9 18:49:08 JST 2010" "+%s"
 
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
