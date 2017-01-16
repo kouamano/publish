@@ -283,11 +283,17 @@ gzip -c
 tar zcvf files.tgz file1 file2
 
 #date
-##いま
+##linux
+###いま
 date -d now
-##フォーマット指定
+###フォーマット指定
 date +"%Y-%m-%d:%H"
 date +"%Y-%m-%d.%H:%M"
+###変換
+date -d "2016-12-26 00:00" +%s
+##FreeBSD
+###変換
+date -j -f "%a %b %d %T %Z %Y" "Sat Jan 9 18:49:08 JST 2010" "+%s"
 
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
