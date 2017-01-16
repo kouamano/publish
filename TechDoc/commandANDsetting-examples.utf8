@@ -295,6 +295,7 @@ date -d "2016-12-26 00:00" +%s
 ###変換
 date -j -f "%a %b %d %T %Z %Y" "Sat Jan 9 18:49:08 JST 2010" "+%s"
 date -j -f "%m %d %T %Z %Y" "1 9 18:49:08 JST 2010" "+%s"
+date -j -f "%Y%m%d %T" "20170116 16:00:00" "+%s"
 ###UNIX時間で現時刻表示
 date "+%s"
 
