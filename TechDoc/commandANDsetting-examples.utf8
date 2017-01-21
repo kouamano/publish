@@ -811,6 +811,7 @@ ans = 3
 keys(m)
 values(m)
 ##gpu
+https://jp.mathworks.com/help/distcomp/run-built-in-functions-on-a-gpu.html
 Ga = rand(1000,'single','gpuArray');
 Gfft = fft(Ga); 
 Gb = (real(Gfft) + Ga) * 6;
