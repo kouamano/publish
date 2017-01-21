@@ -810,6 +810,11 @@ ans = 3
 ###全要素へのアクセス
 keys(m)
 values(m)
+##gpu
+Ga = rand(1000,'single','gpuArray');
+Gfft = fft(Ga); 
+Gb = (real(Gfft) + Ga) * 6;
+G = gather(Gb);
 
 #C
 ##gcc 最適化
