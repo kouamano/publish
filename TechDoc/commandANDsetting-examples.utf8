@@ -1534,7 +1534,9 @@ brew update
 $ cd `brew --prefix`
 $ git fetch origin
 $ git reset --hard origin/master
-
+##トレーサー
+sudo dtruss <program>
+sudo dtruss -p <pid>
 
 
 #PoweerShell
