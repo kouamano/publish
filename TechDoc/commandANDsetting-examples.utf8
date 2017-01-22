@@ -764,6 +764,9 @@ dot -Kdot -Tps test2.utf.dot -o test.ps
 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
 numactl --cpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
 numactl --physcpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -subkernel -noinit -mathlink
+##macのコマンドライン起動
+- Ver. 9:
+/Applications/Mathematica.app/Contents/MacOS/MathKernal
 ##リストからすべてのペアを取り出す
 Permutations[l, {2}]
 
