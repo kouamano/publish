@@ -1024,6 +1024,8 @@ pip install <pkg> --proxy=wwwout.xxxx.xx.xx:8888
 ###固有値、固有ベクトルの対応
 eigval,eigvec = np.linalg.eig()
 eigval[i]に対応するのはeigvec[:,i]となる
+##sort
+http://d.hatena.ne.jp/pashango_p/20090614/1244984058
 
 
 #Ruby
