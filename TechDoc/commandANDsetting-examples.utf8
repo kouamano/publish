@@ -1180,6 +1180,10 @@ sudo foreman export systemd -a tokkyodb -u kamano /etc/systemd/system/
 
 
 #Postgresql
+##バックスラッシュコマンド
+###スクリプト実行
+psql <db>
+\i <sqlファイル>
 ##postgres初期化(1)
 []# su - postgres
 []#initdb
