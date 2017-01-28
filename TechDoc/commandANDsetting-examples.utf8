@@ -98,7 +98,7 @@ journalctl -f
 
 #FireWall
 ##firewalld: CentOS7
-systemctl enable firewalld
+systemctl enable firewalld # コントロール可能にする
 systemctl start firewalld
 firewall-cmd --permanent --zone=public --addport=8080/tcp
 ##ipフォワードのチェック
