@@ -711,6 +711,10 @@ AuthType Basic
 Require valid-user
 ===/
 
+#Squid
+##log format
+http://wiki.squid-cache.org/Features/LogFormat#Details
+
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
 
