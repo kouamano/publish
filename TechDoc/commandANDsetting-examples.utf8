@@ -308,6 +308,8 @@ date -j -f "%s" 1482173562 "%d/%b/%Y:%T"
 date -j -f "%Y%m%d %T" "20170116 16:00:00" "+%s"
 date -v-1d +"%Y%m%d"
 date -v+1H -j -f "%Y-%m-%d %T" "2016-01-02 00:00:00"
+date -v+20H -j -f "%Y-%m-%d %T" "2016-01-02 00:00:01" +"%Y-%m-%d %T"
+
 
 #tr
 cat refxml.source.shtrim | tr [:lower:] [:upper:]
