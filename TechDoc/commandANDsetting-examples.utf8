@@ -110,6 +110,11 @@ route add default gw <ipaddr>
 ##delete default gateway
 route del default
 
+#NetworkManager
+##nmcli
+ipアドレスの設定
+nmcli c mod '優先接続 1' ipv4.addresses 10.10.10.145/24
+
 #LVM
 #以下のコマンドあやしい?
 ##pvcreate
