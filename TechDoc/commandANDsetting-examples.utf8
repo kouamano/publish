@@ -114,6 +114,7 @@ route del default
 ##nmcli
 ipアドレスの設定
 nmcli c mod '優先接続 1' ipv4.addresses 10.10.10.145/24
+nmcli c mod ens160 ipv4.method manual
 
 #LVM
 #以下のコマンドあやしい?
