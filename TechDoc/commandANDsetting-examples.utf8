@@ -292,6 +292,8 @@ tar zcvf files.tgz file1 file2
 ##linux
 ###いま
 date -d now
+###昨日
+date -v-1d +"%Y%m%d"
 ###フォーマット指定
 date +"%Y-%m-%d:%H"
 date +"%Y-%m-%d.%H:%M"
