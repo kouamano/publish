@@ -1008,7 +1008,7 @@ pos($txt) = $p - length($1);
 - "<ORG>"文字列にマッチしない文字列にマッチ: ((?!<ORG>).)*
 -- 例: $l =~ s/(<ORG>.+?<\/ORG>.*?<[0-9]*W>.+?<\/[0-9]*W>)(((?!<ORG>).)+)/$1<RESc>$2<\/RESc>/g;
 
-#python
+#Python
 ##anaconda
 以下のようなエラーが出る：
 import: unable to open X server `' @ error/import.c/ImportImageCommand/368
