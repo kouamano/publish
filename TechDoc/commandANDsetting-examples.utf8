@@ -1206,6 +1206,8 @@ sudo foreman export systemd -a tokkyodb -u kamano /etc/systemd/system/
 ###スクリプト実行
 psql <db>
 \i <sqlファイル>
+###出力先をファイルに
+\o /home/kamano/psql.out
 ##postgres初期化(1)
 []# su - postgres
 []#initdb
@@ -1340,6 +1342,7 @@ SELECT dblink_connect('sassc','host=192.168.0.4 port=5432 dbname=sassc user=sass
 SELECT * from dblink('sassc', 'select * from gene') as t1(gene_symbol text, gene_name text, remarks text);
 ###select dblink_disconnect()
 SELECT dblink_disconnect('sassc');
+
 
 #mysql
 ##mariadb
