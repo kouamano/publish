@@ -829,6 +829,10 @@ ans = 3
 keys(m)
 values(m)
 ##gpu
+###CUDA_CACHE_MAXSIZEの設定
+起動デイレクトリにあるファイル：startup.m に以下を記載
+setenv('CUDA_CACHE_MAXSIZE', '1073741824')
+###使用例
 https://jp.mathworks.com/help/distcomp/run-built-in-functions-on-a-gpu.html
 Ga = rand(1000,'single','gpuArray');
 Gfft = fft(Ga); 
