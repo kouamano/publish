@@ -1052,6 +1052,10 @@ eigval,eigvec = np.linalg.eig()
 eigval[i]に対応するのはeigvec[:,i]となる
 ##sort
 http://d.hatena.ne.jp/pashango_p/20090614/1244984058
+##モジュール内のメソッド一覧
+import tendorflow ads tf
+for x in dir(tf):
+  print(x)
 
 
 #Ruby
@@ -1119,8 +1123,10 @@ bundle exec rake sunspot:solr:start
 ###springのstart/stop
 bundle exec spring start
 bundle exec spring stop
-##Railsアプリのインストール
-###sunspotrailsのインストール
+##Railsアプリの作成(postgresql)
+rails new <application_name> -d postgresql #ディレクトリができる
+###Railsアプリのインストール
+####sunspotrailsのインストール
 - http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
 - file: Gemfile
 /===
@@ -1133,8 +1139,6 @@ bundle install
 rails generate sunspot_rails:install
 -- 場所: 
 config/sunspot.yml
-##Railsアプリの作成(postgresql)
-rails new <application_name> -d postgresql #ディレクトリができる
 ###モデルの作成
 cd <application_name> #特定のアプリケーションディレクトリに移動
 rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
