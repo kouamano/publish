@@ -840,6 +840,8 @@ Gb = (real(Gfft) + Ga) * 6;
 G = gather(Gb);
 
 #C
+##クロスコンパイル
+x86_64-redhat-linux-gcc soc-lm.c -o soc-lm.exe -Wall -O3 -lm -I../../include
 ##gcc 最適化
 gcc -O3 -m64 regionposition.c -lm -o regionposition
 ##clone()システムコール
