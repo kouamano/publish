@@ -446,6 +446,12 @@ virsh console sl62
 qemu-img create -f raw ubuntu16.img 80G
 ##rawイメージのマウント
 mount -o loop,offset=32256 vm006.img /mnt/vimg0
+##イメージの移動
+イメージファイルをmvして設定を変更する：
+/etc/libvirt/qemu/*.xml を編集しても反映されない
+ =>GUIから設定
+  1. 古いディスクを削除
+  2. 新しいディスクをアタッチ
 ##イメージの拡張
 qemu-img resize raw.img +80G
 ##convert image
