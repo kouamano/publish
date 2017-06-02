@@ -1069,10 +1069,12 @@ eigval[i]に対応するのはeigvec[:,i]となる
 ##sort
 http://d.hatena.ne.jp/pashango_p/20090614/1244984058
 ##モジュール内のメソッド一覧
-import tendorflow ads tf
+import tensorflow ads tf
 for x in dir(tf):
   print(x)
 ## xml.etree.ElementTree
+import os
+os.chdir('/BANK/PMC/20170527/articles/Plant_Physiol_Biochem')
 import xml.etree.ElementTree as ET
 tree = ET.parse('PMC3185291.nxml')
 root = tree.getroot()
