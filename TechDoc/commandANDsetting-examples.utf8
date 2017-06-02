@@ -1072,7 +1072,12 @@ http://d.hatena.ne.jp/pashango_p/20090614/1244984058
 import tendorflow ads tf
 for x in dir(tf):
   print(x)
-
+## xml.etree.ElementTree
+import xml.etree.ElementTree as ET
+tree = ET.parse('PMC3185291.nxml')
+root = tree.getroot()
+elm=root.find(".//*[@sec-type='results']")
+ET.tostring(elm)
 
 #Ruby
 ##rubygemsのインストール
