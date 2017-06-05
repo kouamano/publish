@@ -1073,13 +1073,17 @@ import tensorflow ads tf
 for x in dir(tf):
   print(x)
 ## xml.etree.ElementTree
-import os
-os.chdir('/BANK/PMC/20170527/articles/Plant_Physiol_Biochem')
-import xml.etree.ElementTree as ET
-tree = ET.parse('PMC3185291.nxml')
-root = tree.getroot()
-elm=root.find(".//*[@sec-type='results']")
-ET.tostring(elm)
+/===
+ #!/home/kamano/anaconda3/bin/python
+ 
+ import os
+ import xml.etree.ElementTree as ET
+ #os.chdir('/BANK/PMC/20170527/articles/Plant_Physiol_Biochem')
+ tree = ET.parse('/BANK/PMC/20170527/articles/Plant_Physiol_Biochem/PMC3185291.nxml')
+ root = tree.getroot()
+ elm = root.find(".//*[@sec-type='results']")
+ print(ET.tostring(elm))
+===/
 
 #Ruby
 ##rubygemsのインストール
