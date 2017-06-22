@@ -222,6 +222,27 @@ sudo apt-get update
 ##inheritance of user env
 sudo -E xxx
 
+#gpg
+gpg --list-keys
+pub   2048R/3FF819C0 2017-06-20 [満了: 2022-06-19]
+uid                  kou amano <amano.kou@nims.go.jp>
+sub   2048R/BBBD14F1 2017-06-20 [満了: 2022-06-19]
+
+pub   2048R/1DD194A3 2017-06-22 [満了: 2019-06-22]
+uid                  Kou AMANO (一般署名) <AMANO.Kou@nims.go.jp>
+sub   2048R/890B34FC 2017-06-22 [満了: 2019-06-22]
+
+のとき、
+
+署名(秘密鍵で暗号化):
+gpg -e -a -r 890B34FC msg.txt #msg.txt.asc
+
+鍵のエクスポート:
+gpg --export -a 1DD194A3 > kama.pub
+gpg --export -a 890B34FC > kama.prv
+
+
+
 #mount
 ##イメージファイルの作成とマウント
 ###作成
