@@ -235,11 +235,10 @@ sub   2048R/890B34FC 2017-06-22 [満了: 2019-06-22]
 のとき、
 
 署名(秘密鍵で暗号化):
-gpg -e -a -r 890B34FC msg.txt #msg.txt.asc
+gpg -e -a -r 1DD194A3 msg.txt #msg.txt.asc
 
-鍵のエクスポート:
-gpg --export -a 1DD194A3 > kama.pub
-gpg --export -a 890B34FC > kama.prv
+公開鍵のエクスポート:
+gpg --export -a 890B34FC > kama.pbl
 
 
 
