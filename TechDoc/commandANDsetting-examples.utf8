@@ -1602,6 +1602,8 @@ https://github.com/samvera-labs/samvera-vagrant
 ##Hykuのマニュアル
 - install: https://wiki.duraspace.org/display/hyku/Hyku+Product+Beta+-+Frequently+Asked+Questions
 - userman: https://docs.google.com/document/d/1BN7_YnaCZXhbRTOqWooXhGz2SBojpLI-js5d28db6lU/edit#heading=h.b7ep2kef9anu
+##Hyrax:管理者追加
+- https://github.com/samvera/hyrax/wiki/Making-Admin-Users-in-Hyrax
 
 #mac OSX
 ##Xのハマりポイント
