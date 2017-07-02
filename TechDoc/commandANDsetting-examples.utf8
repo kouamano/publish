@@ -1245,6 +1245,8 @@ rails console -e production
 - ex.3
 (irb) PatentPatent.where('created_at >= ?','2016-06-22').map{|patent| patent.index}
 (irb) Sunspot.commit
+###コンソールからテーブル一覧
+irb(main):x:x> ActiveRecord::Base.connection.tables
 ##railsからDBに接続
 rails dbconsole -e production
 ##try
