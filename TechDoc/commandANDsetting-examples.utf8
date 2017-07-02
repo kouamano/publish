@@ -1600,7 +1600,7 @@ RAILS_ENV=production rake sunspot:solr:reindex
 ##VagrantとVirtualBox対応版のインストール
 https://github.com/samvera-labs/samvera-vagrant
 ##Hykuのマニュアル
-
+https://wiki.duraspace.org/display/hyku/Hyku+Product+Beta+-+Frequently+Asked+Questions
 
 #mac OSX
 ##Xのハマりポイント
