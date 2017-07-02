@@ -1596,6 +1596,10 @@ RAILS_ENV=production rake sunspot:solr:reindex
 7.4 a.save
 7.5 a.index!
 
+#Hyku/Hyrax
+##VagrantとVirtualBox対応版のインストール
+https://github.com/samvera-labs/samvera-vagrant
+##Hykuのマニュアル
 
 
 #mac OSX
