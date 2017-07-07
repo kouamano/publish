@@ -33,6 +33,8 @@ sealert -l <ID>
 #bash
 ##タブの入力
 [Ctrl]v [tab]
+##掛け算
+for i in `seq 0 9`; do echo `expr ${i} \* 20 + 1`; done
 ##bash if 構文
 for file in *; do if [ -d $file ]; then echo 1; else echo 2; fi; done; 
 ##bash TABとかの入力
