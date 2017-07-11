@@ -1106,6 +1106,23 @@ for x in dir(tf):
  elm = root.find(".//*[@sec-type='results']")
  print(ET.tostring(elm))
 ===/
+##正規表現マッチ
+###マッチした複数のパターンをprint
+/===
+-*- coding:utf-8 -*-
+import re
+
+html = u"""
+<h3>ここが欲しい</h3>
+HTMLの内容。
+<h3>ここも欲しい</h3>
+別の内容
+"""
+pattern = r'<h3>(.*)</h3>'
+matchs = re.finditer(pattern, html)
+for match in matchs:
+  print match.groups()[0]
+===/
 
 #Ruby
 ##rubygemsのインストール
