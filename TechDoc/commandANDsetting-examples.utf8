@@ -404,8 +404,11 @@ mecab -d /usr/share/mecab/dic/mecab-ipadic
 #mpage アウトライン無し2page/A4
 mpage -o -2 k_amano.ps > k_amano.mpage.ps
 
-#文字数の多い順にソート:
+#sort
+##文字数の多い順にソート:
 cat ./test.txt | awk '{print length($0), $0}' | sort -nr | cut -d' ' -f2-
+##合わせ技
+sort -k 2 top+subname.merge | awk -F '	' '{print length($2)"\t"$1"\t"$2"\t"$3}' | sort -nr | cut -d'	' -f2,3,4 > top+subname.merge.lensort
 
 #sorthex.plの使いかた:
 sorthex.pl -f 2 file.txt
