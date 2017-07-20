@@ -381,6 +381,8 @@ pdvips -D600 -P pdf jcc.jslis.dvi
 dvipdfmx -f texfonts.map  sample.dvi
 ##ファイルに出力:
 pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
+##サイズ指定
+dvipdfmx -p a5 top.dvi
 
 #cdrecord
 cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/OpenSolaris/os200805.iso
