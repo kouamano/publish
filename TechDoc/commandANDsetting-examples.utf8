@@ -65,6 +65,7 @@ history 1
 SendEnv XMODIFIERS
 リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
+ibusが必要(ibus-anthy)
 ##port 443を使う
 sshd_config:
 /===
