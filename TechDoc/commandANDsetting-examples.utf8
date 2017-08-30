@@ -1,5 +1,4 @@
 (**** Linuxを中心としたまとめドキュメント ****)
-
 #OSのバージョン
 cat /etc/redhat-release
 
@@ -29,6 +28,55 @@ audit2allow -i audit.mail -l -m sendmail
 まず、ファイル: /var/log/messages を見て、
 sealert -l <ID>
 でメッセージを見る
+
+#proxy
+#ハマリポイント: .bash_profile が login時に読まれないので、source 。
+##全般
+- file: .bash_profile
+/===
+export http_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
+export https_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
+export ftp_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
+export no_proxy=127.0.0.1,*.local,localhost,*.xxx.xx/
+===/
+##aptのproxy
+- file: /etc/apt/apt.conf
+/===
+Acquire::http::proxy "http://プロキシサーバー名:ポート番号/";
+Acquire::https::proxy "https://プロキシサーバー名:ポート番号/";
+Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
+Acquire::socks::proxy "socks://プロキシサーバー名:ポート番号/";
+===/
+##ssh(git)のproxy
+- file: ~/.ssh/config
+/===
+Host N005
+ hostname 134.160.xx.xx
+ User kxxxx
+ ProxyCommand /bin/nc -x sock.xxx.xxx.xx:xxxx %h %p
+
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+ ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
+
+Host hokusai
+ Hostname hokusai
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
+
+Host Supernig
+ Hostname gw.ddbj.nig.ac.jp
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
+===/
+##using port 443 for git
+/===
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+ Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
+===/
+##ブラウザの起動
+設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
 #bash
 ##タブの入力
@@ -220,10 +268,6 @@ gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
 sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
-
-#sudo
-##inheritance of user env
-sudo -E xxx
 
 #gpg
 gpg --list-keys
@@ -1430,16 +1474,16 @@ SELECT * from dblink('sassc', 'select * from gene') as t1(gene_symbol text, gene
 ###select dblink_disconnect()
 SELECT dblink_disconnect('sassc');
 
-
 #mysql
 ##mariadb
  systemctl enable mariadb.service
  systemctl start mariadb.service
 
+
+
 #BerkleyParser
 ## example1:
 java -jar /usr/local/BerkleyParser/BerkeleyParser-1.7.jar -gr /usr/local/BerkleyParser/eng_sm6.gr -inputFile /BANK/PMC/20140724/terms/ALL/patt.4/ArtVSTerm/Word_Jour-au.sortuniq-eachline
-
 #StanfordNLP
 ## alternatives --config java で1.8を選択するも反映されないのでフルパス
 https://stanfordnlp.github.io/CoreNLP/download.html
@@ -1448,54 +1492,7 @@ https://stanfordnlp.github.io/CoreNLP/download.html
 ## example:
 java -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt 
 
-#proxy
-#ハマリポイント: .bash_profile が login時に読まれないので、source 。
-##全般
-- file: .bash_profile
-/===
-export http_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
-export https_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
-export ftp_proxy=http://wwwxxx.xxxx.xxx.xx:xxxx/
-export no_proxy=127.0.0.1,*.local,localhost,*.xxx.xx/
-===/
-##aptのproxy
-- file: /etc/apt/apt.conf
-/===
-Acquire::http::proxy "http://プロキシサーバー名:ポート番号/";
-Acquire::https::proxy "https://プロキシサーバー名:ポート番号/";
-Acquire::ftp::proxy "ftp://プロキシサーバー名:ポート番号/";
-Acquire::socks::proxy "socks://プロキシサーバー名:ポート番号/";
-===/
-##ssh(git)のproxy
-- file: ~/.ssh/config
-/===
-Host N005
- hostname 134.160.xx.xx
- User kxxxx
- ProxyCommand /bin/nc -x sock.xxx.xxx.xx:xxxx %h %p
 
-Host github.com
- Hostname ssh.github.com
- Port 443
- ProxyCommand /bin/nc -X connect -x wwwxxx.xxxx.xx.jp:8888 %h %p
-
-Host hokusai
- Hostname hokusai
- Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
-
-Host Supernig
- Hostname gw.ddbj.nig.ac.jp
- Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
-===/
-##using port 443 for git
-/===
-Host github.com
- Hostname ssh.github.com
- Port 443
- Proxycommand /usr/bin/nc -X connect -x wwwxxx.xxxx.xx.xx:8888 %h %p
-===/
-##ブラウザの起動
-設定ファイルをsourceして端末からコマンド:アイコン起動では.bash_profileが反映されないみたい
 
 
 
@@ -1668,7 +1665,6 @@ $ git reset --hard origin/master
 ##トレーサー
 sudo dtruss <program>
 sudo dtruss -p <pid>
-
 
 #PoweerShell
 ##カレントディレクトリの使用サイズ
