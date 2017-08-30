@@ -716,6 +716,8 @@ svn log  -v | sed -n '/| yookawa |/,/----$/ p'
 #Java
 ##jar で.jarを見る
 jar tvf <ファイル>
+##alternativesで切り替わるのは
+/usr/bin/java
 #eclipse
 ##CentOS 6.5
 ##64bit版を指定してjava VMを機動 <- aliasを設定
@@ -1439,8 +1441,9 @@ SELECT dblink_disconnect('sassc');
 java -jar /usr/local/BerkleyParser/BerkeleyParser-1.7.jar -gr /usr/local/BerkleyParser/eng_sm6.gr -inputFile /BANK/PMC/20140724/terms/ALL/patt.4/ArtVSTerm/Word_Jour-au.sortuniq-eachline
 
 #StanfordNLP
+## alternatives --config java で1.8を選択するも反映されないのでフルパス
 https://stanfordnlp.github.io/CoreNLP/download.html
-java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref -file input.txt
+ /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref -file input.txt
 #StanfordParser
 ## example:
 java -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt 
