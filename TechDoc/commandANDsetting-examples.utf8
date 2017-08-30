@@ -1494,10 +1494,7 @@ cd /usr/local/stanford-corenlp-full-2017-06-09
 /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java -cp "/usr/local/stanford-corenlp-full-2017-06-09/*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref -file /home/kamano/test/input.txt
 #StanfordParser
 ## example:
-java -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt 
-
-
-
+/usr/bin/java -cp "*" -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz input.txt
 
 
 #RIKEN RICC
