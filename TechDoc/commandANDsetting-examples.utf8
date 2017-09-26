@@ -600,6 +600,10 @@ group = "libvirt"
 dynamic_ownership = 1
 ===/
 
+#docker
+sudo usermod -aG docker ユーザー名
+docker run --rm centos echo 'hello world'
+
 #VirtualBox
 ##ホストからゲストにssh接続
 Natでポートフォワーディングを設定する。
