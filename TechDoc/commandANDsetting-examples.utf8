@@ -1125,7 +1125,7 @@ http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c
 -    ChromeOS: chromebrew + git + pyenv + anaconda(or miniconda)
 ##定義のロード
 execfile(<ファイル名>)
-## nltkのインストール
+## nltk
 rpm -ivh python-nltk-2.0.4-2.el6.1.noarch
 ### データのインストール
 ### pythonを起動
@@ -1499,6 +1499,7 @@ cd /usr/local/stanford-corenlp-full-2017-06-09
 #StanfordParser
 ## example:
 /usr/bin/java -cp "*" -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz input.txt
+#Python nltk :=> # Python / ## nltk
 
 
 #RIKEN RICC
