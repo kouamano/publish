@@ -1494,6 +1494,7 @@ https://stanfordnlp.github.io/CoreNLP/download.html
 - e.g.
 cd /usr/local/stanford-corenlp-full-2017-06-09
 /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref -file /home/kamano/test/input.txt
+ => カレントディレクトリに、結果ファイル:input.txt.xmlができる。
 - e.g.
 /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java -cp "/usr/local/stanford-corenlp-full-2017-06-09/*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref -file /home/kamano/test/input.txt
 #StanfordParser
