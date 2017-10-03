@@ -9,6 +9,8 @@
  Burden. Molecular Identification Number for Substructure Searches. J. Chem. Comput. Sci. (1989) 29, 225-227. :
 The Burden matrix is a symmetric matrix which is constructed as following: the diagonal elements are the atomic number of the atoms; the off diagonal terms representing two bonded atoms i and j are equal to pi* . 10e-1, where pi* is the conventional bond order: 0.1, 0.2, 0.3 and 0.15 for single, double, triple and aromatic bonds, respectively. Off diagonal elements that correspond to terminal bonds are augmented by 0.01, and the rest matrix elements are set at 0.001.
 
+ Milan Randic. "On unique numbering of atoms and unique codes for molecular graphs". Journal of Chemical Information and Computer Science. Vol 15, Issue 2, P.105. 1974.
+
 ここで、Burden Matrixを基礎とする化学構造マッチングを提案する。
 化合物a,bがあるとき、それぞれのBurden MatrixをA,Bとする。
 まず、化合物a,bの原子集合の特殊な共通集合u = Union(a,b)を考える。
