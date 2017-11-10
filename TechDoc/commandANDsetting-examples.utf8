@@ -287,8 +287,8 @@ gpg -e -a -r 1DD194A3 msg.txt #msg.txt.asc
 公開鍵のエクスポート:
 gpg --export -a 890B34FC > kama.pbl
 
-#mount
-##イメージファイルの作成とマウント
+#generate Fs and mount
+##Linux
 ###作成
 truncate -s 10GiB image1.img
 ###ループバックデバイスと関連付け
