@@ -299,7 +299,7 @@ sudo losetup -f
 sudo losetup /dev/loop0 image1.img
 ###パーティショニング
 fdisk
- /dev/loop0p1
+ /dev/loop0
 ###フォーマット
 mkfs.ext4 /dev/loop0
 ###マウント
