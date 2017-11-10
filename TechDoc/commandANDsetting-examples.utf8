@@ -287,8 +287,6 @@ gpg -e -a -r 1DD194A3 msg.txt #msg.txt.asc
 公開鍵のエクスポート:
 gpg --export -a 890B34FC > kama.pbl
 
-
-
 #mount
 ##イメージファイルの作成とマウント
 ###作成
