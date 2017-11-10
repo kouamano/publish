@@ -305,6 +305,8 @@ sudo mount /dev/loop0 /mnt/tmp1/
 ###アンマウント
 ###関連付け解除
 sudo losetup -d /dev/loop0
+##FreeBSD
+http://gdr.geekhood.net/gdrwpl/loop-freebsd.php
 
 #find
 ## パーミッションの一括変換
