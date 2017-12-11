@@ -1275,7 +1275,7 @@ bundle install
 rails generate sunspot_rails:install
 -- 場所: 
 config/sunspot.yml
-###モデルの作成
+###モデル/View/Controlerの作成
 cd <application_name> #特定のアプリケーションディレクトリに移動
 rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
 ###モデルの修正
