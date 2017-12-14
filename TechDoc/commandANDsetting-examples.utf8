@@ -1244,6 +1244,7 @@ app/views/ 以下の
 rails generate migration AddOwnersToPatentPatents owner:text
 rake db:migrate
 ###migration
+rails db:migrate
 rake db:migrate
 ###モデルの破棄(DBの破棄は行われない)
 rails destroy model <modelname>
@@ -1252,6 +1253,7 @@ rails destroy controller <modelname>
 ###DB関係の設定
 ####DBサーバー:
 config/database.yml
+###migrateの記録
 ####table設計:
 db/migrate/*.rb
 
