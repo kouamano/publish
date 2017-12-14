@@ -1229,6 +1229,48 @@ $&
 - http://qiita.com/egnr-in-6matroom/items/c84a1d3896f1015be8d2 (一番簡単)
 ##サービス起動
 rails s -b 0.0.0.0
+##Railsアプリの作成(postgresql)
+rails new <application_name> -d postgresql #ディレクトリができる
+###モデル/View/Controlerの作成
+cd <application_name> #特定のアプリケーションディレクトリに移動
+rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
+###モデルの修正
+db/migrate/ 以下の .rbを修正
+- index: true, unique: true などを追加
+app/models/ 以下の .rbを修正
+app/controllers/ 以下の
+app/views/ 以下の
+###DBへカラム追加の反映
+rails generate migration AddOwnersToPatentPatents owner:text
+rake db:migrate
+###migration
+rake db:migrate
+###モデルの破棄(DBの破棄は行われない)
+rails destroy model <modelname>
+###コントローラーの破棄(DBの破棄は行われない)
+rails destroy controller <modelname>
+###DB関係の設定
+####DBサーバー:
+config/database.yml
+####table設計:
+db/migrate/*.rb
+
+##Railsアプリのインストール
+###sunspotrailsのインストール
+- http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
+- file: Gemfile
+/===
+gem 'sunspot_rails'
+gem 'sunspot_solr' 
+===/
+- バンドル
+bundle install
+- コンフィグファイルの生成:
+rails generate sunspot_rails:install
+-- 場所: 
+config/sunspot.yml
+
+
 ##Railsアプリの起動
 ###solrの起動:
 bundle exec rake sunspot:solr:start
@@ -1259,45 +1301,7 @@ bundle exec rake sunspot:solr:start
 ###springのstart/stop
 bundle exec spring start
 bundle exec spring stop
-##Railsアプリの作成(postgresql)
-rails new <application_name> -d postgresql #ディレクトリができる
-###Railsアプリのインストール
-####sunspotrailsのインストール
-- http://ruby-rails.hatenadiary.com/entry/20150223/1424695504#sunspot-install
-- file: Gemfile
-/===
-gem 'sunspot_rails'
-gem 'sunspot_solr' 
-===/
-- バンドル
-bundle install
-- コンフィグファイルの生成:
-rails generate sunspot_rails:install
--- 場所: 
-config/sunspot.yml
-###モデル/View/Controlerの作成
-cd <application_name> #特定のアプリケーションディレクトリに移動
-rails g scaffold PatentApplication doc_number_s:string title:text applicant:text agent:text inventor:text classification_ipc:text fterm:text ref_cited:text description:text
-###モデルの修正
-db/migrate/ 以下の .rbを修正
-- index: true, unique: true などを追加
-app/models/ 以下の .rbを修正
-app/controllers/ 以下の
-app/views/ 以下の
-###DBへカラム追加の反映
-rails generate migration AddOwnersToPatentPatents owner:text
-rake db:migrate
-###migration
-rake db:migrate
-###モデルの破棄(DBの破棄は行われない)
-rails destroy model <modelname>
-###コントローラーの破棄(DBの破棄は行われない)
-rails destroy controller <modelname>
-###DB関係の設定
-####DBサーバー:
-config/database.yml
-####table設計:
-db/migrate/*.rb
+
 ##モデルとDBから特定のレコードを削除
 rails c;
 ds = PatentRepublication.where('id = ?','18832')
