@@ -1136,6 +1136,10 @@ http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c
 -    ChromeOS: chromebrew + git + pyenv + anaconda(or miniconda)
 ##定義のロード
 execfile(<ファイル名>)
+## get methods in object
+import inspect
+for x in inspect.getmembers(OBJ, inspect.ismethod):
+    print(x[0])
 ## nltk
 rpm -ivh python-nltk-2.0.4-2.el6.1.noarch
 ### データのインストール
@@ -1149,7 +1153,7 @@ nltk.download()
 ### GUIにしたがってデータをインストール
 ##pip
 ###インストール
-yum install yum install python-pip
+yum install python-pip
 ###pipを使ったアップグレード
 pip install --upgrade numpy
 ###proxy
