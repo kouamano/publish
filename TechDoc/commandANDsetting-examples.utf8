@@ -1233,6 +1233,7 @@ $&
 - http://qiita.com/egnr-in-6matroom/items/c84a1d3896f1015be8d2 (一番簡単)
 ##サービス起動
 rails s -b 0.0.0.0
+### app/views/以下にあるディレクトリ名がサービス名
 ##Railsアプリの作成(postgresql)
 rails new <application_name> -d postgresql #ディレクトリができる
 ###モデル/View/Controlerの作成
@@ -1250,9 +1251,9 @@ rake db:migrate
 ###migration
 rails db:migrate
 rake db:migrate
-###モデルの破棄(DBの破棄は行われない)
+### nodel/views/controlerの破棄(DBの破棄は行われない)直ちに行われる
 rails destroy model <modelname>
-###コントローラーの破棄(DBの破棄は行われない)
+rails destroy scaffold <modelname>
 rails destroy controller <modelname>
 ###DB関係の設定
 ####DBサーバー:
