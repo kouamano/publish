@@ -532,6 +532,7 @@ mount -o loop,offset=32256 vm006.img /mnt/vimg0
 qemu-img resize raw.img +80G
 ##convert image
 qemu-img convert -f vmdk amaayo.vmdk -O raw amaayo-flat.vmdk.img #amaayo.vmdk is not a image, but a setting file.
+qemu-img convert -f vdi IMG.vdi -O qcow2 IMG.qcow2
 ##imgのマウント
 kpartx -av disk.img #ループバックデバイス情報が表示される
 mount /dev/mapper/loop0p1 /mnt/kvmimg
