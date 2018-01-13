@@ -831,6 +831,9 @@ https://www.elastic.co/jp/downloads
 - beats
 - logstash
 - hadoop
+## logstash
+### CentOS6.9での停止法
+initctl stop logstash
 
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
