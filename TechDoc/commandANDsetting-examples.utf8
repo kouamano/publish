@@ -954,6 +954,8 @@ x86_64-redhat-linux-gcc soc-lm.c -o soc-lm.exe -Wall -O3 -lm -I../../include
 x86_64-w64-mingw32-gcc soc-lm.c -o soc-lm.exe -Wall -O3 -lm -I../../include
 ##gcc 最適化
 gcc -O3 -m64 regionposition.c -lm -o regionposition
+##ライブラリ作成
+gcc -shared -fPIC -o libhelo.so helo.c
 ##clone()システムコール
 clone(A,B,C,D)
 A: 関数へのポインタ
