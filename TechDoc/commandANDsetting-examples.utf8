@@ -957,7 +957,7 @@ gcc -O3 -m64 regionposition.c -lm -o regionposition
 ##ライブラリ作成
 ###以下は正しい
 gcc -shared -fPIC -o libhelo.so helo.c
-###以下は正しくない -c オプションをつけてはいけない
+###以下は正しくない -c オプションをつけてはいけない. コンパイルは通るが共有ライブラリにならない.
 gcc -shared -fPIC -o libhelo.so -c helo.c
 ##clone()システムコール
 clone(A,B,C,D)
