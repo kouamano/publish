@@ -955,7 +955,10 @@ x86_64-w64-mingw32-gcc soc-lm.c -o soc-lm.exe -Wall -O3 -lm -I../../include
 ##gcc 最適化
 gcc -O3 -m64 regionposition.c -lm -o regionposition
 ##ライブラリ作成
+###以下は正しい
 gcc -shared -fPIC -o libhelo.so helo.c
+###以下は正しくない -c オプションをつけてはいけない
+gcc -shared -fPIC -o libhelo.so -c helo.c
 ##clone()システムコール
 clone(A,B,C,D)
 A: 関数へのポインタ
