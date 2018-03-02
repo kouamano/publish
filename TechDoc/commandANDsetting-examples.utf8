@@ -11,6 +11,30 @@ ps -eZ
 ##audit2allow
 ###make allow policy
 audit2allow --module=httpd --dmesg
+##semanage examples
+/===
+# semanage port -l | grep ssh
+# ssh_port_t                     tcp      22
+# # semanage port -l | grep 443
+# http_port_t                    tcp      80, 443, 488, 8008, 8009, 8443
+# pki_ca_port_t                  tcp      9180, 9701, 9443-9447
+# pki_kra_port_t                 tcp      10180, 10701, 10443-10446
+# pki_ocsp_port_t                tcp      11180, 11701, 11443-11446
+# pki_tks_port_t                 tcp      13180, 13701, 13443-13446
+# # semanage port -a -t ssh_port_t -p tcp 443
+# /usr/sbin/semanage: Port tcp/443 already defined
+# # semanage port -d -t http_port_t -p tcp 443
+# /usr/sbin/semanage: Port tcp/443 is defined in policy, cannot be deleted
+# # semanage port -m -t ssh_port_t -p tcp 443
+# # semanage port -l | grep ssh
+# ssh_port_t                     tcp      443, 22
+# # semanage port -l | grep http
+# http_cache_port_t              tcp      3128, 8080, 8118, 8123, 10001-10010
+# http_cache_port_t              udp      3130
+# http_port_t                    tcp      80, 443, 488, 8008, 8009, 8443
+# pegasus_http_port_t            tcp      5988
+# pegasus_https_port_t           tcp      5989
+===/
 ##list service port
 semanage port -l | grep http
 ##allow service port
