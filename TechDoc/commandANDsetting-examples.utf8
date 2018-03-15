@@ -187,9 +187,13 @@ route del default
 
 #NetworkManager
 ##nmcli
+https://qiita.com/taro0219/items/8d3be39c5cb882d1ba5d
 ipアドレスの設定
 nmcli c mod '優先接続 1' ipv4.addresses 10.10.10.145/24
 nmcli c mod ens160 ipv4.method manual
+インターフェイスの情報
+nmcli d
+nmcli d show eth0
 
 #LVM
 #以下のコマンドあやしい?
