@@ -191,9 +191,33 @@ https://qiita.com/taro0219/items/8d3be39c5cb882d1ba5d
 ipアドレスの設定
 nmcli c mod '優先接続 1' ipv4.addresses 10.10.10.145/24
 nmcli c mod ens160 ipv4.method manual
+
 インターフェイスの情報
 nmcli d
 nmcli d show eth0
+
+インターフェイスを有効化
+nmcli c m eth0 connection.autoconnect yes
+
+IPアドレス、サブネットマスク変更
+nmcli c modify eth0 ipv4.addresses 172.16.0.100/24
+※デバイス確認して「eth0」を変更する
+
+デフォルトゲートウェイ
+nmcli c modify eth0 ipv4.gateway 172.16.0.1
+
+DNS設定
+nmcli c modify eth0 ipv4.dns 172.16.0.1
+
+IPを固定割り当てに設定 (DHCP は "auto"に変更)
+nmcli c modify eth0 ipv4.method manual
+
+インターフェースを再起動して設定を反映
+nmcli c down eth0; nmcli c up eth0
+※デバイス確認して「eth0」を変更する
+
+ネットワーク再起動
+systemctl restart network
 
 #LVM
 #以下のコマンドあやしい?
