@@ -170,6 +170,8 @@ Enforcing
 #systemd
 ##logに対するtail -f 的な使い方
 journalctl -f
+##サービス起動スクリプト
+- proxyの設定は[Service]セクション
 
 #FireWall
 ##firewalld: CentOS7
