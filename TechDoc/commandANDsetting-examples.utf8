@@ -172,6 +172,8 @@ Enforcing
 journalctl -f
 ##サービス起動スクリプト
 - proxyの設定は[Service]セクション
+[Service]
+Environment="HTTP_PROXY=http://172.17.192.16:8080/"
 
 #FireWall
 ##firewalld: CentOS7
