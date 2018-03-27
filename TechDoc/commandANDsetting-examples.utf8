@@ -659,6 +659,8 @@ dynamic_ownership = 1
 - example:
  sudo usermod -aG docker ユーザー名
  docker run --rm centos echo 'hello world'
+##イメージリストの情報(CentOS7)
+/var/lib/docker/image/overlay2/repositories.json
 
 #VirtualBox
 ##ホストからゲストにssh接続
