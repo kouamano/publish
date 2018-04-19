@@ -1768,6 +1768,7 @@ sudo dtruss -p <pid>
 ../QE/q-e-master/bin/bands.x < graphene.bands.in >> log
 ../QE/q-e-master/bin/plotband.x < graphene.plotbands.in >> log
 evince graphene.eps
+../QE/q-e-master/bin/dos.x < graphene.dos.in >> log
 
 #PoweerShell
 ##カレントディレクトリの使用サイズ
