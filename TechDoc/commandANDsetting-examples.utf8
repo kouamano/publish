@@ -1762,6 +1762,13 @@ $ git reset --hard origin/master
 sudo dtruss <program>
 sudo dtruss -p <pid>
 
+#Quantum Espresso
+../QE/q-e-master/bin/pw.x < graphene.scf.in >> log
+../QE/q-e-master/bin/pw.x < graphene.nscf.in >> log
+../QE/q-e-master/bin/bands.x < graphene.bands.in >> log
+../QE/q-e-master/bin/plotband.x < graphene.plotbands.in >> log
+evince graphene.eps
+
 #PoweerShell
 ##カレントディレクトリの使用サイズ
 Get-ChildItem  -Recurse -Force | ForEach-Object -Begin { $Len = 0 } -Process { $Len = $Len + $_.Length } -End { $Len }
