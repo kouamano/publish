@@ -1591,6 +1591,16 @@ cd /usr/local/stanford-corenlp-full-2017-06-09
 /usr/bin/java -cp "*" -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz input.txt
 #Python nltk :=> # Python / ## nltk
 
+#CIF2Cell
+a) VASP: cif2cell -p vasp -f Ni20Mn3P6.cif --vasp-cartesian-positions
+b) ABINIT: cif2cell -p abinit -f SrTiO3.cif -o SrTiO3.in
+c) exciting: cif2cell -p exciting -f SrTiO3.cif 
+d) Fleur: cif2cell -p fleur -f SrTiO3.cif
+e) elk: cif2cell -p elk -f SrTiO3.cif
+f) CPMD: cif2cell -p cpmd -f SrTiO3.cif -o SrTiO3.inp
+g) CASTEP: cif2cell -p castep -f SrTiO3.cif -o SrTiO3.cell
+h) pwscf(>=cif2cell-1.2.0): cif2cell -p pwscf -f SrTiO3.cif -o SrTiO3.in
+i) siesta: cif2cell -p siesta -f SrTiO3.cif -o SrTiO3.fdf
 #Quantum Espresso
 ../QE/q-e-master/bin/pw.x < graphene.scf.in >> log
 ../QE/q-e-master/bin/pw.x < graphene.nscf.in >> log
