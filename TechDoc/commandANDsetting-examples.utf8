@@ -325,6 +325,12 @@ sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
 
+#CBLASのコンパイル
+1. 普通のBLASをコンパイル
+1.1 blas_LINUX.a みたいなのができる
+2. CBLASのMakefile(.in)を編集、1.1の場所を記載 コンパイル
+2.1 gcc、gfortranのバージョンは、適宜合わせる
+
 #gpg
 gpg --list-keys
 pub   2048R/3FF819C0 2017-06-20 [満了: 2022-06-19]
