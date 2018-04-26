@@ -330,6 +330,15 @@ sudo apt-get update
 1.1 blas_LINUX.a みたいなのができる
 2. CBLASのMakefile(.in)を編集、1.1の場所を記載 コンパイル
 2.1 gcc、gfortranのバージョンは、適宜合わせる
+#LAPACKのコンパイル
+#BLASも一緒に用意されている
+1. READMEを読む
+2. 設定する
+3. コンパイルする
+4. 確認する
+./librefblas.a
+./libtmglib.a
+./liblapack.a 
 
 #gpg
 gpg --list-keys
