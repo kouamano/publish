@@ -605,7 +605,7 @@ qemu-img convert -f vdi IMG.vdi -O qcow2 IMG.qcow2
 ##rawイメージのマウント
 mount -o loop,offset=32256 vm006.img /mnt/vimg0
 ##virtio-imgのマウント
-kpartx -av disk.img #ループバックデバイスが作成され情報が表示される
+kpartx -av disk.img #ループバックデバイスが作成され情報が表示される: add map loop2p1 (253:2): 0 167770112 linear /dev/loop2 2048
 mount /dev/mapper/loop0p1 /mnt/kvmimg
 umount /mnt/kvmimg
 kpartx -dv disk.img
