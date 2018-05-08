@@ -379,6 +379,8 @@ return 0;
 gcc hoge.c -lm -lblas --lapack
 ###例2
 http://www.nag-j.co.jp/lapack
+###コンパイル
+http://www.nag-j.co.jp/lapack/how_to_lapack.htm
 
 #gpg
 gpg --list-keys
