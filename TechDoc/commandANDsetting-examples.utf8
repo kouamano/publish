@@ -325,13 +325,14 @@ sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
 
-#CBLASのコンパイル
+#BLAS,LAPACK
+##CBLASのコンパイル
 1. 普通のBLASをコンパイル
 1.1 blas_LINUX.a みたいなのができる
 2. CBLASのMakefile(.in)を編集、1.1の場所を記載 コンパイル
 2.1 gcc、gfortranのバージョンは、適宜合わせる
-#LAPACKのコンパイル
-#BLASも一緒に用意されている
+##LAPACKのコンパイル
+##BLASも一緒に用意されている
 1. READMEを読む
 2. 設定する
 3. コンパイルする
@@ -339,6 +340,41 @@ sudo apt-get update
 ./librefblas.a
 ./libtmglib.a
 ./liblapack.a 
+##LAPACKの使い方
+##行列の配置は列メジャーとなる
+###例:
+/===
+/* 連立方程式
+ * (1 2)(x) -- (5)
+ * (3 4)(y) -- (6)
+ * の解
+ */
+
+#include <stdio.h>
+##define SIZE 2
+#
+int main(void) {
+int     n             = SIZE;// 正方行列Aの次元
+int     nrhs          = 1   ;// Ax=b の縦ベクトルbの列数
+double  A[SIZE*SIZE]        ;// Ax=bの正方行列A
+        A[0]=1; A[2]=2;
+        A[1]=3; A[3]=4;
+int     lda           = SIZE;// 普通はSIZEにする
+int     ipiv[SIZE]          ;// LU分解の交換行列のピポット要素。[SIZE]にしておく
+double  b[SIZE]             ;// Ax=bの縦ベクトルb。計算終了後はxベクトルが入る。
+        b[0]=5;
+        b[1]=6;
+int     ldb           = SIZE;// 普通はSIZEにする
+int     info                ;// 0なら正常終了
+
+dgesv_(&n,&nrhs,A,&lda,ipiv,b,&ldb,&info);
+
+printf("x = %5.3lf\n",b[0]);
+printf("y = %5.3lf\n",b[1]);
+return 0;
+}
+
+===/
 
 #gpg
 gpg --list-keys
