@@ -342,6 +342,7 @@ sudo apt-get update
 ./liblapack.a 
 ##LAPACKの使い方
 ##行列の配置は列メジャーとなる
+##http://auewe.hatenablog.com/entry/2013/05/04/075717
 ###例:
 /===
 /* 連立方程式
