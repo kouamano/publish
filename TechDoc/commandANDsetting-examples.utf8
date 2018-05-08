@@ -340,10 +340,10 @@ sudo apt-get update
 ./librefblas.a
 ./libtmglib.a
 ./liblapack.a 
-##LAPACKの使い方
+##LAPACKサンプルコード
 ##行列の配置は列メジャーとなる
 ##http://auewe.hatenablog.com/entry/2013/05/04/075717
-###例:
+###例1:
 /===
 /* 連立方程式
  * (1 2)(x) -- (5)
@@ -353,7 +353,7 @@ sudo apt-get update
 
 #include <stdio.h>
 ##define SIZE 2
-#
+
 int main(void) {
 int     n             = SIZE;// 正方行列Aの次元
 int     nrhs          = 1   ;// Ax=b の縦ベクトルbの列数
@@ -377,6 +377,8 @@ return 0;
 ===/
 ###コンパイル
 gcc hoge.c -lm -lblas --lapack
+###例2
+http://www.nag-j.co.jp/lapack
 
 #gpg
 gpg --list-keys
