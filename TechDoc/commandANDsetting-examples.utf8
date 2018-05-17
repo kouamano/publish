@@ -326,6 +326,7 @@ sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
 
 #BLAS,LAPACK
+#URL http://www.netlib.org/lapack/explore-html/index.html
 ##CBLASのコンパイル
 1. 普通のBLASをコンパイル
 1.1 blas_LINUX.a みたいなのができる
