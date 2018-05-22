@@ -325,7 +325,7 @@ sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
 
-#BLAS,LAPACK
+#LAPACK/BLAS
 #URL http://www.netlib.org/lapack/explore-html/index.html
 ##CBLASのコンパイル
 1. 普通のBLASをコンパイル
