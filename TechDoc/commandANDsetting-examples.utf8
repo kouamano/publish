@@ -326,7 +326,8 @@ sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
 
 #LAPACK/BLAS
-#URL sourcecode http://www.netlib.org/lapack/
+#Github https://github.com/Reference-LAPACK/lapack
+#URL sourcecode(githubからリリース) http://www.netlib.org/lapack/
 #URL document http://www.netlib.org/lapack/explore-html/index.html
 #Example https://people.sc.fsu.edu/~jburkardt/f_src/lapack_examples/lapack_examples.html
 ##CBLASのコンパイル
