@@ -658,7 +658,7 @@ kpartx -dv disk.img
 ##仮想ゲストのvirbr0とホストのvirbr0が競合する場合
 とりあえず、仮想ゲスト側のvirbr0をkill
 ##仮想マシンのipaddr
-仮想マシンに login ifconfig
+ホスト側ファイル:/var/lib/libvirt/dnsmasq/default.leases
 ## to kill guest virbr0
 virsh net-destroy default
 virsh net-autostart default --disable
