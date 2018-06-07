@@ -730,7 +730,7 @@ docker run --name mycentos -d centos /sbin/init
 ## コンテナlogin
 docker exec -it mycentos /bin/bash
 ## コンテナ停止
-???調査中
+docker stop mycentos
 ##イメージリストの情報(CentOS7)
 /var/lib/docker/image/overlay2/repositories.json
 
