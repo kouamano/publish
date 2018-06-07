@@ -725,8 +725,10 @@ dynamic_ownership = 1
  sudo usermod -aG docker ユーザー名
 ## イメージget
 docker pull centos
-## コンテナ起動
+## コンテナ登録起動
 docker run --name mycentos -d centos /sbin/init
+## コンテナ起動
+docker start mycentos
 ## コンテナlogin
 docker exec -it mycentos /bin/bash
 ## コンテナ停止
