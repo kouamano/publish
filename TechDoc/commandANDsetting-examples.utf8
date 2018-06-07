@@ -718,12 +718,19 @@ group = "libvirt"
 dynamic_ownership = 1
 ===/
 
-#docker
+#Docker
 - ドキュメント: 
  https://qiita.com/tajima_taso/items/28938415846dcc2e83ff
 - example:
  sudo usermod -aG docker ユーザー名
- docker run --rm centos echo 'hello world'
+## イメージget
+docker pull centos
+## コンテナ起動
+docker run --name mycentos -d centos /sbin/init
+## コンテナlogin
+docker exec -it mycentos /bin/bash
+## コンテナ停止
+???調査中
 ##イメージリストの情報(CentOS7)
 /var/lib/docker/image/overlay2/repositories.json
 
