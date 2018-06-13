@@ -733,6 +733,9 @@ docker start mycentos
 docker exec -it mycentos /bin/bash
 ## コンテナ停止
 docker stop mycentos
+## コンテナへの再ログイン
+- だめ(bashが起動しない): sudo docker attach 19b243929e6d
+- OK: sudo docker exec -it 19b243929e6d  /bin/bash
 ##イメージリストの情報(CentOS7)
 /var/lib/docker/image/overlay2/repositories.json
 
