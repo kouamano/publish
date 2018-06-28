@@ -738,6 +738,10 @@ docker stop mycentos
 - OK: sudo docker exec -it 19b243929e6d  /bin/bash
 ##イメージリストの情報(CentOS7)
 /var/lib/docker/image/overlay2/repositories.json
+## postgres
+$ docker pull postgres
+$ docker run --name mypostgres -e POSTGRES_PASSWORD="psw" -d postgres
+$ docker run -it --rm --link mypostgres:postgres postgres psql -h postgres -U postgres
 
 #VirtualBox
 ##ホストからゲストにssh接続
