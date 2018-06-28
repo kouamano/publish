@@ -741,8 +741,8 @@ docker stop mycentos
 ## postgres
 $ docker pull postgres
 $ docker run --name mypostgres -e POSTGRES_PASSWORD="psw" -d postgres #コンテナstart
-$ docker run --name pgserver -e POSTGRES_PASSWORD="psw" -d -p 4321:5432 postgres #コンテナstart
 $ docker run -it --rm --link mypostgres:postgres postgres psql -h postgres -U postgres #コンテナにlogin
+$ docker run --name pgserver -e POSTGRES_PASSWORD="psw" -d -p 4321:5432 postgres #localhostの4321でサービス公開、コンテナstart
 $ psql -p 4321 -h localhost -U postgres #コンテナのpostgres serverにlocalのpsqlで接続
 
 #VirtualBox
