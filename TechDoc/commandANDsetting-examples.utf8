@@ -863,6 +863,12 @@ curl -H "Authorization: token <token>" https://api.github.com/user
 #Gitlab
 ##あっぷろーどファイルの場所
 /opt/gitlab/embedded/service/gitlab-rails/public/uploads/kamano/KAKEN-25330388
+##runnerをdockerにする
+[#] docker run -d --name gitlab-runner --restart always \
+  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest
+[#] docker exec -it gitlab-runner gitlab-runner register
 
 #svn
 ##svn リポジトリ作成 (サーバ側)
