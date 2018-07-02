@@ -1349,6 +1349,10 @@ matchs = re.finditer(pattern, html)
 for match in matchs:
   print match.groups()[0]
 ===/
+#Jupyter
+## 外部サービスとして起動
+jupyter notebook --ip 0.0.0.0 --port 8080 --no-browser #トークン付きURLがターミナルに表示
+
 
 #Ruby
 ##rubygemsのインストール
