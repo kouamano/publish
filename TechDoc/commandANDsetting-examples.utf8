@@ -480,6 +480,8 @@ tar zcvf files.tgz file1 file2
 ##linux
 ###いま
 date -d now
+###Set
+date -s "07/04 11:54 2018"
 ###昨日
 date -v-1d +"%Y%m%d"
 ###フォーマット指定
