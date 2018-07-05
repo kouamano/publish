@@ -326,13 +326,19 @@ sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
 
 #yacc/lex
+##document
 https://engineering.otobank.co.jp/entry/2015/05/07/112100
-##基本手順
+http://kmaebashi.com/programmer/devlang/yacclex.html
+##基本手順1
 flex exe.l
 yacc lang.y
 - y.tab.c を編集以下をインサート
 #include "lex.yy.c"
 gcc44 y.tab.c -lfl -ly
+##基本手順2
+yacc -dv ddf.y
+flex exe.l #exe.lには"y.tab.h"をincludeしてある
+gcc44 y.tab.c lex.yy.c -lfl -ly
 
 #LAPACK/BLAS
 #Github https://github.com/Reference-LAPACK/lapack
