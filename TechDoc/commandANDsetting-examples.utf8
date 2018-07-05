@@ -327,6 +327,12 @@ sudo apt-get update
 
 #yacc/lex
 https://engineering.otobank.co.jp/entry/2015/05/07/112100
+##基本手順
+flex exe.l
+yacc lang.y
+- y.tab.c を編集以下をインサート
+#include "lex.yy.c"
+gcc44 y.tab.c -lfl -ly
 
 #LAPACK/BLAS
 #Github https://github.com/Reference-LAPACK/lapack
