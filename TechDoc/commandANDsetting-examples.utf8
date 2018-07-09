@@ -890,6 +890,8 @@ curl -H "Authorization: token <token>" https://api.github.com/user
   -v /var/run/docker.sock:/var/run/docker.sock \
   gitlab/gitlab-runner:latest
 [#] docker exec -it gitlab-runner gitlab-runner register
+##GPG key登録
+https://kuenishi.hatenadiary.jp/entry/2016/07/12/013041
 
 #svn
 ##svn リポジトリ作成 (サーバ側)
