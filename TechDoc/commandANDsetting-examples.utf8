@@ -403,7 +403,6 @@ http://www.nag-j.co.jp/lapack/how_to_lapack.htm
 
 #gpg
 gpg --gen-key #十分なエントロピーを得るのに相当時間がかかる
-
 gpg --list-keys
 pub   2048R/3FF819C0 2017-06-20 [満了: 2022-06-19]
 uid                  kou amano <amano.kou@nims.go.jp>
@@ -420,6 +419,12 @@ gpg -e -a -r 1DD194A3 msg.txt #msg.txt.asc
 
 公開鍵のエクスポート:
 gpg --export -a 890B34FC > kama.pbl
+##署名
+###クリア署名
+$ gpg --clearsign -s -a sample.txt
+###分離署名
+$ gpg -b -a sample2.txt
+
 
 #generate Fs and mount
 ##Linux
