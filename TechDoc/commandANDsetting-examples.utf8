@@ -329,6 +329,16 @@ sudo apt-get update
 ##document
 https://engineering.otobank.co.jp/entry/2015/05/07/112100
 http://kmaebashi.com/programmer/devlang/yacclex.html
+##基本手順
+- ddf.yには
+-- #include <stdio>
+-- int yyerror 定義
+- exe.lには
+-- #include "y.tab.h"
+-- #include "y.tab.c"
+- yacc ddf.y
+- lex exe.l
+- gcc44 lex.yy.c -lfl -ll
 ##基本手順1
 flex exe.l
 yacc lang.y
