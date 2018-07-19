@@ -654,6 +654,8 @@ xm console <domain name>
 [ctrl]"]"
 
 #KVM
+##ドキュメント
+- network: https://qiita.com/toshiro3/items/9bfece0501d6963a3275
 ##virt-install
 virt-install --name=SL62 --ram=2000 --vcpus=1 --location='/ARCHIVE/OS/SL62/SL-62-x86_64-2012-02-06-Install-DVD.iso' --os-type='linux' --file=/var/lib/libvirt/images/sl62.img --file-size=10 --bridge=virbr0
 ##設定変更(最大CPU数など変更できる)
