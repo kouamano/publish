@@ -654,6 +654,8 @@ xm console <domain name>
 [ctrl]"]"
 
 #KVM
+##ハマり件
+- virbr0のスタートがGUIでしかできなかった。
 ##ドキュメント
 - network: https://qiita.com/toshiro3/items/9bfece0501d6963a3275
 ##virt-install
