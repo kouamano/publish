@@ -659,6 +659,7 @@ xm console <domain name>
 ##ドキュメント
 - network: https://qiita.com/toshiro3/items/9bfece0501d6963a3275
 - network: http://gihyo.jp/admin/serial/01/ibm_kvm/0003
+- network: http://momijiame.tumblr.com/post/84423976326/libvirtkvm-%E3%81%A7-vm-%E3%81%AB%E9%9D%99%E7%9A%84%E3%81%AA-ip-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%92%E9%85%8D%E5%B8%83%E3%81%99%E3%82%8B
 ##virt-install
 virt-install --name=SL62 --ram=2000 --vcpus=1 --location='/ARCHIVE/OS/SL62/SL-62-x86_64-2012-02-06-Install-DVD.iso' --os-type='linux' --file=/var/lib/libvirt/images/sl62.img --file-size=10 --bridge=virbr0
 ##設定変更(最大CPU数など変更できる)
