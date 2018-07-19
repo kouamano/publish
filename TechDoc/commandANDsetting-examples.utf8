@@ -1724,9 +1724,10 @@ cd /usr/local/stanford-corenlp-full-2017-06-09
 #Python nltk :=> # Python / ## nltk
 
 
-#量子化学計算参考サイト
+#量子化学計算
+##参考サイト
 https://www5.hp-ez.com/hp/calculations/page70
-#CIF2Cell
+##CIF2Cell
 a) VASP: cif2cell -p vasp -f Ni20Mn3P6.cif --vasp-cartesian-positions
 b) ABINIT: cif2cell -p abinit -f SrTiO3.cif -o SrTiO3.in
 c) exciting: cif2cell -p exciting -f SrTiO3.cif 
@@ -1736,14 +1737,14 @@ f) CPMD: cif2cell -p cpmd -f SrTiO3.cif -o SrTiO3.inp
 g) CASTEP: cif2cell -p castep -f SrTiO3.cif -o SrTiO3.cell
 h) pwscf(>=cif2cell-1.2.0): cif2cell -p pwscf -f SrTiO3.cif -o SrTiO3.in
 i) siesta: cif2cell -p siesta -f SrTiO3.cif -o SrTiO3.fdf
-#Quantum Espresso
+##Quantum Espresso
 ../QE/q-e-master/bin/pw.x < graphene.scf.in >> log
 ../QE/q-e-master/bin/pw.x < graphene.nscf.in >> log
 ../QE/q-e-master/bin/bands.x < graphene.bands.in >> log
 ../QE/q-e-master/bin/plotband.x < graphene.plotbands.in >> log
 evince graphene.eps
 ../QE/q-e-master/bin/dos.x < graphene.dos.in >> log
-#GNUplot
+##GNUplot
 gnuplot> plot "graphene.dos"
 gnuplot> plot "graphene.dos" using 1:2 w lp
 gnuplot> plot "graphene.dos" using 1:3 w lp
