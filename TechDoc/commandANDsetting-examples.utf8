@@ -830,7 +830,7 @@ githubにpubkeyを登録してsshでclone。
 ##git add (新しいファイルを作ったとき)
 ##git commit (更新をコミット)
 - 署名付き
-  git commit -S -m "comment"
+  git commit -a -S -m "comment"
 ##git push
 git add <program>
 git commit
