@@ -908,6 +908,8 @@ curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/i
 curl -H "Authorization: token <token>" https://api.github.com/user
 
 #Gitlab
+##全体
+https://fumiyas.github.io/gitlab/install-omnibus.html
 ##あっぷろーどファイルの場所
 /opt/gitlab/embedded/service/gitlab-rails/public/uploads/kamano/KAKEN-25330388
 ##runnerをdockerにする
