@@ -134,6 +134,7 @@ history 1
 #SSL/HTTPS
 ##HTTPS on gitlab
 https://ez-net.jp/article/C2/b2FeQWpO/waL2e8toVhnu/
+https://docs.gitlab.com/omnibus/settings/ssl.html
 
 #SSH
 ##Xのトンネリングでかな漢字変換を有効にする
