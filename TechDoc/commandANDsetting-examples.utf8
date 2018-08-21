@@ -131,6 +131,10 @@ while read -r fname ...
 history 1
 で全履歴。
 
+#SSL/HTTPS
+##HTTPS on gitlab
+https://ez-net.jp/article/C2/b2FeQWpO/waL2e8toVhnu/
+
 #SSH
 ##Xのトンネリングでかな漢字変換を有効にする
 ローカル側の /etc/ssh/ssh_configに
