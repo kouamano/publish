@@ -936,6 +936,10 @@ harry = harryssecret
 ##svn ファイアウオール (サーバ側): /etc/sysconfig/iptables を編集、以下を追記
 -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 3690 -j ACCEPT
 -A RH-Firewall-1-INPUT -m state --state NEW -m udp -p udp --dport 3690 -j ACCEPT
+##ソースipアドレス
+-s
+##デスティネーションipアドレス
+-d
 ##svn server起動 (サーバ側)
 svnserve -d -r /usr/local/var/svn/repos/ArticleMatchSystem
 ##svnのユーザ指定(未確認)
