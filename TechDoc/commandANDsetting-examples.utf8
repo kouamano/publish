@@ -1280,6 +1280,13 @@ int main(int atgc, char **argv){
 ##C言語のtime_t
 は、long int
 
+#jq
+## document
+https://qiita.com/jyami/items/308fc961355dff81cc6f
+## キーにドット(.)を含む場合の値の抽出
+https://qiita.com/penguin_dream/items/18a414302ccc301f8b54
+cat files_list_folder.out | jq .[][] | jq '.[".tag"]'
+
 #perl
 ##perlの区切り文字:
 $\ に代入できる
