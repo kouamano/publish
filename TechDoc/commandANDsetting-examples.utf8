@@ -1288,6 +1288,9 @@ https://qiita.com/penguin_dream/items/18a414302ccc301f8b54
 cat files_list_folder.out | jq .[][] | jq '.[".tag"]'
 
 #perl
+## 文字列内に'$'等が含まれる正規表現置換には注意
+s/${head}/$arr{$head}/eg;
+上記はターゲットもデスティネーションも評価されない。
 ##perlの区切り文字:
 $\ に代入できる
 chomp の対象となる
