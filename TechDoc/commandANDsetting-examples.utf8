@@ -1970,3 +1970,9 @@ https://mmnakayama.jimdo.com/study/%E7%AC%AC%E4%B8%80%E5%8E%9F%E7%90%86%E8%A8%88
 #inveio
 http://invenio-software.org/gettingstarted
 
+#各サーバーの利用
+##N009
+###Mathematica
+- docker exec -it 96f94f404623  /bin/bash
+- math
+
