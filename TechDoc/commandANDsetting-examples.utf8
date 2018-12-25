@@ -1418,8 +1418,9 @@ for match in matchs:
   print match.groups()[0]
 ===/
 ##xenonpy
+まずrdkitをインストールし、
 - source activate kamano-rdkit-env
-ののちにxenonpyをインストールする。
+ののちにその他パッケージ、xenonpyをインストールする。
 
 #Jupyter
 ## 外部サービスとして起動
