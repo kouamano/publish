@@ -773,6 +773,7 @@ docker pull centos
 ## コンテナ登録起動
 docker run --name mycentos -d centos7:lastcreated /sbin/init
 docker run --name mycentos -v /usr/local:/usr/HOST/local -d centos7:lastcreated /sbin/init
+docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/home -d centos7:lastcreated /sbin/init
 ## コンテナ起動
 docker start mycentos
 ## コンテナlogin
