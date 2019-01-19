@@ -771,7 +771,7 @@ dynamic_ownership = 1
 ## イメージget
 docker pull centos
 ## コンテナ登録起動
-docker run --name mycentos -d centos /sbin/init
+docker run --name mycentos -d centos7:lastcreated /sbin/init
 ## コンテナ起動
 docker start mycentos
 ## コンテナlogin
