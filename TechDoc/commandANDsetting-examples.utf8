@@ -923,6 +923,10 @@ https://fumiyas.github.io/gitlab/install-omnibus.html
 ##runnerの登録
 gitlab-ci-multi-runner register
   gitlabのrunner情報ページを見ながらインタラクティブに登録。
+##runnerの起動
+runnerを登録したユーザーが
+gitlab-runner run
+を実行する必要がある。
 ##runnerの設定ファイル
 /etc/gitlab-runner/config.toml
 ##GPG key登録
