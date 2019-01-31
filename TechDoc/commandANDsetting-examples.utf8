@@ -929,6 +929,8 @@ gitlab-runner run
 を実行する必要がある。
 ##runnerの設定ファイル
 /etc/gitlab-runner/config.toml
+##gitlab-ciのスキップ
+commit messageに[skip ci] と書く
 ##GPG key登録
 https://kuenishi.hatenadiary.jp/entry/2016/07/12/013041
 
