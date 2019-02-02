@@ -330,6 +330,9 @@ sudo gpg --armor --export 鍵の文字列 | sudo apt-key add -
 sudo apt-get update
 ##aptのproxy設定 -> ##aptのproxy
 
+#ramdiskの作り方
+mount -t tmpfs -o size=12G /dev/shm /ram1
+
 #yacc/lex
 ##document
 https://engineering.otobank.co.jp/entry/2015/05/07/112100
