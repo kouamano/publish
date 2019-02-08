@@ -1361,12 +1361,6 @@ import: unable to open X server `' @ error/import.c/ImportImageCommand/368
 /===
  #!/usr/bin/env python
 ===/
-##おすすめインストール
-http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c
--    Windows: anaconda(or miniconda)
--    linux: git + pyenv + anaconda(or miniconda)
--    MacOS: homebrew + pyenv + anaconda(or miniconda)
--    ChromeOS: chromebrew + git + pyenv + anaconda(or miniconda)
 ##定義のロード
 execfile(<ファイル名>)
 ## get methods in object
@@ -1398,7 +1392,7 @@ eigval[i]に対応するのはeigvec[:,i]となる
 ##sort
 http://d.hatena.ne.jp/pashango_p/20090614/1244984058
 ##モジュール内のメソッド一覧
-import tensorflow ads tf
+import tensorflow as tf
 for x in dir(tf):
   print(x)
 ## xml.etree.ElementTree
