@@ -794,6 +794,12 @@ $ docker run --name mypostgres -e POSTGRES_PASSWORD="psw" -d postgres #コンテ
 $ docker run -it --rm --link mypostgres:postgres postgres psql -h postgres -U postgres #コンテナにlogin
 $ docker run --name pgserver -e POSTGRES_PASSWORD="psw" -d -p 4321:5432 postgres #localhostの4321でサービス公開、コンテナstart
 $ psql -p 4321 -h localhost -U postgres #コンテナのpostgres serverにlocalのpsqlで接続
+## examples
+docker run --name mycentos -d centos7:lastcreated /sbin/init
+docker run --name mycentos -v /usr/local:/usr/HOST/local -d centos7:lastcreated /sbin/init
+docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/usr/HOST/home -d centos7:lastcreated /sbin/init
+docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/home -d centos7:lastcreated /sbin/init
+
 
 #VirtualBox
 ##ホストからゲストにssh接続
