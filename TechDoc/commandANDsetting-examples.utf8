@@ -333,91 +333,6 @@ sudo apt-get update
 #ramdiskの作り方
 mount -t tmpfs -o size=12G /dev/shm /ram1
 
-#yacc/lex
-##document
-https://engineering.otobank.co.jp/entry/2015/05/07/112100
-http://kmaebashi.com/programmer/devlang/yacclex.html
-##基本手順
-- ddf.yには
--- #include <stdio>
--- int yyerror 定義
-- exe.lには
--- #include "y.tab.h"
--- #include "y.tab.c"
-- yacc ddf.y
-- lex exe.l
-- gcc44 lex.yy.c -lfl -ll
-##基本手順1
-flex exe.l
-yacc lang.y
-- y.tab.c を編集以下をインサート
-#include "lex.yy.c"
-gcc44 y.tab.c -lfl -ly
-##基本手順2
-yacc -dv ddf.y
-flex exe.l #exe.lには"y.tab.h"をincludeしてある
-gcc44 y.tab.c lex.yy.c -lfl -ly
-
-#LAPACK/BLAS
-#Github https://github.com/Reference-LAPACK/lapack
-#URL sourcecode(githubからリリース) http://www.netlib.org/lapack/
-#URL document http://www.netlib.org/lapack/explore-html/index.html
-#Example https://people.sc.fsu.edu/~jburkardt/f_src/lapack_examples/lapack_examples.html
-##CBLASのコンパイル
-1. 普通のBLASをコンパイル
-1.1 blas_LINUX.a みたいなのができる
-2. CBLASのMakefile(.in)を編集、1.1の場所を記載 コンパイル
-2.1 gcc、gfortranのバージョンは、適宜合わせる
-##LAPACKのコンパイル
-##BLASも一緒に用意されている
-1. READMEを読む
-2. 設定する
-3. コンパイルする
-4. 確認する
-./librefblas.a
-./libtmglib.a
-./liblapack.a 
-##LAPACKサンプルコード
-##行列の配置は列メジャーとなる
-##http://auewe.hatenablog.com/entry/2013/05/04/075717
-###例1:
-/===
-/* 連立方程式
- * (1 2)(x) -- (5)
- * (3 4)(y) -- (6)
- * の解
- */
-
-#include <stdio.h>
-##define SIZE 2
-
-int main(void) {
-int     n             = SIZE;// 正方行列Aの次元
-int     nrhs          = 1   ;// Ax=b の縦ベクトルbの列数
-double  A[SIZE*SIZE]        ;// Ax=bの正方行列A
-        A[0]=1; A[2]=2;
-        A[1]=3; A[3]=4;
-int     lda           = SIZE;// 普通はSIZEにする
-int     ipiv[SIZE]          ;// LU分解の交換行列のピポット要素。[SIZE]にしておく
-double  b[SIZE]             ;// Ax=bの縦ベクトルb。計算終了後はxベクトルが入る。
-        b[0]=5;
-        b[1]=6;
-int     ldb           = SIZE;// 普通はSIZEにする
-int     info                ;// 0なら正常終了
-
-dgesv_(&n,&nrhs,A,&lda,ipiv,b,&ldb,&info);
-
-printf("x = %5.3lf\n",b[0]);
-printf("y = %5.3lf\n",b[1]);
-return 0;
-}
-===/
-###コンパイル
-gcc hoge.c -lm -lblas --lapack
-###例2
-http://www.nag-j.co.jp/lapack
-###コンパイル
-http://www.nag-j.co.jp/lapack/how_to_lapack.htm
 
 #gpg
 gpg --gen-key #十分なエントロピーを得るのに相当時間がかかる
@@ -1298,6 +1213,94 @@ int main(int atgc, char **argv){
 ===/
 ##C言語のtime_t
 は、long int
+
+#yacc/lex
+##document
+https://engineering.otobank.co.jp/entry/2015/05/07/112100
+http://kmaebashi.com/programmer/devlang/yacclex.html
+##基本手順
+- ddf.yには
+-- #include <stdio>
+-- int yyerror 定義
+- exe.lには
+-- #include "y.tab.h"
+-- #include "y.tab.c"
+- yacc ddf.y
+- lex exe.l
+- gcc44 lex.yy.c -lfl -ll
+##基本手順1
+flex exe.l
+yacc lang.y
+- y.tab.c を編集以下をインサート
+#include "lex.yy.c"
+gcc44 y.tab.c -lfl -ly
+##基本手順2
+yacc -dv ddf.y
+flex exe.l #exe.lには"y.tab.h"をincludeしてある
+gcc44 y.tab.c lex.yy.c -lfl -ly
+
+#LAPACK/BLAS
+#Github https://github.com/Reference-LAPACK/lapack
+#URL sourcecode(githubからリリース) http://www.netlib.org/lapack/
+#URL document http://www.netlib.org/lapack/explore-html/index.html
+#Example https://people.sc.fsu.edu/~jburkardt/f_src/lapack_examples/lapack_examples.html
+##CBLASのコンパイル
+1. 普通のBLASをコンパイル
+1.1 blas_LINUX.a みたいなのができる
+2. CBLASのMakefile(.in)を編集、1.1の場所を記載 コンパイル
+2.1 gcc、gfortranのバージョンは、適宜合わせる
+##LAPACKのコンパイル
+##BLASも一緒に用意されている
+1. READMEを読む
+2. 設定する
+3. コンパイルする
+4. 確認する
+./librefblas.a
+./libtmglib.a
+./liblapack.a 
+##LAPACKサンプルコード
+##行列の配置は列メジャーとなる
+##http://auewe.hatenablog.com/entry/2013/05/04/075717
+###例1:
+/===
+/* 連立方程式
+ * (1 2)(x) -- (5)
+ * (3 4)(y) -- (6)
+ * の解
+ */
+
+#include <stdio.h>
+##define SIZE 2
+
+int main(void) {
+int     n             = SIZE;// 正方行列Aの次元
+int     nrhs          = 1   ;// Ax=b の縦ベクトルbの列数
+double  A[SIZE*SIZE]        ;// Ax=bの正方行列A
+        A[0]=1; A[2]=2;
+        A[1]=3; A[3]=4;
+int     lda           = SIZE;// 普通はSIZEにする
+int     ipiv[SIZE]          ;// LU分解の交換行列のピポット要素。[SIZE]にしておく
+double  b[SIZE]             ;// Ax=bの縦ベクトルb。計算終了後はxベクトルが入る。
+        b[0]=5;
+        b[1]=6;
+int     ldb           = SIZE;// 普通はSIZEにする
+int     info                ;// 0なら正常終了
+
+dgesv_(&n,&nrhs,A,&lda,ipiv,b,&ldb,&info);
+
+printf("x = %5.3lf\n",b[0]);
+printf("y = %5.3lf\n",b[1]);
+return 0;
+}
+===/
+###コンパイル
+gcc hoge.c -lm -lblas --lapack
+###例2
+http://www.nag-j.co.jp/lapack
+###コンパイル
+http://www.nag-j.co.jp/lapack/how_to_lapack.htm
+
+
 
 #jq
 ## document
