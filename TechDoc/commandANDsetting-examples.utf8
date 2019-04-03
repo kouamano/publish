@@ -1439,6 +1439,55 @@ for match in matchs:
 まずrdkitをインストールし、
 - source activate kamano-rdkit-env
 ののちにその他パッケージ、xenonpyをインストールする。
+## クラスの使い方
+天野様
+
+高橋です、
+コード送ります。
+
+import sympy as sy　　★そのままでOK
+
+class Quantity:
+    def __init__(self):
+        self.unit = ""
+        self.value = 0
+        self.qt = sy.symbols("qt")　★self.をつける
+    def setUnit(self,unit):
+        self.unit = unit
+    def getUnit(self):
+        return self.unit
+    def setValue(self,value):
+        self.value = value
+    def getValue(self):
+        return self.value
+    def setQuantity(self,unit,value):
+        self.unit = unit
+        self.value = value
+    def getQuantity(self):
+        return self.qt(self.value,self.unit)　★self.をつける
+
+-------------------------
+実行部ですが、
+
+from nimsUnitClass import Quantity
+
+a = Quantity()
+
+a.setValue(123)
+print(a.getValue())
+
+a.setUnit(456)
+print(a.getUnit())
+
+print(a.getQuantity())
+
+-------------------------
+123
+456
+qt(123, 456)
+-------------------------
+となりました。
+
 
 #Jupyter
 ## 外部サービスとして起動
