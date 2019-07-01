@@ -172,6 +172,10 @@ Enforcing
 ##ポート設定のオプション
 -P : 大文字のP(sshとおぷしょんがちがう)
 
+#PBS
+##インタラクティブジョブの開始
+$ qsub -I -q inter
+
 #systemd
 ##logに対するtail -f 的な使い方
 journalctl -f
