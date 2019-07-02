@@ -1217,6 +1217,8 @@ int main(int atgc, char **argv){
 ===/
 ##C言語のtime_t
 は、long int
+##XML parser
+https://stackoverflow.com/questions/399704/xml-parser-for-c
 
 #yacc/lex
 ##document
