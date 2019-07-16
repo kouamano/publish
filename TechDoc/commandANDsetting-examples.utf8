@@ -842,6 +842,8 @@ curl -H "Authorization: token <token>" https://api.github.com/user
 https://fumiyas.github.io/gitlab/install-omnibus.html
 ##あっぷろーどファイルの場所
 /opt/gitlab/embedded/service/gitlab-rails/public/uploads/kamano/KAKEN-25330388
+## データの格納場所
+/var/opt/gitlab/git-data/repositories/tsunoda-h/
 ##runnerをdockerにする
 [#] docker run -d --name gitlab-runner --restart always \
   -v /srv/gitlab-runner/config:/etc/gitlab-runner \
