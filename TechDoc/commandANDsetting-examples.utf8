@@ -837,31 +837,31 @@ curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/i
 -- token使用例:
 curl -H "Authorization: token <token>" https://api.github.com/user
 
-#Gitlab
-##全体
+# Gitlab
+## 全体
 https://fumiyas.github.io/gitlab/install-omnibus.html
-##あっぷろーどファイルの場所
+## あっぷろーどファイルの場所
 /opt/gitlab/embedded/service/gitlab-rails/public/uploads/kamano/KAKEN-25330388
 ## データの格納場所
 /var/opt/gitlab/git-data/repositories/tsunoda-h/
-##runnerをdockerにする
+## runnerをdockerにする
 [#] docker run -d --name gitlab-runner --restart always \
   -v /srv/gitlab-runner/config:/etc/gitlab-runner \
   -v /var/run/docker.sock:/var/run/docker.sock \
   gitlab/gitlab-runner:latest
 [#] docker exec -it gitlab-runner gitlab-runner register
-##runnerの登録
+## runnerの登録
 gitlab-ci-multi-runner register
   gitlabのrunner情報ページを見ながらインタラクティブに登録。
-##runnerの起動
+## runnerの起動
 runnerを登録したユーザーが
 gitlab-runner run
 を実行する必要がある。
-##runnerの設定ファイル
+## runnerの設定ファイル
 /etc/gitlab-runner/config.toml
-##gitlab-ciのスキップ
+## gitlab-ciのスキップ
 commit messageに[skip ci] と書く
-##GPG key登録
+## GPG key登録
 https://kuenishi.hatenadiary.jp/entry/2016/07/12/013041
 
 #svn
