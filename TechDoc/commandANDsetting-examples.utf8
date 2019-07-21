@@ -692,6 +692,9 @@ dynamic_ownership = 1
  sudo usermod -aG docker ユーザー名
 ## イメージget
 docker pull centos
+## コンテナ取得登録起動
+docker run --name my_centos7 -itd centos:centos7 #取得登録起動
+docker exec -it my_centos7 /bin/bash #login
 ## コンテナ登録起動
 docker run --name mycentos -d centos7:lastcreated /sbin/init
 docker run --name mycentos -v /usr/local:/usr/HOST/local -d centos7:lastcreated /sbin/init
