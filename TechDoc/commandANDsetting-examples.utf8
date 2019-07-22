@@ -692,6 +692,9 @@ dynamic_ownership = 1
  sudo usermod -aG docker ユーザー名
 ## イメージget
 docker pull centos
+## コンテナ取得登録起動 with volume mount
+docker run --name u16 -v /home/kamano/gitsrc/LightLDA:/home/kamano/build -itd ubuntu1604:latest
+docker exec -it u16 /bin/bash
 ## コンテナ取得登録起動
 docker run --name my_centos7 -itd centos:centos7 #取得登録起動
 docker exec -it my_centos7 /bin/bash #login
