@@ -685,7 +685,7 @@ group = "libvirt"
 dynamic_ownership = 1
 ===/
 
-#Docker
+# Docker
 - ドキュメント: 
  https://qiita.com/tajima_taso/items/28938415846dcc2e83ff
 - example:
@@ -711,7 +711,9 @@ docker stop mycentos
 ## コンテナへの再ログイン
 - だめ(bashが起動しない): sudo docker attach 19b243929e6d
 - OK: sudo docker exec -it 19b243929e6d  /bin/bash
-##イメージリストの情報(CentOS7)
+## コンテナをイメージに
+docker commit -m "環境の説明とかを書きます" コンテナID イメージ名
+## イメージリストの情報(CentOS7)
 /var/lib/docker/image/overlay2/repositories.json
 ## postgres
 $ docker pull postgres
