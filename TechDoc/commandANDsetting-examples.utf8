@@ -507,6 +507,10 @@ pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
 ##サイズ指定
 dvipdfmx -p a5 top.dvi
 
+#pandoc
+- latex to restructuredtext
+pandoc nimsweek.tex -f latex -t rst
+
 #cdrecord
 cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/OpenSolaris/os200805.iso
 cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OperatingSystem.img/Ubuntu/ubuntu-ja-9.04-desktop-i386.iso
