@@ -803,12 +803,15 @@ git remote set-url origin https://kouamano@github.com/kouamano/SOC.git
 unset SSH_ASKPASS
 ##ファイルを特定のcommit状態に戻す
 git checkout <commit番号> <ファイル>
+##hashの作り方
+https://tech.mercari.com/entry/2016/02/08/173000
 ##未解決問題
 ###forkしたリポジトリへのpush
   ! [remote rejected] master -> master (permission denied)
    error: failed to push some refs to 'git@github.com:kamano-at-nims/utility.git'
  branchをつくらないとダメなのか？
  - http://kik.xii.jp/archives/179
+
 
 #GitHub
 - 参照: http://qiita.com/shunjikonishi/items/c5024e70b0878817725f
@@ -870,7 +873,8 @@ runnerを登録したユーザーが
 gitlab-runner run
 を実行する必要がある。
 ## runnerの設定ファイル
-/etc/gitlab-runner/config.toml
+- /etc/gitlab-runner/config.toml
+- ${HOME}/.gitlab-runner/config.toml
 ## gitlab-ciのスキップ
 commit messageに[skip ci] と書く
 ## GPG key登録
