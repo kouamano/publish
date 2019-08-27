@@ -181,7 +181,7 @@ $ qsub -I -q inter
 -- select : ノード数
 -- mpiprocs : ノードあたりプロセス数
 -- ompthreads : プロセスあたりスレッド数
--- ncpus 全CPU数なのかノードあたりCPU数なのか不明
+-- ncpus : 全CPU数
 
 #systemd
 ##logに対するtail -f 的な使い方
