@@ -175,6 +175,13 @@ Enforcing
 #PBS
 ##インタラクティブジョブの開始
 $ qsub -I -q inter
+## プロセス数の指定
+- #PBS -l select=2:mpiprocs=24:ompthreads=1:ncpus=4
+48プロセスが実行される
+-- select : ノード数
+-- mpiprocs : ノードあたりプロセス数
+-- ompthreads : プロセスあたりスレッド数
+-- ncpus 全CPU数なのかノードあたりCPU数なのか不明
 
 #systemd
 ##logに対するtail -f 的な使い方
