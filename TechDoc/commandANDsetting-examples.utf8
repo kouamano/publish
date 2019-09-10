@@ -143,6 +143,8 @@ SendEnv XMODIFIERS
 リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
 ibusが必要(ibus-anthy)
+## port forward
+ssh -L 8983:localhost:8983 kamano@144.213.102.91
 ##port 443を使う
 sshd_config:
 /===
