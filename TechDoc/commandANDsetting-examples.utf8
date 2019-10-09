@@ -513,6 +513,14 @@ kpsewhich cid-x.map
 ##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
 dvipdfmx -f texfonts.map  sample.dvi
+
+- texfonts.map :
+%%% IPA-fonts
+rml  H :0:ipam.ttf
+gbm  H :0:ipag.ttf
+rmlv V :0:ipam.ttf 
+gbmv V :0:ipag.ttf
+
 ##ファイルに出力:
 pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
 ##サイズ指定
