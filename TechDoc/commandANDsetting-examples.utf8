@@ -508,6 +508,8 @@ vim -c ":e ++enc=euc-jp" inedx.html
 6. /usr/local/share/texmf/tex/latex/revtex4/sample/apssamp.tex をコンパイル。\endnoteに対してエラーがでるが、その他はOK。
 
 #dvips
+##フォントマップの確認
+kpsewhich cid-x.map
 ##フォントの埋め込み:
 pdvips -D600 -P pdf jcc.jslis.dvi 
 dvipdfmx -f texfonts.map  sample.dvi
