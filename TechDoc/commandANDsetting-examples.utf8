@@ -410,6 +410,9 @@ find Ar* | xargs -IF /BANK/PMC/bin/match_position qf=/BANK/Organiztion/RIKEN-BRC
 #grep
 ##OR検索
 grep -e ACK -e Mat
+## 最短一致
+- -Pオプションをonにして?を使う
+grep -oP '<p><strong>Received.*?</p>' journal.pone.0211271.htm
 
 #strace
 ##ファイルに出力
