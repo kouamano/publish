@@ -2038,6 +2038,10 @@ https://github.com/samvera-labs/samvera-vagrant
 - (base) [kamano@n007 ~]$ docker run --name OSRA -v /mnt/Docker:/Docker -d berlinguyinca/osra /sbin/init
 - (base) [kamano@n007 ~]$ docker exec -it OSRA /bin/bash
 - <mages_origami/images# osra 17350842896711914313.jpg                         
+  => 
+C#*[*+]C12C(*)CCC2CC[C@H]1*
+*CC/*(=[U]\N=C)/C
+
 
 #==========#
 #mac OSX
