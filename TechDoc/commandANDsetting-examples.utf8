@@ -2035,8 +2035,9 @@ https://github.com/samvera-labs/samvera-vagrant
 - https://github.com/samvera/hyrax/wiki/Making-Admin-Users-in-Hyrax
 
 #OSRA
-(base) [kamano@n007 ~]$ docker run --name OSRA -v /mnt/Docker:/Docker -d berlinguyinca/osra /sbin/init
-(base) [kamano@n007 ~]$ docker exec -it OSRA /bin/bash
+- (base) [kamano@n007 ~]$ docker run --name OSRA -v /mnt/Docker:/Docker -d berlinguyinca/osra /sbin/init
+- (base) [kamano@n007 ~]$ docker exec -it OSRA /bin/bash
+- <mages_origami/images# osra 17350842896711914313.jpg                         
 
 #==========#
 #mac OSX
