@@ -489,88 +489,6 @@ sudo dpkg-reconfigure keyboard-configuration
 ##文字コードを指定して開く
 vim -c ":e ++enc=euc-jp" inedx.html
 
-#TeX
-##revtex4のインストール(http://be.nucl.ap.titech.ac.jp/~koba/cgi-bin/moin.cgi/Linux%20Memo)
-1. texconfig コマンドで TEXMFLOCAL のパスを確認
- CONF を選択
-2. revtex4.zip をダウンロード、展開。
-3. README の Installation を確認し、$TEXMFLOCAL/tex/latex/revtex4 に、以下のファイルを置く。
- $TEXMFLOCAL/tex/latex に revtex4 というディレクトリがなければ作る。(パーミッションは特に気にしない。)
-- 10pt.rtx
-- 11pt.rtx
-- 12pt.rtx
-- aps.rtx
-- revsymb.sty
-- revtex4.cls
-- rmp.rtx
-4. $TEXMFLOCAL/bibtex/bst/revtex4 に、以下のファイルを置く。$TEXMFLOCAL/bibtex/bst に revtex4 というディレクトリがなければ作る。
-- apsrev.bst
-- apsrmp.bst
-5. スーパーユーザー で texconfig コマンドを実行。 REAHSH を選択。これで revtex4.cls にパスが通る。これを実行しないと以下のエラーとなる。
-! LaTeX Error: File `revtex4.cls' not found.
-6. /usr/local/share/texmf/tex/latex/revtex4/sample/apssamp.tex をコンパイル。\endnoteに対してエラーがでるが、その他はOK。
-
-#dvips
-##フォントマップの確認
-kpsewhich cid-x.map
-##フォントの埋め込み:
-pdvips -D600 -P pdf jcc.jslis.dvi 
-dvipdfmx -f texfonts.map  sample.dvi
-
-- texfonts.map :
-%%% IPA-fonts
-rml  H :0:ipam.ttf
-gbm  H :0:ipag.ttf
-rmlv V :0:ipam.ttf 
-gbmv V :0:ipag.ttf
-
-##ファイルに出力:
-pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
-##サイズ指定
-dvipdfmx -p a5 top.dvi
-
-#pandoc
-- latex to restructuredtext
-pandoc nimsweek.tex -f latex -t rst
-
-#cdrecord
-cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/OpenSolaris/os200805.iso
-cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OperatingSystem.img/Ubuntu/ubuntu-ja-9.04-desktop-i386.iso
-cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /home/kamano/download/ubuntu-ja-8.10-desktop-i386.iso
-
-#wget
-##wgetの結果を標準出力
-wget http://192.168.0.4/ -O -
-##no proxy
-wget --no-proxy
-##port
-wget http://xxx.xxx.xxx:8080/home/
-
-#nkfで文字コードを推測する
-nkf -g hoge.txt
-
-#mecab
-mecab -d /usr/share/mecab/dic/mecab-ipadic
-
-#mpage アウトライン無し2page/A4
-mpage -o -2 k_amano.ps > k_amano.mpage.ps
-
-#sort
-##文字数の多い順にソート:
-cat ./test.txt | awk '{print length($0), $0}' | sort -nr | cut -d' ' -f2-
-##合わせ技
-sort -k 2 top+subname.merge | awk -F '	' '{print length($2)"\t"$1"\t"$2"\t"$3}' | sort -nr | cut -d'	' -f2,3,4 > top+subname.merge.lensort
-
-#sorthex.plの使いかた:
-sorthex.pl -f 2 file.txt
-
-#mailコマンドでメイルおくる
-mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
-
-#hexstring2bytecodeの使い方
-#hogeとtmpはおなじはずだがtmpに改行が余計に入っている?
-cat hoge | string_to_hexcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
-
 #screen
 ##スクリーンデーモンリスト
 screen -ls
@@ -587,6 +505,141 @@ screen -rx
 ##screen内の仮想端末間の移動
 [ctrl]a n
 [ctrl]a p
+
+#Git
+##gitのproxy設定 -> ##ssh(git)のproxy
+##gitことはじめ
+https://github.com/
+githubでリポジトリ作成
+メッセージにしたがってソースコードをpushまでおこなう。
+プロジェクトごとに.gitつくる
+##あたらしいレポジトリの作成(1)
+###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
+###clone 元URLをコピー、clone
+git clone ...
+###git push
+> .gitignore
+git add .gitignore
+git commit
+git push origin master
+##あたらしいレポジトリの作成(2)
+###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
+###メッセージにしたがいリポジトリを作成、
+###おなじくメッセージにしたがいローカルでディレクトリを作成、コミット。
+###git config
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+###git pull
+プロジェクトのディレクトリで
+git pull <URL>
+git pull origin master
+git pull --all
+##git clone
+githubにpubkeyを登録してsshでclone。
+##git add (新しいファイルを作ったとき)
+##git commit (更新をコミット)
+- 署名付き
+  git commit -a -S -m "comment"
+##git push
+git add <program>
+git commit
+git push origin master
+##push先の変更
+git remote rm origin
+git remote add origin git@github.com:tsunekawa/baum.git
+##branchの作成
+git branch <ブランチ名>
+##brunch間の移動
+git checkout <branch>
+##branchのリスト閲覧
+git branch -a
+##強制的にpull(1)
+git checkout -- .
+git pull
+##強制的にpull(2)
+git fetch origin
+git reset --hard origin/master
+##pushできないときの対応
+### ex.1
+git remote set-url origin https://kouamano@github.com/kouamano/SOC.git
+unset SSH_ASKPASS
+##ファイルを特定のcommit状態に戻す
+git checkout <commit番号> <ファイル>
+##hashの作り方
+https://tech.mercari.com/entry/2016/02/08/173000
+##未解決問題
+###forkしたリポジトリへのpush
+  ! [remote rejected] master -> master (permission denied)
+   error: failed to push some refs to 'git@github.com:kamano-at-nims/utility.git'
+ branchをつくらないとダメなのか？
+ - http://kik.xii.jp/archives/179
+
+#GitHub
+- 参照: http://qiita.com/shunjikonishi/items/c5024e70b0878817725f
+##issueの検索
+created / updated / mereged /closed
+ created:<2015-04-01
+ updated:>=2015-04-01T18:00:00+09:00
+ merged:2015-04-01..2015-05-01
+###特定のユーザーのリポジトリの検索
+user:kouamano cvi
+###所属するorganizationののリポジトリの検索
+org:nims-library nimspapers
+
+#GitHubAPI
+- 参考:
+https://developer.github.com/v3/oauth/
+http://qiita.com/KENJU/items/1f02720f1f64c657cc44
+- curl
+-- tokenを使わない例:
+--- ユーザー/組織情報
+curl https://api.github.con/users/kouamano - 503
+curl -i -u 自分のユーザ名 https://api.github.com/users/ユーザ名 ##ユーザー情報
+curl -i -u kouamano https://api.github.com/users/kouamano ##ユーザー情報
+curl -i -u "kouamano:<pass>" https://api.github.com/users/kouamano ##ユーザー情報
+curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library ##組織情報
+--- リポジトリ情報
+curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library/repos ##リポジトリ情報、プライベート以外
+curl -i -u "kouamano:<pass>" https://api.github.com/orgs/nims-library/repos ##リポジトリ情報、プライベート含む
+curl -i -u "kouamano:<pass>" https://api.github.com/orgs/nims-library/repos | /home/kamano/gitsrc/JSONOP/git_ReponameFromRepolist.pl ##リポジトリ名のみ取得
+--- issue情報
+curl https://github.com/kouamano/test/issues
+curl -i -u "kouamano:<pass>" https://github.com/kouamano/test
+curl -i -u "kouamano:<pass>" https://github.com/kouamano/test/issues
+curl -i -u "kouamano:<pass>" https://github.com/nims-library/samurai2
+curl -i -u "kouamano:<pass>" https://github.com/nims-library/ninja/issues - 404
+curl -i -u "kouamano:<pass>" https://api.github.com/repos/kouamano/test/issues
+curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/issues
+-- token使用例:
+curl -H "Authorization: token <token>" https://api.github.com/user
+
+# Gitlab
+## 全体
+https://fumiyas.github.io/gitlab/install-omnibus.html
+## あっぷろーどファイルの場所
+/opt/gitlab/embedded/service/gitlab-rails/public/uploads/kamano/KAKEN-25330388
+## データの格納場所
+/var/opt/gitlab/git-data/repositories/tsunoda-h/
+## runnerをdockerにする
+[#] docker run -d --name gitlab-runner --restart always \
+  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest
+[#] docker exec -it gitlab-runner gitlab-runner register
+## runnerの登録
+gitlab-ci-multi-runner register
+  gitlabのrunner情報ページを見ながらインタラクティブに登録。
+## runnerの起動
+runnerを登録したユーザーが
+gitlab-runner run
+を実行する必要がある。
+## runnerの設定ファイル
+- /etc/gitlab-runner/config.toml
+- ${HOME}/.gitlab-runner/config.toml
+## gitlab-ciのスキップ
+commit messageに[skip ci] と書く
+## GPG key登録
+https://kuenishi.hatenadiary.jp/entry/2016/07/12/013041
 
 #X-window
 #設定
@@ -753,7 +806,6 @@ docker run --name mycentos -v /usr/local:/usr/HOST/local -d centos7:lastcreated 
 docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/usr/HOST/home -d centos7:lastcreated /sbin/init
 docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/home -d centos7:lastcreated /sbin/init
 
-
 #VirtualBox
 ##ホストからゲストにssh接続
 Natでポートフォワーディングを設定する。
@@ -765,142 +817,6 @@ $ ssh -p <ホストポート番号> <ログインユーザー>@localhost
 キーボード入力
 ##デバイスにコピーイメージをアサインできない
 http://www.webzoit.net/hp/it/internet/homepage/env/cs/virtual_machine/move_copy/
-
-#Git
-##gitのproxy設定 -> ##ssh(git)のproxy
-##gitことはじめ
-https://github.com/
-githubでリポジトリ作成
-メッセージにしたがってソースコードをpushまでおこなう。
-プロジェクトごとに.gitつくる
-##あたらしいレポジトリの作成(1)
-###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
-###clone 元URLをコピー、clone
-git clone ...
-###git push
-> .gitignore
-git add .gitignore
-git commit
-git push origin master
-##あたらしいレポジトリの作成(2)
-###githubにアクセスし右上のアイコン<Create a New Repo>をクリック
-###メッセージにしたがいリポジトリを作成、
-###おなじくメッセージにしたがいローカルでディレクトリを作成、コミット。
-###git config
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
-###git pull
-プロジェクトのディレクトリで
-git pull <URL>
-git pull origin master
-git pull --all
-##git clone
-githubにpubkeyを登録してsshでclone。
-##git add (新しいファイルを作ったとき)
-##git commit (更新をコミット)
-- 署名付き
-  git commit -a -S -m "comment"
-##git push
-git add <program>
-git commit
-git push origin master
-##push先の変更
-git remote rm origin
-git remote add origin git@github.com:tsunekawa/baum.git
-##branchの作成
-git branch <ブランチ名>
-##brunch間の移動
-git checkout <branch>
-##branchのリスト閲覧
-git branch -a
-##強制的にpull(1)
-git checkout -- .
-git pull
-##強制的にpull(2)
-git fetch origin
-git reset --hard origin/master
-##pushできないときの対応
-### ex.1
-git remote set-url origin https://kouamano@github.com/kouamano/SOC.git
-unset SSH_ASKPASS
-##ファイルを特定のcommit状態に戻す
-git checkout <commit番号> <ファイル>
-##hashの作り方
-https://tech.mercari.com/entry/2016/02/08/173000
-##未解決問題
-###forkしたリポジトリへのpush
-  ! [remote rejected] master -> master (permission denied)
-   error: failed to push some refs to 'git@github.com:kamano-at-nims/utility.git'
- branchをつくらないとダメなのか？
- - http://kik.xii.jp/archives/179
-
-
-#GitHub
-- 参照: http://qiita.com/shunjikonishi/items/c5024e70b0878817725f
-##issueの検索
-created / updated / mereged /closed
- created:<2015-04-01
- updated:>=2015-04-01T18:00:00+09:00
- merged:2015-04-01..2015-05-01
-###特定のユーザーのリポジトリの検索
-user:kouamano cvi
-###所属するorganizationののリポジトリの検索
-org:nims-library nimspapers
-
-#GitHubAPI
-- 参考:
-https://developer.github.com/v3/oauth/
-http://qiita.com/KENJU/items/1f02720f1f64c657cc44
-- curl
--- tokenを使わない例:
---- ユーザー/組織情報
-curl https://api.github.con/users/kouamano - 503
-curl -i -u 自分のユーザ名 https://api.github.com/users/ユーザ名 ##ユーザー情報
-curl -i -u kouamano https://api.github.com/users/kouamano ##ユーザー情報
-curl -i -u "kouamano:<pass>" https://api.github.com/users/kouamano ##ユーザー情報
-curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library ##組織情報
---- リポジトリ情報
-curl -i -u "kouamano:<pass>" https://api.github.com/users/nims-library/repos ##リポジトリ情報、プライベート以外
-curl -i -u "kouamano:<pass>" https://api.github.com/orgs/nims-library/repos ##リポジトリ情報、プライベート含む
-curl -i -u "kouamano:<pass>" https://api.github.com/orgs/nims-library/repos | /home/kamano/gitsrc/JSONOP/git_ReponameFromRepolist.pl ##リポジトリ名のみ取得
---- issue情報
-curl https://github.com/kouamano/test/issues
-curl -i -u "kouamano:<pass>" https://github.com/kouamano/test
-curl -i -u "kouamano:<pass>" https://github.com/kouamano/test/issues
-curl -i -u "kouamano:<pass>" https://github.com/nims-library/samurai2
-curl -i -u "kouamano:<pass>" https://github.com/nims-library/ninja/issues - 404
-curl -i -u "kouamano:<pass>" https://api.github.com/repos/kouamano/test/issues
-curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/issues
--- token使用例:
-curl -H "Authorization: token <token>" https://api.github.com/user
-
-# Gitlab
-## 全体
-https://fumiyas.github.io/gitlab/install-omnibus.html
-## あっぷろーどファイルの場所
-/opt/gitlab/embedded/service/gitlab-rails/public/uploads/kamano/KAKEN-25330388
-## データの格納場所
-/var/opt/gitlab/git-data/repositories/tsunoda-h/
-## runnerをdockerにする
-[#] docker run -d --name gitlab-runner --restart always \
-  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  gitlab/gitlab-runner:latest
-[#] docker exec -it gitlab-runner gitlab-runner register
-## runnerの登録
-gitlab-ci-multi-runner register
-  gitlabのrunner情報ページを見ながらインタラクティブに登録。
-## runnerの起動
-runnerを登録したユーザーが
-gitlab-runner run
-を実行する必要がある。
-## runnerの設定ファイル
-- /etc/gitlab-runner/config.toml
-- ${HOME}/.gitlab-runner/config.toml
-## gitlab-ciのスキップ
-commit messageに[skip ci] と書く
-## GPG key登録
-https://kuenishi.hatenadiary.jp/entry/2016/07/12/013041
 
 #svn
 ##svn リポジトリ作成 (サーバ側)
@@ -943,6 +859,88 @@ svn diff svn://jewela.tu1135.riken.jp:3695/var/www/svn/web/test/php/pg/qa_list/c
 ##sedを使って大川さんのログだけ取り出す
 svn log  -v | sed -n '/ookawa/,/----$/ p'
 svn log  -v | sed -n '/| yookawa |/,/----$/ p'
+
+#TeX
+##revtex4のインストール(http://be.nucl.ap.titech.ac.jp/~koba/cgi-bin/moin.cgi/Linux%20Memo)
+1. texconfig コマンドで TEXMFLOCAL のパスを確認
+ CONF を選択
+2. revtex4.zip をダウンロード、展開。
+3. README の Installation を確認し、$TEXMFLOCAL/tex/latex/revtex4 に、以下のファイルを置く。
+ $TEXMFLOCAL/tex/latex に revtex4 というディレクトリがなければ作る。(パーミッションは特に気にしない。)
+- 10pt.rtx
+- 11pt.rtx
+- 12pt.rtx
+- aps.rtx
+- revsymb.sty
+- revtex4.cls
+- rmp.rtx
+4. $TEXMFLOCAL/bibtex/bst/revtex4 に、以下のファイルを置く。$TEXMFLOCAL/bibtex/bst に revtex4 というディレクトリがなければ作る。
+- apsrev.bst
+- apsrmp.bst
+5. スーパーユーザー で texconfig コマンドを実行。 REAHSH を選択。これで revtex4.cls にパスが通る。これを実行しないと以下のエラーとなる。
+! LaTeX Error: File `revtex4.cls' not found.
+6. /usr/local/share/texmf/tex/latex/revtex4/sample/apssamp.tex をコンパイル。\endnoteに対してエラーがでるが、その他はOK。
+
+#dvips
+##フォントマップの確認
+kpsewhich cid-x.map
+##フォントの埋め込み:
+pdvips -D600 -P pdf jcc.jslis.dvi 
+dvipdfmx -f texfonts.map  sample.dvi
+
+- texfonts.map :
+%%% IPA-fonts
+rml  H :0:ipam.ttf
+gbm  H :0:ipag.ttf
+rmlv V :0:ipam.ttf 
+gbmv V :0:ipag.ttf
+
+##ファイルに出力:
+pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
+##サイズ指定
+dvipdfmx -p a5 top.dvi
+
+#pandoc
+- latex to restructuredtext
+pandoc nimsweek.tex -f latex -t rst
+
+#cdrecord
+cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OS/OpenSolaris/os200805.iso
+cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /BANK/OperatingSystem.img/Ubuntu/ubuntu-ja-9.04-desktop-i386.iso
+cdrecord fs=16m dev=/dev/hdd -dao driveropts=burnfree -v -data -nopad /home/kamano/download/ubuntu-ja-8.10-desktop-i386.iso
+
+#wget
+##wgetの結果を標準出力
+wget http://192.168.0.4/ -O -
+##no proxy
+wget --no-proxy
+##port
+wget http://xxx.xxx.xxx:8080/home/
+
+#nkfで文字コードを推測する
+nkf -g hoge.txt
+
+#mecab
+mecab -d /usr/share/mecab/dic/mecab-ipadic
+
+#mpage アウトライン無し2page/A4
+mpage -o -2 k_amano.ps > k_amano.mpage.ps
+
+#sort
+##文字数の多い順にソート:
+cat ./test.txt | awk '{print length($0), $0}' | sort -nr | cut -d' ' -f2-
+##合わせ技
+sort -k 2 top+subname.merge | awk -F '	' '{print length($2)"\t"$1"\t"$2"\t"$3}' | sort -nr | cut -d'	' -f2,3,4 > top+subname.merge.lensort
+
+#sorthex.plの使いかた:
+sorthex.pl -f 2 file.txt
+
+#mailコマンドでメイルおくる
+mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
+
+#hexstring2bytecodeの使い方
+#hogeとtmpはおなじはずだがtmpに改行が余計に入っている?
+cat hoge | string_to_hexcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
 
 #Java
 ##jar で.jarを見る
