@@ -2034,7 +2034,11 @@ https://github.com/samvera-labs/samvera-vagrant
 ##Hyrax:管理者追加
 - https://github.com/samvera/hyrax/wiki/Making-Admin-Users-in-Hyrax
 
+#OSRA
+(base) [kamano@n007 ~]$ docker run --name OSRA -v /mnt/Docker:/Docker -d berlinguyinca/osra /sbin/init
+(base) [kamano@n007 ~]$ docker exec -it OSRA /bin/bash
 
+#==========#
 #mac OSX
 ##Xのハマりポイント
 ###ssh -X
@@ -2063,7 +2067,6 @@ $ git reset --hard origin/master
 sudo dtruss <program>
 sudo dtruss -p <pid>
 
-
 #Windows
 ##PoweerShell
 ##カレントディレクトリの使用サイズ
@@ -2072,12 +2075,11 @@ Get-ChildItem  -Recurse -Force | ForEach-Object -Begin { $Len = 0 } -Process { $
 ###Keymap
 yanor.net/wiki/?Windows%2FTIPS%2F%E3%83%AC%E3%82%B8%E3%82%B9%E3%83%88%E3%83%AA%E3%82%92%E4%BF%AE%E6%AD%A3%E3%81%97%E3%81%A6CAPSLOCK%E3%81%AE%E5%89%B2%E3%82%8A%E5%BD%93%E3%81%A6%E5%A4%89%E6%9B%B4
 
-
 ##MS-excel
 ##get the list of sheets
 blog.asens.jp/archives/1194
 
-
+#==========#
 #その他資料
 #グラフ
 http://www.graphclasses.org/
