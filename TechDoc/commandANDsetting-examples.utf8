@@ -1864,7 +1864,7 @@ cd /usr/local/stanford-corenlp-full-2017-06-09
 
 #openCV
 ## python + cv2
-- ex.1
+- 線分の認識
 >>> import cv2
 >>> img = cv2.imread("gl-01.png")
 >>> gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
