@@ -1863,6 +1863,8 @@ cd /usr/local/stanford-corenlp-full-2017-06-09
 #Python nltk :=> # Python / ## nltk
 
 #openCV
+## findContours
+- https://www.pynote.info/entry/opencv-findcontours
 ## python + cv2
 - 線分の認識
 >>> import cv2
