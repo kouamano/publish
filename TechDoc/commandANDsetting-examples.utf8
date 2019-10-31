@@ -1845,8 +1845,6 @@ SELECT dblink_disconnect('sassc');
  systemctl enable mariadb.service
  systemctl start mariadb.service
 
-
-
 #BerkleyParser
 ## example1:
 java -jar /usr/local/BerkleyParser/BerkeleyParser-1.7.jar -gr /usr/local/BerkleyParser/eng_sm6.gr -inputFile /home/kamano/test/input.txt
@@ -1863,6 +1861,20 @@ cd /usr/local/stanford-corenlp-full-2017-06-09
 ## example:
 /usr/bin/java -cp "*" -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz input.txt
 #Python nltk :=> # Python / ## nltk
+
+#openCV
+## python + cv2
+- ex.1
+>>> import cv2
+>>> img = cv2.imread("gl-01.png")
+>>> gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+>>> gray2 = cv2.bitwise_not(gray)
+>>> lines = cv2.HoughLinesP(gray2, rho=1, theta=np.pi/360, threshold=80, minLineLength=400, maxLineGap=5)
+>>> print(lines)
+None
+>>> lines = cv2.HoughLinesP(gray2, rho=1, theta=np.pi/360, threshold=8, minLineLength=40, maxLineGap=5)
+>>> print(lines)
+ ...
 
 
 #量子化学計算
@@ -1891,7 +1903,22 @@ gnuplot> plot "graphene.dos" using 1:2 w lp
 gnuplot> plot "graphene.dos" using 1:3 w lp
 gnuplot> replot "graphene.dos" using 1:3 w lp
 
+#NCBIのNXML
+##マルチバイトコードの数値文字参照について
+##数値部分が10進数表記か16進数表記かわからない
+##ほとんど以下の表現なので文字エンコードでなく文字コードの10進数表記か?
+## &#x[][][][][];
+#Pubme API
+##summaryをget
+- ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=22674858,22434880
+##Meshを含む書誌情報をget
+- ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=22674858
+##キーワードリストを含む書誌情報をhttpから得る(APIじゃない)
+http://www.ncbi.nlm.nih.gov/pubmed/25965974?report=xml&format=text
 
+
+
+#==========#
 #RIKEN RICC
 ##キューの確認
 qstat
@@ -1915,7 +1942,6 @@ qsub file
 ##以下の出力がある:
 logout
 [INFO] PJM 0083 pjsub Interactive job 35031 completed.
-
 
 #RPi
 ##keyboard setting
@@ -1951,19 +1977,6 @@ sudo apt-get install openmpi*
 sudo apt-get install mpich*
 ##qemuでraspberrypi
 qemu-system-arm -kernel /BANK/OS.img/kernel-qemu  -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda /BANK/OS.img/2013-09-25-wheezy-raspbian.img
-
-#NCBIのNXML
-##マルチバイトコードの数値文字参照について
-##数値部分が10進数表記か16進数表記かわからない
-##ほとんど以下の表現なので文字エンコードでなく文字コードの10進数表記か?
-## &#x[][][][][];
-#Pubme API
-##summaryをget
-- ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=22674858,22434880
-##Meshを含む書誌情報をget
-- ex. http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=22674858
-##キーワードリストを含む書誌情報をhttpから得る(APIじゃない)
-http://www.ncbi.nlm.nih.gov/pubmed/25965974?report=xml&format=text
 
 #enju
 ##仮想マシン
