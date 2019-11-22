@@ -783,6 +783,8 @@ docker run --name mycentos -v /HOST/dir:/GUEST/dir -d centos7:lastcreated /sbin/
 docker run --name mycentos -v /HOST/dir:/GUEST/dir -v /home:/home -d centos7:lastcreated /sbin/init
 ## コンテナ起動
 docker start mycentos
+## 起動済みコンテナにアタッチ
+docker exec -it 628ea63ab137 /bin/bash
 ## コンテナlogin
 docker exec -it mycentos /bin/bash
 ## コンテナ停止
