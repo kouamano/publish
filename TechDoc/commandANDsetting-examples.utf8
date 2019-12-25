@@ -606,6 +606,11 @@ user:kouamano cvi
 ###所属するorganizationののリポジトリの検索
 org:nims-library nimspapers
 
+#curl
+- certificate回避
+curl --insecure  https://127.0.0.1
+
+
 #GitHubAPI
 - 参考:
 https://developer.github.com/v3/oauth/
