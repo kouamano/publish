@@ -613,6 +613,9 @@ org:nims-library nimspapers
 #curl
 - certificate回避
 curl --insecure  https://127.0.0.1
+-  no proxy
+curl --noproxy 127.0.0.1 --insecure  https://127.0.0.1
+curl --noproxy 144.213.7.83 --insecure  https://144.213.7.83
 
 
 #GitHubAPI
