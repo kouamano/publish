@@ -53,6 +53,10 @@ audit2allow -i audit.mail -l -m sendmail
 sealert -l <ID>
 でメッセージを見る
 
+#NUMA
+- メモリをできるだけlocalに確保する
+numactl --localalloc math
+
 #proxy
 #ハマリポイント: .bash_profile が login時に読まれないので、source 。
 ##全般
