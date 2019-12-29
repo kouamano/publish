@@ -2,6 +2,11 @@
 #OSのバージョン
 cat /etc/redhat-release
 
+#file-system
+## ファイル名参照できない場合にi-node番号を使う
+- ファイル名の変更
+find . -inum 656486 -exec mv '{}' renamed-file \;
+
 #SELinux
 ##log file
 /var/log/messages
