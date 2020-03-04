@@ -230,6 +230,10 @@ firewall-cmd --permanent --zone=public --addport=8080/tcp
 ##ipフォワードのチェック
 cat /proc/sys/net/ipv4/ip_forward
 
+#netcat
+## 例
+ncat --proxy socks.nims.go.jp:1080 --proxy-type socks5 %h %p
+
 #Gateway
 ##adding default gateway
 route add default gw <ipaddr>
