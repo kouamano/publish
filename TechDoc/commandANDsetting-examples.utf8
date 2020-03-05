@@ -1077,6 +1077,7 @@ blastp -query 89member.fasta -db /BANK/SEQUENCE/blastdb/Bacteria.20100925.top3gr
 blastn -query test_query.fasta -db ./mm_ref_chrX.fa.gz.cut.50 > test_query.fasta.result
 
 #megablast
+#短い配列対短い配列の検索はmegablastでないとhitしない？
 megablast -d /BANK/SEQUENCE/ncbi/blastdb/cut1000/cfa_chr9.fa.cut -i /BANK/SEQUENCE/ncbi/cut1000/H_sapiens/hs_ref_chr17.cut -W 25 -o hs_chr17-cf_chr9.mega-W25
 
 #megablast
