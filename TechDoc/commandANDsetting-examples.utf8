@@ -1079,10 +1079,8 @@ blastn -query test_query.fasta -db ./mm_ref_chrX.fa.gz.cut.50 > test_query.fasta
 #megablast
 #makeblastdbで作成したblastDBに対して使用する
 #短い配列対短い配列の検索はmegablastでないとhitしない？
-megablast -d /BANK/SEQUENCE/ncbi/blastdb/cut1000/cfa_chr9.fa.cut -i /BANK/SEQUENCE/ncbi/cut1000/H_sapiens/hs_ref_chr17.cut -W 25 -o hs_chr17-cf_chr9.mega-W25
-
-#megablast
-time for file in /BANK/SEQUENCE/frame/cut1000/H_sapiens/*; do   /usr/local/blast-2.2.18/bin/megablast -d /BANK/SEQUENCE/blastdb/cut1000/mm_ref_chrAll.cut -i $file -W 50 -o ${file##*\/}-mm_ref_chrAll.cut-W50; done
+- megablast -d /BANK/SEQUENCE/ncbi/blastdb/cut1000/cfa_chr9.fa.cut -i /BANK/SEQUENCE/ncbi/cut1000/H_sapiens/hs_ref_chr17.cut -W 25 -o hs_chr17-cf_chr9.mega-W25
+- time for file in /BANK/SEQUENCE/frame/cut1000/H_sapiens/*; do   /usr/local/blast-2.2.18/bin/megablast -d /BANK/SEQUENCE/blastdb/cut1000/mm_ref_chrAll.cut -i $file -W 50 -o ${file##*\/}-mm_ref_chrAll.cut-W50; done
 
 #blastall
 blastn ・・・ 塩基配列対塩基配列の比較を行うためのプログラム。
