@@ -943,6 +943,11 @@ pdvips -D2400 -P pdf -f cluster-validity.dvi > tmp.ps
 ##サイズ指定
 dvipdfmx -p a5 top.dvi
 
+# RestructuredText (rst)
+## rstをPDFにする
+1. Anaconda3の rst2latex.py 
+2. texliveの platex
+
 #pandoc
 - latex to restructuredtext
 pandoc nimsweek.tex -f latex -t rst
