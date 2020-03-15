@@ -1074,6 +1074,7 @@ time murasaki -p11001100 -dHs17-Mm11 /BANK/SEQUENCE/ncbi/genomes/H_sapiens/Assem
 makeblastdb -in GI-fname-CDS.fasta.faa -input_type fasta
 ##DNA
 makeblastdb -in mm_ref_chrX.fa.gz.cut.50 -dbtype nucl -input_type fasta
+makeblastdb -in random_100M.1.fa -out /BANK/genome/DB/random_100M.1 -dbtype nucl -input_type fasta -parse_seqids
 ##blastp (blastpを行うディレクトリはdbのあるディレクトリでないといけない? とはか ぎらない?)
 ##アミノ酸
 blastp -query GI-fname-CDS.fasta -db ./GI-fname-CDS.fasta
