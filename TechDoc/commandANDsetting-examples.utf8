@@ -1069,10 +1069,12 @@ for file in `cat species_add.cand_ex.2.ov50.Dir.sort.uniq`; do cat /BANK/SEQUENC
 #murasaki
 time murasaki -p11001100 -dHs17-Mm11 /BANK/SEQUENCE/ncbi/genomes/H_sapiens/Assembled_chromosomes/hs_ref_chr17.fa /BANK/SEQUENCE/ncbi/genomes/M_musclus/Assembled_chromosomes/mm_ref_chr11.fa
 
+#clustalw
+clustalw -infile=globin.aln -bootstrap=1000
+
 #blast+
-##makeblastdb (使いかたよくわからん、これでよいのか? -> よいらしい)
-makeblastdb -in GI-fname-CDS.fasta.faa -input_type fasta
-##DNA
+##makeblastdb
+###DNA
 makeblastdb -in mm_ref_chrX.fa.gz.cut.50 -dbtype nucl -input_type fasta
 makeblastdb -in random_100M.1.fa -out /BANK/genome/DB/random_100M.1 -dbtype nucl -input_type fasta -parse_seqids
 ##blastp (blastpを行うディレクトリはdbのあるディレクトリでないといけない? とはか ぎらない?)
