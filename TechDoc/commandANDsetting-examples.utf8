@@ -1069,7 +1069,7 @@ for file in `cat species_add.cand_ex.2.ov50.Dir.sort.uniq`; do cat /BANK/SEQUENC
 #murasaki
 time murasaki -p11001100 -dHs17-Mm11 /BANK/SEQUENCE/ncbi/genomes/H_sapiens/Assembled_chromosomes/hs_ref_chr17.fa /BANK/SEQUENCE/ncbi/genomes/M_musclus/Assembled_chromosomes/mm_ref_chr11.fa
 
-#muscle (マルチプルアライメント、高速)
+#muscle (マルチプルアライメント、高速、アライメント配列が直接得られる)
 muscle -in Vt-corona.hitsite.fasta -out Vt-corona.hitsite.fasta.aln
 
 #clustalw
