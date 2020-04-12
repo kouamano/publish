@@ -539,6 +539,13 @@ screen -rx
 [ctrl]a n
 [ctrl]a p
 
+#curl
+- certificate回避
+curl --insecure  https://127.0.0.1
+-  no proxy
+curl --noproxy 127.0.0.1 --insecure  https://127.0.0.1
+curl --noproxy 144.213.7.83 --insecure  https://144.213.7.83
+
 #Git
 ##gitのproxy設定 -> ##ssh(git)のproxy
 ##gitことはじめ
@@ -618,16 +625,7 @@ created / updated / mereged /closed
 user:kouamano cvi
 ###所属するorganizationののリポジトリの検索
 org:nims-library nimspapers
-
-#curl
-- certificate回避
-curl --insecure  https://127.0.0.1
--  no proxy
-curl --noproxy 127.0.0.1 --insecure  https://127.0.0.1
-curl --noproxy 144.213.7.83 --insecure  https://144.213.7.83
-
-
-#GitHubAPI
+## GitHubAPI
 - 参考:
 https://developer.github.com/v3/oauth/
 http://qiita.com/KENJU/items/1f02720f1f64c657cc44
@@ -681,6 +679,8 @@ gitlab-runner run
 commit messageに[skip ci] と書く
 ## GPG key登録
 https://kuenishi.hatenadiary.jp/entry/2016/07/12/013041
+## gitlab-api
+- 例 curl -XGET -H "kamano:<サイトで作ったtoken>" "https://n007.nims.go.jp/gitdatarepository/api/v4/projects"
 
 #X-window
 #設定
