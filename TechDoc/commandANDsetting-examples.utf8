@@ -681,7 +681,7 @@ commit messageに[skip ci] と書く
 https://kuenishi.hatenadiary.jp/entry/2016/07/12/013041
 ## GitLabApi
 - 例 curl --header "Private-token: <サイトで作ったtoken>" "https://n007.nims.go.jp/gitdatarepository/api/v4/projects"
-- 例 curl -XGET  "https://n007.nims.go.jp/gitdatarepository/api/v4/projects"
+- 例 curl --header "Private-token: <token>" "https://n007.nims.go.jp/gitdatarepository/api/v4/projects/14"
 
 #X-window
 #設定
