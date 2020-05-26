@@ -152,7 +152,7 @@ SendEnv XMODIFIERS
 リモート側の /etc/ssh/sshd_configに
 AcceptEnv XMODIFIERS
 ibusが必要(ibus-anthy)
-## port forward
+##port forward
 ssh -L 8983:localhost:8983 kamano@144.213.102.91
 ##port 443を使う
 sshd_config:
@@ -193,7 +193,7 @@ $ qsub -I -q inter
 -- mpiprocs : ノードあたりプロセス数
 -- ompthreads : プロセスあたりスレッド数
 -- ncpus : 全CPU数
-## job array
+##job array
 - example script:
 /===
 #!/bin/bash
@@ -545,6 +545,16 @@ curl --insecure  https://127.0.0.1
 -  no proxy
 curl --noproxy 127.0.0.1 --insecure  https://127.0.0.1
 curl --noproxy 144.213.7.83 --insecure  https://144.213.7.83
+
+#xmllint
+- ex.1
+xmllint --xpath '//article-meta/pub-date/year' /lustre/group/tdmpf/tdm/data/original/acstdm/data/fy2018/ab6b00641/ab6b00641.xml
+- ex.2 confファイルへの反映時は、バックスラッシュは不要
+xmllint --xpath //article-meta/pub-date[@date-type=\'pub\']/year /lustre/group/tdmpf/tdm/data/original/acstdm/data/fy2018/jp8b03859/jp8b03859.xml
+<year>2018</year>
+- ex.3
+xmllint --xpath "//*[local-name()='coverDisplayDate']" /lustre/group/tdmpf/tdm/data/original/elsevier/data/fy2019/00143057/10.1016_j.eurpolymj.2019.109395/10.1016_j.eurpolymj.2019.109395.xml
+<prism:coverDisplayDate>5 January 2020</prism:coverDisplayDate>
 
 #Git
 ##gitのproxy設定 -> ##ssh(git)のproxy
