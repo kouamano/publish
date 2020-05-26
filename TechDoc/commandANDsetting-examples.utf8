@@ -552,7 +552,7 @@ xmllint --xpath '//article-meta/pub-date/year' /lustre/group/tdmpf/tdm/data/orig
 - ex.2 confファイルへの反映時は、バックスラッシュは不要
 xmllint --xpath //article-meta/pub-date[@date-type=\'pub\']/year /lustre/group/tdmpf/tdm/data/original/acstdm/data/fy2018/jp8b03859/jp8b03859.xml
 <year>2018</year>
-- ex.3
+- ex.3 local-name() を使う際は全ての要素(階層)に対して使う。
 xmllint --xpath "//*[local-name()='coverDisplayDate']" /lustre/group/tdmpf/tdm/data/original/elsevier/data/fy2019/00143057/10.1016_j.eurpolymj.2019.109395/10.1016_j.eurpolymj.2019.109395.xml
 <prism:coverDisplayDate>5 January 2020</prism:coverDisplayDate>
 
