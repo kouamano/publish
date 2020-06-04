@@ -1481,6 +1481,9 @@ import: unable to open X server `' @ error/import.c/ImportImageCommand/368
 /===
  #!/usr/bin/env python
 ===/
+##環境を(de)activate
+conda deactivate
+conda activate
 ##定義のロード
 execfile(<ファイル名>)
 ## get methods in object
