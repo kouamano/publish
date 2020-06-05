@@ -134,6 +134,8 @@ while read -r fname ...
 ##コマンド実行時刻を記録する
 - file: .bashrc
  HISTTIMEFORMAT='%Y-%m-%dT%T%z '
+##ワンライナーによる並列実行
+ct=0; while read line; ct=$((ct+=1)); do (cat $line)& if [ $ct = 60 ]; then ct=0 wait; fi; done < AA9c2c09f8-c3fb-43a9-95d7-2c0317fd1e01.XML
 
 #zsh
 ##zshでのhistory
