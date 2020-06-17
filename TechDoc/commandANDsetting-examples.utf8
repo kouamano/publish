@@ -1781,6 +1781,8 @@ psql <db>
 ##postgres初期化(2)
 []# su - postgres
 []$ initdb /BANK/pgsql/8.1
+- port変更等:
+/BANK/pgsql/8.1/postgresql.conf
 []$ pg_ctl start -D /BANK/pgsql/8.1
 []$ createdb test
 []$ psql test	#接続
