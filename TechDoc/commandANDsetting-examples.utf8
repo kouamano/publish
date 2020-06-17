@@ -1784,7 +1784,7 @@ psql <db>
 - port変更等:
 /BANK/pgsql/8.1/postgresql.conf
 []$ pg_ctl start -D /BANK/pgsql/8.1
-[]$ createdb test
+[]$ createdb -p 6543 test
 []$ psql test	#接続
 ##connection test
 psql template1 -h localhost -p 5432 -U postgres
