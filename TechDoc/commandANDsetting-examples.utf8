@@ -1003,6 +1003,10 @@ mail kamano@affrc.go.jp -- -f amano@brc.riken.jp
 #hogeとtmpはおなじはずだがtmpに改行が余計に入っている?
 cat hoge | string_to_hexcode | tr -d '\n' | sed -e 's/://g' | ./hexstring2bytecode > tmp
 
+#CUDA
+##nvcc
+ソースファイル拡張子が".cu"である必要がある。（アホ仕様）
+
 #Java
 ##jar で.jarを見る
 jar tvf <ファイル>
