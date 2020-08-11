@@ -1141,6 +1141,9 @@ numactl --physcpubind=0 /usr/local/Wolfram/Mathematica/7.0/Executables/math -sub
 /Applications/Mathematica.app/Contents/MacOS/MathKernal
 ##リストからすべてのペアを取り出す
 Permutations[l, {2}]
+#Wolfram Eingine
+##macのコマンド起動
+alias math='/Applications/Wolfram\ Engine.app/Contents/MacOS/Wolfram\ Engine'
 
 #R
 ##position
