@@ -155,7 +155,15 @@ SendEnv XMODIFIERS
 AcceptEnv XMODIFIERS
 ibusが必要(ibus-anthy)
 ##port forward
+- ex1
 ssh -L 8983:localhost:8983 kamano@144.213.102.91
+- ex2 mac-G005-N009
+ssh -L 10022:192.168.0.9:22 -i ~/.ssh/id_rsa kamano@G005
+  <- G005のパスフレーズ
+- ex3 mac-G005-N009-gitlab.443
+ssh -L 10443:gitlab.nims.go.jp:443 kamano@127.0.0.1 -p 10022
+  <- N009のパスワード
+（ローカル）ブラウザで https://127.0.0.1:10443 に接続
 ##port 443を使う
 sshd_config:
 /===
