@@ -1,0 +1,19 @@
+# qemu-img create -f qcow2 /guest_images/weko-jenkins.img 80G
+# cd /guest_images
+# virt-install \
+  --name weko-jenkins \
+  --hvm \
+  --virt-type kvm \
+  --ram 4096 \
+  --vcpus 2 \
+  --arch x86_64 \
+  --os-type linux \
+  --os-variant rhel7 \
+  --boot hd \
+  --disk weko-jenkins.img \
+  --network bridge=br0 \
+  --graphics none \
+  --serial pty \
+  --location /mnt/tmp/CentOS-7-x86_64-Minimal-2003.iso \
+  --initrd-inject /mnt/tmp/centos7.ks.cfg \
+  --extra-args "inst.ks=file:/centos7.ks.cfg console=ttyS0,115200n8" 
