@@ -873,14 +873,6 @@ docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/usr/HOST/home
 docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/home -d centos7:lastcreated /sbin/init
 
 #VirtualBox
-##ホストからゲストにssh接続
-Natでポートフォワーディングを設定する。
-Host port : 2223
-Guest port : 22
-ホストからlogin
-$ ssh -p <ホストポート番号> <ログインユーザー>@localhost
-##mac(ホスト)のハマりポイント
-キーボード入力
 ##デバイスにコピーイメージをアサインできない
 http://www.webzoit.net/hp/it/internet/homepage/env/cs/virtual_machine/move_copy/
 
