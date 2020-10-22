@@ -847,15 +847,11 @@ docker run --name mycentos -v /HOST/dir:/GUEST/dir -d centos7:lastcreated /sbin/
 docker run --name mycentos -v /HOST/dir:/GUEST/dir -v /home:/home -d centos7:lastcreated /sbin/init
 ## コンテナ起動
 docker start mycentos
-## 起動済みコンテナにアタッチ
+## 起動済みコンテナにアタッチ / login / 再login
 docker exec -it 628ea63ab137 /bin/bash
-## コンテナlogin
 docker exec -it mycentos /bin/bash
 ## コンテナ停止
 docker stop mycentos
-## コンテナへの再ログイン
-- だめ(bashが起動しない): sudo docker attach 19b243929e6d
-- OK: sudo docker exec -it 19b243929e6d  /bin/bash
 ## コンテナをイメージに
 docker commit -m "環境の説明とかを書きます" コンテナID イメージ名
 ## イメージリストの情報(CentOS7)
