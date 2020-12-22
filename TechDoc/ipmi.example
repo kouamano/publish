@@ -1,0 +1,19 @@
+2.リモートの物理サーバへの操作を行う
+ipmitool -H IPアドレス -U ユーザ名 -P パスワード サブコマンド ...
+3.電源を操作する
+電源の状態を確認する
+ipmitool -H IPアドレス -U admin -P パスワード power status
+電源をONにする
+ipmitool -H IPアドレス -U admin -P パスワード power on
+電源をOFFにする
+ipmitool -H IPアドレス -U admin -P パスワード power off
+4.BMCのネットワーク情報の取得・設定
+ネットワーク情報を取得する
+ipmitool -H IPアドレス -U admin -P パスワード lan print <channel>
+ネットワーク情報を設定する(DHCP)
+ipmitool lan set <channel> ipsrc dhcp
+ネットワーク情報を設定する(固定IP)
+ipmitool lan set <channel> ipsrc static
+ipmitool lan set <channel> ipaddr IPアドレス
+ipmitool lan set <channel> netmask ネットマスク
+ipmitool lan set <channel> defgw ipaddr デフォルトゲートウェイ
