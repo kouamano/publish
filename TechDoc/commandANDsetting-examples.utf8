@@ -873,6 +873,14 @@ docker run --name mycentos -v /usr/local:/usr/HOST/local -d centos7:lastcreated 
 docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/usr/HOST/home -d centos7:lastcreated /sbin/init
 docker run --name mycentos -v /usr/local:/usr/HOST/local -v /home:/home -d centos7:lastcreated /sbin/init
 
+#Kubernetes
+- podのリスト
+kubectl get pods --all-namespaces
+- コンテナにlogin
+kubectl exec -it -n <ネームスペース> <pod名> bash
+- コンテナlog
+kubectl logs -n weko3 w3-migration-ir-rcos-nii-ac-jp-web-556ccfcfc4-hfjgs nginx
+
 #VirtualBox
 ##デバイスにコピーイメージをアサインできない
 http://www.webzoit.net/hp/it/internet/homepage/env/cs/virtual_machine/move_copy/
