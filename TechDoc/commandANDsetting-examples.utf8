@@ -885,7 +885,8 @@ kubectl logs -n weko3 w3-migration-ir-rcos-nii-ac-jp-web-556ccfcfc4-hfjgs nginx
 kubectl exec -n weko3 -it w3-migration-ir-rcos-nii-ac-jp-web-7bf86d49b8-bw2tn -c web -- bash
 - podの詳細
 kubectl describe pod -n weko3 w3-migration-ir-rcos-nii-ac-jp-web-7bf86d49b8-bw2tn
-
+- postgresへのユーザーlogin
+kubectl -n weko3pg exec -it weko3pg-db-node1-0 -- psql -U invenio postgres
 
 #VirtualBox
 ##デバイスにコピーイメージをアサインできない
