@@ -570,6 +570,9 @@ xmllint --xpath "//*[local-name()='coverDisplayDate']" /lustre/group/tdmpf/tdm/d
 <prism:coverDisplayDate>5 January 2020</prism:coverDisplayDate>
 
 #Git
+##Githubのtoken設定
+- git remote set-url <stream> https://<token>@github.com/<username>/<repo>
+- https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
 ##gitのproxy設定 -> ##ssh(git)のproxy
 ##gitことはじめ
 https://github.com/
