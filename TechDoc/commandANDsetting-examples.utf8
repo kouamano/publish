@@ -1094,6 +1094,12 @@ https://www.elastic.co/jp/downloads
 - beats
 - logstash
 - hadoop
+## elasticsearch
+- データ投入
+curl -H "Content-Type: application/json" -X PUT http://localhost:9200/blog/article/4 -d '{"test": "testVal"}'
+- ドキュメントGET
+curl -X GET http://localhost:9200/blog/article/4 
+
 ## logstash
 ### CentOS6.9での停止法
 initctl stop logstash
