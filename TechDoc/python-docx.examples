@@ -1,0 +1,30 @@
+(base) kouamano@x86_64-apple-darwin13 test % python
+Python 3.8.2 (default, Mar 25 2020, 11:22:43) 
+[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import docx
+>>> doc=docx.Document()
+>>> doc.add_paragraph('hoge')
+<docx.text.paragraph.Paragraph object at 0x7fb81039d190>
+>>> doc.add_paragraph('hogege')
+<docx.text.paragraph.Paragraph object at 0x7fb81039d1c0>
+>>> doc.add_paragraph('hogehoge')
+<docx.text.paragraph.Paragraph object at 0x7fb81039d070>
+>>> doc.save('createdbypy.docx')
+>>> doc.add_heading('head',0)
+<docx.text.paragraph.Paragraph object at 0x7fb810334340>
+>>> doc.save('createdbypy.docx')
+>>> tx=open('text','r')
+>>> textdata=tx.read()
+>>> tx.close()
+>>> texdata
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'texdata' is not defined
+>>> textdata
+'text\n'
+>>> doc.add_paragraph(textdata)
+<docx.text.paragraph.Paragraph object at 0x7fb810334340>
+>>> doc.save('createdbypy.docx')
+>>> 
+
