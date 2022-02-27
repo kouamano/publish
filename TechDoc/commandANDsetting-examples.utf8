@@ -391,6 +391,9 @@ mount -t tmpfs -o size=12G /dev/shm /ram1
 
 
 #gpg
+https://text.baldanders.info/openpgp/gnupg-cheat-sheet/
+設定ファイルから
+gpg --gen-key --batch alice-key.conf
 gpg --gen-key #十分なエントロピーを得るのに相当時間がかかる
 gpg --list-keys
 pub   2048R/3FF819C0 2017-06-20 [満了: 2022-06-19]
