@@ -1098,6 +1098,13 @@ https://www.elastic.co/jp/downloads
 - logstash
 - hadoop
 ## elasticsearch
+### setting
+- elasticsearch.yml
+適宜、以下を追加：
+node.local: true # disable network
+network.host: 0.0.0.0
+discovery.type: single-node
+### curl
 - データ投入
 curl -H "Content-Type: application/json" -X PUT http://localhost:9200/blog/article/4 -d '{"test": "testVal"}'
 - ドキュメントGET
