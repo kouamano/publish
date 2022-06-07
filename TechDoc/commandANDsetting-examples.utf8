@@ -577,6 +577,11 @@ xmllint --xpath "//*[local-name()='coverDisplayDate']" /lustre/group/tdmpf/tdm/d
 - git remote set-url <stream> https://<token>@github.com/<username>/<repo>
 - https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
 ##gitのproxy設定 -> ##ssh(git)のproxy
+##githubへのssh login確認
+- ssh -T git@github.com
+  .ssh/config を読むので鍵はconfigで指定しておく
+  loginできてもclone等できない現象あり
+
 ##gitことはじめ
 https://github.com/
 githubでリポジトリ作成
