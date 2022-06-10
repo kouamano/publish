@@ -359,6 +359,11 @@ zpool get all
 ##FreeBSDでのターゲットの設定ファイル:
 /etc/ctl.conf
 
+#CIFS
+##cifsのマウント
+自分の環境だと、LinkStation 200シリーズへの接続で、「vers=2.0」をつけることでマウントできました。
+mount -t cifs -o user=<ユーザー名>,password=<password>,vers=2.0 //<IPアドレス>/info(NAS側) /mnt(マウント先)
+
 #yum
 ##yumのデータベースからエントリを削除
 yum --tsflags=justdb remove 'scim*'
