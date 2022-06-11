@@ -1,16 +1,13 @@
 Script started on Mon Jun  6 16:05:18 2022
-ERROR: This cross-compiler package contains no program /Users/kouamano/opt/anaconda3/bin/x86_64-apple-darwin13.4.0-ar
-ERROR: This cross-compiler package contains no program /Users/kouamano/opt/anaconda3/bin/x86_64-apple-darwin13.4.0-ar
-[1m[7m%[27m[1m[0m                                                                                ]7;file://x86_64-apple-darwin13.4.0/Users/kouamano/gitsrc/publish/TechDoc[0m[27m[24m[J(base) kouamano@x86_64-apple-darwin13 TechDoc % [K[?2004hppython[?2004l
 Python 3.8.2 (default, Mar 25 2020, 11:22:43) 
 [Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import numpy as np 
 >>> import pandas as pd 
->>> import matplotlib.pyplot as plt 
+>>> import matplotlib.pyplot as plt
 >>> from sklearn import cluster, preprocessing
 >>> df_wine_all=pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-dataabases/wine/wine.data', header=None)
->>> df_wine_all=pd.read_csv('/Volumes/home/NII/基盤_CiNii/調査/ディスカバリサー ビスのリスト/NISTEP+/NISTEP-DSlink-Target_New-17/tab60x31.tsv',delimiter='\t')
+df_wine_all=pd.read_csv('/Volumes/home/NII/基盤_CiNii/調査/ディスカバリサービスのリスト/NISTEP+/NISTEP-DSlink-Target_New-17/tab60x31.tsv',delimiter='\t')
 
 >>> type(df_wine_all)
 <class 'pandas.core.frame.DataFrame'>
@@ -18,7 +15,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> df_wine.columns
 Int64Index([0, 10, 13], dtype='int64')
 >>> df_wine.columns = [u'class', u'color', u'proline']
->>> df_wine.columns = [u'class', u'color', u'proline'][C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
 Index(['class', 'color', 'proline'], dtype='object')
 >>> df_wine.ndim
 2
