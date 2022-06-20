@@ -2193,6 +2193,11 @@ C#*[*+]C12C(*)CCC2CC[C@H]1*
 
 #==========#
 #mac OSX
+##スリープの設定
+###スリープさせない
+sudo pmset -a disablesleep 1
+###スリープさせる
+sudo pmset -a disablesleep 0
 ##Xのハマりポイント
 ###ssh -X
 そもそもキー入力がおかしい
