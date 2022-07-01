@@ -646,6 +646,8 @@ unset SSH_ASKPASS
 git checkout <commit番号> <ファイル>
 ##hashの作り方
 https://tech.mercari.com/entry/2016/02/08/173000
+##すべてのブランチに対して検索
+git grep '検索文字' $(git ls-remote . 'refs/remotes/*' | cut -f 2)
 ##未解決問題
 ###forkしたリポジトリへのpush
   ! [remote rejected] master -> master (permission denied)
