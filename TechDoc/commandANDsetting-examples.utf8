@@ -284,6 +284,24 @@ nmcli c down eth0; nmcli c up eth0
 ネットワーク再起動
 systemctl restart network
 
+ネットワーク設定ファイルの例 ifcfg-enp0s8:
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPADDR=192.168.56.100
+NETMASK=255.255.255.0
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp0s8
+DEVICE=enp0s8
+ONBOOT=yes
+
+
 #LVM
 #以下のコマンドあやしい?
 ##pvcreate
