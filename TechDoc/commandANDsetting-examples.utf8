@@ -224,14 +224,6 @@ pwd > /home/kamano/test/pwd.out.${PBS_ARRAY_INDEX}
 ls > /home/kamano/test/ls.out.${PBS_ARRAY_INDEX}
 ===/
 
-#systemd
-##logに対するtail -f 的な使い方
-journalctl -f
-##サービス起動スクリプト
-- proxyの設定は[Service]セクション
-[Service]
-Environment="HTTP_PROXY=http://172.17.192.16:8080/"
-
 #FireWall
 ##firewalld: CentOS7
 systemctl enable firewalld # コントロール可能にする
@@ -382,6 +374,17 @@ zpool get all
 自分の環境だと、LinkStation 200シリーズへの接続で、「vers=2.0」をつけることでマウントできました。
 mount -t cifs -o user=<ユーザー名>,password=<password>,vers=2.0 //<IPアドレス>/info(NAS側) /mnt(マウント先)
 
+#systemd
+##logに対するtail -f 的な使い方
+journalctl -f
+##サービス起動スクリプト
+- proxyの設定は[Service]セクション
+[Service]
+Environment="HTTP_PROXY=http://172.17.192.16:8080/"
+
+#fluentd
+https://zenn.dev/ryoatsuta/articles/a0dea1dc377000
+
 #yum
 ##yumのデータベースからエントリを削除
 yum --tsflags=justdb remove 'scim*'
@@ -401,7 +404,7 @@ rpm -e --justdb package.rpm
 ##rpmデータベースの修復
 rpm --rebuilddb
 
-#debian: apt-get
+#apt-get
 apt-get update
 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 鍵の文字列のエラーが出るとき
 gpg --keyserver pgp.nic.ad.jp --recv-keys 鍵の文字列
@@ -411,7 +414,6 @@ sudo apt-get update
 
 #ramdiskの作り方
 mount -t tmpfs -o size=12G /dev/shm /ram1
-
 
 #gpg
 https://text.baldanders.info/openpgp/gnupg-cheat-sheet/
@@ -439,7 +441,6 @@ gpg --export -a 890B34FC > kama.pbl
 $ gpg --clearsign -s -a sample.txt
 ###分離署名
 $ gpg -b -a sample2.txt
-
 
 #generate Fs and mount
 ##Linux
@@ -664,6 +665,8 @@ unset SSH_ASKPASS
 git checkout <commit番号> <ファイル>
 ##hashの作り方
 https://tech.mercari.com/entry/2016/02/08/173000
+##すべてのブランチに対して検索
+git grep '検索文字' $(git ls-remote . 'refs/remotes/*' | cut -f 2)
 ##未解決問題
 ###forkしたリポジトリへのpush
   ! [remote rejected] master -> master (permission denied)
@@ -2211,6 +2214,11 @@ C#*[*+]C12C(*)CCC2CC[C@H]1*
 
 #==========#
 #mac OSX
+##スリープの設定
+###スリープさせない
+sudo pmset -a disablesleep 1
+###スリープさせる
+sudo pmset -a disablesleep 0
 ##Xのハマりポイント
 ###ssh -X
 そもそもキー入力がおかしい
