@@ -1228,6 +1228,14 @@ R R CMD SHLIB MST.lib.c
 R
 ##ライブラリをロード:
 > dyn.load("./MST.lib.so")
+## コマンド引数
+Rscript hoge.r arg1 arg2
+hoge.r
+:
+args1 = commandArgs(trailingOnly=TRUE)[1] #1番目の引数を取得する
+args2 = commandArgs(trailingOnly=TRUE)[2] #2番目の引数を取得する
+args3 = commandArgs(trailingOnly=TRUE)[3] #3番目の引数を取得する
+
 
 #matlab
 ## matlabではステートメントの返り値を直接操作できない
