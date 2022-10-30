@@ -2246,6 +2246,12 @@ sysctl -w net.inet.ip.fw.enable=0
 /System/Library/Input Methods/JapaneseIM.app/Contents/MacOS/JapaneseIM
 /System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent
 /System/Library/Frameworks/InputMethodKit.framework/Versions/A/XPCServices/com.apple.InputMethodKit.UserDictionary.xpc/Contents/MacOS/com.apple.InputMethodKit.UserDictionary
+##XCODE
+###環境の切り替え
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+sudo xcode-select --switch /Library/Developer/CommandLineTools
+確認
+xcode-select -p
 ##ソフトウエアアップデート
 sudo softwareupdate -i -a
 ##HomeBrew
