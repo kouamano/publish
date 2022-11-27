@@ -596,6 +596,9 @@ xmllint --xpath //article-meta/pub-date[@date-type=\'pub\']/year /lustre/group/t
 xmllint --xpath "//*[local-name()='coverDisplayDate']" /lustre/group/tdmpf/tdm/data/original/elsevier/data/fy2019/00143057/10.1016_j.eurpolymj.2019.109395/10.1016_j.eurpolymj.2019.109395.xml
 <prism:coverDisplayDate>5 January 2020</prism:coverDisplayDate>
 
+#ffmpeg
+for file in *avi; do  ffmpeg -i $file -pix_fmt yuv420p  ${file%avi}mp4; done
+
 #Git
 ##Githubのtoken設定
 - git remote set-url <stream> https://<token>@github.com/<username>/<repo>
