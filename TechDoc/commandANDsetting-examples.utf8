@@ -13,8 +13,9 @@ TE,RBAC,UBAC,MCS,MLSの機能を持つ。
 近年ではほとんどTE（とMCS）のみで制御されている。
 そのため、TEの機能として、
 - サブジェクトおよびオブジェクトの、Attribute
-- オブジェクトの、Object Class (MLS)
+- オブジェクトの、Object Class
 が多用されている。
+一方MCSは、タイプとは別にカテゴリを割り当て、より繊細に制御を行う機構となる。
 ##log file
 /var/log/messages
 /var/log/audit
