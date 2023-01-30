@@ -8,6 +8,13 @@ cat /etc/redhat-release
 find . -inum 656486 -exec mv '{}' renamed-file \;
 
 #SELinux
+##概要
+TE,RBAC,UBAC,MCS,MLSの機能を持つ。
+近年ではほとんどTE（とMCS）のみで制御されている。
+そのため、TEの機能として、
+- サブジェクトおよびオブジェクトの、Attribute
+- オブジェクトの、Object Class (MLS)
+が多用されている。
 ##log file
 /var/log/messages
 /var/log/audit
