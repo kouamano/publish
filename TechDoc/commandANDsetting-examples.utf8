@@ -1163,6 +1163,10 @@ curl -X GET http://localhost:9200/blog/article/4
 ### CentOS6.9での停止法
 initctl stop logstash
 
+#genome
+##シークエンスftpサイト
+https://ftp.ncbi.nlm.nih.gov/genomes/genbank/
+
 #mapserver config:
 ./configure --with-proj --with-gdal --with-ogr --with-geos --with-gd --with-postgis=/usr/bin/pg_config --with-httpd=/usr/local/apache2/bin/httpd --with-php=/usr/include/php
 
