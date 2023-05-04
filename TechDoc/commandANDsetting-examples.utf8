@@ -2281,6 +2281,16 @@ $ git reset --hard origin/master
 ##トレーサー
 sudo dtruss <program>
 sudo dtruss -p <pid>
+##bootイメージ作成と書き込み
+###linuxのboot-image(for mac)作成
+デバイス確認
+$ diskutil list
+ターゲットデバイスのunmount
+$ diskutil unMountDisk /dev/disk3
+mac用のboot-imageにコンバート
+$ hdiutil convert -format UDRW -o CentOS-7-x86_64-Minimal-1810.iso.img CentOS-7-x86_64-Minimal-1810.iso
+ddでcopy
+$ sudo dd if=/Users/igarashishunsuke/Downloads/CentOS-7-x86_64-Minimal-1810.iso.img.dmg of=/dev/disk3 bs=1m
 
 #Windows
 ##PoweerShell
