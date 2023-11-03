@@ -939,6 +939,9 @@ kubectl -n weko3pg exec -it weko3pg-db-node1-0 -- psql -U invenio postgres
 #VirtualBox
 ##デバイスにコピーイメージをアサインできない
 http://www.webzoit.net/hp/it/internet/homepage/env/cs/virtual_machine/move_copy/
+## VBoxManageの例
+- VBoxManage list vms
+- VBoxmanage startvm <VM>
 
 #svn
 ##svn リポジトリ作成 (サーバ側)
