@@ -942,6 +942,9 @@ http://www.webzoit.net/hp/it/internet/homepage/env/cs/virtual_machine/move_copy/
 ## VBoxManageの例
 - VBoxManage list vms
 - VBoxmanage startvm <VM>
+- VBoxManage modifyvm OracleLinux6Test --cpus 2 --memory 2048 --vram 12
+- VBoxManage showvminfo OracleLinux6Test | grep "Memory size"
+  Memory size:     2048MB
 
 #svn
 ##svn リポジトリ作成 (サーバ側)
