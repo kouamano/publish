@@ -383,6 +383,8 @@ zpool get all
 自分の環境だと、LinkStation 200シリーズへの接続で、「vers=2.0」をつけることでマウントできました。
 - mount -t cifs -o user=<ユーザー名>,password=<password>,vers=2.0 //<IPアドレス>/info(NAS側) /mnt(マウント先)
 - mount.cifs //192.168.10.113/home /Volumes/home -o user=amano,pass=Na11Mg12
+- mount.cifs //192.168.10.113/home /Volumes/home -o user=amano,pass=Na11Mg12,vers=2.0
+  <= ts5600Dへの接続
 
 #systemd
 ##logに対するtail -f 的な使い方
