@@ -2318,7 +2318,13 @@ blog.asens.jp/archives/1194
 #==========#
 #各アプリ
 ## ollama
+### モデルの読み込み
+- モデルの取得
+- modelfile作成
+- モデルの読み込み
+- run
 https://microai.jp/blog/0e96c38f-9f36-4b39-a55f-72dad641dfe2
+https://techblog.cccmkhd.co.jp/entry/2024/07/23/100000
 
 #==========#
 #その他資料
