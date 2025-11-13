@@ -1626,6 +1626,8 @@ nltk.download()
 yum install python-pip
 ###pipを使ったアップグレード
 pip install --upgrade numpy
+- 依存関係を解決しつつインストール
+pip install --upgrade --upgrade-strategy eager <パッケージ名>
 ###proxy
 pip install <pkg> --proxy=wwwout.xxxx.xx.xx:8888
 ##numpy
