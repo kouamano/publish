@@ -172,6 +172,9 @@ ssh -L 10022:192.168.0.9:22 -i ~/.ssh/id_rsa kamano@G005
 ssh -L 10443:gitlab.nims.go.jp:443 kamano@127.0.0.1 -p 10022
   <- N009のパスワード
 （ローカル）ブラウザで https://127.0.0.1:10443 に接続
+- ex4 httpsのport11000 接続を残す
+ssh -N -L 11000:localhost:11000 user@linux_host
+
 ##port 443を使う
 sshd_config:
 /===
