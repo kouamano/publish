@@ -732,6 +732,23 @@ curl -i -u "kouamano:<pass>" https://api.github.com/repos/nims-library/library/i
 curl -H "Authorization: token <token>" https://api.github.com/user
 
 # Gitlab
+## dockerによる構築
+- ディレクトリ作成:ホスト側
+mkdir -p /srv/docker/etc/gitlab
+mkdir -p /srv/docker/var/opt/gitlab
+mkdir -p /srv/docker/var/log/gitlab
+- コンテナ
+docker run --detach \
+  --hostname gitlab.localhost \
+  --publish 443:443 \
+  --publish 80:80 \
+  --publish 2322:22 \
+  --name gitlab \
+  --restart always \
+  --volume /srv/docker/etc/gitlab:/etc/gitlab \
+  --volume /srv/docker/var/log/gitlab:/var/log/gitlab \
+  --volume /srv/docker/var/opt/gitlab/var/opt/gitlab \
+  gitlab/gitlab-ce:18.5.2-ce.0
 ## 直接インストール
 https://fumiyas.github.io/gitlab/install-omnibus.html
 ### あっぷろーどファイルの場所
