@@ -206,6 +206,13 @@ Enforcing
 -P : 大文字のP(sshとおぷしょんがちがう)
 scp -P 2222 mbair.ssh.tar localhost:/home/kouamano/
 
+#MPI @DGX-spark
+https://build.nvidia.com/spark/connected-two-sparks/stacked-sparks
+##NCCL
+https://build.nvidia.com/spark/nccl/stacked-sparks
+##vLLM
+https://build.nvidia.com/spark/vllm/stacked-sparks
+
 #PBS
 ##インタラクティブジョブの開始
 $ qsub -I -q inter
@@ -2209,9 +2216,6 @@ apt-get install ibus
 reboot
 ##セットアップコマンド
 raspi-config
-##MPI
-sudo apt-get install openmpi*
-sudo apt-get install mpich*
 ##qemuでraspberrypi
 qemu-system-arm -kernel /BANK/OS.img/kernel-qemu  -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda /BANK/OS.img/2013-09-25-wheezy-raspbian.img
 
