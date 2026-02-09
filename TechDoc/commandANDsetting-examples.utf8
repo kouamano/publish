@@ -213,7 +213,7 @@ https://build.nvidia.com/spark/nccl/stacked-sparks
 ##vLLM
 https://build.nvidia.com/spark/vllm/stacked-sparks
 ###再起動
-- 上記ページのStep 3のHead Nodeのdocker imageの登録からやり直す
+- 上記ページのStep 3のHead Nodeのdocker imageの登録からやり直す（両方のnodeで）
 
 #PBS
 ##インタラクティブジョブの開始
