@@ -2372,6 +2372,13 @@ blog.asens.jp/archives/1194
 https://microai.jp/blog/0e96c38f-9f36-4b39-a55f-72dad641dfe2
 https://techblog.cccmkhd.co.jp/entry/2024/07/23/100000
 
+## llama.cpp
+- ローカル（キャッシュ）イメージのリスト
+llama-server -cl
+- HFからイメージをダウンロードして実行、-clのnameをそのままタイプ
+llama-server -hf unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M
+
+
 #==========#
 #その他資料
 #グラフ
