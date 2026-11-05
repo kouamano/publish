@@ -2282,16 +2282,16 @@ RAILS_ENV=production rake sunspot:solr:reindex
 7.4 a.save
 7.5 a.index!
 
-#Hyku/Hyrax
-##VagrantとVirtualBox対応版のインストール
+# Hyku/Hyrax
+## VagrantとVirtualBox対応版のインストール
 https://github.com/samvera-labs/samvera-vagrant
-##Hykuのマニュアル
+## Hykuのマニュアル
 - install: https://wiki.duraspace.org/display/hyku/Hyku+Product+Beta+-+Frequently+Asked+Questions
 - userman: https://docs.google.com/document/d/1BN7_YnaCZXhbRTOqWooXhGz2SBojpLI-js5d28db6lU/edit#heading=h.b7ep2kef9anu
 ##Hyrax:管理者追加
 - https://github.com/samvera/hyrax/wiki/Making-Admin-Users-in-Hyrax
 
-#OSRA
+# OSRA
 - (base) [kamano@n007 ~]$ docker run --name OSRA -v /mnt/Docker:/Docker -d berlinguyinca/osra /sbin/init
 - (base) [kamano@n007 ~]$ docker exec -it OSRA /bin/bash
 - <mages_origami/images# osra 17350842896711914313.jpg                         
@@ -2301,14 +2301,14 @@ C#*[*+]C12C(*)CCC2CC[C@H]1*
 - <mages_origami/images# osra -R 90 17350842896711914313.jpg                         
 
 #==========#
-#mac OSX
-##スリープの設定
-###スリープさせない
-sudo pmset -a disablesleep 1
-###スリープさせる
-sudo pmset -a disablesleep 0
-##Xのハマりポイント
-###ssh -X
+# macOS
+## スリープの設定
+### スリープさせない
+  sudo pmset -a disablesleep 1
+### スリープさせる
+  sudo pmset -a disablesleep 0
+## Xのハマりポイント
+### ssh -X
 そもそもキー入力がおかしい
 ## pfctl （パケットフィルター）
 - status
@@ -2324,38 +2324,40 @@ load anchor "osamanoina" from "/etc/pf.anchors/osamanoina"
 ===/
 - 読み込みコマンド実行
   pfctl -a osamanoina -f /etc/pf.anchors/osamanoina 
+- 読み込みルール確認
+  pfctl -a osamanoina -sr
 
-##ファイアウォールの切りかた:
-sysctl -w net.inet.ip.fw.enable=0
-##OSX nfs client
+## ファイアウォールの切りかた:
+  sysctl -w net.inet.ip.fw.enable=0
+## OSX nfs client
 [Directory utility] -> [mount] -> (dialog左下のアイコン列;一番右をクリック) -> [詳細マウントパラメータ] に "-P nosuid" を入れる。
 ##imputmethodが起動しなくなった時(Yosemite)
 以下のどれかのプログラムが落ちていないか確認:
 /System/Library/Input Methods/JapaneseIM.app/Contents/MacOS/JapaneseIM
 /System/Library/Frameworks/InputMethodKit.framework/Resources/imklaunchagent
 /System/Library/Frameworks/InputMethodKit.framework/Versions/A/XPCServices/com.apple.InputMethodKit.UserDictionary.xpc/Contents/MacOS/com.apple.InputMethodKit.UserDictionary
-##XCODE
-###環境の切り替え
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-sudo xcode-select --switch /Library/Developer/CommandLineTools
+## XCODE
+### 環境の切り替え
+  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+  sudo xcode-select --switch /Library/Developer/CommandLineTools
 確認
-xcode-select -p
-##ソフトウエアアップデート
-sudo softwareupdate -i -a
-##HomeBrew
-###ライブラリがみつからない的なエラー対応:
-cd /usr/local/Library
-git pull origin master
-brew update
-###エラーが出た時
+  xcode-select -p
+## ソフトウエアアップデート
+  sudo softwareupdate -i -a
+## HomeBrew
+### ライブラリがみつからない的なエラー対応:
+  cd /usr/local/Library
+  git pull origin master
+  brew update
+### エラーが出た時
 $ cd `brew --prefix`
 $ git fetch origin
 $ git reset --hard origin/master
-##トレーサー
-sudo dtruss <program>
-sudo dtruss -p <pid>
-##bootイメージ作成と書き込み
-###linuxのboot-image(for mac)作成
+## トレーサー
+  sudo dtruss <program>
+  sudo dtruss -p <pid>
+## bootイメージ作成と書き込み
+### linuxのboot-image(for mac)作成
 デバイス確認
 $ diskutil list
 ターゲットデバイスのunmount
@@ -2365,20 +2367,20 @@ $ hdiutil convert -format UDRW -o CentOS-7-x86_64-Minimal-1810.iso.img CentOS-7-
 ddでcopy
 $ sudo dd if=/Users/igarashishunsuke/Downloads/CentOS-7-x86_64-Minimal-1810.iso.img.dmg of=/dev/disk3 bs=1m
 
-#Windows
-##PoweerShell
-##カレントディレクトリの使用サイズ
-Get-ChildItem  -Recurse -Force | ForEach-Object -Begin { $Len = 0 } -Process { $Len = $Len + $_.Length } -End { $Len }
-##registory
-###Keymap
+# Windows
+## PoweerShell
+### カレントディレクトリの使用サイズ
+  Get-ChildItem  -Recurse -Force | ForEach-Object -Begin { $Len = 0 } -Process { $Len = $Len + $_.Length } -End { $Len }
+## registory
+### Keymap
 yanor.net/wiki/?Windows%2FTIPS%2F%E3%83%AC%E3%82%B8%E3%82%B9%E3%83%88%E3%83%AA%E3%82%92%E4%BF%AE%E6%AD%A3%E3%81%97%E3%81%A6CAPSLOCK%E3%81%AE%E5%89%B2%E3%82%8A%E5%BD%93%E3%81%A6%E5%A4%89%E6%9B%B4
 
-##MS-excel
-##get the list of sheets
+## MS-excel
+### get the list of sheets
 blog.asens.jp/archives/1194
 
 #==========#
-#各アプリ
+# 各アプリ
 ## ollama
 ### モデルの読み込み
 - モデルの取得
@@ -2396,17 +2398,17 @@ llama-server -hf unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M
 
 
 #==========#
-#その他資料
-#グラフ
+# その他資料
+# グラフ
 http://www.graphclasses.org/
-#第一原理計算
+# 第一原理計算
 https://mmnakayama.jimdo.com/study/%E7%AC%AC%E4%B8%80%E5%8E%9F%E7%90%86%E8%A8%88%E7%AE%97%EF%BC%91/
-#inveio
+# inveio
 http://invenio-software.org/gettingstarted
 
-#各サーバーの利用
-##N009
-###Mathematica
+# 各サーバーの利用
+## N009
+### Mathematica
 - docker exec -it 96f94f404623  /bin/bash
 - math
 
