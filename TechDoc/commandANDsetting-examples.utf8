@@ -2310,6 +2310,21 @@ sudo pmset -a disablesleep 0
 ##Xのハマりポイント
 ###ssh -X
 そもそもキー入力がおかしい
+## pfctl （パケットフィルター）
+- status
+  pfctl -s info
+- 書式チェック
+  pfctl -n -f <file>
+### ルール追加
+- /etc/pf.anchors/ 配下にファイルを作成
+- /etc/pf.conf に上記ファイル読み込み設定：
+/===
+anchor "osamanoina"
+load anchor "osamanoina" from "/etc/pf.anchors/osamanoina"
+===/
+- 読み込みコマンド実行
+  pfctl -a osamanoina -f /etc/pf.anchors/osamanoina 
+
 ##ファイアウォールの切りかた:
 sysctl -w net.inet.ip.fw.enable=0
 ##OSX nfs client
