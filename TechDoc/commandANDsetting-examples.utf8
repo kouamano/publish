@@ -398,6 +398,7 @@ zpool get all
 - mount.cifs //192.168.10.113/home /Volumes/home -o user=amano,pass=Na11Mg12
 - mount.cifs //192.168.10.113/home /Volumes/home -o user=amano,pass=Na11Mg12,vers=2.0
   <= ts5600Dへの接続
+- mount -t cifs //169.254.6.191/Public /mnt/Public -o username=kouamano,password=Na11Mg12
 
 #systemd
 ##logに対するtail -f 的な使い方
