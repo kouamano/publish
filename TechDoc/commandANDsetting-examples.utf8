@@ -2397,10 +2397,10 @@ https://techblog.cccmkhd.co.jp/entry/2024/07/23/100000
 llama-server -cl
 - HFからイメージをダウンロードして実行、-clのnameをそのままタイプ
 llama-server -hf unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M
-### DGX-sparkのビルド
-https://build.nvidia.com/spark/llama-cpp/instructions
+### DGX-sparkでのビルド
+nvidiaのインストラクション: https://build.nvidia.com/spark/llama-cpp/instructions
 ターゲットがllama-serverのみになっている。
-が、ターゲットを指定せずにやってみる。
+が、ターゲットを指定せずにやってみる。 -> 問題なさそう。
 
 #==========#
 # その他資料
