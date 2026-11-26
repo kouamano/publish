@@ -2385,10 +2385,14 @@ blog.asens.jp/archives/1194
 # 各アプリ
 ## ollama
 ### モデルの読み込み
-- モデルの取得
-- modelfile作成
-- モデルの読み込み
-- run
+- ローカルモデルのリスト
+  ollama list
+- モデルの取得（run）
+  ollama run <モデル>
+- バッチ
+  ollama run <モデル> <会話文>
+- プロンプトとファイルを渡す
+  cat prompt.txt content.txt | ollama run <モデル>
 
 ## llama.cpp
 - ローカル（キャッシュ）イメージのリスト
