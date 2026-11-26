@@ -1942,6 +1942,8 @@ sudo foreman export systemd -a tokkyodb -u kamano /etc/systemd/system/
 インストール後にセットアップ（initdb）する必要あり。
 postgresql-setup --initdb
 ## バックスラッシュコマンド
+- テーブル一覧
+\dt
 ### スクリプト実行
 psql <db>
 \i <sqlファイル>
@@ -2056,6 +2058,9 @@ ALTER TABLE tbl1 add primary key (item1);
 ALTER TABLE region_type add constraint cons_region_type unique (region_type);
 alter TABLE resourcename_region add constraint cons_region_type foreign key (region_type) references region_type(region_type);
 ALTER TABLE organizationname_region add constraint cons_region_type foreign key (region_type) references region_type(region_type);
+
+## 制約の削除
+alter table "01a1d331-836d-7551-8f15-bda257c9273c" drop CONSTRAINT "01a1d331-836d-7551-8f15-bda257c9273c_pkey";
 
 ## 外部接続の許可
 $PGDATAディレクトリ以下のふたつのファイル
