@@ -1938,19 +1938,19 @@ tryをつかうと
 sudo foreman export systemd -a tokkyodb -u kamano /etc/systemd/system/
 
 
-#Postgresql
+# Postgresql
 インストール後にセットアップ（initdb）する必要あり。
 postgresql-setup --initdb
-##バックスラッシュコマンド
-###スクリプト実行
+## バックスラッシュコマンド
+### スクリプト実行
 psql <db>
 \i <sqlファイル>
-###出力先をファイルに
+### 出力先をファイルに
 \o /home/kamano/psql.out
-##postgres初期化(1)
+## postgres初期化(1)
 []# su - postgres
 []#initdb
-##postgres初期化(2)
+## postgres初期化(2)
 []# su - postgres
 []$ initdb /BANK/pgsql/8.1
 - port変更等:
@@ -1958,33 +1958,35 @@ psql <db>
 []$ pg_ctl start -D /BANK/pgsql/8.1
 []$ createdb -p 6543 test
 []$ psql test	#接続
-##connection test
+## connection test
 psql template1 -h localhost -p 5432 -U postgres
 psql -h achi -d tokkyodb_development -U kamano
-##システムカタログ
-###list DB
+## DBを指定して接続
+[]$ psql -d 01a1d2e2-5476-74e6-982b-6158fd9d9006
+## システムカタログ
+### list DB
 [] psql
 =# select * from pg_database;
  OR
 [] psql -l
-##create table
+## create table
 CREATE TABLE organization (id int, top_level_organization_name text, organization_name text);
-###カラム名
+### カラム名
 select * from pg_attribute;
-###特定のテーブルのカラム名
+### 特定のテーブルのカラム名
 select * from pg_attribute where attrelid = 'manifestations'::regclass;
-###テーブル名
+### テーブル名
 select * from pg_class;
-##タプルデリート
+## タプルデリート
 delete  from patent_patents;
-##テーブルオーナーの書き換え:
+## テーブルオーナーの書き換え:
 term_region=# ALTER TABLE public.organizationname_region OWNER TO kamano;
-##macddr型のマッチ
+## macddr型のマッチ
 select mac_address from arp_regist_mac where(mac_address > '00:40:66:00:00:00'::macaddr);
-##カラムを文字列として結合(AとBをansとして結合、ans, Cを表示)
+## カラムを文字列として結合(AとBをansとして結合、ans, Cを表示)
 SELECT A || '-' || B ans , C from table;
 SELECT name_code || '+' || brc_no from accession;
-##テキストをcomma結合する集約関数
+## テキストをcomma結合する集約関数
 CREATE FUNCTION text_comma_join(text, text) RETURNS text AS '
 	SELECT $1 || '','' || $2
 ' LANGUAGE SQL;
@@ -2001,7 +2003,7 @@ CREATE AGGREGATE comma_join (
   INITCOND = ''
 );
 
-##テキストをsemicolon結合する集約関数
+## テキストをsemicolon結合する集約関数
 CREATE FUNCTION text_semicolon_join(text, text) RETURNS text AS '
 	SELECT $1 || '' ; '' || $2
 ' LANGUAGE SQL;
@@ -2018,70 +2020,70 @@ CREATE AGGREGATE semicolon_join (
   INITCOND = ''
 );
 
-##parent()
+## parent()
 create function parent(text) returns text as '
 	select line.background from line where(line.current = $1)
 ' LANGUAGE sql;
 
-##parents()
+## parents()
 create function parents(text) returns setof text as '
 	select line.background from line where(line.current = $1)
 ' LANGUAGE sql;
 
-##daughter()
+## daughter()
 create function daughter(text) returns text as '
 	select line.current from line where(line.background = $1)
 ' LANGUAGE sql;
 
-##daughters()
+## daughters()
 create function daughters(text) returns setof text as '
 	select line.current from line where(line.background = $1)
 ' LANGUAGE sql;
 
-##制約の確認
+## 制約の確認
 select * from information_schema.table_constraints;
 
-##制約:例1
+## 制約:例1
 ALTER TABLE fact_data ADD primary key (fact_data);
 ALTER TABLE fact_data ADD constraint fact unique (<colum_name>);
 alter table patent_us_tsvs add constraint publication_number unique(publication_number);
 ALTER TABLE accession_and_assay_and_fact_data ADD constraint assay_fact_data foreign key (fact_data) REFERENCES fact_data(fact_data) MATCH FULL;
 
-##制約:例2
+## 制約:例2
 ALTER TABLE tbl1 add primary key (item1);
 
-##制約:例3
+## 制約:例3
 ALTER TABLE region_type add constraint cons_region_type unique (region_type);
 alter TABLE resourcename_region add constraint cons_region_type foreign key (region_type) references region_type(region_type);
 ALTER TABLE organizationname_region add constraint cons_region_type foreign key (region_type) references region_type(region_type);
 
-##外部接続の許可
+## 外部接続の許可
 $PGDATAディレクトリ以下のふたつのファイル
 pg_hba.conf
 postgresql.conf
 をそれぞれ書き換え:
-###pg_hba.conf の書き換え:
+### pg_hba.conf の書き換え:
 /===
 # host       DATABASE  USER  CIDR-ADDRESS  METHOD  [OPTION]
 ---
 host       all  all  192.168.0.5  255.255.255.255 trust
 ===/
 
-###postgresql.conf の書き換え:
+### postgresql.conf の書き換え:
 /===
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
 ---
 listen_addresses = '*'
 ===/
 
-##dblink
-###dblinkのインストール: そこから利用したい全てのデータベースに対し行う
+## dblink
+### dblinkのインストール: そこから利用したい全てのデータベースに対し行う
 psql -U postgres -d test < /usr/share/pgsql/contrib/dblink.sql
-###dblink_connect()
+### dblink_connect()
 SELECT dblink_connect('sassc','host=192.168.0.4 port=5432 dbname=sassc user=sassc password=Ra88Fr87');
-###select from dblink
+### select from dblink
 SELECT * from dblink('sassc', 'select * from gene') as t1(gene_symbol text, gene_name text, remarks text);
-###select dblink_disconnect()
+### select dblink_disconnect()
 SELECT dblink_disconnect('sassc');
 
 #mysql
