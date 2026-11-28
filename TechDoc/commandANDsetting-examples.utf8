@@ -2410,6 +2410,7 @@ blog.asens.jp/archives/1194
 llama-server -cl
 - HFからイメージをダウンロードして実行、-clのnameをそのままタイプ
 llama-server -hf unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M
+llama-server -hf unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M --host 0.0.0.0
 ### DGX-sparkでのビルド
 nvidiaのインストラクション: https://build.nvidia.com/spark/llama-cpp/instructions
 ターゲットがllama-serverのみになっている。
